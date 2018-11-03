@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct APIClient {
+    static let APIHost = " qiita.com"
+    static let Auth = APIHost + "/api/v2/oauth/authorize"
+}
