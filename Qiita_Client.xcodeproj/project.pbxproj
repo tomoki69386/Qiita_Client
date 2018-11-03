@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B74A384E218D1EA60066EA24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A384D218D1EA60066EA24 /* AppDelegate.swift */; };
-		B74A3850218D1EA60066EA24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A384F218D1EA60066EA24 /* ViewController.swift */; };
-		B74A3853218D1EA60066EA24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74A3851218D1EA60066EA24 /* Main.storyboard */; };
+		B74A3853218D1EA60066EA24 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74A3851218D1EA60066EA24 /* Home.storyboard */; };
 		B74A3855218D1EA70066EA24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B74A3854218D1EA70066EA24 /* Assets.xcassets */; };
 		B74A3858218D1EA70066EA24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74A3856218D1EA70066EA24 /* LaunchScreen.storyboard */; };
 		B74A3865218D24300066EA24 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74A3860218D24300066EA24 /* RxCocoa.framework */; };
@@ -17,13 +16,14 @@
 		B74A3867218D24300066EA24 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74A3862218D24300066EA24 /* RxSwift.framework */; };
 		B74A3868218D24300066EA24 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74A3863218D24300066EA24 /* SDWebImage.framework */; };
 		B74A3869218D24300066EA24 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74A3864218D24300066EA24 /* SnapKit.framework */; };
+		B74A3870218DE7770066EA24 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A386F218DE7770066EA24 /* APIClient.swift */; };
+		B74A3874218DE7B60066EA24 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A3873218DE7B60066EA24 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B74A384A218D1EA60066EA24 /* Qiita_Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qiita_Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74A384D218D1EA60066EA24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B74A384F218D1EA60066EA24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B74A3852218D1EA60066EA24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B74A3852218D1EA60066EA24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		B74A3854218D1EA70066EA24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B74A3857218D1EA70066EA24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B74A3859218D1EA70066EA24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,6 +32,8 @@
 		B74A3862218D24300066EA24 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		B74A3863218D24300066EA24 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		B74A3864218D24300066EA24 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		B74A386F218DE7770066EA24 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		B74A3873218DE7B60066EA24 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,9 +72,10 @@
 		B74A384C218D1EA60066EA24 /* Qiita_Client */ = {
 			isa = PBXGroup;
 			children = (
-				B74A384D218D1EA60066EA24 /* AppDelegate.swift */,
-				B74A384F218D1EA60066EA24 /* ViewController.swift */,
-				B74A3851218D1EA60066EA24 /* Main.storyboard */,
+				B74A386E218DE75B0066EA24 /* StoryBoard */,
+				B74A386D218DE7550066EA24 /* Model */,
+				B74A386C218DE74F0066EA24 /* View */,
+				B74A386B218DE7480066EA24 /* API */,
 				B74A3854218D1EA70066EA24 /* Assets.xcassets */,
 				B74A3856218D1EA70066EA24 /* LaunchScreen.storyboard */,
 				B74A3859218D1EA70066EA24 /* Info.plist */,
@@ -90,6 +93,54 @@
 				B74A3864218D24300066EA24 /* SnapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B74A386B218DE7480066EA24 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B74A386F218DE7770066EA24 /* APIClient.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		B74A386C218DE74F0066EA24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B74A3872218DE7A40066EA24 /* Home */,
+				B74A384D218D1EA60066EA24 /* AppDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B74A386D218DE7550066EA24 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B74A386E218DE75B0066EA24 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				B74A3871218DE78D0066EA24 /* Home */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		B74A3871218DE78D0066EA24 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B74A3851218D1EA60066EA24 /* Home.storyboard */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		B74A3872218DE7A40066EA24 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B74A3873218DE7B60066EA24 /* HomeViewController.swift */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,7 +204,7 @@
 			files = (
 				B74A3858218D1EA70066EA24 /* LaunchScreen.storyboard in Resources */,
 				B74A3855218D1EA70066EA24 /* Assets.xcassets in Resources */,
-				B74A3853218D1EA60066EA24 /* Main.storyboard in Resources */,
+				B74A3853218D1EA60066EA24 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,20 +240,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B74A3850218D1EA60066EA24 /* ViewController.swift in Sources */,
 				B74A384E218D1EA60066EA24 /* AppDelegate.swift in Sources */,
+				B74A3870218DE7770066EA24 /* APIClient.swift in Sources */,
+				B74A3874218DE7B60066EA24 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B74A3851218D1EA60066EA24 /* Main.storyboard */ = {
+		B74A3851218D1EA60066EA24 /* Home.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B74A3852218D1EA60066EA24 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Home.storyboard;
 			sourceTree = "<group>";
 		};
 		B74A3856218D1EA70066EA24 /* LaunchScreen.storyboard */ = {
