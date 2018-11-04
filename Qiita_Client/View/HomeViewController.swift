@@ -8,6 +8,7 @@
 
 import UIKit
 import AMScrollingNavbar
+import SkeletonView
 
 class HomeViewController: UIViewController {
     
@@ -18,12 +19,13 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         navigationItem.title = "記事一覧"
         navigationController?.navigationBar.barTintColor = AppColor.main
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        tableView.dataSource = self
-        tableView.delegate = self
         
         showRequest()
     }

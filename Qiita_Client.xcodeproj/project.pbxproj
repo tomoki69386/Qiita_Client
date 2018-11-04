@@ -24,6 +24,7 @@
 		B74A387D218EC9310066EA24 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A387C218EC9310066EA24 /* AppColor.swift */; };
 		B74A387F218ECAD10066EA24 /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74A387E218ECAD10066EA24 /* TabBarController.storyboard */; };
 		B74A3881218ED0FE0066EA24 /* AMScrollingNavbar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74A3880218ED0FD0066EA24 /* AMScrollingNavbar.framework */; };
+		B74A3883218EE0980066EA24 /* SkeletonView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74A3882218EE0980066EA24 /* SkeletonView.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		B74A387C218EC9310066EA24 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		B74A387E218ECAD10066EA24 /* TabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
 		B74A3880218ED0FD0066EA24 /* AMScrollingNavbar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMScrollingNavbar.framework; path = Carthage/Build/iOS/AMScrollingNavbar.framework; sourceTree = "<group>"; };
+		B74A3882218EE0980066EA24 /* SkeletonView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkeletonView.framework; path = Carthage/Build/iOS/SkeletonView.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B74A3883218EE0980066EA24 /* SkeletonView.framework in Frameworks */,
 				B74A3881218ED0FE0066EA24 /* AMScrollingNavbar.framework in Frameworks */,
 				B74A3865218D24300066EA24 /* RxCocoa.framework in Frameworks */,
 				B74A3866218D24300066EA24 /* Alamofire.framework in Frameworks */,
@@ -100,6 +103,7 @@
 		B74A385F218D242F0066EA24 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B74A3882218EE0980066EA24 /* SkeletonView.framework */,
 				B74A3880218ED0FD0066EA24 /* AMScrollingNavbar.framework */,
 				B74A3861218D24300066EA24 /* Alamofire.framework */,
 				B74A3860218D24300066EA24 /* RxCocoa.framework */,
@@ -253,6 +257,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AMScrollingNavbar.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SkeletonView.framework",
 			);
 			outputFileListPaths = (
 			);
