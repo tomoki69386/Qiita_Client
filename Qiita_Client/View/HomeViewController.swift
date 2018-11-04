@@ -19,6 +19,9 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "記事一覧"
+        navigationController?.navigationBar.barTintColor = AppColor.main
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         tableView.dataSource = self
         tableView.delegate = self
         
