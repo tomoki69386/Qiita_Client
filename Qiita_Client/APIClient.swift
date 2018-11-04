@@ -9,6 +9,20 @@
 import Foundation
 
 struct APIClient {
-    static let APIHost = " qiita.com"
-    static let Auth = APIHost + "/api/v2/oauth/authorize"
+    
+    static func fetchArticle(_ completion: @escaping ([Article]) -> Void) {
+        let components = URLComponents(string: "https://qiita.com/api/v2/items")
+        guard let url = components?.url else { return }
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else { return }
+            let decorder = JSONDecoder()
+            do {
+                let articles = try decorder.decode([Article].self, from: data)
+                completion(articles)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        task.resume()
+    }
 }
