@@ -55,5 +55,8 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(items[indexPath.row].url ?? "")
+        guard let url = items[indexPath.row].url else { return }
+        let VC = ArticleViewController(article: url)
+        self.navigationController?.pushViewController(VC, animated: true)
     }
 }
