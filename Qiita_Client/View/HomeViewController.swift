@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
         view.addSubview(tableView)
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.showAnimatedGradientSkeleton()
         
         navigationItem.title = "記事一覧"
         navigationController?.navigationBar.barTintColor = AppColor.main
@@ -45,6 +46,7 @@ class HomeViewController: UIViewController {
         APIClient.fetchArticle { (articles) in
             self.items = articles
             DispatchQueue.main.sync {
+                self.tableView.hideSkeleton()
                 self.tableView.reloadData()
             }
         }
