@@ -30,9 +30,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("1")
         if let navigationController = navigationController as? ScrollingNavigationController {
-            print("2")
             navigationController.followScrollView(tableView, delay: 50.0)
         }
     }
