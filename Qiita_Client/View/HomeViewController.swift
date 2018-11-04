@@ -14,13 +14,17 @@ class HomeViewController: UIViewController {
     
     private var items = [Article]()
     
-    @IBOutlet weak var tableView: UITableView!
+    private let tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "Home")
+        tableView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        view.addSubview(tableView)
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.showAnimatedGradientSkeleton()
         
         navigationItem.title = "記事一覧"
         navigationController?.navigationBar.barTintColor = AppColor.main
@@ -42,24 +46,26 @@ class HomeViewController: UIViewController {
         APIClient.fetchArticle { (articles) in
             self.items = articles
             DispatchQueue.main.sync {
+                self.tableView.hideSkeleton()
                 self.tableView.reloadData()
             }
         }
     }
 }
 
-extension HomeViewController: UITableViewDataSource {
+extension HomeViewController: SkeletonTableViewDataSource {
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return "Home"
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        cell.textLabel?.text = items[indexPath.row].title
-        cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.sizeToFit()
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Home", for: indexPath) as! HomeTableViewCell
+        cell.setup(item: items[indexPath.row])
         return cell
     }
 }
