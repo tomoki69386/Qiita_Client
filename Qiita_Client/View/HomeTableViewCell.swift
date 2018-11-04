@@ -22,7 +22,7 @@ class HomeTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.addSubview(titleLabel)
-        titleLabel.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
+        titleLabel.frame = CGRect(x: (UIScreen.main.bounds.width - frame.width) / 2, y: 0, width: frame.width, height: frame.height)
     }
     
     func setup(item: Article) {
