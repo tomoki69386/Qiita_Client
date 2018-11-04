@@ -20,6 +20,7 @@
 		B74A3874218DE7B60066EA24 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A3873218DE7B60066EA24 /* HomeViewController.swift */; };
 		B74A3876218DEE590066EA24 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A3875218DEE590066EA24 /* Article.swift */; };
 		B74A3878218EAB940066EA24 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A3877218EAB940066EA24 /* ArticleViewController.swift */; };
+		B74A387B218EC72A0066EA24 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A387A218EC72A0066EA24 /* UIColor+hex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		B74A3873218DE7B60066EA24 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B74A3875218DEE590066EA24 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		B74A3877218EAB940066EA24 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		B74A387A218EC72A0066EA24 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				B74A386D218DE7550066EA24 /* Model */,
 				B74A386C218DE74F0066EA24 /* View */,
 				B74A386B218DE7480066EA24 /* API */,
+				B74A3879218EC70A0066EA24 /* Extension */,
 				B74A3854218D1EA70066EA24 /* Assets.xcassets */,
 				B74A3856218D1EA70066EA24 /* LaunchScreen.storyboard */,
 				B74A3859218D1EA70066EA24 /* Info.plist */,
@@ -147,6 +150,14 @@
 				B74A3877218EAB940066EA24 /* ArticleViewController.swift */,
 			);
 			name = Home;
+			sourceTree = "<group>";
+		};
+		B74A3879218EC70A0066EA24 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B74A387A218EC72A0066EA24 /* UIColor+hex.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +260,7 @@
 				B74A3876218DEE590066EA24 /* Article.swift in Sources */,
 				B74A384E218D1EA60066EA24 /* AppDelegate.swift in Sources */,
 				B74A3878218EAB940066EA24 /* ArticleViewController.swift in Sources */,
+				B74A387B218EC72A0066EA24 /* UIColor+hex.swift in Sources */,
 				B74A3870218DE7770066EA24 /* APIClient.swift in Sources */,
 				B74A3874218DE7B60066EA24 /* HomeViewController.swift in Sources */,
 			);
