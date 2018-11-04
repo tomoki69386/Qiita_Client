@@ -25,6 +25,9 @@
 		B74A387F218ECAD10066EA24 /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74A387E218ECAD10066EA24 /* TabBarController.storyboard */; };
 		B74A3881218ED0FE0066EA24 /* AMScrollingNavbar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74A3880218ED0FD0066EA24 /* AMScrollingNavbar.framework */; };
 		B74A3883218EE0980066EA24 /* SkeletonView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74A3882218EE0980066EA24 /* SkeletonView.framework */; };
+		B74A388A218EF06B0066EA24 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A3889218EF06B0066EA24 /* UserViewController.swift */; };
+		B74A388C218EF0730066EA24 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74A388B218EF0730066EA24 /* User.storyboard */; };
+		B74A388E218EF2810066EA24 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A388D218EF2810066EA24 /* HomeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		B74A387E218ECAD10066EA24 /* TabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
 		B74A3880218ED0FD0066EA24 /* AMScrollingNavbar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMScrollingNavbar.framework; path = Carthage/Build/iOS/AMScrollingNavbar.framework; sourceTree = "<group>"; };
 		B74A3882218EE0980066EA24 /* SkeletonView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkeletonView.framework; path = Carthage/Build/iOS/SkeletonView.framework; sourceTree = "<group>"; };
+		B74A3889218EF06B0066EA24 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		B74A388B218EF0730066EA24 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
+		B74A388D218EF2810066EA24 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,7 @@
 		B74A386C218DE74F0066EA24 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B74A3887218EF0430066EA24 /* User */,
 				B74A3872218DE7A40066EA24 /* Home */,
 				B74A384D218D1EA60066EA24 /* AppDelegate.swift */,
 			);
@@ -143,8 +150,9 @@
 		B74A386E218DE75B0066EA24 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
-				B74A387E218ECAD10066EA24 /* TabBarController.storyboard */,
+				B74A3888218EF04D0066EA24 /* User */,
 				B74A3871218DE78D0066EA24 /* Home */,
+				B74A387E218ECAD10066EA24 /* TabBarController.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -161,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				B74A3873218DE7B60066EA24 /* HomeViewController.swift */,
+				B74A388D218EF2810066EA24 /* HomeTableViewCell.swift */,
 				B74A3877218EAB940066EA24 /* ArticleViewController.swift */,
 			);
 			name = Home;
@@ -172,6 +181,22 @@
 				B74A387A218EC72A0066EA24 /* UIColor+hex.swift */,
 			);
 			name = Extension;
+			sourceTree = "<group>";
+		};
+		B74A3887218EF0430066EA24 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				B74A3889218EF06B0066EA24 /* UserViewController.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		B74A3888218EF04D0066EA24 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				B74A388B218EF0730066EA24 /* User.storyboard */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B74A3858218D1EA70066EA24 /* LaunchScreen.storyboard in Resources */,
+				B74A388C218EF0730066EA24 /* User.storyboard in Resources */,
 				B74A3855218D1EA70066EA24 /* Assets.xcassets in Resources */,
 				B74A387F218ECAD10066EA24 /* TabBarController.storyboard in Resources */,
 				B74A3853218D1EA60066EA24 /* Home.storyboard in Resources */,
@@ -275,10 +301,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B74A3876218DEE590066EA24 /* Article.swift in Sources */,
+				B74A388A218EF06B0066EA24 /* UserViewController.swift in Sources */,
 				B74A384E218D1EA60066EA24 /* AppDelegate.swift in Sources */,
 				B74A3878218EAB940066EA24 /* ArticleViewController.swift in Sources */,
 				B74A387D218EC9310066EA24 /* AppColor.swift in Sources */,
 				B74A387B218EC72A0066EA24 /* UIColor+hex.swift in Sources */,
+				B74A388E218EF2810066EA24 /* HomeTableViewCell.swift in Sources */,
 				B74A3870218DE7770066EA24 /* APIClient.swift in Sources */,
 				B74A3874218DE7B60066EA24 /* HomeViewController.swift in Sources */,
 			);
