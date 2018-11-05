@@ -11,6 +11,7 @@ import Foundation
 struct Article: Codable {
     var title: String?
     var url: String?
+    var body: String?
     var userId: String?
     
     private enum UserKeys: String, CodingKey {
@@ -20,6 +21,7 @@ struct Article: Codable {
     private enum ArticleKeys: String, CodingKey {
         case title
         case url
+        case body
         case user
     }
     
@@ -27,6 +29,7 @@ struct Article: Codable {
         let values = try decoder.container(keyedBy: ArticleKeys.self)
         self.title = try values.decode(String.self, forKey: .title)
         self.url = try values.decode(String.self, forKey: .url)
+        self.body = try values.decode(String.self, forKey: .body)
         let user = try values.nestedContainer(keyedBy: UserKeys.self, forKey: .user)
         self.userId = try user.decode(String.self, forKey: .userId)
     }
