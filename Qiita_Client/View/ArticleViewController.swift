@@ -7,13 +7,29 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 import MarkdownView
 import AMScrollingNavbar
 
 final class ArticleViewController: UIViewController {
     
+    private let disposeBag = DisposeBag()
     private let article: Article
     private let mdView = MarkdownView()
+    private var isLike: Bool = false {
+        didSet {
+            if isLike {
+                likeButton.setImage(UIImage(named: "like_true"), for: .normal)
+                likeButton.backgroundColor = AppColor.main
+            }else {
+                likeButton.setImage(UIImage(named: "like"), for: .normal)
+                likeButton.backgroundColor = AppColor.white
+                likeButton.layer.borderWidth = 2.0
+                likeButton.layer.borderColor = AppColor.main.cgColor
+            }
+        }
+    }
     private let likeButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = AppColor.white
@@ -43,6 +59,7 @@ final class ArticleViewController: UIViewController {
         mdView.load(markdown: article.body)
         view.addSubview(mdView)
         setBtn()
+        btnEvent()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,6 +85,12 @@ final class ArticleViewController: UIViewController {
                 self.stockButton.frame.origin.y -= (self.tabBarController?.tabBar.frame.height)! + 150
             })
         })
+    }
+    
+    private func btnEvent() {
+        likeButton.rx.tap.subscribe(onNext: { _ in
+            self.isLike = !self.isLike
+        }).disposed(by: self.disposeBag)
     }
     
     required init?(coder aDecoder: NSCoder) {
