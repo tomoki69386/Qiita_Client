@@ -82,19 +82,26 @@ final class ArticleViewController: UIViewController {
     }
     
     private func setBtn() {
-        stockButton.frame = CGRect(x: view.frame.width - 75, y: UIScreen.main.bounds.height, width: 60, height: 60)
-        stockButton.layer.cornerRadius = stockButton.frame.width / 2
-        view.addSubview(stockButton)
-        
         likeButton.frame = CGRect(x: view.frame.width - 75, y: UIScreen.main.bounds.height, width: 60, height: 60)
         likeButton.layer.cornerRadius = likeButton.frame.width / 2
         view.addSubview(likeButton)
         
+        stockButton.frame = CGRect(x: view.frame.width - 75, y: UIScreen.main.bounds.height, width: 60, height: 60)
+        stockButton.layer.cornerRadius = stockButton.frame.width / 2
+        view.addSubview(stockButton)
+        
+//        UIView.animate(withDuration: 0.5, animations: {
+//            self.likeButton.frame.origin.y -= (self.tabBarController?.tabBar.frame.height)! + 75
+//        }, completion: { _ in
+//            UIView.animate(withDuration: 0.5, animations: {
+//                self.stockButton.frame.origin.y -= (self.tabBarController?.tabBar.frame.height)! + 150
+//            })
+//        })
         UIView.animate(withDuration: 0.5, animations: {
-            self.likeButton.frame.origin.y -= (self.tabBarController?.tabBar.frame.height)! + 75
+            self.stockButton.frame.origin.y -= (self.tabBarController?.tabBar.frame.height)! + 75
         }, completion: { _ in
             UIView.animate(withDuration: 0.5, animations: {
-                self.stockButton.frame.origin.y -= (self.tabBarController?.tabBar.frame.height)! + 150
+                self.likeButton.frame.origin.y -= (self.tabBarController?.tabBar.frame.height)! + 150
             })
         })
     }
