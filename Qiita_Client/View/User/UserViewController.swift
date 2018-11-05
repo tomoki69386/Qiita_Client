@@ -7,19 +7,12 @@
 //
 
 import UIKit
-import SkeletonView
 
 class UserViewController: UIViewController {
-    
-    @IBOutlet private weak var label: UILabel!
-    @IBOutlet private weak var ImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        label.numberOfLines = 0
-        label.isSkeletonable = true
-        view.showAnimatedGradientSkeleton()
     }
 
 }
