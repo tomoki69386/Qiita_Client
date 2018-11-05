@@ -92,10 +92,7 @@ final class ArticleViewController: UIViewController {
         
         UIView.animate(withDuration: 0.5, animations: {
             self.stockButton.frame.origin.y -= (self.tabBarController?.tabBar.frame.height)! + 75
-        }, completion: { _ in
-            UIView.animate(withDuration: 0.5, animations: {
-                self.likeButton.frame.origin.y -= (self.tabBarController?.tabBar.frame.height)! + 150
-            })
+            self.likeButton.frame.origin.y -= (self.tabBarController?.tabBar.frame.height)! + 150
         })
     }
     
