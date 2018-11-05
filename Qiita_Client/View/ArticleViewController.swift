@@ -90,13 +90,6 @@ final class ArticleViewController: UIViewController {
         stockButton.layer.cornerRadius = stockButton.frame.width / 2
         view.addSubview(stockButton)
         
-//        UIView.animate(withDuration: 0.5, animations: {
-//            self.likeButton.frame.origin.y -= (self.tabBarController?.tabBar.frame.height)! + 75
-//        }, completion: { _ in
-//            UIView.animate(withDuration: 0.5, animations: {
-//                self.stockButton.frame.origin.y -= (self.tabBarController?.tabBar.frame.height)! + 150
-//            })
-//        })
         UIView.animate(withDuration: 0.5, animations: {
             self.stockButton.frame.origin.y -= (self.tabBarController?.tabBar.frame.height)! + 75
         }, completion: { _ in
