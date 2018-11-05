@@ -8,18 +8,19 @@
 
 import UIKit
 import SkeletonView
+import MarkdownView
 
 class UserViewController: UIViewController {
     
-    @IBOutlet private weak var label: UILabel!
-    @IBOutlet private weak var ImageView: UIImageView!
+    let md = MarkdownView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        md.frame = view.bounds
+        md.load(markdown: "# Hello World!")
+        view.addSubview(md)
 
-        label.numberOfLines = 0
-        label.isSkeletonable = true
-        view.showAnimatedGradientSkeleton()
     }
 
 }
