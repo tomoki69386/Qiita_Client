@@ -7,19 +7,11 @@
 //
 
 import UIKit
-import SkeletonView
-import MarkdownView
 
 class UserViewController: UIViewController {
-    
-    let md = MarkdownView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        md.frame = view.bounds
-        md.load(markdown: "# Hello World!")
-        view.addSubview(md)
 
     }
 
