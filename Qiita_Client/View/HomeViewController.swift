@@ -73,8 +73,7 @@ extension HomeViewController: SkeletonTableViewDataSource {
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        guard let body = items[indexPath.row].body else { return }
-        let VC = ArticleViewController(article: body)
+        let VC = ArticleViewController(article: items[indexPath.row])
         self.navigationController?.pushViewController(VC, animated: true)
     }
 }

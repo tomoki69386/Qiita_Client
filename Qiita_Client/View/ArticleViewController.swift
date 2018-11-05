@@ -8,15 +8,23 @@
 
 import UIKit
 import MarkdownView
+import AMScrollingNavbar
 
 final class ArticleViewController: UIViewController {
     
-    private let article: String
+    private let article: Article
     private let mdView = MarkdownView()
     
-    init(article: String) {
+    init(article: Article) {
         self.article = article
         super.init(nibName: nil, bundle: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let navigationController = navigationController as? ScrollingNavigationController {
+            navigationController.followScrollView(mdView, delay: 50.0)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -26,8 +34,10 @@ final class ArticleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = article.title
+        
         mdView.frame = view.bounds
-        mdView.load(markdown: article)
+        mdView.load(markdown: article.body)
         view.addSubview(mdView)
     }
 }
