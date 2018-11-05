@@ -16,9 +16,16 @@ final class ArticleViewController: UIViewController {
     private let mdView = MarkdownView()
     private let likeButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor.green
+        button.backgroundColor = AppColor.white
+        button.layer.borderWidth = 2.0
+        button.layer.borderColor = AppColor.main.cgColor
         return button
     }()
+    private let stockButton: UIButton = {
+        let button = UIButton()
+        
+        return button
+    }
     
     init(article: Article) {
         self.article = article
@@ -28,7 +35,6 @@ final class ArticleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabBarController?.tabBar.backgroundColor = UIColor.white
         navigationItem.title = article.title
         
         mdView.frame = view.bounds
