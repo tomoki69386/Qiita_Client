@@ -9,6 +9,13 @@
 import UIKit
 
 struct AppColor {
+    
+    // #55C500
     static var main: UIColor { return #colorLiteral(red: 0, green: 0.7846030593, blue: 0, alpha: 1) }
+    
+    // #FFFFFF
     static var white: UIColor { return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) }
+    
+    // #777777
+    static var glay: UIColor { return #colorLiteral(red: 0.5406702161, green: 0.5406834483, blue: 0.5406762958, alpha: 1) }
 }

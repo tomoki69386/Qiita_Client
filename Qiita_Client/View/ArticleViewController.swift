@@ -23,9 +23,9 @@ final class ArticleViewController: UIViewController {
     }()
     private let stockButton: UIButton = {
         let button = UIButton()
-        
+        button.backgroundColor = AppColor.glay
         return button
-    }
+    }()
     
     init(article: Article) {
         self.article = article
@@ -40,7 +40,7 @@ final class ArticleViewController: UIViewController {
         mdView.frame = view.bounds
         mdView.load(markdown: article.body)
         view.addSubview(mdView)
-        setLike()
+        setBtn()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,13 +50,21 @@ final class ArticleViewController: UIViewController {
         }
     }
     
-    private func setLike() {
+    private func setBtn() {
+        stockButton.frame = CGRect(x: view.frame.width - 75, y: UIScreen.main.bounds.height, width: 60, height: 60)
+        stockButton.layer.cornerRadius = stockButton.frame.width / 2
+        view.addSubview(stockButton)
+        
         likeButton.frame = CGRect(x: view.frame.width - 75, y: UIScreen.main.bounds.height, width: 60, height: 60)
         likeButton.layer.cornerRadius = likeButton.frame.width / 2
         view.addSubview(likeButton)
         
         UIView.animate(withDuration: 0.5, animations: {
             self.likeButton.frame.origin.y -= (self.tabBarController?.tabBar.frame.height)! + 75
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.5, animations: {
+                self.stockButton.frame.origin.y -= (self.tabBarController?.tabBar.frame.height)! + 150
+            })
         })
     }
     
