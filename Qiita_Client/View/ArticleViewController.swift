@@ -14,10 +14,27 @@ final class ArticleViewController: UIViewController {
     
     private let article: Article
     private let mdView = MarkdownView()
+    private let likeButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor.green
+        return button
+    }()
     
     init(article: Article) {
         self.article = article
         super.init(nibName: nil, bundle: nil)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tabBarController?.tabBar.backgroundColor = UIColor.white
+        navigationItem.title = article.title
+        
+        mdView.frame = view.bounds
+        mdView.load(markdown: article.body)
+        view.addSubview(mdView)
+        setLike()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,17 +44,17 @@ final class ArticleViewController: UIViewController {
         }
     }
     
+    private func setLike() {
+        likeButton.frame = CGRect(x: view.frame.width - 75, y: UIScreen.main.bounds.height, width: 60, height: 60)
+        likeButton.layer.cornerRadius = likeButton.frame.width / 2
+        view.addSubview(likeButton)
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.likeButton.frame.origin.y -= (self.tabBarController?.tabBar.frame.height)! + 75
+        })
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        navigationItem.title = article.title
-        
-        mdView.frame = view.bounds
-        mdView.load(markdown: article.body)
-        view.addSubview(mdView)
     }
 }
