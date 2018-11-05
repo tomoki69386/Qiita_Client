@@ -30,6 +30,16 @@ final class ArticleViewController: UIViewController {
             }
         }
     }
+    private var isStock: Bool = false {
+        didSet {
+            if isStock {
+                stockButton.setImage(UIImage(named: "like_true"), for: .normal)
+            }else {
+                stockButton.setImage(UIImage(named: "stock"), for: .normal)
+                stockButton.backgroundColor = AppColor.glay
+            }
+        }
+    }
     private let likeButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = AppColor.white
@@ -42,6 +52,8 @@ final class ArticleViewController: UIViewController {
     private let stockButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = AppColor.glay
+        button.setImage(UIImage(named: "stock"), for: .normal)
+        button.clipsToBounds = true
         return button
     }()
     
@@ -90,6 +102,10 @@ final class ArticleViewController: UIViewController {
     private func btnEvent() {
         likeButton.rx.tap.subscribe(onNext: { _ in
             self.isLike = !self.isLike
+        }).disposed(by: self.disposeBag)
+        
+        stockButton.rx.tap.subscribe(onNext: { _ in
+            self.isStock = !self.isStock
         }).disposed(by: self.disposeBag)
     }
     
