@@ -19,6 +19,8 @@ final class ArticleViewController: UIViewController {
         button.backgroundColor = AppColor.white
         button.layer.borderWidth = 2.0
         button.layer.borderColor = AppColor.main.cgColor
+        button.setImage(UIImage(named: "like"), for: .normal)
+        button.clipsToBounds = true
         return button
     }()
     private let stockButton: UIButton = {
