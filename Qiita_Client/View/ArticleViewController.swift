@@ -22,7 +22,7 @@ final class ArticleViewController: UIViewController {
             if isLike {
                 likeButton.setImage(UIImage(named: "like_true"), for: .normal)
                 likeButton.backgroundColor = AppColor.main
-            }else {
+            } else {
                 likeButton.setImage(UIImage(named: "like"), for: .normal)
                 likeButton.backgroundColor = AppColor.white
                 likeButton.layer.borderWidth = 2.0
