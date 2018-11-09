@@ -15,6 +15,9 @@ class UserViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -23,5 +26,20 @@ class UserViewController: UIViewController {
             navigationController.followScrollView(tableView, delay: 50.0)
         }
     }
+}
 
+extension UserViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    
+}
+
+extension UserViewController: UITableViewDelegate {
+    
 }
