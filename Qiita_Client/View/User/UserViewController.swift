@@ -7,18 +7,11 @@
 //
 
 import UIKit
-import MarkdownView
 
 class UserViewController: UIViewController {
-    
-    let mdView = MarkdownView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        mdView.frame = view.bounds
-        mdView.load(markdown: "# Markdown")
-        view.addSubview(mdView)
     }
 
 }
