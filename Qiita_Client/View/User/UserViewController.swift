@@ -8,6 +8,7 @@
 
 import UIKit
 import AMScrollingNavbar
+import Alamofire
 
 class UserViewController: UIViewController {
     
@@ -16,8 +17,12 @@ class UserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        navigationItem.title = "プロフィール"
+//        tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "ProfileCell")
+    }
+    
+    private func showUser() {
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,18 +33,18 @@ class UserViewController: UIViewController {
     }
 }
 
-extension UserViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
-    
-    
-}
-
-extension UserViewController: UITableViewDelegate {
-    
-}
+//extension UserViewController: UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        <#code#>
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        <#code#>
+//    }
+//
+//
+//}
+//
+//extension UserViewController: UITableViewDelegate {
+//
+//}
