@@ -25,4 +25,20 @@ struct APIClient {
         }
         task.resume()
     }
+    
+    static func fetchUser(_ completion: @escaping (User) -> Void) {
+        let components = URLComponents(string: "https://qiita.com/api/v2/users/tomoki_sun")
+        guard let url = components?.url else { return }
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else { return }
+            let decorder = JSONDecoder()
+            do {
+                let user = try decorder.decode(User.self, from: data)
+                completion(user)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        task.resume()
+    }
 }

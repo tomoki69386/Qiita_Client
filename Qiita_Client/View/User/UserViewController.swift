@@ -18,11 +18,14 @@ class UserViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "プロフィール"
+        showUser()
 //        tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "ProfileCell")
     }
     
     private func showUser() {
-       
+        APIClient.fetchUser{ (user) in
+            print(user)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
