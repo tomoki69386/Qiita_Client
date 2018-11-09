@@ -13,5 +13,12 @@ class UserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let navigationController = navigationController as? ScrollingNavigationController {
+            navigationController.followScrollView(tableView, delay: 50.0)
+        }
+    }
 
 }
