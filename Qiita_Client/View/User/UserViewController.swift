@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import AMScrollingNavbar
 
 class UserViewController: UIViewController {
+    
+    @IBOutlet var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
