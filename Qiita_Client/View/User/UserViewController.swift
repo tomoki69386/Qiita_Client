@@ -12,12 +12,12 @@ import SnapKit
 import Alamofire
 import SDWebImage
 
-class UserViewController: UIViewController {
+class UserViewController: MainViewController {
     
     private let scrollView = UIScrollView()
     private let imageView = UIImageView()
     private let nameLabel = UILabel()
-    private let tableView = UITableView()
+    
     
     private var userArticles = [Article]()
 
@@ -25,14 +25,9 @@ class UserViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "プロフィール"
-        tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "UserCell")
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.tableFooterView = UIView()
         self.view.addSubview(scrollView)
         scrollView.addSubview(imageView)
         scrollView.addSubview(nameLabel)
-        scrollView.addSubview(tableView)
         showUser()
     }
     
@@ -55,14 +50,6 @@ class UserViewController: UIViewController {
             make.height.equalTo(30)
             make.width.equalTo(200)
         }
-        
-        tableView.snp.makeConstraints { (make) in
-            make.top.equalTo(self.nameLabel.snp.bottom).offset(20)
-            make.left.equalTo(0)
-            make.width.equalTo(self.scrollView.snp.width)
-            make.height.equalTo(self.scrollView.snp.height)
-        }
-        print(tableView.frame)
     }
     
     private func showUser() {
@@ -77,31 +64,8 @@ class UserViewController: UIViewController {
         APIClient.fetchUserArticle { (articles) in
             self.userArticles = articles
             DispatchQueue.main.sync {
-                self.tableView.reloadData()
+
             }
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-}
-
-extension UserViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userArticles.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! ProfileTableViewCell
-        cell.textLabel?.text = userArticles[indexPath.row].title
-        return cell
-    }
-}
-
-extension UserViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
