@@ -9,6 +9,7 @@
 import UIKit
 import AMScrollingNavbar
 import SnapKit
+import SDWebImage
 
 class UserViewController: UIViewController {
     
@@ -19,7 +20,6 @@ class UserViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "プロフィール"
-        imageView.backgroundColor = AppColor.glay
         showUser()
     }
     
@@ -44,6 +44,8 @@ class UserViewController: UIViewController {
     private func showUser() {
         APIClient.fetchUser{ (user) in
             print(user)
+            guard let imageURL = URL(string: user.profile_image_url!) else { return }
+            self.imageView.sd_setImage(with: imageURL)
         }
     }
     
