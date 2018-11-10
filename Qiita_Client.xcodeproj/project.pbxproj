@@ -501,6 +501,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/AMScrollingNavbar.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SkeletonView.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MarkdownView.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/XLPagerTabStrip.framework",
 			);
 			outputFileListPaths = (
 			);

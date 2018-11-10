@@ -5,3 +5,4 @@ github "Alamofire/Alamofire"
 github "andreamazz/AMScrollingNavbar"
 github "Juanpe/SkeletonView"
 github "keitaoouchi/MarkdownView"
+github "xmartlabs/XLPagerTabStrip" ~> 8.1
