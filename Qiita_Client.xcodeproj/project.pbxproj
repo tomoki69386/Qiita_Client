@@ -168,6 +168,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		B715F7E02196738100BE0218 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B74A3875218DEE590066EA24 /* Article.swift */,
+				B715F7DE2195915300BE0218 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B74A3841218D1EA50066EA24 = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +227,7 @@
 		B74A386B218DE7480066EA24 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				B715F7E02196738100BE0218 /* Model */,
 				B74A386F218DE7770066EA24 /* APIClient.swift */,
 				B74A3926219030480066EA24 /* ErrorMessage.swift */,
 			);
@@ -237,8 +247,6 @@
 		B74A386D218DE7550066EA24 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B74A3875218DEE590066EA24 /* Article.swift */,
-				B715F7DE2195915300BE0218 /* User.swift */,
 				B74A387C218EC9310066EA24 /* AppColor.swift */,
 			);
 			name = Model;
