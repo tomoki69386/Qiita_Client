@@ -11,7 +11,7 @@ import XLPagerTabStrip
 
 class NewArticleViewController: MainViewController {
     
-    private var itemInfo: IndicatorInfo = "First"
+    private var itemInfo: IndicatorInfo = "新着記事"
     
     override func viewDidLoad() {
         super.viewDidLoad()
