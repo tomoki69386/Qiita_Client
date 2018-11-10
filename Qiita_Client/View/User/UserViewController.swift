@@ -27,6 +27,8 @@ class UserViewController: UIViewController {
         navigationItem.title = "プロフィール"
         tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "UserCell")
         tableView.dataSource = self
+        tableView.delegate = self
+        tableView.tableFooterView = UIView()
         self.view.addSubview(scrollView)
         scrollView.addSubview(imageView)
         scrollView.addSubview(nameLabel)
@@ -93,9 +95,13 @@ extension UserViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! ProfileTableViewCell
-        
         cell.textLabel?.text = userArticles[indexPath.row].title
-        
         return cell
+    }
+}
+
+extension UserViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
