@@ -1,6 +1,0 @@
-disabled_rules:
-  - line_length
-included:
-excluded:
-  - Carthage
-  - Pods
