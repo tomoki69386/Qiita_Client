@@ -11,15 +11,12 @@ import AMScrollingNavbar
 import Alamofire
 
 class UserViewController: UIViewController {
-    
-    @IBOutlet var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "プロフィール"
         showUser()
-//        tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "ProfileCell")
     }
     
     private func showUser() {
@@ -30,24 +27,6 @@ class UserViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let navigationController = navigationController as? ScrollingNavigationController {
-            navigationController.followScrollView(tableView, delay: 50.0)
-        }
+        
     }
 }
-
-//extension UserViewController: UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        <#code#>
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        <#code#>
-//    }
-//
-//
-//}
-//
-//extension UserViewController: UITableViewDelegate {
-//
-//}
