@@ -18,6 +18,7 @@ class UserViewController: MainViewController {
     private let imageView = UIImageView()
     private let nameLabel = UILabel()
     
+    
     private var userArticles = [Article]()
 
     override func viewDidLoad() {
