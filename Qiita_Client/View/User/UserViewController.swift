@@ -12,7 +12,7 @@ import SnapKit
 import Alamofire
 import SDWebImage
 
-class UserViewController: UIViewController {
+class UserViewController: MainViewController {
     
     private let scrollView = UIScrollView()
     private let imageView = UIImageView()

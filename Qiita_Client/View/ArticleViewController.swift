@@ -12,9 +12,8 @@ import RxCocoa
 import MarkdownView
 import AMScrollingNavbar
 
-final class ArticleViewController: UIViewController {
+final class ArticleViewController: MainViewController {
     
-    private let disposeBag = DisposeBag()
     private let article: Article
     private let mdView = MarkdownView()
     private var isLike: Bool = false {

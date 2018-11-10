@@ -10,7 +10,7 @@ import UIKit
 import AMScrollingNavbar
 import SkeletonView
 
-class HomeViewController: UIViewController {
+class HomeViewController: MainViewController {
     
     private var items = [Article]()
     
