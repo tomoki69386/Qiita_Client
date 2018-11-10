@@ -9,11 +9,15 @@
 import UIKit
 import XLPagerTabStrip
 
-class UserArticleViewController: UIViewController {
-
+class UserArticleViewController: MainViewController, IndicatorInfoProvider {
+    
+    private var itemInfo: IndicatorInfo = "投稿記事"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return itemInfo
+    }
 }
