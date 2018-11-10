@@ -15,6 +15,7 @@ class UserViewController: UIViewController {
     
     let scrollView = UIScrollView()
     let imageView = UIImageView()
+    let nameLabel = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,7 @@ class UserViewController: UIViewController {
         
         self.view.addSubview(scrollView)
         scrollView.addSubview(imageView)
+        scrollView.addSubview(nameLabel)
         
         scrollView.snp.makeConstraints { (make) in
             make.size.equalToSuperview()
@@ -39,14 +41,24 @@ class UserViewController: UIViewController {
             imageView.layer.cornerRadius = 45
             imageView.clipsToBounds = true
         }
+        nameLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.imageView.snp.bottom).offset(10)
+            make.left.equalTo(10)
+            make.height.equalTo(30)
+            make.width.equalTo(200)
+        }
     }
     
     private func showUser() {
         APIClient.fetchUser{ (user) in
             print(user)
-            guard let imageURL = URL(string: user.profile_image_url!) else { return }
-            self.imageView.sd_setImage(with: imageURL)
+            DispatchQueue.main.sync {
+                guard let imageURL = URL(string: user.profile_image_url!) else { return }
+                self.imageView.sd_setImage(with: imageURL)
+                self.nameLabel.text = user.name
+            }
         }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
