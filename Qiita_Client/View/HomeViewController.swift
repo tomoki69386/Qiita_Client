@@ -9,6 +9,7 @@
 import UIKit
 import AMScrollingNavbar
 import SkeletonView
+import XLPagerTabStrip
 
 class HomeViewController: UIViewController {
     
