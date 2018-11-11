@@ -12,6 +12,7 @@ import SDWebImage
 class ProfileView: UIView {
     
     private let userImageView = UIImageView()
+    private let nameLabel = UILabel()
     
     required override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,6 +21,9 @@ class ProfileView: UIView {
         let imageURL = URL(string: "https://qiita-image-store.s3.amazonaws.com/0/165815/profile-images/1518552294")
         userImageView.sd_setImage(with: imageURL)
         self.addSubview(userImageView)
+        
+        nameLabel.text = "ともき"
+        self.addSubview(nameLabel)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,5 +35,7 @@ class ProfileView: UIView {
         
         userImageView.frame = CGRect(x: 10, y: 10, width: 80, height: 80)
         userImageView.layer.cornerRadius = userImageView.frame.width / 2
+        
+        nameLabel.frame = CGRect(x: 10, y: userImageView.frame.maxY + 10, width: self.frame.width, height: 19)
     }
 }
