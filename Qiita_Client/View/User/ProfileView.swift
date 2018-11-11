@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileView: UIView {
     
-    
+    private let userImageView = UIImageView()
     
     required override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        userImageView.clipsToBounds = true
+        let imageURL = URL(string: "https://qiita-image-store.s3.amazonaws.com/0/165815/profile-images/1518552294")
+        userImageView.sd_setImage(with: imageURL)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -22,5 +27,8 @@ class ProfileView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        userImageView.frame = CGRect(x: 10, y: 10, width: 80, height: 80)
+        userImageView.layer.cornerRadius = userImageView.frame.width / 2
     }
 }
