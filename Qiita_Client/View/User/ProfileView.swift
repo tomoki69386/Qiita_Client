@@ -19,6 +19,7 @@ class ProfileView: UIView {
         userImageView.clipsToBounds = true
         let imageURL = URL(string: "https://qiita-image-store.s3.amazonaws.com/0/165815/profile-images/1518552294")
         userImageView.sd_setImage(with: imageURL)
+        self.addSubview(userImageView)
     }
     
     required init?(coder aDecoder: NSCoder) {
