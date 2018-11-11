@@ -13,6 +13,8 @@ class ProfileView: UIView {
     
     private let userImageView = UIImageView()
     private let nameLabel = UILabel()
+    private let userIDLabel = UILabel()
+    private let profileLabel = UILabel()
     
     required override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,6 +26,13 @@ class ProfileView: UIView {
         
         nameLabel.text = "ともき"
         self.addSubview(nameLabel)
+        
+        userIDLabel.text = "@tomoki_sun"
+        self.addSubview(userIDLabel)
+        
+        profileLabel.text = "プログラミング大好きだよ♡"
+        profileLabel.sizeToFit()
+        self.addSubview(profileLabel)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,5 +46,7 @@ class ProfileView: UIView {
         userImageView.layer.cornerRadius = userImageView.frame.width / 2
         
         nameLabel.frame = CGRect(x: 10, y: userImageView.frame.maxY + 10, width: self.frame.width, height: 19)
+        userIDLabel.frame = CGRect(x: 10, y: nameLabel.frame.maxY + 10, width: self.frame.width, height: 14)
+        profileLabel.frame = CGRect(x: 10, y: userIDLabel.frame.maxY + 10, width: self.frame.width - 20, height: 14)
     }
 }
