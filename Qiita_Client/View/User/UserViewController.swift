@@ -25,19 +25,15 @@ class UserViewController: MainViewController {
     }
     
     private func showUser() {
-//        APIClient.fetchUser { (user) in
-//            DispatchQueue.main.sync {
-//                guard let imageURL = URL(string: user.profile_image_url!) else { return }
-//                self.imageView.sd_setImage(with: imageURL)
-//                self.nameLabel.text = user.name
-//            }
-//        }
-//        userArticles.removeAll()
-//        APIClient.fetchUserArticle { (articles) in
-//            self.userArticles = articles
-//            DispatchQueue.main.sync {
-//
-//            }
-//        }
+        APIManager.call(UserRequest.get, disposeBag, onSuccess: { (response) in
+            print(response)
+        }) { (error) in
+            print(error)
+        }
+        APIManager.call(UserArticleRequest.get, disposeBag, onSuccess: { (response) in
+            print(response)
+        }) { (error) in
+            print(error)
+        }
     }
 }
