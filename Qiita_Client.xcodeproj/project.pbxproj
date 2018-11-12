@@ -10,6 +10,14 @@
 		B71555C2219750D0004A1399 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555C1219750D0004A1399 /* MainViewController.swift */; };
 		B71555C421975550004A1399 /* UserArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555C321975550004A1399 /* UserArticleViewController.swift */; };
 		B71555DA21986832004A1399 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555D921986832004A1399 /* ProfileView.swift */; };
+		B71555DC21989BD2004A1399 /* APIClients.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555DB21989BD2004A1399 /* APIClients.swift */; };
+		B71555DE21989D8E004A1399 /* BaseAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555DD21989D8E004A1399 /* BaseAPIProtocol.swift */; };
+		B71555E021989DFF004A1399 /* BaseRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555DF21989DFF004A1399 /* BaseRequestProtocol.swift */; };
+		B71555E321989EEC004A1399 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555E221989EEC004A1399 /* UserRequest.swift */; };
+		B71555E521989F2D004A1399 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555E421989F2D004A1399 /* APIResult.swift */; };
+		B71555E721989F46004A1399 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555E621989F46004A1399 /* APIManager.swift */; };
+		B71555E92199438C004A1399 /* ArticleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555E82199438C004A1399 /* ArticleRequest.swift */; };
+		B71555EB219943D9004A1399 /* UserArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555EA219943D9004A1399 /* UserArticle.swift */; };
 		B715F7DD21958E2600BE0218 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B715F7DC21958E2600BE0218 /* ProfileTableViewCell.swift */; };
 		B715F7DF2195915300BE0218 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B715F7DE2195915300BE0218 /* User.swift */; };
 		B74A384E218D1EA60066EA24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A384D218D1EA60066EA24 /* AppDelegate.swift */; };
@@ -41,6 +49,14 @@
 		B71555C1219750D0004A1399 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B71555C321975550004A1399 /* UserArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserArticleViewController.swift; sourceTree = "<group>"; };
 		B71555D921986832004A1399 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		B71555DB21989BD2004A1399 /* APIClients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClients.swift; sourceTree = "<group>"; };
+		B71555DD21989D8E004A1399 /* BaseAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIProtocol.swift; sourceTree = "<group>"; };
+		B71555DF21989DFF004A1399 /* BaseRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequestProtocol.swift; sourceTree = "<group>"; };
+		B71555E221989EEC004A1399 /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
+		B71555E421989F2D004A1399 /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
+		B71555E621989F46004A1399 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		B71555E82199438C004A1399 /* ArticleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRequest.swift; sourceTree = "<group>"; };
+		B71555EA219943D9004A1399 /* UserArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserArticle.swift; sourceTree = "<group>"; };
 		B715F7DC21958E2600BE0218 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		B715F7DE2195915300BE0218 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B74A384A218D1EA60066EA24 /* Qiita_Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qiita_Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +174,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B71555E121989ED8004A1399 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				B71555E221989EEC004A1399 /* UserRequest.swift */,
+				B71555E82199438C004A1399 /* ArticleRequest.swift */,
+				B71555EA219943D9004A1399 /* UserArticle.swift */,
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
 		B715F7DA21958DF900BE0218 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +262,12 @@
 				B715F7E02196738100BE0218 /* Model */,
 				B74A386F218DE7770066EA24 /* APIClient.swift */,
 				B74A3926219030480066EA24 /* ErrorMessage.swift */,
+				B71555DB21989BD2004A1399 /* APIClients.swift */,
+				B71555DD21989D8E004A1399 /* BaseAPIProtocol.swift */,
+				B71555DF21989DFF004A1399 /* BaseRequestProtocol.swift */,
+				B71555E621989F46004A1399 /* APIManager.swift */,
+				B71555E421989F2D004A1399 /* APIResult.swift */,
+				B71555E121989ED8004A1399 /* Request */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -529,11 +561,19 @@
 			files = (
 				B74A3876218DEE590066EA24 /* Article.swift in Sources */,
 				B74A388A218EF06B0066EA24 /* UserViewController.swift in Sources */,
+				B71555E021989DFF004A1399 /* BaseRequestProtocol.swift in Sources */,
 				B74A3927219030480066EA24 /* ErrorMessage.swift in Sources */,
+				B71555E321989EEC004A1399 /* UserRequest.swift in Sources */,
 				B715F7DD21958E2600BE0218 /* ProfileTableViewCell.swift in Sources */,
+				B71555E92199438C004A1399 /* ArticleRequest.swift in Sources */,
+				B71555EB219943D9004A1399 /* UserArticle.swift in Sources */,
+				B71555E721989F46004A1399 /* APIManager.swift in Sources */,
 				B71555C2219750D0004A1399 /* MainViewController.swift in Sources */,
 				B74A384E218D1EA60066EA24 /* AppDelegate.swift in Sources */,
 				B74A3878218EAB940066EA24 /* ArticleViewController.swift in Sources */,
+				B71555DC21989BD2004A1399 /* APIClients.swift in Sources */,
+				B71555DE21989D8E004A1399 /* BaseAPIProtocol.swift in Sources */,
+				B71555E521989F2D004A1399 /* APIResult.swift in Sources */,
 				B71555DA21986832004A1399 /* ProfileView.swift in Sources */,
 				B74A387D218EC9310066EA24 /* AppColor.swift in Sources */,
 				B74A387B218EC72A0066EA24 /* UIColor+hex.swift in Sources */,
