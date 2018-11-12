@@ -24,7 +24,7 @@ class UserViewController: MainViewController {
         scrollView.addSubview(profileView)
     }
     
-//    private func showUser() {
+    private func showUser() {
 //        APIClient.fetchUser { (user) in
 //            DispatchQueue.main.sync {
 //                guard let imageURL = URL(string: user.profile_image_url!) else { return }
@@ -39,5 +39,5 @@ class UserViewController: MainViewController {
 //
 //            }
 //        }
-//    }
+    }
 }
