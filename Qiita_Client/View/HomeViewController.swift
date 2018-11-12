@@ -50,6 +50,11 @@ class HomeViewController: MainViewController {
                 self.tableView.reloadData()
             }
         }
+        APIManager.call(UserRequest.get, disposeBag, onSuccess: { item in
+            print(item)
+        }, onError: {_ in
+            
+        })
     }
 }
 
