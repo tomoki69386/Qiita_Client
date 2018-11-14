@@ -13,6 +13,7 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
     
     
     override func viewDidLoad() {
+        setBarLayout()
         super.viewDidLoad()
     }
     
@@ -20,5 +21,20 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
         return [
             Storyboard.newArticle.instantiateViewController()
         ]
+    }
+    
+    private func setBarLayout() {
+        settings.style.buttonBarBackgroundColor = .white
+        settings.style.buttonBarItemBackgroundColor = .white
+        settings.style.buttonBarItemTitleColor = AppColor.main
+        settings.style.selectedBarBackgroundColor = AppColor.main
+        settings.style.selectedBarHeight = 2.5
+        changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) in
+            guard changeCurrentIndex else { return }
+            oldCell?.label.textColor = .gray
+            oldCell?.label.font = UIFont.systemFont(ofSize: CGFloat(15))
+            newCell?.label.textColor = AppColor.main
+            newCell?.label.font = UIFont.boldSystemFont(ofSize: 15)
+        }
     }
 }
