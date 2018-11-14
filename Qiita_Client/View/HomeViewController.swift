@@ -19,7 +19,8 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         return [
-            Storyboard.newArticle.instantiateViewController()
+            Storyboard.newArticle.instantiateViewController(),
+            Storyboard.hogeView.instantiateViewController()
         ]
     }
     

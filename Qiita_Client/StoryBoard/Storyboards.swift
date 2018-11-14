@@ -16,6 +16,7 @@ class Storyboards {
     
     static let homeNav = Storyboard<UINavigationController>(name: "Home")
     static let newArticle = Storyboard<NewArticleViewController>(name: "NewArticle")
+    static let hogeView = Storyboard<HogeViewController>(name: "Hoge")
     
     static let userNav = Storyboard<UINavigationController>(name: "User")
     

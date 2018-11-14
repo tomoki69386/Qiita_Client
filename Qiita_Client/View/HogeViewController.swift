@@ -1,8 +1,8 @@
 //
-//  NewArticleViewController.swift
+//  HogeViewController.swift
 //  Qiita_Client
 //
-//  Created by 築山朋紀 on 2018/11/11.
+//  Created by 築山朋紀 on 2018/11/14.
 //  Copyright © 2018 tomoki. All rights reserved.
 //
 
@@ -10,8 +10,8 @@ import UIKit
 import XLPagerTabStrip
 import AMScrollingNavbar
 
-class NewArticleViewController: MainViewController {
-    
+class HogeViewController: MainViewController {
+
     private var itemInfo: IndicatorInfo = "新着記事"
     private var items = [Article]()
     
@@ -25,6 +25,11 @@ class NewArticleViewController: MainViewController {
         view.addSubview(tableView)
         tableView.dataSource = self
         tableView.delegate = self
+        
+        navigationItem.title = "記事一覧"
+        navigationController?.navigationBar.barTintColor = AppColor.main
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
         showRequest()
     }
@@ -47,7 +52,7 @@ class NewArticleViewController: MainViewController {
     }
 }
 
-extension NewArticleViewController: UITableViewDataSource {
+extension HogeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -59,7 +64,7 @@ extension NewArticleViewController: UITableViewDataSource {
     }
 }
 
-extension NewArticleViewController: UITableViewDelegate {
+extension HogeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let VC = ArticleViewController(article: items[indexPath.row])
@@ -68,14 +73,8 @@ extension NewArticleViewController: UITableViewDelegate {
 }
 
 
-extension NewArticleViewController: IndicatorInfoProvider {
+extension HogeViewController: IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return itemInfo
-    }
-}
-
-extension NewArticleViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(self.navigationController?.navigationBar.frame.maxY)
     }
 }

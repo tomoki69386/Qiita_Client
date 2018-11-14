@@ -9,59 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Qiita_Client" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0F-VM-jVJ">
-                                <rect key="frame" x="0.0" y="94" width="375" height="573"/>
-                            </scrollView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MYp-Tb-Lq0" customClass="ButtonBarView" customModule="XLPagerTabStrip">
-                                <rect key="frame" x="0.0" y="64" width="375" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="drk-Oq-8qb"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="psD-eG-Ic9">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KZf-RP-YgD" customClass="ButtonBarViewCell" customModule="XLPagerTabStrip">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="MYp-Tb-Lq0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="27o-Qx-HVD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="x0F-VM-jVJ" secondAttribute="trailing" id="8Ed-Ua-hgj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="x0F-VM-jVJ" secondAttribute="bottom" id="Idu-fn-Fwf"/>
-                            <constraint firstItem="MYp-Tb-Lq0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WN0-5F-Sng"/>
-                            <constraint firstItem="x0F-VM-jVJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nTj-ij-uFI"/>
-                            <constraint firstItem="x0F-VM-jVJ" firstAttribute="top" secondItem="MYp-Tb-Lq0" secondAttribute="bottom" id="r6n-Nz-EPE"/>
-                            <constraint firstItem="MYp-Tb-Lq0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wop-a2-ogm"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="QCD-Xx-LMR"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="980" y="25.637181409295355"/>
-        </scene>
         <!--Scrolling Navigation Controller-->
         <scene sceneID="DNX-vG-oCW">
             <objects>
@@ -73,12 +20,60 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Wrf-lH-vjH"/>
+                        <segue destination="JlK-5z-37l" kind="relationship" relationship="rootViewController" id="ZlV-sg-VYV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2OL-dy-Qzt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="170" y="26"/>
+        </scene>
+        <!--ホーム-->
+        <scene sceneID="eYx-EP-WSW">
+            <objects>
+                <viewController id="JlK-5z-37l" customClass="HomeViewController" customModule="Qiita_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N9E-9o-3nv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0nl-Gw-3xG" customClass="ButtonBarView" customModule="XLPagerTabStrip">
+                                <rect key="frame" x="0.0" y="64" width="375" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="UAs-a5-xTI"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cDf-iS-Wqh">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sqX-va-wFW">
+                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sqX-va-wFW" firstAttribute="top" secondItem="0nl-Gw-3xG" secondAttribute="bottom" id="0im-oB-m28"/>
+                            <constraint firstItem="0nl-Gw-3xG" firstAttribute="top" secondItem="5dg-jP-7j5" secondAttribute="top" id="3Ic-7e-bH9"/>
+                            <constraint firstItem="sqX-va-wFW" firstAttribute="leading" secondItem="5dg-jP-7j5" secondAttribute="leading" id="Op7-jL-tcj"/>
+                            <constraint firstItem="5dg-jP-7j5" firstAttribute="bottom" secondItem="sqX-va-wFW" secondAttribute="bottom" id="g49-Cb-xdZ"/>
+                            <constraint firstItem="0nl-Gw-3xG" firstAttribute="trailing" secondItem="5dg-jP-7j5" secondAttribute="trailing" id="nmv-eU-Lfj"/>
+                            <constraint firstItem="sqX-va-wFW" firstAttribute="trailing" secondItem="5dg-jP-7j5" secondAttribute="trailing" id="vs9-fK-ldz"/>
+                            <constraint firstItem="0nl-Gw-3xG" firstAttribute="leading" secondItem="5dg-jP-7j5" secondAttribute="leading" id="wBM-w7-QAS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5dg-jP-7j5"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="ホーム" id="Oyw-X2-6gB"/>
+                    <connections>
+                        <outlet property="buttonBarView" destination="0nl-Gw-3xG" id="F3r-YG-7lq"/>
+                        <outlet property="containerView" destination="sqX-va-wFW" id="M8a-nc-7og"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gre-pv-GeI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="975" y="26"/>
         </scene>
     </scenes>
 </document>
