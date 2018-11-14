@@ -17,9 +17,8 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        //管理されるViewControllerを返す処理
-        let newArticleVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "First")
-        let childViewControllers:[UIViewController] = [newArticleVC]
-        return childViewControllers
+        return [
+            Storyboard.newArticle.instantiateViewController()
+        ]
     }
 }
