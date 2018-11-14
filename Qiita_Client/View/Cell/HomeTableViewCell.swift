@@ -15,7 +15,6 @@ class HomeTableViewCell: UITableViewCell {
         let label = UILabel()
         label.numberOfLines = 0
         label.sizeToFit()
-        label.isSkeletonable = true
         return label
     }()
     
