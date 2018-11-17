@@ -13,7 +13,6 @@ import SkeletonView
 class HomeViewController: MainViewController {
     
     private var items = [Article]()
-    
     private let tableView = UITableView()
     
     override func viewDidLoad() {
