@@ -17,30 +17,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hac-Qw-ExW">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1yS-x8-QqO">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4TO-ST-48Z" customClass="ProfileView" customModule="Qiita_Client" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pX1-iY-sxj" customClass="ProfileView" customModule="Qiita_Client" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="pX1-iY-sxj" secondAttribute="height" multiplier="3:2" id="U5q-bh-LuX"/>
+                                        </constraints>
                                     </view>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0Oa-kb-lvx" customClass="ButtonBarView" customModule="XLPagerTabStrip">
+                                        <rect key="frame" x="0.0" y="250" width="375" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="UU5-Wt-XFd"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Qax-dW-IC7">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pcR-cQ-eyg" customClass="ButtonBarViewCell" customModule="XLPagerTabStrip">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </view>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Guo-zS-NH5">
+                                        <rect key="frame" x="0.0" y="298" width="375" height="305"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </scrollView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="pX1-iY-sxj" firstAttribute="top" secondItem="1yS-x8-QqO" secondAttribute="top" id="7Y5-Ar-3zS"/>
+                                    <constraint firstItem="pX1-iY-sxj" firstAttribute="centerX" secondItem="1yS-x8-QqO" secondAttribute="centerX" id="MEi-Qr-OBi"/>
+                                    <constraint firstItem="pX1-iY-sxj" firstAttribute="leading" secondItem="1yS-x8-QqO" secondAttribute="leading" id="SK7-D1-tMa"/>
+                                    <constraint firstItem="0Oa-kb-lvx" firstAttribute="leading" secondItem="1yS-x8-QqO" secondAttribute="leading" id="Y04-IQ-O0V"/>
+                                    <constraint firstItem="0Oa-kb-lvx" firstAttribute="top" secondItem="pX1-iY-sxj" secondAttribute="bottom" id="edc-R9-Eon"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Oa-kb-lvx" secondAttribute="trailing" id="mPB-wb-WIZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="pX1-iY-sxj" secondAttribute="trailing" id="nnt-jC-GTS"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="aED-bh-nBM" firstAttribute="bottom" secondItem="Hac-Qw-ExW" secondAttribute="bottom" id="DPi-c9-G1s"/>
-                            <constraint firstItem="aED-bh-nBM" firstAttribute="trailing" secondItem="Hac-Qw-ExW" secondAttribute="trailing" id="QbN-Pt-ZUf"/>
-                            <constraint firstItem="Hac-Qw-ExW" firstAttribute="top" secondItem="aED-bh-nBM" secondAttribute="top" id="hNf-Oh-0hN"/>
-                            <constraint firstItem="Hac-Qw-ExW" firstAttribute="leading" secondItem="aED-bh-nBM" secondAttribute="leading" id="udo-Br-rGt"/>
+                            <constraint firstItem="1yS-x8-QqO" firstAttribute="centerX" secondItem="vYT-gZ-cfb" secondAttribute="centerX" id="AKz-ZT-46A"/>
+                            <constraint firstItem="aED-bh-nBM" firstAttribute="trailing" secondItem="1yS-x8-QqO" secondAttribute="trailing" id="CfY-n0-wBa"/>
+                            <constraint firstItem="1yS-x8-QqO" firstAttribute="leading" secondItem="aED-bh-nBM" secondAttribute="leading" id="EKK-OE-PfB"/>
+                            <constraint firstItem="aED-bh-nBM" firstAttribute="bottom" secondItem="1yS-x8-QqO" secondAttribute="bottom" id="OPt-ic-qLd"/>
+                            <constraint firstItem="1yS-x8-QqO" firstAttribute="top" secondItem="aED-bh-nBM" secondAttribute="top" id="mwZ-eg-BsU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aED-bh-nBM"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qQU-T4-Xj2"/>
+                    <navigationItem key="navigationItem" id="qQU-T4-Xj2">
+                        <nil key="title"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="profileView" destination="4TO-ST-48Z" id="Oap-Hm-nIn"/>
-                        <outlet property="scrollView" destination="Hac-Qw-ExW" id="bCs-bU-VZM"/>
+                        <outlet property="containerView" destination="Guo-zS-NH5" id="6Jz-qT-J9W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qdp-nh-IqX" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import RxSwift
+import XLPagerTabStrip
 
-class UserViewController: MainViewController {
+class UserViewController: ButtonBarPagerTabStripViewController {
     
-    @IBOutlet private weak var scrollView: UIScrollView!
-    @IBOutlet private weak var profileView: ProfileView!
+    let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()

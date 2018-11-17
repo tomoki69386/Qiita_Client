@@ -45,6 +45,7 @@
 		B74A3927219030480066EA24 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A3926219030480066EA24 /* ErrorMessage.swift */; };
 		B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */; };
 		B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */; };
+		B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFC00021A0B850001A4BD4 /* Storyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -157,6 +158,7 @@
 		B74A3926219030480066EA24 /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
+		B7EFC00021A0B850001A4BD4 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +302,7 @@
 		B74A386E218DE75B0066EA24 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
+				B7EFC00021A0B850001A4BD4 /* Storyboard.swift */,
 				B74A3888218EF04D0066EA24 /* User */,
 				B74A3871218DE78D0066EA24 /* Home */,
 				B74A387E218ECAD10066EA24 /* TabBarController.storyboard */,
@@ -587,6 +590,7 @@
 				B74A387B218EC72A0066EA24 /* UIColor+hex.swift in Sources */,
 				B715F7DF2195915300BE0218 /* User.swift in Sources */,
 				B74A388E218EF2810066EA24 /* HomeTableViewCell.swift in Sources */,
+				B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */,
 				B74A3870218DE7770066EA24 /* APIClient.swift in Sources */,
 				B71555C421975550004A1399 /* UserArticleViewController.swift in Sources */,
 				B74A3874218DE7B60066EA24 /* HomeViewController.swift in Sources */,
