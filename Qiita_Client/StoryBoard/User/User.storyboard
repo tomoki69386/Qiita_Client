@@ -16,10 +16,32 @@
                     <view key="view" contentMode="scaleToFill" id="vYT-gZ-cfb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hac-Qw-ExW">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4TO-ST-48Z" customClass="ProfileView" customModule="Qiita_Client" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aED-bh-nBM" firstAttribute="bottom" secondItem="Hac-Qw-ExW" secondAttribute="bottom" id="DPi-c9-G1s"/>
+                            <constraint firstItem="aED-bh-nBM" firstAttribute="trailing" secondItem="Hac-Qw-ExW" secondAttribute="trailing" id="QbN-Pt-ZUf"/>
+                            <constraint firstItem="Hac-Qw-ExW" firstAttribute="top" secondItem="aED-bh-nBM" secondAttribute="top" id="hNf-Oh-0hN"/>
+                            <constraint firstItem="Hac-Qw-ExW" firstAttribute="leading" secondItem="aED-bh-nBM" secondAttribute="leading" id="udo-Br-rGt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aED-bh-nBM"/>
                     </view>
                     <navigationItem key="navigationItem" id="qQU-T4-Xj2"/>
+                    <connections>
+                        <outlet property="profileView" destination="4TO-ST-48Z" id="Oap-Hm-nIn"/>
+                        <outlet property="scrollView" destination="Hac-Qw-ExW" id="bCs-bU-VZM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qdp-nh-IqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,6 +9,7 @@
 import UIKit
 import SDWebImage
 
+@IBDesignable
 class ProfileView: UIView {
     
     private let userImageView = UIImageView()
@@ -19,6 +20,16 @@ class ProfileView: UIView {
     required override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setUp()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        setUp()
+    }
+    
+    private func setUp() {
         userImageView.clipsToBounds = true
         let imageURL = URL(string: "https://qiita-image-store.s3.amazonaws.com/0/165815/profile-images/1518552294")
         userImageView.sd_setImage(with: imageURL)
@@ -33,10 +44,6 @@ class ProfileView: UIView {
         profileLabel.text = "プログラミング大好きだよ♡"
         profileLabel.sizeToFit()
         self.addSubview(profileLabel)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError()
     }
     
     override func layoutSubviews() {

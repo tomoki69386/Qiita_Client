@@ -7,21 +7,16 @@
 //
 
 import UIKit
-import AMScrollingNavbar
 
 class UserViewController: MainViewController {
     
-    private let scrollView = UIScrollView()
-    private let profileView = ProfileView()
+    @IBOutlet private weak var scrollView: UIScrollView!
+    @IBOutlet private weak var profileView: ProfileView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "プロフィール"
-        scrollView.frame = view.bounds
-        profileView.frame = view.bounds
-        self.view.addSubview(scrollView)
-        scrollView.addSubview(profileView)
     }
     
     private func showUser() {
