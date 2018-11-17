@@ -15,6 +15,8 @@ class UserArticleViewController: MainViewController, IndicatorInfoProvider {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = AppColor.main
     }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
