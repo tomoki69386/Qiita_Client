@@ -44,6 +44,7 @@
 		B74A3923218FD5660066EA24 /* MarkdownView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74A38E9218FD55C0066EA24 /* MarkdownView.framework */; };
 		B74A3927219030480066EA24 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A3926219030480066EA24 /* ErrorMessage.swift */; };
 		B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */; };
+		B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,6 +156,7 @@
 		B74A3922218FD55C0066EA24 /* .AMScrollingNavbar.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .AMScrollingNavbar.version; sourceTree = "<group>"; };
 		B74A3926219030480066EA24 /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */,
 				B74A3923218FD5660066EA24 /* MarkdownView.framework in Frameworks */,
 				B74A3883218EE0980066EA24 /* SkeletonView.framework in Frameworks */,
 				B74A3881218ED0FE0066EA24 /* AMScrollingNavbar.framework in Frameworks */,
@@ -246,6 +249,7 @@
 		B74A385F218D242F0066EA24 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */,
 				B74A38D8218FD55C0066EA24 /* Build */,
 				B74A3882218EE0980066EA24 /* SkeletonView.framework */,
 				B74A3880218ED0FD0066EA24 /* AMScrollingNavbar.framework */,
