@@ -18,4 +18,7 @@ struct AppColor {
     
     // #777777
     static var glay: UIColor { return #colorLiteral(red: 0.5406702161, green: 0.5406834483, blue: 0.5406762958, alpha: 1) }
+    
+    // #000000
+    static var black: UIColor { return #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) }
 }

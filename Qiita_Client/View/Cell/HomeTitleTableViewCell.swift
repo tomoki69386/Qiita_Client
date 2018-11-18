@@ -9,6 +9,13 @@
 import UIKit
 
 class HomeTitleTableViewCell: UITableViewCell {
+    
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Qiita View"
+        label.font = .systemFont(ofSize: 30)
+        return label
+    }()
 
     override func awakeFromNib() {
         super.awakeFromNib()
