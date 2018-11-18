@@ -16,6 +16,7 @@ class HomeViewController: MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.register(HomeTitleTableViewCell.self, forCellReuseIdentifier: "HomeTitle")
         tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "Home")
         tableView.frame = view.bounds
         view.addSubview(tableView)
@@ -43,12 +44,15 @@ class HomeViewController: MainViewController {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Home", for: indexPath) as! HomeTableViewCell
-        cell.setup(item: items[indexPath.row])
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "Home", for: indexPath) as! HomeTableViewCell
+//        cell.setup(item: items[indexPath.row])
+//        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTitle", for: indexPath) as! HomeTitleTableViewCell
+        
         return cell
     }
 }
