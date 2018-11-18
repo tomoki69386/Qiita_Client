@@ -89,6 +89,7 @@
                         <nil key="title"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="buttonBarView" destination="0Oa-kb-lvx" id="V2S-zf-gNB"/>
                         <outlet property="containerView" destination="Guo-zS-NH5" id="6Jz-qT-J9W"/>
                     </connections>
                 </viewController>
