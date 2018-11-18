@@ -44,7 +44,7 @@ class HomeTrendTableViewCell: UITableViewCell {
             make.top.equalTo(titleLabel.snp.bottom).offset(10)
             make.left.equalTo(self).offset(10)
             make.right.equalTo(self).offset(-10)
-            make.height.equalTo(trendImageView.snp.width).multipliedBy(0.7)
+            make.height.equalTo(trendImageView.snp.width).multipliedBy(0.6)
         }
     }
     

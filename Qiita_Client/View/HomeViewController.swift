@@ -60,7 +60,7 @@ extension HomeViewController: UITableViewDataSource {
             tableView.rowHeight = 50
             return homeTitleCell(at: indexPath, in: tableView)
         case 1:
-            tableView.rowHeight = 300
+            tableView.rowHeight = 270
             return homeTrendCell(at: indexPath, in: tableView)
         default:
             return homeTitleCell(at: indexPath, in: tableView)
