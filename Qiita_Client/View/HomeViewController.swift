@@ -48,11 +48,12 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Home", for: indexPath) as! HomeTableViewCell
-//        cell.setup(item: items[indexPath.row])
-//        return cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTitle", for: indexPath) as! HomeTitleTableViewCell
-        
+        return homeTitleCell(at: indexPath, in: tableView)
+    }
+    
+    private func homeTitleCell(at indePath: IndexPath, in tableView: UITableView) -> HomeTitleTableViewCell {
+        tableView.rowHeight = 50
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTitle") as! HomeTitleTableViewCell
         return cell
     }
 }

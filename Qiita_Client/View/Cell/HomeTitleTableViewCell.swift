@@ -30,7 +30,6 @@ class HomeTitleTableViewCell: UITableViewCell {
         
         titleLabel.snp.makeConstraints { make in
             make.left.right.equalTo(self).offset(10)
-            make.height.equalTo(50)
             make.top.bottom.equalTo(self.contentView)
         }
     }
