@@ -10,6 +10,16 @@ import UIKit
 
 class HomeTrendTableViewCell: UITableViewCell {
     
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "今日のトレンド"
+        label.font = .systemFont(ofSize: 20)
+        label.textColor = AppColor.glay
+        return label
+    }()
+    
+    private let trendImageView = UIImageView(image: UIImage(named: "programming"))
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
