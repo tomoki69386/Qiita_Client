@@ -23,7 +23,8 @@ class UserViewController: ButtonBarPagerTabStripViewController {
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         return [
-            Storyboard.userArticle.instantiateViewController()
+            Storyboard.userArticle.instantiateViewController(),
+            Storyboard.userLiktArticle.instantiateViewController()
         ]
     }
     
