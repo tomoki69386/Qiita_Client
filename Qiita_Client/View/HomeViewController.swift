@@ -26,9 +26,6 @@ class HomeViewController: MainViewController {
         tableView.showAnimatedGradientSkeleton()
         
         navigationItem.title = "記事一覧"
-        navigationController?.navigationBar.barTintColor = AppColor.main
-        navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
         showRequest()
     }
