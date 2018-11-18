@@ -50,6 +50,7 @@
 		B7EFC00521A1719D001A4BD4 /* UserLikeArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFC00421A1719D001A4BD4 /* UserLikeArticleViewController.swift */; };
 		B7EFC00721A17266001A4BD4 /* UserLikeArticle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7EFC00621A17266001A4BD4 /* UserLikeArticle.storyboard */; };
 		B7EFC00921A181A7001A4BD4 /* HomeTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFC00821A181A7001A4BD4 /* HomeTitleTableViewCell.swift */; };
+		B7EFC00B21A18D4E001A4BD4 /* HomeTrendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFC00A21A18D4E001A4BD4 /* HomeTrendTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -167,6 +168,7 @@
 		B7EFC00421A1719D001A4BD4 /* UserLikeArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLikeArticleViewController.swift; sourceTree = "<group>"; };
 		B7EFC00621A17266001A4BD4 /* UserLikeArticle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserLikeArticle.storyboard; sourceTree = "<group>"; };
 		B7EFC00821A181A7001A4BD4 /* HomeTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTitleTableViewCell.swift; sourceTree = "<group>"; };
+		B7EFC00A21A18D4E001A4BD4 /* HomeTrendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTrendTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				B7EFC00821A181A7001A4BD4 /* HomeTitleTableViewCell.swift */,
+				B7EFC00A21A18D4E001A4BD4 /* HomeTrendTableViewCell.swift */,
 				B74A388D218EF2810066EA24 /* HomeTableViewCell.swift */,
 			);
 			path = Cell;
@@ -595,6 +598,7 @@
 				B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */,
 				B71555C2219750D0004A1399 /* MainViewController.swift in Sources */,
 				B7EFC00521A1719D001A4BD4 /* UserLikeArticleViewController.swift in Sources */,
+				B7EFC00B21A18D4E001A4BD4 /* HomeTrendTableViewCell.swift in Sources */,
 				B74A384E218D1EA60066EA24 /* AppDelegate.swift in Sources */,
 				B74A3878218EAB940066EA24 /* ArticleViewController.swift in Sources */,
 				B71555DC21989BD2004A1399 /* APIClients.swift in Sources */,
