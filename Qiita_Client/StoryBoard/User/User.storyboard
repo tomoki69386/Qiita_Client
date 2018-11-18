@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1yS-x8-QqO">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1yS-x8-QqO">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pX1-iY-sxj" customClass="ProfileView" customModule="Qiita_Client" customModuleProvider="target">
@@ -50,19 +50,28 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Guo-zS-NH5">
-                                        <rect key="frame" x="0.0" y="298" width="375" height="305"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Guo-zS-NH5">
+                                        <rect key="frame" x="0.0" y="290" width="375" height="313"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="305" id="6Xo-pC-wdl"/>
+                                        </constraints>
                                     </scrollView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="pX1-iY-sxj" firstAttribute="top" secondItem="1yS-x8-QqO" secondAttribute="top" id="7Y5-Ar-3zS"/>
+                                    <constraint firstItem="Guo-zS-NH5" firstAttribute="top" secondItem="0Oa-kb-lvx" secondAttribute="bottom" id="GvM-8O-LhS"/>
+                                    <constraint firstAttribute="bottom" secondItem="Guo-zS-NH5" secondAttribute="bottom" id="H4K-5m-q2h"/>
                                     <constraint firstItem="pX1-iY-sxj" firstAttribute="centerX" secondItem="1yS-x8-QqO" secondAttribute="centerX" id="MEi-Qr-OBi"/>
+                                    <constraint firstAttribute="trailing" secondItem="Guo-zS-NH5" secondAttribute="trailing" id="PKa-gJ-xRB"/>
                                     <constraint firstItem="pX1-iY-sxj" firstAttribute="leading" secondItem="1yS-x8-QqO" secondAttribute="leading" id="SK7-D1-tMa"/>
+                                    <constraint firstItem="Guo-zS-NH5" firstAttribute="leading" secondItem="1yS-x8-QqO" secondAttribute="leading" id="Wrg-Bv-9XW"/>
                                     <constraint firstItem="0Oa-kb-lvx" firstAttribute="leading" secondItem="1yS-x8-QqO" secondAttribute="leading" id="Y04-IQ-O0V"/>
                                     <constraint firstItem="0Oa-kb-lvx" firstAttribute="top" secondItem="pX1-iY-sxj" secondAttribute="bottom" id="edc-R9-Eon"/>
+                                    <constraint firstAttribute="trailing" secondItem="Guo-zS-NH5" secondAttribute="trailing" id="i3X-V2-jKD"/>
+                                    <constraint firstItem="Guo-zS-NH5" firstAttribute="leading" secondItem="1yS-x8-QqO" secondAttribute="leading" id="l6L-nY-xrC"/>
                                     <constraint firstAttribute="trailing" secondItem="0Oa-kb-lvx" secondAttribute="trailing" id="mPB-wb-WIZ"/>
                                     <constraint firstAttribute="trailing" secondItem="pX1-iY-sxj" secondAttribute="trailing" id="nnt-jC-GTS"/>
+                                    <constraint firstAttribute="bottom" secondItem="Guo-zS-NH5" secondAttribute="bottom" id="whj-3w-v3D"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
