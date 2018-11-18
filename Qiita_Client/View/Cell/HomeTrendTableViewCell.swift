@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import SnapKit
 
 class HomeTrendTableViewCell: UITableViewCell {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "今日のトレンド"
-        label.font = .systemFont(ofSize: 20)
+        label.font = .systemFont(ofSize: 25)
         label.textColor = AppColor.glay
         return label
     }()
@@ -23,10 +24,28 @@ class HomeTrendTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        self.addSubview(titleLabel)
+        trendImageView.layer.cornerRadius = 5
+        trendImageView.clipsToBounds = true
+        self.addSubview(trendImageView)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        titleLabel.snp.makeConstraints { make in
+            make.left.equalTo(self).offset(10)
+            make.right.equalTo(self).offset(-10)
+            make.top.equalTo(self).offset(5)
+            make.height.equalTo(30)
+        }
+        
+        trendImageView.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+            make.left.equalTo(self).offset(10)
+            make.right.equalTo(self).offset(-10)
+            make.height.equalTo(trendImageView.snp.width).multipliedBy(0.7)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

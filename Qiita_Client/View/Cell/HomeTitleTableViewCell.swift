@@ -14,7 +14,7 @@ class HomeTitleTableViewCell: UITableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Qiita View"
-        label.font = .systemFont(ofSize: 30)
+        label.font = .systemFont(ofSize: 40)
         label.textColor = AppColor.black
         return label
     }()
@@ -29,8 +29,10 @@ class HomeTitleTableViewCell: UITableViewCell {
         super.layoutSubviews()
         
         titleLabel.snp.makeConstraints { make in
-            make.left.right.equalTo(self).offset(10)
-            make.top.bottom.equalTo(self.contentView)
+            make.top.equalTo(self).offset(5)
+            make.bottom.equalTo(self).offset(-5)
+            make.left.equalTo(self).offset(10)
+            make.right.equalTo(self).offset(-10)
         }
     }
     

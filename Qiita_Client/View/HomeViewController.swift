@@ -11,19 +11,26 @@ import UIKit
 class HomeViewController: MainViewController {
     
     private var items = [Article]()
-    private let tableView = UITableView()
+//    private let tableView = UITableView()
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "Home")
+        tableView.register(HomeTitleTableViewCell.self, forCellReuseIdentifier: "HomeTitle")
+        tableView.register(HomeTrendTableViewCell.self, forCellReuseIdentifier: "HomeTrend")
+        tableView.separatorColor = .clear
+        tableView.tableFooterView = UIView()
+        return tableView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(HomeTitleTableViewCell.self, forCellReuseIdentifier: "HomeTitle")
-        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "Home")
         tableView.frame = view.bounds
         view.addSubview(tableView)
         tableView.dataSource = self
-        tableView.delegate = self
+//        tableView.delegate = self
         
-        showRequest()
+//        showRequest()
     }
     
     private func showRequest() {
@@ -44,17 +51,28 @@ class HomeViewController: MainViewController {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return homeTitleCell(at: indexPath, in: tableView)
+        switch indexPath.row {
+        case 0:
+            tableView.rowHeight = 50
+            return homeTitleCell(at: indexPath, in: tableView)
+        case 1:
+            tableView.rowHeight = 300
+            return homeTrendCell(at: indexPath, in: tableView)
+        default:
+            return homeTitleCell(at: indexPath, in: tableView)
+        }
     }
     
     private func homeTitleCell(at indePath: IndexPath, in tableView: UITableView) -> HomeTitleTableViewCell {
-        tableView.rowHeight = 50
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTitle") as! HomeTitleTableViewCell
-        return cell
+        return tableView.dequeueReusableCell(withIdentifier: "HomeTitle") as! HomeTitleTableViewCell
+    }
+    
+    private func homeTrendCell(at indexPath: IndexPath, in tableView: UITableView) -> HomeTrendTableViewCell {
+        return tableView.dequeueReusableCell(withIdentifier: "HomeTrend") as! HomeTrendTableViewCell
     }
 }
 
