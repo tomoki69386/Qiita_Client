@@ -8,7 +8,6 @@
 
 import UIKit
 import AMScrollingNavbar
-import SkeletonView
 
 class HomeViewController: MainViewController {
     
@@ -23,14 +22,13 @@ class HomeViewController: MainViewController {
         view.addSubview(tableView)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.showAnimatedGradientSkeleton()
         
         navigationItem.title = "記事一覧"
         navigationController?.navigationBar.barTintColor = AppColor.main
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
-        showRequest()
+//        showRequest()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,7 +43,6 @@ class HomeViewController: MainViewController {
         APIClient.fetchArticle { (articles) in
             self.items = articles
             DispatchQueue.main.sync {
-                self.tableView.hideSkeleton()
                 self.tableView.reloadData()
             }
         }
@@ -57,11 +54,7 @@ class HomeViewController: MainViewController {
     }
 }
 
-extension HomeViewController: SkeletonTableViewDataSource {
-    
-    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
-        return "Home"
-    }
+extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count

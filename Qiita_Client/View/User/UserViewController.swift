@@ -13,6 +13,7 @@ import XLPagerTabStrip
 class UserViewController: ButtonBarPagerTabStripViewController {
     
     let disposeBag = DisposeBag()
+    @IBOutlet private weak var baseScrollView: UIScrollView!
 
     override func viewDidLoad() {
         setBarLayout()
@@ -39,6 +40,7 @@ class UserViewController: ButtonBarPagerTabStripViewController {
         }) { (error) in
             print(error)
         }
+
     }
     
     private func setBarLayout() {
