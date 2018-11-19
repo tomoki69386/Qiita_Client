@@ -8,12 +8,29 @@
 
 import UIKit
 import RxSwift
+import SnapKit
 import XLPagerTabStrip
 
 class UserViewController: ButtonBarPagerTabStripViewController {
     
-    let disposeBag = DisposeBag()
     @IBOutlet private weak var baseScrollView: UIScrollView!
+    private let nameLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = AppColor.main
+        label.font = .systemFont(ofSize: 30)
+        label.textAlignment = .center
+        label.text = "Kota Hibino"
+        return label
+    }()
+    
+    private let userImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.clipsToBounds = true
+        imageView.backgroundColor = AppColor.main
+        return imageView
+    }()
+    
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         setBarLayout()
@@ -25,9 +42,19 @@ class UserViewController: ButtonBarPagerTabStripViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
+        baseScrollView.addSubview(nameLabel)
+        baseScrollView.addSubview(userImageView)
+        
         baseScrollView.frame = view.bounds
+        
+        nameLabel.frame = CGRect(x: 20, y: 40, width: self.view.frame.width / 2, height: 30)
+        userImageView.frame = CGRect(x: self.view.frame.width - (20 + self.view.frame.width / 3),
+                                     y: 20,
+                                     width: self.view.frame.width / 3,
+                                     height: self.view.frame.width / 3)
+        userImageView.layer.cornerRadius = userImageView.frame.width / 2
         baseScrollView.contentSize = CGSize(width: baseScrollView.frame.width, height: baseScrollView.frame.height * 2)
-        buttonBarView.frame = CGRect(x: 0, y: 0, width: baseScrollView.frame.width, height: 40)
+        buttonBarView.frame = CGRect(x: 0, y: userImageView.frame.maxY + 10, width: baseScrollView.frame.width, height: 40)
         containerView.frame = CGRect(x: 0, y: buttonBarView.frame.maxY, width: baseScrollView.frame.width, height: baseScrollView.frame.height - 40)
     }
     
