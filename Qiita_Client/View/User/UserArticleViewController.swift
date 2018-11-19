@@ -11,12 +11,25 @@ import XLPagerTabStrip
 
 class UserArticleViewController: MainViewController {
     
-    @IBOutlet private weak var tableView: UITableView!
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "ArticleCell")
+        tableView.tableFooterView = UIView()
+        tableView.rowHeight = 70
+        return tableView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
+        self.view.addSubview(tableView)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        tableView.frame = self.view.bounds
     }
 }
 
@@ -26,8 +39,12 @@ extension UserArticleViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserArticleCell", for: indexPath)
-        cell.textLabel?.text = String(indexPath.row)
+        return articleCell(at: indexPath, in: tableView)
+    }
+    
+    private func articleCell(at indexPath: IndexPath, in tableView: UITableView) -> ArticleTableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell") as! ArticleTableViewCell
+        cell.setUp()
         return cell
     }
 }

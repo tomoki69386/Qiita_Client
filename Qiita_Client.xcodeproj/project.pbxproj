@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B71555C2219750D0004A1399 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555C1219750D0004A1399 /* MainViewController.swift */; };
 		B71555C421975550004A1399 /* UserArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555C321975550004A1399 /* UserArticleViewController.swift */; };
-		B71555DA21986832004A1399 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555D921986832004A1399 /* ProfileView.swift */; };
 		B71555DC21989BD2004A1399 /* APIClients.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555DB21989BD2004A1399 /* APIClients.swift */; };
 		B71555DE21989D8E004A1399 /* BaseAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555DD21989D8E004A1399 /* BaseAPIProtocol.swift */; };
 		B71555E021989DFF004A1399 /* BaseRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555DF21989DFF004A1399 /* BaseRequestProtocol.swift */; };
@@ -54,7 +53,6 @@
 /* Begin PBXFileReference section */
 		B71555C1219750D0004A1399 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B71555C321975550004A1399 /* UserArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserArticleViewController.swift; sourceTree = "<group>"; };
-		B71555D921986832004A1399 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		B71555DB21989BD2004A1399 /* APIClients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClients.swift; sourceTree = "<group>"; };
 		B71555DD21989D8E004A1399 /* BaseAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIProtocol.swift; sourceTree = "<group>"; };
 		B71555DF21989DFF004A1399 /* BaseRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequestProtocol.swift; sourceTree = "<group>"; };
@@ -347,7 +345,6 @@
 			isa = PBXGroup;
 			children = (
 				B74A3889218EF06B0066EA24 /* UserViewController.swift */,
-				B71555D921986832004A1399 /* ProfileView.swift */,
 				B71555C321975550004A1399 /* UserArticleViewController.swift */,
 				B7EFC00421A1719D001A4BD4 /* UserLikeArticleViewController.swift */,
 				B715F7DA21958DF900BE0218 /* Cell */,
@@ -597,7 +594,6 @@
 				B71555DC21989BD2004A1399 /* APIClients.swift in Sources */,
 				B71555DE21989D8E004A1399 /* BaseAPIProtocol.swift in Sources */,
 				B71555E521989F2D004A1399 /* APIResult.swift in Sources */,
-				B71555DA21986832004A1399 /* ProfileView.swift in Sources */,
 				B74A387D218EC9310066EA24 /* AppColor.swift in Sources */,
 				B74A387B218EC72A0066EA24 /* UIColor+hex.swift in Sources */,
 				B715F7DF2195915300BE0218 /* User.swift in Sources */,
