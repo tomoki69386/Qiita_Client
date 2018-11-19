@@ -32,18 +32,28 @@ class ArticleTableViewCell: UITableViewCell {
         return imageView
     }()
     
+    private let likeCountLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = AppColor.main
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 15)
+        return label
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.addSubview(userImageView)
         self.addSubview(titleLabel)
         self.addSubview(likeImageView)
+        self.addSubview(likeCountLabel)
     }
     
     func setUp() {
         let imageURL = URL(string: "https://qiita-image-store.s3.amazonaws.com/0/165815/profile-images/1518552294")
         userImageView.sd_setImage(with: imageURL)
         titleLabel.text = "NavigationBarを隠すAMScrollViewについて"
+        likeCountLabel.text = "13"
     }
     
     override func layoutSubviews() {
@@ -58,6 +68,13 @@ class ArticleTableViewCell: UITableViewCell {
             make.top.equalTo(self).offset(10)
             make.right.equalTo(self).offset(-10)
             make.width.height.equalTo(30)
+        }
+        
+        likeCountLabel.snp.makeConstraints { make in
+            make.top.equalTo(likeImageView.snp.bottom).offset(5)
+            make.right.equalTo(self).offset(-10)
+            make.width.equalTo(likeImageView)
+            make.height.equalTo(20)
         }
         
         titleLabel.snp.makeConstraints { make in

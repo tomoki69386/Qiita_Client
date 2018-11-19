@@ -15,7 +15,7 @@ class UserArticleViewController: MainViewController {
         let tableView = UITableView()
         tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "ArticleCell")
         tableView.tableFooterView = UIView()
-        tableView.rowHeight = 70
+        tableView.rowHeight = 90
         return tableView
     }()
     
