@@ -22,6 +22,15 @@ class UserViewController: ButtonBarPagerTabStripViewController {
         navigationItem.title = "プロフィール"
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        baseScrollView.frame = view.bounds
+        baseScrollView.contentSize = CGSize(width: baseScrollView.frame.width, height: baseScrollView.frame.height * 2)
+        buttonBarView.frame = CGRect(x: 0, y: 0, width: baseScrollView.frame.width, height: 40)
+        containerView.frame = CGRect(x: 0, y: buttonBarView.frame.maxY, width: baseScrollView.frame.width, height: baseScrollView.frame.height - 40)
+    }
+    
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         return [
             Storyboard.userArticle.instantiateViewController(),
