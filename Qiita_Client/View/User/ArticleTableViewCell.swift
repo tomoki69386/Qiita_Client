@@ -26,11 +26,18 @@ class ArticleTableViewCell: UITableViewCell {
         return label
     }()
     
+    private let likeImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "like")
+        return imageView
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.addSubview(userImageView)
         self.addSubview(titleLabel)
+        self.addSubview(likeImageView)
     }
     
     func setUp() {
@@ -43,14 +50,20 @@ class ArticleTableViewCell: UITableViewCell {
         super.layoutSubviews()
         
         userImageView.snp.makeConstraints { make in
-            make.top.left.equalTo(self).offset(5)
+            make.top.left.equalTo(self).offset(10)
             make.width.height.equalTo(60)
+        }
+        
+        likeImageView.snp.makeConstraints { make in
+            make.top.equalTo(self).offset(10)
+            make.right.equalTo(self).offset(-10)
+            make.width.height.equalTo(30)
         }
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(self).offset(10)
-            make.left.equalTo(userImageView.snp.right).offset(5)
-            make.right.equalTo(self).offset(5)
+            make.left.equalTo(userImageView.snp.right).offset(10)
+            make.right.equalTo(likeImageView.snp.left).offset(-10)
             make.height.equalTo(15)
         }
     }
