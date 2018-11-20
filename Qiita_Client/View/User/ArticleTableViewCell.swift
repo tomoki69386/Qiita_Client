@@ -26,11 +26,7 @@ class ArticleTableViewCell: UITableViewCell {
         return label
     }()
     
-    private let likeImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "like")
-        return imageView
-    }()
+    private let likeImageView = UIImageView(image: UIImage(named: "like"))
     
     private let likeCountLabel: UILabel = {
         let label = UILabel()
