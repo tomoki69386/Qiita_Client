@@ -36,6 +36,14 @@ class ArticleTableViewCell: UITableViewCell {
         return label
     }()
     
+    private let tagLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 12)
+        label.textAlignment = .left
+        label.textColor = AppColor.glay
+        return label
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -43,6 +51,7 @@ class ArticleTableViewCell: UITableViewCell {
         self.addSubview(titleLabel)
         self.addSubview(likeImageView)
         self.addSubview(likeCountLabel)
+        self.addSubview(tagLabel)
     }
     
     func setUp() {
@@ -50,6 +59,7 @@ class ArticleTableViewCell: UITableViewCell {
         userImageView.sd_setImage(with: imageURL)
         titleLabel.text = "NavigationBarを隠すAMScrollViewについて"
         likeCountLabel.text = "13"
+        tagLabel.text = "Tag: Swift Markdown MarkdownView"
     }
     
     override func layoutSubviews() {
@@ -78,6 +88,13 @@ class ArticleTableViewCell: UITableViewCell {
             make.left.equalTo(userImageView.snp.right).offset(10)
             make.right.equalTo(likeImageView.snp.left).offset(-10)
             make.height.equalTo(15)
+        }
+        
+        tagLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(5)
+            make.left.equalTo(userImageView.snp.right).offset(10)
+            make.right.equalTo(likeImageView.snp.left).offset(-10)
+            make.height.equalTo(12)
         }
     }
     
