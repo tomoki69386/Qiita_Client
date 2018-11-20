@@ -22,7 +22,7 @@ class ArticleTableViewCell: UITableViewCell {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 15)
+        label.font = .boldSystemFont(ofSize: 15)
         return label
     }()
     
