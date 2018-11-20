@@ -23,6 +23,7 @@ class UserArticleViewController: MainViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
+        tableView.delegate = self
         self.view.addSubview(tableView)
     }
     
@@ -47,6 +48,16 @@ extension UserArticleViewController: UITableViewDataSource {
         cell.setUp()
         return cell
     }
+}
+
+extension UserArticleViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(tableView.contentOffset.y)
+    }
+}
+
+extension UserArticleViewController: UITableViewDelegate {
+    
 }
 
 extension UserArticleViewController: IndicatorInfoProvider {
