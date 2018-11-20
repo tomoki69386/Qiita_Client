@@ -40,10 +40,6 @@ extension UserArticleViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return articleCell(at: indexPath, in: tableView)
-    }
-    
-    private func articleCell(at indexPath: IndexPath, in tableView: UITableView) -> ArticleTableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell") as! ArticleTableViewCell
         cell.setUp()
         return cell
