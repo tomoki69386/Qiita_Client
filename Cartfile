@@ -6,3 +6,4 @@ github "andreamazz/AMScrollingNavbar"
 github "Juanpe/SkeletonView"
 github "keitaoouchi/MarkdownView"
 github "xmartlabs/XLPagerTabStrip" ~> 8.1
+github "radex/SwiftyUserDefaults" "4.0.0-alpha.1"

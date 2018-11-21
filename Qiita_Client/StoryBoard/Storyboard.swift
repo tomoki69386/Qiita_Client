@@ -18,6 +18,7 @@ class Storyboards {
     static let userNav = Storyboard<UINavigationController>(name: "User")
     static let userArticle = Storyboard<UserArticleViewController>(name: "UserArticle")
     static let userLiktArticle = Storyboard<UserLikeArticleViewController>(name: "UserLikeArticle")
+    static let userStock = Storyboard<UserStockViewController>(name: "UserStock")
     
 }
 // MARK: - Storyboard -
