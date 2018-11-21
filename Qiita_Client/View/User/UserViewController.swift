@@ -39,6 +39,9 @@ class UserViewController: ButtonBarPagerTabStripViewController {
         super.viewDidLoad()
         
         navigationItem.title = "プロフィール"
+        let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
+        
         let imageURL = URL(string: "https://scontent-nrt1-1.xx.fbcdn.net/v/t1.0-9/30594824_442982472781144_5732347718363692662_n.jpg?_nc_cat=101&_nc_ht=scontent-nrt1-1.xx&oh=ab9ec3b27d7620463e33003551707b27&oe=5C6EEF4E")
         userImageView.sd_setImage(with: imageURL)
         baseScrollView.delegate = self

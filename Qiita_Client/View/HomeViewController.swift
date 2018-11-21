@@ -24,9 +24,8 @@ class HomeViewController: MainViewController {
         tableView.delegate = self
         
         navigationItem.title = "記事一覧"
-        navigationController?.navigationBar.barTintColor = AppColor.main
-        navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
         
 //        showRequest()
         tabBarController?.selectedIndex = 1
