@@ -23,6 +23,7 @@ class ArticleTableViewCell: UITableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 15)
+        label.numberOfLines = 2
         return label
     }()
     
@@ -97,7 +98,7 @@ class ArticleTableViewCell: UITableViewCell {
             make.top.equalTo(self).offset(10)
             make.left.equalTo(userImageView.snp.right).offset(10)
             make.right.equalTo(likeImageView.snp.left).offset(-10)
-            make.height.equalTo(15)
+            make.height.greaterThanOrEqualTo(15)
         }
         
         tagLabel.snp.makeConstraints { make in
