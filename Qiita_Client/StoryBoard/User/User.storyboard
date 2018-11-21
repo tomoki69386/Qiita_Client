@@ -54,7 +54,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="qQU-T4-Xj2">
                         <nil key="title"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="setting" id="Kyp-5Z-26W"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="setting" id="Kyp-5Z-26W">
+                            <connections>
+                                <segue destination="bAp-fW-i7G" kind="show" id="RVa-Hq-UOL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="baseScrollView" destination="yYc-sE-ARZ" id="Vov-Dw-DqX"/>
@@ -65,6 +69,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qdp-nh-IqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="924" y="169.21182266009853"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="uIV-Xn-qjm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Setting" id="bAp-fW-i7G" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V8m-48-hHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1579" y="56"/>
         </scene>
         <!--Scrolling Navigation Controller-->
         <scene sceneID="nxH-BE-Xuf">
