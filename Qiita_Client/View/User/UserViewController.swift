@@ -50,13 +50,12 @@ class UserViewController: ButtonBarPagerTabStripViewController {
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let currentPoint = scrollView.contentOffset
-        if scrollBeginingPoint.y < currentPoint.y {
-            print("下へスクロール")
-            scrollBeginingPoint = scrollView.contentOffset
-        } else {
-            print("上へスクロール")
-            scrollBeginingPoint = scrollView.contentOffset
+        let navigationBarHeight = self.navigationController!.navigationBar.frame.maxY
+        let tabBarHeight = tabBarController!.tabBar.frame.minY
+        let spaceHeight = tabBarHeight - navigationBarHeight
+        
+        if (scrollView.contentOffset.y + navigationBarHeight) + spaceHeight > scrollView.contentSize.height && scrollView.isDragging {
+            print("一番下")
         }
     }
     

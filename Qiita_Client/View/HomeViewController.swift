@@ -29,6 +29,7 @@ class HomeViewController: MainViewController {
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
 //        showRequest()
+        tabBarController?.selectedIndex = 1
     }
     
     override func viewWillAppear(_ animated: Bool) {

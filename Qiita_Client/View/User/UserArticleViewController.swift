@@ -54,16 +54,16 @@ extension UserArticleViewController: UITableViewDataSource {
 }
 
 extension UserArticleViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let currentPoint = scrollView.contentOffset
-        if scrollBeginingPoint.y < currentPoint.y {
-            print("下へスクロール")
-            scrollBeginingPoint = scrollView.contentOffset
-        } else {
-            print("上へスクロール")
-            scrollBeginingPoint = scrollView.contentOffset
-        }
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let currentPoint = scrollView.contentOffset
+//        if scrollBeginingPoint.y < currentPoint.y {
+//            print("下へスクロール")
+//            scrollBeginingPoint = scrollView.contentOffset
+//        } else {
+//            print("上へスクロール")
+//            scrollBeginingPoint = scrollView.contentOffset
+//        }
+//    }
 }
 
 extension UserArticleViewController: UITableViewDelegate {
