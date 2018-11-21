@@ -43,6 +43,7 @@
 		B74A3923218FD5660066EA24 /* MarkdownView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74A38E9218FD55C0066EA24 /* MarkdownView.framework */; };
 		B74A3927219030480066EA24 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A3926219030480066EA24 /* ErrorMessage.swift */; };
 		B76EBCFB21A5FDA800AD0FFB /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B76EBCFA21A5FDA800AD0FFB /* SwiftyUserDefaults.framework */; };
+		B76EBCFD21A5FDF600AD0FFB /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBCFC21A5FDF600AD0FFB /* AppUser.swift */; };
 		B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */; };
 		B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */; };
 		B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFC00021A0B850001A4BD4 /* Storyboard.swift */; };
@@ -159,6 +160,7 @@
 		B74A3922218FD55C0066EA24 /* .AMScrollingNavbar.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .AMScrollingNavbar.version; sourceTree = "<group>"; };
 		B74A3926219030480066EA24 /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		B76EBCFA21A5FDA800AD0FFB /* SwiftyUserDefaults.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUserDefaults.framework; path = Carthage/Build/iOS/SwiftyUserDefaults.framework; sourceTree = "<group>"; };
+		B76EBCFC21A5FDF600AD0FFB /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		B7EFC00021A0B850001A4BD4 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				B74A387C218EC9310066EA24 /* AppColor.swift */,
+				B76EBCFC21A5FDF600AD0FFB /* AppUser.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				B7EFC00521A1719D001A4BD4 /* UserLikeArticleViewController.swift in Sources */,
 				B74A384E218D1EA60066EA24 /* AppDelegate.swift in Sources */,
 				B74A3878218EAB940066EA24 /* ArticleViewController.swift in Sources */,
+				B76EBCFD21A5FDF600AD0FFB /* AppUser.swift in Sources */,
 				B71555DC21989BD2004A1399 /* APIClients.swift in Sources */,
 				B71555DE21989D8E004A1399 /* BaseAPIProtocol.swift in Sources */,
 				B71555E521989F2D004A1399 /* APIResult.swift in Sources */,
