@@ -46,6 +46,8 @@
 		B76EBCFD21A5FDF600AD0FFB /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBCFC21A5FDF600AD0FFB /* AppUser.swift */; };
 		B76EBD0021A600A700AD0FFB /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76EBCFF21A600A700AD0FFB /* Setting.storyboard */; };
 		B76EBD0321A6014700AD0FFB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD0221A6014700AD0FFB /* SettingViewController.swift */; };
+		B76EBD0521A60A4800AD0FFB /* UserStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD0421A60A4800AD0FFB /* UserStockViewController.swift */; };
+		B76EBD0721A60A9B00AD0FFB /* UserStock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD0621A60A9B00AD0FFB /* UserStock.storyboard */; };
 		B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */; };
 		B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */; };
 		B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFC00021A0B850001A4BD4 /* Storyboard.swift */; };
@@ -165,6 +167,8 @@
 		B76EBCFC21A5FDF600AD0FFB /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		B76EBCFF21A600A700AD0FFB /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		B76EBD0221A6014700AD0FFB /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		B76EBD0421A60A4800AD0FFB /* UserStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStockViewController.swift; sourceTree = "<group>"; };
+		B76EBD0621A60A9B00AD0FFB /* UserStock.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserStock.storyboard; sourceTree = "<group>"; };
 		B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		B7EFC00021A0B850001A4BD4 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -360,6 +364,7 @@
 				B74A3889218EF06B0066EA24 /* UserViewController.swift */,
 				B71555C321975550004A1399 /* UserArticleViewController.swift */,
 				B7EFC00421A1719D001A4BD4 /* UserLikeArticleViewController.swift */,
+				B76EBD0421A60A4800AD0FFB /* UserStockViewController.swift */,
 				B715F7DA21958DF900BE0218 /* Cell */,
 			);
 			path = User;
@@ -371,6 +376,7 @@
 				B74A388B218EF0730066EA24 /* User.storyboard */,
 				B7EFC00221A0B899001A4BD4 /* UserArticle.storyboard */,
 				B7EFC00621A17266001A4BD4 /* UserLikeArticle.storyboard */,
+				B76EBD0621A60A9B00AD0FFB /* UserStock.storyboard */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -563,6 +569,7 @@
 				B74A3858218D1EA70066EA24 /* LaunchScreen.storyboard in Resources */,
 				B74A388C218EF0730066EA24 /* User.storyboard in Resources */,
 				B74A3855218D1EA70066EA24 /* Assets.xcassets in Resources */,
+				B76EBD0721A60A9B00AD0FFB /* UserStock.storyboard in Resources */,
 				B74A387F218ECAD10066EA24 /* TabBarController.storyboard in Resources */,
 				B7EFC00721A17266001A4BD4 /* UserLikeArticle.storyboard in Resources */,
 				B7EFC00321A0B899001A4BD4 /* UserArticle.storyboard in Resources */,
@@ -622,6 +629,7 @@
 				B7EFC00521A1719D001A4BD4 /* UserLikeArticleViewController.swift in Sources */,
 				B74A384E218D1EA60066EA24 /* AppDelegate.swift in Sources */,
 				B74A3878218EAB940066EA24 /* ArticleViewController.swift in Sources */,
+				B76EBD0521A60A4800AD0FFB /* UserStockViewController.swift in Sources */,
 				B76EBCFD21A5FDF600AD0FFB /* AppUser.swift in Sources */,
 				B71555DC21989BD2004A1399 /* APIClients.swift in Sources */,
 				B71555DE21989D8E004A1399 /* BaseAPIProtocol.swift in Sources */,
