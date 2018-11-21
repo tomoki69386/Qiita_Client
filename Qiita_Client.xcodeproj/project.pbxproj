@@ -42,6 +42,7 @@
 		B74A388E218EF2810066EA24 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A388D218EF2810066EA24 /* HomeTableViewCell.swift */; };
 		B74A3923218FD5660066EA24 /* MarkdownView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74A38E9218FD55C0066EA24 /* MarkdownView.framework */; };
 		B74A3927219030480066EA24 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A3926219030480066EA24 /* ErrorMessage.swift */; };
+		B76EBCFB21A5FDA800AD0FFB /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B76EBCFA21A5FDA800AD0FFB /* SwiftyUserDefaults.framework */; };
 		B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */; };
 		B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */; };
 		B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFC00021A0B850001A4BD4 /* Storyboard.swift */; };
@@ -157,6 +158,7 @@
 		B74A3921218FD55C0066EA24 /* .SkeletonView.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .SkeletonView.version; sourceTree = "<group>"; };
 		B74A3922218FD55C0066EA24 /* .AMScrollingNavbar.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .AMScrollingNavbar.version; sourceTree = "<group>"; };
 		B74A3926219030480066EA24 /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		B76EBCFA21A5FDA800AD0FFB /* SwiftyUserDefaults.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUserDefaults.framework; path = Carthage/Build/iOS/SwiftyUserDefaults.framework; sourceTree = "<group>"; };
 		B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		B7EFC00021A0B850001A4BD4 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B76EBCFB21A5FDA800AD0FFB /* SwiftyUserDefaults.framework in Frameworks */,
 				B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */,
 				B74A3923218FD5660066EA24 /* MarkdownView.framework in Frameworks */,
 				B74A3883218EE0980066EA24 /* SkeletonView.framework in Frameworks */,
@@ -255,6 +258,7 @@
 		B74A385F218D242F0066EA24 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B76EBCFA21A5FDA800AD0FFB /* SwiftyUserDefaults.framework */,
 				B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */,
 				B74A38D8218FD55C0066EA24 /* Build */,
 				B74A3882218EE0980066EA24 /* SkeletonView.framework */,
@@ -561,6 +565,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SkeletonView.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MarkdownView.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/XLPagerTabStrip.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyUserDefaults.framework",
 			);
 			outputFileListPaths = (
 			);
