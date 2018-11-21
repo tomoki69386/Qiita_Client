@@ -19,6 +19,7 @@ class SettingViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        tableView.backgroundColor = AppColor.bgGlay
     }
 }
 
