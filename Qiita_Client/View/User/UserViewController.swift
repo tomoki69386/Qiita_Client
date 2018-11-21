@@ -32,6 +32,7 @@ class UserViewController: ButtonBarPagerTabStripViewController {
     }()
     
     private let disposeBag = DisposeBag()
+    private var scrollBeginingPoint: CGPoint!
 
     override func viewDidLoad() {
         setBarLayout()
@@ -40,6 +41,23 @@ class UserViewController: ButtonBarPagerTabStripViewController {
         navigationItem.title = "プロフィール"
         let imageURL = URL(string: "https://scontent-nrt1-1.xx.fbcdn.net/v/t1.0-9/30594824_442982472781144_5732347718363692662_n.jpg?_nc_cat=101&_nc_ht=scontent-nrt1-1.xx&oh=ab9ec3b27d7620463e33003551707b27&oe=5C6EEF4E")
         userImageView.sd_setImage(with: imageURL)
+        baseScrollView.delegate = self
+        scrollBeginingPoint = baseScrollView.contentOffset
+    }
+    
+    private func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        scrollBeginingPoint = scrollView.contentOffset
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let currentPoint = scrollView.contentOffset
+        if scrollBeginingPoint.y < currentPoint.y {
+            print("下へスクロール")
+            scrollBeginingPoint = scrollView.contentOffset
+        } else {
+            print("上へスクロール")
+            scrollBeginingPoint = scrollView.contentOffset
+        }
     }
     
     override func viewWillLayoutSubviews() {
