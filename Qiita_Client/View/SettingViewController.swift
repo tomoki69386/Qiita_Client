@@ -13,7 +13,7 @@ class SettingViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
     private let sections = ["アカウント", "サポート", "アプリについて"]
-    private let accounts = ["ログアウト"]
+    private let accounts = ["ブックマーク", "ログアウト"]
     private let supports = ["お問い合わせ"]
     private let apps = ["アプリ開発者", "ライセンス"]
 
