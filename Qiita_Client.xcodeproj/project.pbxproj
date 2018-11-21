@@ -48,6 +48,8 @@
 		B76EBD0321A6014700AD0FFB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD0221A6014700AD0FFB /* SettingViewController.swift */; };
 		B76EBD0521A60A4800AD0FFB /* UserStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD0421A60A4800AD0FFB /* UserStockViewController.swift */; };
 		B76EBD0721A60A9B00AD0FFB /* UserStock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD0621A60A9B00AD0FFB /* UserStock.storyboard */; };
+		B76EBD0921A611CD00AD0FFB /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD0821A611CD00AD0FFB /* InfoViewController.swift */; };
+		B76EBD0B21A611D800AD0FFB /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD0A21A611D800AD0FFB /* Info.storyboard */; };
 		B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */; };
 		B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */; };
 		B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFC00021A0B850001A4BD4 /* Storyboard.swift */; };
@@ -169,6 +171,8 @@
 		B76EBD0221A6014700AD0FFB /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		B76EBD0421A60A4800AD0FFB /* UserStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStockViewController.swift; sourceTree = "<group>"; };
 		B76EBD0621A60A9B00AD0FFB /* UserStock.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserStock.storyboard; sourceTree = "<group>"; };
+		B76EBD0821A611CD00AD0FFB /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		B76EBD0A21A611D800AD0FFB /* Info.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
 		B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		B7EFC00021A0B850001A4BD4 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -495,6 +499,7 @@
 			isa = PBXGroup;
 			children = (
 				B76EBCFF21A600A700AD0FFB /* Setting.storyboard */,
+				B76EBD0A21A611D800AD0FFB /* Info.storyboard */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -503,6 +508,7 @@
 			isa = PBXGroup;
 			children = (
 				B76EBD0221A6014700AD0FFB /* SettingViewController.swift */,
+				B76EBD0821A611CD00AD0FFB /* InfoViewController.swift */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -574,6 +580,7 @@
 				B7EFC00721A17266001A4BD4 /* UserLikeArticle.storyboard in Resources */,
 				B7EFC00321A0B899001A4BD4 /* UserArticle.storyboard in Resources */,
 				B74A3853218D1EA60066EA24 /* Home.storyboard in Resources */,
+				B76EBD0B21A611D800AD0FFB /* Info.storyboard in Resources */,
 				B76EBD0021A600A700AD0FFB /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -643,6 +650,7 @@
 				B74A3870218DE7770066EA24 /* APIClient.swift in Sources */,
 				B71555C421975550004A1399 /* UserArticleViewController.swift in Sources */,
 				B74A3874218DE7B60066EA24 /* HomeViewController.swift in Sources */,
+				B76EBD0921A611CD00AD0FFB /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
