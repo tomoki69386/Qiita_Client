@@ -60,32 +60,6 @@ class UserViewController: ButtonBarPagerTabStripViewController {
         }
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        baseScrollView.addSubview(nameLabel)
-        baseScrollView.addSubview(userImageView)
-        
-        let navigationBarHeight = self.navigationController!.navigationBar.frame.size.height
-        let statuBarHeight = UIApplication.shared.statusBarFrame.size.height
-        let topBar = statuBarHeight + navigationBarHeight
-        let tabBarHeight = self.tabBarController!.tabBar.frame.size.height
-        
-        baseScrollView.frame = view.bounds
-        nameLabel.frame = CGRect(x: 20, y: 40, width: self.view.frame.width / 2, height: 30)
-        userImageView.frame = CGRect(x: self.view.frame.width - (20 + self.view.frame.width / 3),
-                                     y: 20,
-                                     width: self.view.frame.width / 3,
-                                     height: self.view.frame.width / 3)
-        userImageView.layer.cornerRadius = userImageView.frame.width / 2
-        buttonBarView.frame = CGRect(x: 0, y: userImageView.frame.maxY + 10, width: baseScrollView.frame.width, height: 40)
-        containerView.frame = CGRect(x: 0,
-                                     y: buttonBarView.frame.maxY,
-                                     width: baseScrollView.frame.width,
-                                     height: baseScrollView.frame.height - (40 + topBar + tabBarHeight))
-        baseScrollView.contentSize = CGSize(width: baseScrollView.frame.width, height: containerView.frame.maxY)
-    }
-    
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         return [
             Storyboard.userArticle.instantiateViewController(),
@@ -120,5 +94,31 @@ class UserViewController: ButtonBarPagerTabStripViewController {
             newCell?.label.textColor = AppColor.main
             newCell?.label.font = .boldSystemFont(ofSize: 15)
         }
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        baseScrollView.addSubview(nameLabel)
+        baseScrollView.addSubview(userImageView)
+        
+        let navigationBarHeight = self.navigationController!.navigationBar.frame.size.height
+        let statuBarHeight = UIApplication.shared.statusBarFrame.size.height
+        let topBar = statuBarHeight + navigationBarHeight
+        let tabBarHeight = self.tabBarController!.tabBar.frame.size.height
+        
+        baseScrollView.frame = view.bounds
+        nameLabel.frame = CGRect(x: 20, y: 40, width: self.view.frame.width / 2, height: 30)
+        userImageView.frame = CGRect(x: self.view.frame.width - (20 + self.view.frame.width / 3),
+                                     y: 20,
+                                     width: self.view.frame.width / 3,
+                                     height: self.view.frame.width / 3)
+        userImageView.layer.cornerRadius = userImageView.frame.width / 2
+        buttonBarView.frame = CGRect(x: 0, y: userImageView.frame.maxY + 10, width: baseScrollView.frame.width, height: 40)
+        containerView.frame = CGRect(x: 0,
+                                     y: buttonBarView.frame.maxY,
+                                     width: baseScrollView.frame.width,
+                                     height: baseScrollView.frame.height - (40 + topBar + tabBarHeight))
+        baseScrollView.contentSize = CGSize(width: baseScrollView.frame.width, height: containerView.frame.maxY)
     }
 }
