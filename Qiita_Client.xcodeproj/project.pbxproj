@@ -44,6 +44,7 @@
 		B74A3927219030480066EA24 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A3926219030480066EA24 /* ErrorMessage.swift */; };
 		B76EBCFB21A5FDA800AD0FFB /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B76EBCFA21A5FDA800AD0FFB /* SwiftyUserDefaults.framework */; };
 		B76EBCFD21A5FDF600AD0FFB /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBCFC21A5FDF600AD0FFB /* AppUser.swift */; };
+		B76EBD0021A600A700AD0FFB /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76EBCFF21A600A700AD0FFB /* Setting.storyboard */; };
 		B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */; };
 		B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */; };
 		B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFC00021A0B850001A4BD4 /* Storyboard.swift */; };
@@ -161,6 +162,7 @@
 		B74A3926219030480066EA24 /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		B76EBCFA21A5FDA800AD0FFB /* SwiftyUserDefaults.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUserDefaults.framework; path = Carthage/Build/iOS/SwiftyUserDefaults.framework; sourceTree = "<group>"; };
 		B76EBCFC21A5FDF600AD0FFB /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
+		B76EBCFF21A600A700AD0FFB /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		B7EFC00021A0B850001A4BD4 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				B7EFC00021A0B850001A4BD4 /* Storyboard.swift */,
+				B76EBCFE21A6009B00AD0FFB /* Setting */,
 				B74A3888218EF04D0066EA24 /* User */,
 				B74A3871218DE78D0066EA24 /* Home */,
 				B74A387E218ECAD10066EA24 /* TabBarController.storyboard */,
@@ -479,6 +482,14 @@
 			path = tvOS;
 			sourceTree = "<group>";
 		};
+		B76EBCFE21A6009B00AD0FFB /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				B76EBCFF21A600A700AD0FFB /* Setting.storyboard */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -545,6 +556,7 @@
 				B7EFC00721A17266001A4BD4 /* UserLikeArticle.storyboard in Resources */,
 				B7EFC00321A0B899001A4BD4 /* UserArticle.storyboard in Resources */,
 				B74A3853218D1EA60066EA24 /* Home.storyboard in Resources */,
+				B76EBD0021A600A700AD0FFB /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -54,6 +54,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="qQU-T4-Xj2">
                         <nil key="title"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="setting" id="Kyp-5Z-26W"/>
                     </navigationItem>
                     <connections>
                         <outlet property="baseScrollView" destination="yYc-sE-ARZ" id="Vov-Dw-DqX"/>
@@ -84,4 +85,7 @@
             <point key="canvasLocation" x="-15.199999999999999" y="169.56521739130437"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="setting" width="66" height="66"/>
+    </resources>
 </document>
