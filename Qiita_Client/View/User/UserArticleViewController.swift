@@ -19,12 +19,19 @@ class UserArticleViewController: MainViewController {
         return tableView
     }()
     
+    private var scrollBeginingPoint: CGPoint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
         self.view.addSubview(tableView)
+        scrollBeginingPoint = tableView.contentOffset
+    }
+    
+    private func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        scrollBeginingPoint = scrollView.contentOffset
     }
     
     override func viewWillLayoutSubviews() {
@@ -48,7 +55,14 @@ extension UserArticleViewController: UITableViewDataSource {
 
 extension UserArticleViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(tableView.contentOffset.y)
+        let currentPoint = scrollView.contentOffset
+        if scrollBeginingPoint.y < currentPoint.y {
+            print("下へスクロール")
+            scrollBeginingPoint = scrollView.contentOffset
+        } else {
+            print("上へスクロール")
+            scrollBeginingPoint = scrollView.contentOffset
+        }
     }
 }
 
