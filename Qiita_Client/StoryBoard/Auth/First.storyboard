@@ -16,13 +16,33 @@
                     <view key="view" contentMode="scaleToFill" id="aAK-GX-fgu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izp-XH-eO8">
+                                <rect key="frame" x="50" y="355" width="275" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="13n-jU-Ebj"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="auth" destination="BUQ-YM-FZ2" eventType="touchUpInside" id="ia8-dk-UIV"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="izp-XH-eO8" firstAttribute="leading" secondItem="SQ0-Iw-vsZ" secondAttribute="leading" constant="50" id="sHX-Lt-AH2"/>
+                            <constraint firstItem="SQ0-Iw-vsZ" firstAttribute="trailing" secondItem="izp-XH-eO8" secondAttribute="trailing" constant="50" id="z1w-c1-9hf"/>
+                            <constraint firstItem="SQ0-Iw-vsZ" firstAttribute="bottom" secondItem="izp-XH-eO8" secondAttribute="bottom" constant="262" id="z5b-Eb-iX0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="SQ0-Iw-vsZ"/>
                     </view>
+                    <connections>
+                        <outlet property="registrationButton" destination="izp-XH-eO8" id="5PR-nD-EIs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ey-Jh-0Nr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="410" y="-304"/>
+            <point key="canvasLocation" x="408.80000000000001" y="-304.4977511244378"/>
         </scene>
     </scenes>
 </document>

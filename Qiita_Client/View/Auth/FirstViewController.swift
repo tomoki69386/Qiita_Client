@@ -7,24 +7,22 @@
 //
 
 import UIKit
+import Alamofire
 
 class FirstViewController: UIViewController {
 
+    @IBOutlet private weak var registrationButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        registrationButton.setTitle("ログイン", for: .normal)
+        registrationButton.setTitleColor(AppColor.white, for: .normal)
+        registrationButton.backgroundColor = AppColor.main
+        registrationButton.layer.cornerRadius = registrationButton.frame.height / 2
     }
     
+    @IBAction private func auth() {
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
-
 }
