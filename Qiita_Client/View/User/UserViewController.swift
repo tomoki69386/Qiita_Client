@@ -15,6 +15,7 @@ import XLPagerTabStrip
 class UserViewController: ButtonBarPagerTabStripViewController {
     
     @IBOutlet private weak var baseScrollView: UIScrollView!
+    private let friendView = FriendView()
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = AppColor.main
@@ -104,6 +105,7 @@ class UserViewController: ButtonBarPagerTabStripViewController {
         
         baseScrollView.addSubview(nameLabel)
         baseScrollView.addSubview(userImageView)
+        baseScrollView.addSubview(friendView)
         
         let navigationBarHeight = self.navigationController!.navigationBar.frame.size.height
         let statuBarHeight = UIApplication.shared.statusBarFrame.size.height
@@ -116,6 +118,12 @@ class UserViewController: ButtonBarPagerTabStripViewController {
                                      y: 20,
                                      width: self.view.frame.width / 3,
                                      height: self.view.frame.width / 3)
+        friendView.snp.makeConstraints { make in
+            make.top.equalTo(nameLabel.snp.bottom).offset(20)
+            make.left.equalTo(nameLabel)
+            make.width.equalTo(nameLabel)
+            make.height.equalTo(35)
+        }
         userImageView.layer.cornerRadius = userImageView.frame.width / 2
         buttonBarView.frame = CGRect(x: 0, y: userImageView.frame.maxY + 10, width: baseScrollView.frame.width, height: 40)
         containerView.frame = CGRect(x: 0,
