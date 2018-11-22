@@ -15,7 +15,7 @@ class SettingViewController: UIViewController {
     private let sections = ["アカウント", "サポート", "アプリについて"]
     private let accounts = ["ブックマーク", "ログアウト"]
     private let supports = ["お問い合わせ"]
-    private let apps = ["アプリ開発者", "ライセンス"]
+    private let apps = ["利用規約", "プライバシーポリシー", "ライセンス"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
