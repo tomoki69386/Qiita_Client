@@ -12,19 +12,32 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.tabBar.tintColor = AppColor.main
+        let viewControllers = Tab.allCases.map { $0.instantiateViewController() }
+        setViewControllers(viewControllers, animated: false)
     }
+}
+
+extension TabBarController {
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private enum Tab: CaseIterable {
+        case home
+        case user
+        
+        func instantiateViewController() -> UINavigationController {
+            let nav: UINavigationController
+            let tabBarItem: UITabBarItem
+            switch self {
+            case .home:
+                nav = Storyboard.homeNav.instantiateViewController()
+                tabBarItem = UITabBarItem(title: "ホーム", image: UIImage(named: "Home"), selectedImage: UIImage(named: "Home"))
+            case .user:
+                nav = Storyboard.userNav.instantiateViewController()
+                tabBarItem = UITabBarItem(title: "マイページ", image: UIImage(named: "User"), selectedImage: UIImage(named: "User"))
+            }
+            nav.tabBarItem = tabBarItem
+            return nav
+        }
     }
-    */
-
 }
