@@ -32,7 +32,6 @@ class UserViewController: ButtonBarPagerTabStripViewController {
     }()
     
     private let disposeBag = DisposeBag()
-    private var scrollBeginingPoint: CGPoint!
 
     override func viewDidLoad() {
         setBarLayout()
@@ -45,23 +44,7 @@ class UserViewController: ButtonBarPagerTabStripViewController {
         let imageURL = URL(string: "https://qiita-image-store.s3.amazonaws.com/0/165815/profile-images/1518552294")
         userImageView.sd_setImage(with: imageURL)
         nameLabel.text = "ともき"
-        baseScrollView.delegate = self
         friendView.friendDelegate = self
-        scrollBeginingPoint = baseScrollView.contentOffset
-    }
-    
-    private func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        scrollBeginingPoint = scrollView.contentOffset
-    }
-    
-    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let navigationBarHeight = self.navigationController!.navigationBar.frame.maxY
-//        let tabBarHeight = tabBarController!.tabBar.frame.minY
-//        let spaceHeight = tabBarHeight - navigationBarHeight
-//
-//        if (scrollView.contentOffset.y + navigationBarHeight) + spaceHeight > scrollView.contentSize.height && scrollView.isDragging {
-//            print("一番下")
-//        }
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
