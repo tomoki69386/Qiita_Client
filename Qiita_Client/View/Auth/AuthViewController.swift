@@ -17,8 +17,7 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let clientid = AppUser.clientID else { fatalError("定義されていません。") }
-        let url = URL(string: "https://qiita.com/api/v2/oauth/authorize?client_id=\(clientid)&scope=read_qiita+write_qiita")
+        let url = URL(string: "https://qiita.com/api/v2/oauth/authorize?client_id=\(AppUser.clientID)&scope=read_qiita+write_qiita")
         let urlRequest = URLRequest(url: url!)
         self.webView.load(urlRequest)
     }
@@ -55,11 +54,9 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
         ]
         
         // 認証に必要な値を設定
-        let clientID: String = AppUser.clientID!
-        let clientSecret: String = AppUser.clientSecret!
         let parameters: Parameters = [
-            "client_id": clientID,
-            "client_secret": clientSecret,
+            "client_id": AppUser.clientID,
+            "client_secret": AppUser.clientSecret,
             "code": code
         ]
         

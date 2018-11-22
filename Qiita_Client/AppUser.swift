@@ -15,11 +15,11 @@ struct AppUser {
         return Defaults[.accessToken]
     }
     
-    static var clientID: String? {
+    static var clientID: String {
         return Defaults[.clientID]
     }
     
-    static var clientSecret: String? {
+    static var clientSecret: String {
         return Defaults[.clientSecret]
     }
     
@@ -31,6 +31,6 @@ struct AppUser {
 
 private extension DefaultsKeys {
     static let accessToken = DefaultsKey<String?>("access_token", defaultValue: nil)
-    static let clientID = DefaultsKey<String?>("client_id", defaultValue: nil)
-    static let clientSecret = DefaultsKey<String?>("client_secret", defaultValue: nil)
+    static let clientID = DefaultsKey<String>("client_id", defaultValue: "")
+    static let clientSecret = DefaultsKey<String>("client_secret", defaultValue: "")
 }
