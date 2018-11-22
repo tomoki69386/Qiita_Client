@@ -59,6 +59,12 @@
 		B76EBD1B21A6324300AD0FFB /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD1A21A6324300AD0FFB /* FollowViewController.swift */; };
 		B76EBD1D21A6324C00AD0FFB /* FollowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD1C21A6324C00AD0FFB /* FollowerViewController.swift */; };
 		B76EBD1F21A6441300AD0FFB /* UserShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD1E21A6441300AD0FFB /* UserShowTableViewCell.swift */; };
+		B76EBD2F21A6D5C300AD0FFB /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD2E21A6D5C300AD0FFB /* AuthViewController.swift */; };
+		B76EBD3121A6D5E400AD0FFB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD3021A6D5E400AD0FFB /* FirstViewController.swift */; };
+		B76EBD3421A6D5FB00AD0FFB /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD3321A6D5FB00AD0FFB /* Auth.storyboard */; };
+		B76EBD3621A6D61200AD0FFB /* First.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD3521A6D61200AD0FFB /* First.storyboard */; };
+		B76EBD3821A6EA8C00AD0FFB /* .env in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD3721A6EA8B00AD0FFB /* .env */; };
+		B76EBD3A21A6EA9E00AD0FFB /* .env.sample in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD3921A6EA9E00AD0FFB /* .env.sample */; };
 		B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */; };
 		B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */; };
 		B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFC00021A0B850001A4BD4 /* Storyboard.swift */; };
@@ -191,6 +197,12 @@
 		B76EBD1A21A6324300AD0FFB /* FollowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
 		B76EBD1C21A6324C00AD0FFB /* FollowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerViewController.swift; sourceTree = "<group>"; };
 		B76EBD1E21A6441300AD0FFB /* UserShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserShowTableViewCell.swift; sourceTree = "<group>"; };
+		B76EBD2E21A6D5C300AD0FFB /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		B76EBD3021A6D5E400AD0FFB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		B76EBD3321A6D5FB00AD0FFB /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		B76EBD3521A6D61200AD0FFB /* First.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = First.storyboard; sourceTree = "<group>"; };
+		B76EBD3721A6EA8B00AD0FFB /* .env */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
+		B76EBD3921A6EA9E00AD0FFB /* .env.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .env.sample; sourceTree = "<group>"; };
 		B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		B7EFC00021A0B850001A4BD4 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -284,6 +296,8 @@
 				B74A3854218D1EA70066EA24 /* Assets.xcassets */,
 				B74A3856218D1EA70066EA24 /* LaunchScreen.storyboard */,
 				B74A3859218D1EA70066EA24 /* Info.plist */,
+				B76EBD3721A6EA8B00AD0FFB /* .env */,
+				B76EBD3921A6EA9E00AD0FFB /* .env.sample */,
 			);
 			path = Qiita_Client;
 			sourceTree = "<group>";
@@ -329,6 +343,7 @@
 				B76EBD1021A631E300AD0FFB /* Friend */,
 				B74A3887218EF0430066EA24 /* User */,
 				B74A3872218DE7A40066EA24 /* Home */,
+				B76EBD2D21A6D5B300AD0FFB /* Auth */,
 				B74A384D218D1EA60066EA24 /* AppDelegate.swift */,
 				B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */,
 			);
@@ -352,6 +367,7 @@
 				B76EBD1121A631F100AD0FFB /* Friend */,
 				B74A3888218EF04D0066EA24 /* User */,
 				B74A3871218DE78D0066EA24 /* Home */,
+				B76EBD3221A6D5EB00AD0FFB /* Auth */,
 				B74A387E218ECAD10066EA24 /* TabBarController.storyboard */,
 			);
 			path = StoryBoard;
@@ -565,6 +581,24 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		B76EBD2D21A6D5B300AD0FFB /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				B76EBD2E21A6D5C300AD0FFB /* AuthViewController.swift */,
+				B76EBD3021A6D5E400AD0FFB /* FirstViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		B76EBD3221A6D5EB00AD0FFB /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				B76EBD3321A6D5FB00AD0FFB /* Auth.storyboard */,
+				B76EBD3521A6D61200AD0FFB /* First.storyboard */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -630,13 +664,17 @@
 				B74A3855218D1EA70066EA24 /* Assets.xcassets in Resources */,
 				B76EBD0721A60A9B00AD0FFB /* UserStock.storyboard in Resources */,
 				B74A387F218ECAD10066EA24 /* TabBarController.storyboard in Resources */,
+				B76EBD3421A6D5FB00AD0FFB /* Auth.storyboard in Resources */,
 				B7EFC00721A17266001A4BD4 /* UserLikeArticle.storyboard in Resources */,
 				B76EBD1321A6320400AD0FFB /* Friend.storyboard in Resources */,
 				B7EFC00321A0B899001A4BD4 /* UserArticle.storyboard in Resources */,
 				B74A3853218D1EA60066EA24 /* Home.storyboard in Resources */,
+				B76EBD3821A6EA8C00AD0FFB /* .env in Resources */,
 				B76EBD0B21A611D800AD0FFB /* Info.storyboard in Resources */,
+				B76EBD3A21A6EA9E00AD0FFB /* .env.sample in Resources */,
 				B76EBD0021A600A700AD0FFB /* Setting.storyboard in Resources */,
 				B76EBD1521A6321900AD0FFB /* Follow.storyboard in Resources */,
+				B76EBD3621A6D61200AD0FFB /* First.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,6 +733,7 @@
 				B7EFC00521A1719D001A4BD4 /* UserLikeArticleViewController.swift in Sources */,
 				B74A384E218D1EA60066EA24 /* AppDelegate.swift in Sources */,
 				B74A3878218EAB940066EA24 /* ArticleViewController.swift in Sources */,
+				B76EBD2F21A6D5C300AD0FFB /* AuthViewController.swift in Sources */,
 				B76EBD0521A60A4800AD0FFB /* UserStockViewController.swift in Sources */,
 				B76EBCFD21A5FDF600AD0FFB /* AppUser.swift in Sources */,
 				B71555DC21989BD2004A1399 /* APIClients.swift in Sources */,
@@ -704,6 +743,7 @@
 				B74A387D218EC9310066EA24 /* AppColor.swift in Sources */,
 				B74A387B218EC72A0066EA24 /* UIColor+hex.swift in Sources */,
 				B715F7DF2195915300BE0218 /* User.swift in Sources */,
+				B76EBD3121A6D5E400AD0FFB /* FirstViewController.swift in Sources */,
 				B74A388E218EF2810066EA24 /* HomeTableViewCell.swift in Sources */,
 				B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */,
 				B76EBD0321A6014700AD0FFB /* SettingViewController.swift in Sources */,

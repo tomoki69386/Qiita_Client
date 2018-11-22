@@ -1,4 +1,25 @@
-# Xcode
+func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) { 
+
+        // 設定しているコールバックURLのスキーム、ホスト名で分岐処理       
+        if navigationAction.request.url?.scheme == "yyokii", navigationAction.request.url?.host == "GithubSearchApp"{
+            dismiss(animated: true, completion: nil)
+
+            // 認証コード取得
+            let code = getQueryStringParameter(url: (navigationAction.request.url?.absoluteString)!, param: "code")
+
+
+            // ② アクセストークン取得処理
+            let githubAPIManager = GithubAPIManager.sharedManager
+            githubAPIManager.getAccessToken(code: code, completion: nil)
+
+            decisionHandler(WKNavigationActionPolicy.allow);
+}
+
+
+static func getQueryStringParameter(url: String, param: String) -> String? {
+        guard let url = URLComponents(string: url) else { return nil }
+        return url.queryItems?.first(where: { $0.name == param })?.value
+    }# Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
@@ -66,3 +87,5 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+*.env

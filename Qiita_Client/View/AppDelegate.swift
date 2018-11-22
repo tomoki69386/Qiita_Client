@@ -19,6 +19,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = AppColor.main
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        // .envの読み込み
+        guard let path = Bundle.main.path(forResource: ".env", ofType: nil) else {
+            fatalError(".envファイルがプロジェクトファイルに存在しません。")
+        }
+        let url = URL(fileURLWithPath: path)
+        do {
+            let data = try Data(contentsOf: url)
+            let str = String(data: data, encoding: .utf8) ?? "Empty File"
+            let clean = str.replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: "'", with: "")
+            let envVars = clean.components(separatedBy:"\n")
+            for envVar in envVars {
+                let keyVal = envVar.components(separatedBy:"=")
+                if keyVal.count == 2 {
+                    setenv(keyVal[0], keyVal[1], 1)
+                }
+            }
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+        
+        guard let clientID = ProcessInfo.processInfo.environment["Client_id"] else {
+            fatalError("Client_idが.envファイルに記載されていません。")
+        }
+        guard let clientSecret = ProcessInfo.processInfo.environment["Client_Secret"] else {
+            fatalError("Client_Secretが.envファイルに記載されていません。")
+        }
+        print(clientID)
+        print(clientSecret)
+        AppUser.setUp(id: clientID, secret: clientSecret)
+        
         return true
     }
 
