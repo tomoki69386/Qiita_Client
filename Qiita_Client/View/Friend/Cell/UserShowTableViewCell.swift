@@ -8,8 +8,11 @@
 
 import UIKit
 import SDWebImage
+import RxSwift
 
 class UserShowTableViewCell: UITableViewCell {
+    
+    let disposeBag = DisposeBag()
     
     private let userImageView: UIImageView = {
         let imageView = UIImageView()
@@ -43,8 +46,21 @@ class UserShowTableViewCell: UITableViewCell {
         return label
     }()
     
+    private func selectButtonPush() {
+        selectButton.rx.tap.subscribe( onNext: { _ in
+            self.selectButton.isSelected = !self.selectButton.isSelected
+            if self.selectButton.isSelected {
+                self.selectButton.backgroundColor = AppColor.main
+            } else {
+                self.selectButton.backgroundColor = AppColor.white
+            }
+        }).disposed(by: disposeBag)
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        selectButtonPush()
         
         self.addSubview(userImageView)
         self.addSubview(nameLabel)
