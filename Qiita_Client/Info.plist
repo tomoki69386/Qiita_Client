@@ -27,7 +27,7 @@
 			<string>com.tomoki.Qiita-Client</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>tomoki-Qiita-Client</string>
+				<string>tomoki-qiita-client</string>
 			</array>
 		</dict>
 	</array>
