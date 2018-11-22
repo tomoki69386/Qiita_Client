@@ -9,6 +9,10 @@
 import UIKit
 import RxSwift
 
+protocol FriendViewDelegate: class {
+    func didPushViewController(at index: Int)
+}
+
 class FriendView: UIView {
     
     let disposeBag = DisposeBag()
@@ -51,7 +55,7 @@ class FriendView: UIView {
     
     private let followButton = UIButton()
     private let followerButton = UIButton()
-    private let navigationController = UINavigationController()
+    weak var friendDelegate: FriendViewDelegate?
     
     private let rodView = UIView()
 
@@ -73,13 +77,11 @@ class FriendView: UIView {
     private func action() {
         print("hoge")
         followButton.rx.tap.subscribe(onNext: { _ in
-            let VC = FriendViewController(at: 0)
-            self.navigationController.pushViewController(VC, animated: true)
+            self.friendDelegate?.didPushViewController(at: 0)
         }).disposed(by: disposeBag)
         
         followerButton.rx.tap.subscribe(onNext: { _ in
-            let VC = FriendViewController(at: 1)
-            self.navigationController.pushViewController(VC, animated: true)
+            self.friendDelegate?.didPushViewController(at: 1)
         }).disposed(by: disposeBag)
     }
     

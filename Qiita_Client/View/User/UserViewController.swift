@@ -46,6 +46,7 @@ class UserViewController: ButtonBarPagerTabStripViewController {
         let imageURL = URL(string: "https://scontent-nrt1-1.xx.fbcdn.net/v/t1.0-9/30594824_442982472781144_5732347718363692662_n.jpg?_nc_cat=101&_nc_ht=scontent-nrt1-1.xx&oh=ab9ec3b27d7620463e33003551707b27&oe=5C6EEF4E")
         userImageView.sd_setImage(with: imageURL)
         baseScrollView.delegate = self
+        friendView.friendDelegate = self
         scrollBeginingPoint = baseScrollView.contentOffset
     }
     
@@ -131,5 +132,12 @@ class UserViewController: ButtonBarPagerTabStripViewController {
                                      width: baseScrollView.frame.width,
                                      height: baseScrollView.frame.height - (40 + topBar + tabBarHeight))
         baseScrollView.contentSize = CGSize(width: baseScrollView.frame.width, height: containerView.frame.maxY)
+    }
+}
+
+extension UserViewController: FriendViewDelegate {
+    func didPushViewController(at index: Int) {
+        let VC = FriendViewController(at: index)
+        self.navigationController?.pushViewController(VC, animated: true)
     }
 }
