@@ -51,12 +51,14 @@ class FriendView: UIView {
     
     private let followButton = UIButton()
     private let followerButton = UIButton()
+    private let navigationController = UINavigationController()
     
     private let rodView = UIView()
 
     required override init(frame: CGRect) {
         super.init(frame: frame)
         
+        action()
         rodView.backgroundColor = AppColor.glay
         
         self.addSubview(followCountLabel)
@@ -69,12 +71,15 @@ class FriendView: UIView {
     }
     
     private func action() {
+        print("hoge")
         followButton.rx.tap.subscribe(onNext: { _ in
-            
+            let VC = FriendViewController(at: 0)
+            self.navigationController.pushViewController(VC, animated: true)
         }).disposed(by: disposeBag)
         
         followerButton.rx.tap.subscribe(onNext: { _ in
-            
+            let VC = FriendViewController(at: 1)
+            self.navigationController.pushViewController(VC, animated: true)
         }).disposed(by: disposeBag)
     }
     
@@ -91,7 +96,7 @@ class FriendView: UIView {
         followerCountLabel.frame = CGRect(x: followCountLabel.frame.maxX, y: 0, width: followCountLabel.frame.width, height: 20)
         followerLabel.frame = CGRect(x: followCountLabel.frame.maxX, y: followerCountLabel.frame.maxY, width: followCountLabel.frame.width, height: 15)
         followButton.frame = CGRect(x: 0, y: 0, width: followCountLabel.frame.width, height: 35)
-        followerButton.frame = CGRect(x: followerCountLabel.frame.minX, y: 0, width: followerCountLabel.frame.width, height: 35)
+        followerButton.frame = CGRect(x: followCountLabel.frame.maxX, y: 0, width: followerCountLabel.frame.width, height: 35)
     }
 
 }
