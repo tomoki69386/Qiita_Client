@@ -31,11 +31,12 @@ extension TabBarController {
             switch self {
             case .home:
                 nav = Storyboard.homeNav.instantiateViewController()
-                tabBarItem = UITabBarItem(title: "ホーム", image: UIImage(named: "Home"), selectedImage: UIImage(named: "Home"))
+                tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Home"), selectedImage: UIImage(named: "Home"))
             case .user:
                 nav = Storyboard.userNav.instantiateViewController()
-                tabBarItem = UITabBarItem(title: "マイページ", image: UIImage(named: "User"), selectedImage: UIImage(named: "User"))
+                tabBarItem = UITabBarItem(title: "", image: UIImage(named: "User"), selectedImage: UIImage(named: "User"))
             }
+            tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
             nav.tabBarItem = tabBarItem
             return nav
         }
