@@ -21,8 +21,4 @@ class FirstViewController: UIViewController {
         registrationButton.backgroundColor = AppColor.main
         registrationButton.layer.cornerRadius = registrationButton.frame.height / 2
     }
-    
-    @IBAction private func auth() {
-
-    }
 }

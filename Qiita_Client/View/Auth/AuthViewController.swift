@@ -7,24 +7,23 @@
 //
 
 import UIKit
+import WebKit
 
 class AuthViewController: UIViewController {
-
+    
+    private let webView = WKWebView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        guard let clientid = AppUser.clientID else { fatalError("定義されていません。") }
+        let url = URL(string: "https://qiita.com/api/v2/oauth/authorize?client_id=\(clientid)&scope=read_qiita+write_qiita")
+        let urlRequest = URLRequest(url: url!)
+        self.webView.load(urlRequest)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func loadView() {
+        self.view = self.webView
     }
-    */
-
+    
 }

@@ -63,6 +63,8 @@
 		B76EBD3121A6D5E400AD0FFB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD3021A6D5E400AD0FFB /* FirstViewController.swift */; };
 		B76EBD3421A6D5FB00AD0FFB /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD3321A6D5FB00AD0FFB /* Auth.storyboard */; };
 		B76EBD3621A6D61200AD0FFB /* First.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD3521A6D61200AD0FFB /* First.storyboard */; };
+		B76EBD3821A6EA8C00AD0FFB /* .env in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD3721A6EA8B00AD0FFB /* .env */; };
+		B76EBD3A21A6EA9E00AD0FFB /* .env.sample in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD3921A6EA9E00AD0FFB /* .env.sample */; };
 		B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */; };
 		B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */; };
 		B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFC00021A0B850001A4BD4 /* Storyboard.swift */; };
@@ -199,6 +201,8 @@
 		B76EBD3021A6D5E400AD0FFB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		B76EBD3321A6D5FB00AD0FFB /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		B76EBD3521A6D61200AD0FFB /* First.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = First.storyboard; sourceTree = "<group>"; };
+		B76EBD3721A6EA8B00AD0FFB /* .env */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
+		B76EBD3921A6EA9E00AD0FFB /* .env.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .env.sample; sourceTree = "<group>"; };
 		B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		B7EFC00021A0B850001A4BD4 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -292,6 +296,8 @@
 				B74A3854218D1EA70066EA24 /* Assets.xcassets */,
 				B74A3856218D1EA70066EA24 /* LaunchScreen.storyboard */,
 				B74A3859218D1EA70066EA24 /* Info.plist */,
+				B76EBD3721A6EA8B00AD0FFB /* .env */,
+				B76EBD3921A6EA9E00AD0FFB /* .env.sample */,
 			);
 			path = Qiita_Client;
 			sourceTree = "<group>";
@@ -663,7 +669,9 @@
 				B76EBD1321A6320400AD0FFB /* Friend.storyboard in Resources */,
 				B7EFC00321A0B899001A4BD4 /* UserArticle.storyboard in Resources */,
 				B74A3853218D1EA60066EA24 /* Home.storyboard in Resources */,
+				B76EBD3821A6EA8C00AD0FFB /* .env in Resources */,
 				B76EBD0B21A611D800AD0FFB /* Info.storyboard in Resources */,
+				B76EBD3A21A6EA9E00AD0FFB /* .env.sample in Resources */,
 				B76EBD0021A600A700AD0FFB /* Setting.storyboard in Resources */,
 				B76EBD1521A6321900AD0FFB /* Follow.storyboard in Resources */,
 				B76EBD3621A6D61200AD0FFB /* First.storyboard in Resources */,
