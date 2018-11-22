@@ -48,7 +48,7 @@ extension UserStockViewController: UITableViewDataSource {
 
 extension UserStockViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(tableView.contentOffset.y)
+        
     }
 }
 

@@ -48,7 +48,7 @@ extension UserLikeArticleViewController: UITableViewDataSource {
 
 extension UserLikeArticleViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(tableView.contentOffset.y)
+        
     }
 }
 
