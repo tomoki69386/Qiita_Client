@@ -18,6 +18,7 @@ class FriendViewController: ButtonBarPagerTabStripViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = AppColor.white
+        navigationItem.title = "tomoki_sun"
     }
     
     init(at recipePosition: Int) {

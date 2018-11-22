@@ -21,7 +21,6 @@ class UserViewController: ButtonBarPagerTabStripViewController {
         label.textColor = AppColor.main
         label.font = .systemFont(ofSize: 30)
         label.textAlignment = .center
-        label.text = "Kota Hibino"
         return label
     }()
     
@@ -43,8 +42,9 @@ class UserViewController: ButtonBarPagerTabStripViewController {
         let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButtonItem
         
-        let imageURL = URL(string: "https://scontent-nrt1-1.xx.fbcdn.net/v/t1.0-9/30594824_442982472781144_5732347718363692662_n.jpg?_nc_cat=101&_nc_ht=scontent-nrt1-1.xx&oh=ab9ec3b27d7620463e33003551707b27&oe=5C6EEF4E")
+        let imageURL = URL(string: "https://qiita-image-store.s3.amazonaws.com/0/165815/profile-images/1518552294")
         userImageView.sd_setImage(with: imageURL)
+        nameLabel.text = "ともき"
         baseScrollView.delegate = self
         friendView.friendDelegate = self
         scrollBeginingPoint = baseScrollView.contentOffset
@@ -55,13 +55,13 @@ class UserViewController: ButtonBarPagerTabStripViewController {
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let navigationBarHeight = self.navigationController!.navigationBar.frame.maxY
-        let tabBarHeight = tabBarController!.tabBar.frame.minY
-        let spaceHeight = tabBarHeight - navigationBarHeight
-        
-        if (scrollView.contentOffset.y + navigationBarHeight) + spaceHeight > scrollView.contentSize.height && scrollView.isDragging {
-            print("一番下")
-        }
+//        let navigationBarHeight = self.navigationController!.navigationBar.frame.maxY
+//        let tabBarHeight = tabBarController!.tabBar.frame.minY
+//        let spaceHeight = tabBarHeight - navigationBarHeight
+//
+//        if (scrollView.contentOffset.y + navigationBarHeight) + spaceHeight > scrollView.contentSize.height && scrollView.isDragging {
+//            print("一番下")
+//        }
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
