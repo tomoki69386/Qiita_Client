@@ -16,7 +16,8 @@ class FriendViewController: ButtonBarPagerTabStripViewController {
     override func viewDidLoad() {
         setBarLayout()
         super.viewDidLoad()
-
+        
+        self.view.backgroundColor = AppColor.white
     }
     
     init(at recipePosition: Int) {
