@@ -20,6 +20,10 @@ class Storyboards {
     static let userLiktArticle = Storyboard<UserLikeArticleViewController>(name: "UserLikeArticle")
     static let userStock = Storyboard<UserStockViewController>(name: "UserStock")
     
+    static let friend = Storyboard<FriendViewController>(name: "Friend")
+    static let follow = Storyboard<FollowViewController>(name: "Follow")
+    static let follower = Storyboard<FollowerViewController>(name: "Follower")
+    
 }
 // MARK: - Storyboard -
 final class Storyboard<InitialVC: UIViewController>: Storyboards {

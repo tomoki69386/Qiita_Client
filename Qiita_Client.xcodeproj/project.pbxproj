@@ -52,6 +52,12 @@
 		B76EBD0B21A611D800AD0FFB /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD0A21A611D800AD0FFB /* Info.storyboard */; };
 		B76EBD0D21A6143100AD0FFB /* Device.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B76EBD0C21A6143100AD0FFB /* Device.framework */; };
 		B76EBD0F21A627A100AD0FFB /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD0E21A627A100AD0FFB /* FriendView.swift */; };
+		B76EBD1321A6320400AD0FFB /* Friend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD1221A6320400AD0FFB /* Friend.storyboard */; };
+		B76EBD1521A6321900AD0FFB /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD1421A6321900AD0FFB /* Follow.storyboard */; };
+		B76EBD1721A6322700AD0FFB /* Follower.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD1621A6322700AD0FFB /* Follower.storyboard */; };
+		B76EBD1921A6323D00AD0FFB /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD1821A6323D00AD0FFB /* FriendViewController.swift */; };
+		B76EBD1B21A6324300AD0FFB /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD1A21A6324300AD0FFB /* FollowViewController.swift */; };
+		B76EBD1D21A6324C00AD0FFB /* FollowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD1C21A6324C00AD0FFB /* FollowerViewController.swift */; };
 		B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */; };
 		B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */; };
 		B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFC00021A0B850001A4BD4 /* Storyboard.swift */; };
@@ -177,6 +183,12 @@
 		B76EBD0A21A611D800AD0FFB /* Info.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
 		B76EBD0C21A6143100AD0FFB /* Device.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Device.framework; path = Carthage/Build/iOS/Device.framework; sourceTree = "<group>"; };
 		B76EBD0E21A627A100AD0FFB /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
+		B76EBD1221A6320400AD0FFB /* Friend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Friend.storyboard; sourceTree = "<group>"; };
+		B76EBD1421A6321900AD0FFB /* Follow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Follow.storyboard; sourceTree = "<group>"; };
+		B76EBD1621A6322700AD0FFB /* Follower.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Follower.storyboard; sourceTree = "<group>"; };
+		B76EBD1821A6323D00AD0FFB /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
+		B76EBD1A21A6324300AD0FFB /* FollowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
+		B76EBD1C21A6324C00AD0FFB /* FollowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerViewController.swift; sourceTree = "<group>"; };
 		B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		B7EFC00021A0B850001A4BD4 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -312,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				B76EBD0121A6013400AD0FFB /* Setting */,
+				B76EBD1021A631E300AD0FFB /* Friend */,
 				B74A3887218EF0430066EA24 /* User */,
 				B74A3872218DE7A40066EA24 /* Home */,
 				B74A384D218D1EA60066EA24 /* AppDelegate.swift */,
@@ -334,6 +347,7 @@
 			children = (
 				B7EFC00021A0B850001A4BD4 /* Storyboard.swift */,
 				B76EBCFE21A6009B00AD0FFB /* Setting */,
+				B76EBD1121A631F100AD0FFB /* Friend */,
 				B74A3888218EF04D0066EA24 /* User */,
 				B74A3871218DE78D0066EA24 /* Home */,
 				B74A387E218ECAD10066EA24 /* TabBarController.storyboard */,
@@ -520,6 +534,26 @@
 			name = Setting;
 			sourceTree = "<group>";
 		};
+		B76EBD1021A631E300AD0FFB /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				B76EBD1821A6323D00AD0FFB /* FriendViewController.swift */,
+				B76EBD1A21A6324300AD0FFB /* FollowViewController.swift */,
+				B76EBD1C21A6324C00AD0FFB /* FollowerViewController.swift */,
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
+		B76EBD1121A631F100AD0FFB /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				B76EBD1221A6320400AD0FFB /* Friend.storyboard */,
+				B76EBD1421A6321900AD0FFB /* Follow.storyboard */,
+				B76EBD1621A6322700AD0FFB /* Follower.storyboard */,
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -580,15 +614,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				B74A3858218D1EA70066EA24 /* LaunchScreen.storyboard in Resources */,
+				B76EBD1721A6322700AD0FFB /* Follower.storyboard in Resources */,
 				B74A388C218EF0730066EA24 /* User.storyboard in Resources */,
 				B74A3855218D1EA70066EA24 /* Assets.xcassets in Resources */,
 				B76EBD0721A60A9B00AD0FFB /* UserStock.storyboard in Resources */,
 				B74A387F218ECAD10066EA24 /* TabBarController.storyboard in Resources */,
 				B7EFC00721A17266001A4BD4 /* UserLikeArticle.storyboard in Resources */,
+				B76EBD1321A6320400AD0FFB /* Friend.storyboard in Resources */,
 				B7EFC00321A0B899001A4BD4 /* UserArticle.storyboard in Resources */,
 				B74A3853218D1EA60066EA24 /* Home.storyboard in Resources */,
 				B76EBD0B21A611D800AD0FFB /* Info.storyboard in Resources */,
 				B76EBD0021A600A700AD0FFB /* Setting.storyboard in Resources */,
+				B76EBD1521A6321900AD0FFB /* Follow.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,8 +674,10 @@
 				B71555E321989EEC004A1399 /* UserRequest.swift in Sources */,
 				B715F7DD21958E2600BE0218 /* ArticleTableViewCell.swift in Sources */,
 				B71555E92199438C004A1399 /* ArticleRequest.swift in Sources */,
+				B76EBD1B21A6324300AD0FFB /* FollowViewController.swift in Sources */,
 				B71555EB219943D9004A1399 /* UserArticle.swift in Sources */,
 				B71555E721989F46004A1399 /* APIManager.swift in Sources */,
+				B76EBD1D21A6324C00AD0FFB /* FollowerViewController.swift in Sources */,
 				B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */,
 				B71555C2219750D0004A1399 /* MainViewController.swift in Sources */,
 				B7EFC00521A1719D001A4BD4 /* UserLikeArticleViewController.swift in Sources */,
@@ -647,6 +686,7 @@
 				B76EBD0521A60A4800AD0FFB /* UserStockViewController.swift in Sources */,
 				B76EBCFD21A5FDF600AD0FFB /* AppUser.swift in Sources */,
 				B71555DC21989BD2004A1399 /* APIClients.swift in Sources */,
+				B76EBD1921A6323D00AD0FFB /* FriendViewController.swift in Sources */,
 				B71555DE21989D8E004A1399 /* BaseAPIProtocol.swift in Sources */,
 				B71555E521989F2D004A1399 /* APIResult.swift in Sources */,
 				B74A387D218EC9310066EA24 /* AppColor.swift in Sources */,
