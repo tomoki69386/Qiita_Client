@@ -58,6 +58,7 @@
 		B76EBD1921A6323D00AD0FFB /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD1821A6323D00AD0FFB /* FriendViewController.swift */; };
 		B76EBD1B21A6324300AD0FFB /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD1A21A6324300AD0FFB /* FollowViewController.swift */; };
 		B76EBD1D21A6324C00AD0FFB /* FollowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD1C21A6324C00AD0FFB /* FollowerViewController.swift */; };
+		B76EBD1F21A6441300AD0FFB /* UserShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD1E21A6441300AD0FFB /* UserShowTableViewCell.swift */; };
 		B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */; };
 		B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */; };
 		B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFC00021A0B850001A4BD4 /* Storyboard.swift */; };
@@ -189,6 +190,7 @@
 		B76EBD1821A6323D00AD0FFB /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
 		B76EBD1A21A6324300AD0FFB /* FollowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
 		B76EBD1C21A6324C00AD0FFB /* FollowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerViewController.swift; sourceTree = "<group>"; };
+		B76EBD1E21A6441300AD0FFB /* UserShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserShowTableViewCell.swift; sourceTree = "<group>"; };
 		B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		B7EFC00021A0B850001A4BD4 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -540,6 +542,7 @@
 				B76EBD1821A6323D00AD0FFB /* FriendViewController.swift */,
 				B76EBD1A21A6324300AD0FFB /* FollowViewController.swift */,
 				B76EBD1C21A6324C00AD0FFB /* FollowerViewController.swift */,
+				B76EBD2021A644D500AD0FFB /* Cell */,
 			);
 			path = Friend;
 			sourceTree = "<group>";
@@ -552,6 +555,14 @@
 				B76EBD1621A6322700AD0FFB /* Follower.storyboard */,
 			);
 			path = Friend;
+			sourceTree = "<group>";
+		};
+		B76EBD2021A644D500AD0FFB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B76EBD1E21A6441300AD0FFB /* UserShowTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -676,6 +687,7 @@
 				B71555E92199438C004A1399 /* ArticleRequest.swift in Sources */,
 				B76EBD1B21A6324300AD0FFB /* FollowViewController.swift in Sources */,
 				B71555EB219943D9004A1399 /* UserArticle.swift in Sources */,
+				B76EBD1F21A6441300AD0FFB /* UserShowTableViewCell.swift in Sources */,
 				B71555E721989F46004A1399 /* APIManager.swift in Sources */,
 				B76EBD1D21A6324C00AD0FFB /* FollowerViewController.swift in Sources */,
 				B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */,

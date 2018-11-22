@@ -11,11 +11,15 @@ import XLPagerTabStrip
 
 class FollowViewController: UIViewController {
     
-    @IBOutlet private weak var tableView: UITableView!
+    private let tableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.register(UserShowTableViewCell.self, forCellReuseIdentifier: "UserShowCell")
+        tableView.rowHeight = 70
+        tableView.frame = view.bounds
+        self.view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -27,8 +31,8 @@ extension FollowViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "followCell", for: indexPath)
-        cell.textLabel?.text = String(indexPath.row)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserShowCell", for: indexPath) as! UserShowTableViewCell
+        cell.setUp()
         return cell
     }
 }
