@@ -37,6 +37,19 @@ class FriendViewController: ButtonBarPagerTabStripViewController {
         ]
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        let navigationBarHeight = self.navigationController!.navigationBar.frame.size.height
+        let statuBarHeight = UIApplication.shared.statusBarFrame.size.height
+        let topBar = statuBarHeight + navigationBarHeight
+        let tabBarHeight = self.tabBarController!.tabBar.frame.size.height
+        
+        buttonBarView.frame = CGRect(x: 0, y: topBar, width: view.frame.width, height: 40)
+        containerView.frame = CGRect(x: 0, y: buttonBarView.frame.maxY, width: view.frame.width, height: view.frame.height - (topBar + tabBarHeight + 40))
+        print(containerView.frame.height)
+    }
+    
     private func setBarLayout() {
         settings.style.buttonBarBackgroundColor = AppColor.white
         settings.style.buttonBarItemBackgroundColor = AppColor.white
