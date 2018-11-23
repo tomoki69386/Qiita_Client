@@ -56,16 +56,6 @@ class UserViewController: ButtonBarPagerTabStripViewController {
     }
     
     private func showUser() {
-        APIManager.call(UserRequest.get, disposeBag, onSuccess: { (response) in
-            print(response)
-        }) { (error) in
-            print(error)
-        }
-        APIManager.call(UserArticleRequest.get, disposeBag, onSuccess: { (response) in
-            print(response)
-        }) { (error) in
-            print(error)
-        }
 
     }
     

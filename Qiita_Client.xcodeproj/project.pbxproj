@@ -9,14 +9,6 @@
 /* Begin PBXBuildFile section */
 		B71555C2219750D0004A1399 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555C1219750D0004A1399 /* MainViewController.swift */; };
 		B71555C421975550004A1399 /* UserArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555C321975550004A1399 /* UserArticleViewController.swift */; };
-		B71555DC21989BD2004A1399 /* APIClients.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555DB21989BD2004A1399 /* APIClients.swift */; };
-		B71555DE21989D8E004A1399 /* BaseAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555DD21989D8E004A1399 /* BaseAPIProtocol.swift */; };
-		B71555E021989DFF004A1399 /* BaseRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555DF21989DFF004A1399 /* BaseRequestProtocol.swift */; };
-		B71555E321989EEC004A1399 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555E221989EEC004A1399 /* UserRequest.swift */; };
-		B71555E521989F2D004A1399 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555E421989F2D004A1399 /* APIResult.swift */; };
-		B71555E721989F46004A1399 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555E621989F46004A1399 /* APIManager.swift */; };
-		B71555E92199438C004A1399 /* ArticleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555E82199438C004A1399 /* ArticleRequest.swift */; };
-		B71555EB219943D9004A1399 /* UserArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555EA219943D9004A1399 /* UserArticle.swift */; };
 		B715F7DD21958E2600BE0218 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B715F7DC21958E2600BE0218 /* ArticleTableViewCell.swift */; };
 		B715F7DF2195915300BE0218 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B715F7DE2195915300BE0218 /* User.swift */; };
 		B74A384E218D1EA60066EA24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A384D218D1EA60066EA24 /* AppDelegate.swift */; };
@@ -28,7 +20,6 @@
 		B74A3867218D24300066EA24 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74A3862218D24300066EA24 /* RxSwift.framework */; };
 		B74A3868218D24300066EA24 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74A3863218D24300066EA24 /* SDWebImage.framework */; };
 		B74A3869218D24300066EA24 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74A3864218D24300066EA24 /* SnapKit.framework */; };
-		B74A3870218DE7770066EA24 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A386F218DE7770066EA24 /* APIClient.swift */; };
 		B74A3874218DE7B60066EA24 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A3873218DE7B60066EA24 /* HomeViewController.swift */; };
 		B74A3876218DEE590066EA24 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A3875218DEE590066EA24 /* Article.swift */; };
 		B74A3878218EAB940066EA24 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A3877218EAB940066EA24 /* ArticleViewController.swift */; };
@@ -41,7 +32,6 @@
 		B74A388C218EF0730066EA24 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74A388B218EF0730066EA24 /* User.storyboard */; };
 		B74A388E218EF2810066EA24 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A388D218EF2810066EA24 /* HomeTableViewCell.swift */; };
 		B74A3923218FD5660066EA24 /* MarkdownView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74A38E9218FD55C0066EA24 /* MarkdownView.framework */; };
-		B74A3927219030480066EA24 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A3926219030480066EA24 /* ErrorMessage.swift */; };
 		B76EBCFB21A5FDA800AD0FFB /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B76EBCFA21A5FDA800AD0FFB /* SwiftyUserDefaults.framework */; };
 		B76EBCFD21A5FDF600AD0FFB /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBCFC21A5FDF600AD0FFB /* AppUser.swift */; };
 		B76EBD0021A600A700AD0FFB /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76EBCFF21A600A700AD0FFB /* Setting.storyboard */; };
@@ -78,14 +68,6 @@
 /* Begin PBXFileReference section */
 		B71555C1219750D0004A1399 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B71555C321975550004A1399 /* UserArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserArticleViewController.swift; sourceTree = "<group>"; };
-		B71555DB21989BD2004A1399 /* APIClients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClients.swift; sourceTree = "<group>"; };
-		B71555DD21989D8E004A1399 /* BaseAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIProtocol.swift; sourceTree = "<group>"; };
-		B71555DF21989DFF004A1399 /* BaseRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequestProtocol.swift; sourceTree = "<group>"; };
-		B71555E221989EEC004A1399 /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
-		B71555E421989F2D004A1399 /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
-		B71555E621989F46004A1399 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		B71555E82199438C004A1399 /* ArticleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRequest.swift; sourceTree = "<group>"; };
-		B71555EA219943D9004A1399 /* UserArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserArticle.swift; sourceTree = "<group>"; };
 		B715F7DC21958E2600BE0218 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		B715F7DE2195915300BE0218 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B74A384A218D1EA60066EA24 /* Qiita_Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qiita_Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,7 +81,6 @@
 		B74A3862218D24300066EA24 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		B74A3863218D24300066EA24 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		B74A3864218D24300066EA24 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
-		B74A386F218DE7770066EA24 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		B74A3873218DE7B60066EA24 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B74A3875218DEE590066EA24 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		B74A3877218EAB940066EA24 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
@@ -181,7 +162,6 @@
 		B74A3920218FD55C0066EA24 /* .SDWebImage.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .SDWebImage.version; sourceTree = "<group>"; };
 		B74A3921218FD55C0066EA24 /* .SkeletonView.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .SkeletonView.version; sourceTree = "<group>"; };
 		B74A3922218FD55C0066EA24 /* .AMScrollingNavbar.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .AMScrollingNavbar.version; sourceTree = "<group>"; };
-		B74A3926219030480066EA24 /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		B76EBCFA21A5FDA800AD0FFB /* SwiftyUserDefaults.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUserDefaults.framework; path = Carthage/Build/iOS/SwiftyUserDefaults.framework; sourceTree = "<group>"; };
 		B76EBCFC21A5FDF600AD0FFB /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		B76EBCFF21A600A700AD0FFB /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
@@ -237,16 +217,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B71555E121989ED8004A1399 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				B71555E221989EEC004A1399 /* UserRequest.swift */,
-				B71555E82199438C004A1399 /* ArticleRequest.swift */,
-				B71555EA219943D9004A1399 /* UserArticle.swift */,
-			);
-			name = Request;
-			sourceTree = "<group>";
-		};
 		B715F7DA21958DF900BE0218 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,14 +300,6 @@
 			children = (
 				B786C3DE21A7EFFB0026BA1E /* Auth */,
 				B715F7E02196738100BE0218 /* Responses */,
-				B71555E121989ED8004A1399 /* Request */,
-				B74A386F218DE7770066EA24 /* APIClient.swift */,
-				B74A3926219030480066EA24 /* ErrorMessage.swift */,
-				B71555DB21989BD2004A1399 /* APIClients.swift */,
-				B71555DD21989D8E004A1399 /* BaseAPIProtocol.swift */,
-				B71555DF21989DFF004A1399 /* BaseRequestProtocol.swift */,
-				B71555E621989F46004A1399 /* APIManager.swift */,
-				B71555E421989F2D004A1399 /* APIResult.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -732,16 +694,10 @@
 			files = (
 				B74A3876218DEE590066EA24 /* Article.swift in Sources */,
 				B74A388A218EF06B0066EA24 /* UserViewController.swift in Sources */,
-				B71555E021989DFF004A1399 /* BaseRequestProtocol.swift in Sources */,
-				B74A3927219030480066EA24 /* ErrorMessage.swift in Sources */,
-				B71555E321989EEC004A1399 /* UserRequest.swift in Sources */,
 				B786C3E021A7F00F0026BA1E /* Auth.swift in Sources */,
 				B715F7DD21958E2600BE0218 /* ArticleTableViewCell.swift in Sources */,
-				B71555E92199438C004A1399 /* ArticleRequest.swift in Sources */,
 				B76EBD1B21A6324300AD0FFB /* FollowViewController.swift in Sources */,
-				B71555EB219943D9004A1399 /* UserArticle.swift in Sources */,
 				B76EBD1F21A6441300AD0FFB /* UserShowTableViewCell.swift in Sources */,
-				B71555E721989F46004A1399 /* APIManager.swift in Sources */,
 				B76EBD1D21A6324C00AD0FFB /* FollowerViewController.swift in Sources */,
 				B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */,
 				B71555C2219750D0004A1399 /* MainViewController.swift in Sources */,
@@ -751,10 +707,7 @@
 				B76EBD2F21A6D5C300AD0FFB /* AuthViewController.swift in Sources */,
 				B76EBD0521A60A4800AD0FFB /* UserStockViewController.swift in Sources */,
 				B76EBCFD21A5FDF600AD0FFB /* AppUser.swift in Sources */,
-				B71555DC21989BD2004A1399 /* APIClients.swift in Sources */,
 				B76EBD1921A6323D00AD0FFB /* FriendViewController.swift in Sources */,
-				B71555DE21989D8E004A1399 /* BaseAPIProtocol.swift in Sources */,
-				B71555E521989F2D004A1399 /* APIResult.swift in Sources */,
 				B74A387D218EC9310066EA24 /* AppColor.swift in Sources */,
 				B74A387B218EC72A0066EA24 /* UIColor+hex.swift in Sources */,
 				B715F7DF2195915300BE0218 /* User.swift in Sources */,
@@ -762,7 +715,6 @@
 				B74A388E218EF2810066EA24 /* HomeTableViewCell.swift in Sources */,
 				B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */,
 				B76EBD0321A6014700AD0FFB /* SettingViewController.swift in Sources */,
-				B74A3870218DE7770066EA24 /* APIClient.swift in Sources */,
 				B71555C421975550004A1399 /* UserArticleViewController.swift in Sources */,
 				B74A3874218DE7B60066EA24 /* HomeViewController.swift in Sources */,
 				B76EBD0F21A627A100AD0FFB /* FriendView.swift in Sources */,
