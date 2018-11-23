@@ -33,6 +33,24 @@ extension AppUser {
     static func saveAccessToken(token: String) {
         Defaults[.accessToken] = token
     }
+    
+    static func saveUser(user: User) {
+        Defaults[.id] = user.id
+        Defaults[.followeesCount] = user.followeesCount
+        Defaults[.followersCount] = user.followersCount
+        Defaults[.itemsCount] = user.itemsCount
+        Defaults[.permanentID] = user.permanentID
+        Defaults[.profileImageURL] = user.profileImageURL
+        Defaults[.userDescription] = user.userDescription
+        Defaults[.facebookID] = user.facebookID
+        Defaults[.githubLoginName] = user.githubLoginName
+        Defaults[.linkedinID] = user.linkedinID
+        Defaults[.location] = user.location
+        Defaults[.name] = user.name
+        Defaults[.organization] = user.organization
+        Defaults[.twitterScreenName] = user.twitterScreenName
+        Defaults[.websiteURL] = user.websiteURL
+    }
 }
 
 private extension DefaultsKeys {
