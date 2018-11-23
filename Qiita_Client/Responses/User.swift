@@ -47,7 +47,7 @@ public struct User: Codable {
     public let permanentID: Int
     
     /// プロフィール画像
-    public let profileImageURL: URL
+    public let profileImageURL: String
     
     /// Twitter
     public let twitterScreenName: String?
