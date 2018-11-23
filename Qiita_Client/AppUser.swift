@@ -68,7 +68,7 @@ struct AppUser {
     }
     
     static var name: String? {
-        return Defaults[.location]
+        return Defaults[.name]
     }
     
     static var organization: String? {

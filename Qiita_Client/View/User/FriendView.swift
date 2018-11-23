@@ -64,6 +64,8 @@ class FriendView: UIView {
         
         action()
         rodView.backgroundColor = AppColor.glay
+        followCountLabel.text = String(AppUser.followeesCount)
+        followerCountLabel.text = String(AppUser.followersCount)
         
         self.addSubview(followCountLabel)
         self.addSubview(followLabel)
