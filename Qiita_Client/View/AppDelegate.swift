@@ -49,7 +49,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppUser.setUp(id: clientID, secret: clientSecret)
         
         if AppUser.accessToken != "" {
-            Auth.getUserProfile()
             self.window?.rootViewController = Storyboard.tabBar.instantiateViewController()
             self.window?.makeKeyAndVisible()
         }
