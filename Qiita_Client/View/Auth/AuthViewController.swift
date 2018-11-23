@@ -50,6 +50,7 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
         
         // 受信可能なレスポンスデータのメディアタイプを指定
         let headers = [
+            "Content-type": "application/json",
             "ACCEPT": "application/json"
         ]
         
@@ -60,11 +61,7 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
             "code": code
         ]
         
-        Alamofire.request(url, method: .post, parameters: parameters, headers: headers).responseJSON{ response in
-            print(parameters)
-            print(url)
-            print(headers)
-            print(response)
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
             switch response.result {
             case .success:
                 print(response)
