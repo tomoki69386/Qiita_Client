@@ -41,9 +41,9 @@ class UserViewController: ButtonBarPagerTabStripViewController {
         let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButtonItem
         
-        let imageURL = URL(string: "https://qiita-image-store.s3.amazonaws.com/0/165815/profile-images/1518552294")
+        let imageURL = URL(string: AppUser.profileImageURL)
         userImageView.sd_setImage(with: imageURL)
-        nameLabel.text = "ともき"
+        nameLabel.text = AppUser.name
         friendView.friendDelegate = self
     }
     

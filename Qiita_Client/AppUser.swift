@@ -11,26 +11,126 @@ import SwiftyUserDefaults
 struct AppUser {
     private init() {}
     
-    static var accessToken: String? {
+    static var accessToken: String {
         return Defaults[.accessToken]
     }
     
-    static var clientID: String? {
+    static var clientID: String {
         return Defaults[.clientID]
     }
     
-    static var clientSecret: String? {
+    static var clientSecret: String {
         return Defaults[.clientSecret]
     }
     
+    static var id: String {
+        return Defaults[.id]
+    }
+    
+    static var followeesCount: Int {
+        return Defaults[.followeesCount]
+    }
+    
+    static var followersCount: Int {
+        return Defaults[.followersCount]
+    }
+    
+    static var itemsCount: Int {
+        return Defaults[.itemsCount]
+    }
+    
+    static var permanentID: Int {
+        return Defaults[.permanentID]
+    }
+    
+    static var profileImageURL: String {
+        return Defaults[.profileImageURL]
+    }
+    
+    static var userDescription: String? {
+        return Defaults[.userDescription]
+    }
+    
+    static var facebookID: String? {
+        return Defaults[.facebookID]
+    }
+    
+    static var githubLoginName: String? {
+        return Defaults[.githubLoginName]
+    }
+    
+    static var linkedinID: String? {
+        return Defaults[.linkedinID]
+    }
+    
+    static var location: String? {
+        return Defaults[.location]
+    }
+    
+    static var name: String? {
+        return Defaults[.name]
+    }
+    
+    static var organization: String? {
+        return Defaults[.organization]
+    }
+    
+    static var twitterScreenName: String? {
+        return Defaults[.twitterScreenName]
+    }
+    
+    static var websiteURL: String? {
+        return Defaults[.websiteURL]
+    }
+}
+
+extension AppUser {
     static func setUp(id: String, secret: String) {
         Defaults[.clientID] = id
         Defaults[.clientSecret] = secret
     }
+    
+    static func saveAccessToken(token: String) {
+        Defaults[.accessToken] = token
+    }
+    
+    static func saveUser(user: User) {
+        Defaults[.id] = user.id
+        Defaults[.followeesCount] = user.followeesCount
+        Defaults[.followersCount] = user.followersCount
+        Defaults[.itemsCount] = user.itemsCount
+        Defaults[.permanentID] = user.permanentID
+        Defaults[.profileImageURL] = user.profileImageURL
+        Defaults[.userDescription] = user.userDescription
+        Defaults[.facebookID] = user.facebookID
+        Defaults[.githubLoginName] = user.githubLoginName
+        Defaults[.linkedinID] = user.linkedinID
+        Defaults[.location] = user.location
+        Defaults[.name] = user.name
+        Defaults[.organization] = user.organization
+        Defaults[.twitterScreenName] = user.twitterScreenName
+        Defaults[.websiteURL] = user.websiteURL
+    }
 }
 
 private extension DefaultsKeys {
-    static let accessToken = DefaultsKey<String?>("access_token", defaultValue: nil)
-    static let clientID = DefaultsKey<String?>("client_id", defaultValue: nil)
-    static let clientSecret = DefaultsKey<String?>("client_secret", defaultValue: nil)
+    static let accessToken = DefaultsKey<String>("access_token", defaultValue: "")
+    static let clientID = DefaultsKey<String>("client_id", defaultValue: "")
+    static let clientSecret = DefaultsKey<String>("client_secret", defaultValue: "")
+
+    static let id = DefaultsKey<String>("id")
+    static let followeesCount = DefaultsKey<Int>("followees_count")
+    static let followersCount = DefaultsKey<Int>("followers_count")
+    static let itemsCount = DefaultsKey<Int>("items_count")
+    static let permanentID = DefaultsKey<Int>("permanent_id")
+    static let profileImageURL = DefaultsKey<String>("profile_image_url")
+    static let userDescription = DefaultsKey<String?>("description", defaultValue: "")
+    static let facebookID = DefaultsKey<String?>("facebook_id", defaultValue: "")
+    static let githubLoginName = DefaultsKey<String?>("github_login_name", defaultValue: "")
+    static let linkedinID = DefaultsKey<String?>("linkedin_id", defaultValue: "")
+    static let location = DefaultsKey<String?>("location", defaultValue: "")
+    static let name = DefaultsKey<String?>("name", defaultValue: "")
+    static let organization = DefaultsKey<String?>("organization", defaultValue: "")
+    static let twitterScreenName = DefaultsKey<String?>("twitter_screen_name", defaultValue: "")
+    static let websiteURL = DefaultsKey<String?>("website_url", defaultValue: "")
 }

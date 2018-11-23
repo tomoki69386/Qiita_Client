@@ -64,6 +64,8 @@ class FriendView: UIView {
         
         action()
         rodView.backgroundColor = AppColor.glay
+        followCountLabel.text = String(AppUser.followeesCount)
+        followerCountLabel.text = String(AppUser.followersCount)
         
         self.addSubview(followCountLabel)
         self.addSubview(followLabel)
@@ -75,7 +77,6 @@ class FriendView: UIView {
     }
     
     private func action() {
-        print("hoge")
         followButton.rx.tap.subscribe(onNext: { _ in
             self.friendDelegate?.didPushViewController(at: 0)
         }).disposed(by: disposeBag)

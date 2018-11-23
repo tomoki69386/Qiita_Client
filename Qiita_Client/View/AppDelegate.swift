@@ -46,8 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let clientSecret = ProcessInfo.processInfo.environment["Client_Secret"] else {
             fatalError("Client_Secretが.envファイルに記載されていません。")
         }
-        print(clientID)
-        print(clientSecret)
         AppUser.setUp(id: clientID, secret: clientSecret)
         
         return true
