@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Alamofire
 import XLPagerTabStrip
 
 class UserLikeArticleViewController: MainViewController {
+    
+    private var articles = [Article]()
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -27,6 +30,28 @@ class UserLikeArticleViewController: MainViewController {
         self.view.addSubview(tableView)
     }
     
+    private func request() {
+        let url = "https://qiita.com/api/v2/authenticated_user/items?page=1&per_page=20"
+        let headers = [
+            "Content-type": "application/json",
+            "ACCEPT": "application/json",
+            "Authorization": "Bearer \(AppUser.accessToken)"
+        ]
+        
+        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
+            guard let data = response.data else { return }
+            switch response.result {
+            case .success:
+                let decoder = JSONDecoder()
+                let result = try! decoder.decode(Array<Article>.self, from: data)
+                self.articles = result
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
@@ -36,12 +61,12 @@ class UserLikeArticleViewController: MainViewController {
 
 extension UserLikeArticleViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return articles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell") as! ArticleTableViewCell
-        cell.setUp()
+        cell.dataSet(article: articles[indexPath.row])
         return cell
     }
 }

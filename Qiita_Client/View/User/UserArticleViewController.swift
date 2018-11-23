@@ -46,7 +46,6 @@ class UserArticleViewController: MainViewController {
             switch response.result {
             case .success:
                 let decoder = JSONDecoder()
-                print(response)
                 let result = try! decoder.decode(Array<Article>.self, from: data)
                 self.articles = result
                 self.tableView.reloadData()
