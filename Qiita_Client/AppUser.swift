@@ -22,15 +22,21 @@ struct AppUser {
     static var clientSecret: String {
         return Defaults[.clientSecret]
     }
-    
+}
+
+extension AppUser {
     static func setUp(id: String, secret: String) {
         Defaults[.clientID] = id
         Defaults[.clientSecret] = secret
     }
+    
+    static func saveAccessToken(token: String) {
+        Defaults[.accessToken] = token
+    }
 }
 
 private extension DefaultsKeys {
-    static let accessToken = DefaultsKey<String?>("access_token", defaultValue: nil)
+    static let accessToken = DefaultsKey<String>("access_token", defaultValue: "")
     static let clientID = DefaultsKey<String>("client_id", defaultValue: "")
     static let clientSecret = DefaultsKey<String>("client_secret", defaultValue: "")
 }
