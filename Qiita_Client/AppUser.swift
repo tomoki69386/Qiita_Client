@@ -26,6 +26,62 @@ struct AppUser {
     static var id: String {
         return Defaults[.id]
     }
+    
+    static var followeesCount: Int {
+        return Defaults[.followeesCount]
+    }
+    
+    static var followersCount: Int {
+        return Defaults[.followersCount]
+    }
+    
+    static var itemsCount: Int {
+        return Defaults[.itemsCount]
+    }
+    
+    static var permanentID: Int {
+        return Defaults[.permanentID]
+    }
+    
+    static var profileImageURL: String {
+        return Defaults[.profileImageURL]
+    }
+    
+    static var userDescription: String? {
+        return Defaults[.userDescription]
+    }
+    
+    static var facebookID: String? {
+        return Defaults[.facebookID]
+    }
+    
+    static var githubLoginName: String? {
+        return Defaults[.githubLoginName]
+    }
+    
+    static var linkedinID: String? {
+        return Defaults[.linkedinID]
+    }
+    
+    static var location: String? {
+        return Defaults[.location]
+    }
+    
+    static var name: String? {
+        return Defaults[.location]
+    }
+    
+    static var organization: String? {
+        return Defaults[.organization]
+    }
+    
+    static var twitterScreenName: String? {
+        return Defaults[.twitterScreenName]
+    }
+    
+    static var websiteURL: String? {
+        return Defaults[.websiteURL]
+    }
 }
 
 extension AppUser {
