@@ -19,10 +19,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4HT-8U-TlT"/>
                     </view>
+                    <connections>
+                        <segue destination="dEk-Sy-s4A" kind="showDetail" identifier="toTabBar" id="6jA-4z-4iC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLs-5O-LSz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-162" y="-51"/>
+        </scene>
+        <!--TabBarController-->
+        <scene sceneID="DqD-Qi-Voh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TabBarController" id="dEk-Sy-s4A" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="JQL-Mp-O0Z"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s9m-Ui-qRS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="351" y="-175"/>
         </scene>
     </scenes>
 </document>
