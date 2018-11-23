@@ -64,13 +64,10 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
             switch response.result {
             case .success:
-                print(response)
-//                let json = JSON(response.result.value)
-//
-//                // アクセストークンを取得
-//                let accessToken = json["access_token"].string
-//                UserDefaults.standard.set(accessToken!, forKey: ACCESS_TOKEN)
-//                completion()
+                let decoder = JSONDecoder()
+                let result = try! decoder.decode(AccessToken.self, from: response.data!)
+                print(result.token)
+                
             case .failure(let error):
                 print(error)
             }
