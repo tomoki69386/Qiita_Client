@@ -24,7 +24,7 @@ struct Auth {
             case .success:
                 let decoder = JSONDecoder()
                 let result = try! decoder.decode(User.self, from: response.data!)
-                print(result)
+                AppUser.saveUser(user: result)
             case .failure(let error):
                 print(error)
             }

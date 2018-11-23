@@ -22,6 +22,10 @@ struct AppUser {
     static var clientSecret: String {
         return Defaults[.clientSecret]
     }
+    
+    static var id: String {
+        return Defaults[.id]
+    }
 }
 
 extension AppUser {
