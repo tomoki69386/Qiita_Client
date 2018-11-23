@@ -92,7 +92,11 @@ extension UserArticleViewController: UIScrollViewDelegate {
 }
 
 extension UserArticleViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let VC = ArticleViewController(article: articles[indexPath.row])
+        self.navigationController?.pushViewController(VC, animated: true)
+    }
 }
 
 extension UserArticleViewController: IndicatorInfoProvider {
