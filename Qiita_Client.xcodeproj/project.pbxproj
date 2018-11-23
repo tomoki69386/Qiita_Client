@@ -259,13 +259,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		B715F7E02196738100BE0218 /* Model */ = {
+		B715F7E02196738100BE0218 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
 				B74A3875218DEE590066EA24 /* Article.swift */,
 				B715F7DE2195915300BE0218 /* User.swift */,
 			);
-			path = Model;
+			path = Responses;
 			sourceTree = "<group>";
 		};
 		B74A3841218D1EA50066EA24 = {
@@ -323,7 +323,7 @@
 		B74A386B218DE7480066EA24 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				B715F7E02196738100BE0218 /* Model */,
+				B715F7E02196738100BE0218 /* Responses */,
 				B71555E121989ED8004A1399 /* Request */,
 				B74A386F218DE7770066EA24 /* APIClient.swift */,
 				B74A3926219030480066EA24 /* ErrorMessage.swift */,
