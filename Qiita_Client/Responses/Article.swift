@@ -8,29 +8,42 @@
 
 import Foundation
 
-struct Article: Codable {
-    var title: String?
-    var url: String?
-    var body: String?
-    var userId: String?
+public struct Article: Codable {
     
-    private enum UserKeys: String, CodingKey {
-        case userId = "id"
+    public struct Tag: Codable {
+        let name: String
+        let versions: [String]
     }
     
-    private enum ArticleKeys: String, CodingKey {
-        case title
-        case url
-        case body
-        case user
+    /// タグを特定するための一意な名前
+    public let id: String
+    
+    /// Markdown形式の本文
+    public let body: String
+    
+    /// データが作成された日時
+    public let createdAt: String
+    
+    /// 投稿のタイトル
+    public let title: String
+    
+    /// 投稿のURL
+    public let URL: Foundation.URL
+    
+    /// 投稿者
+    public let user: User
+    
+}
+
+extension Article {
+    
+    enum CodingKeys: String, CodingKey {
+        case id           = "id"
+        case body         = "body"
+        case createdAt    = "created_at"
+        case title        = "title"
+        case URL          = "url"
+        case user         = "user"
     }
     
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: ArticleKeys.self)
-        self.title = try values.decode(String.self, forKey: .title)
-        self.url = try values.decode(String.self, forKey: .url)
-        self.body = try values.decode(String.self, forKey: .body)
-        let user = try values.nestedContainer(keyedBy: UserKeys.self, forKey: .user)
-        self.userId = try user.decode(String.self, forKey: .userId)
-    }
 }

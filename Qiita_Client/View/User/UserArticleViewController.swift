@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 import XLPagerTabStrip
 
 class UserArticleViewController: MainViewController {
@@ -28,6 +29,29 @@ class UserArticleViewController: MainViewController {
         tableView.delegate = self
         self.view.addSubview(tableView)
         scrollBeginingPoint = tableView.contentOffset
+        request()
+    }
+    
+    private func request() {
+        let url = "https://qiita.com/api/v2/authenticated_user/items?page=1&per_page=20"
+        let headers = [
+            "Content-type": "application/json",
+            "ACCEPT": "application/json",
+            "Authorization": "Bearer \(AppUser.accessToken)"
+        ]
+        
+        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
+            guard let data = response.data else { return }
+            switch response.result {
+            case .success:
+                let decoder = JSONDecoder()
+                print(response)
+                let result = try! decoder.decode(Array<Article>.self, from: data)
+                print(result)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     private func scrollViewWillBeginDragging(scrollView: UIScrollView) {
