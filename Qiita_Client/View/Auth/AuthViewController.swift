@@ -66,7 +66,7 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
             case .success:
                 let decoder = JSONDecoder()
                 let result = try! decoder.decode(AccessToken.self, from: response.data!)
-                print(result.token)
+                AppUser.saveAccessToken(token: result.token)
                 
             case .failure(let error):
                 print(error)

@@ -11,7 +11,7 @@ import SwiftyUserDefaults
 struct AppUser {
     private init() {}
     
-    static var accessToken: String? {
+    static var accessToken: String {
         return Defaults[.accessToken]
     }
     
