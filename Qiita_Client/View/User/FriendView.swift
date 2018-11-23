@@ -75,7 +75,6 @@ class FriendView: UIView {
     }
     
     private func action() {
-        print("hoge")
         followButton.rx.tap.subscribe(onNext: { _ in
             self.friendDelegate?.didPushViewController(at: 0)
         }).disposed(by: disposeBag)
