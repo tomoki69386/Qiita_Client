@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = AppColor.main
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UITabBar.appearance().tintColor = AppColor.white
+        UITabBar.appearance().backgroundColor = AppColor.white
         
         // .envの読み込み
         guard let path = Bundle.main.path(forResource: ".env", ofType: nil) else {
