@@ -73,6 +73,14 @@ class ArticleTableViewCell: UITableViewCell {
         createdLabel.text = "2018年11月20日に投稿"
     }
     
+    func dataSet(article: Article) {
+        let imageURL = URL(string: article.user.profileImageURL)
+        userImageView.sd_setImage(with: imageURL)
+        titleLabel.text = article.title
+        likeCountLabel.text = String(article.likesCount)
+        createdLabel.text = article.createdAt
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         

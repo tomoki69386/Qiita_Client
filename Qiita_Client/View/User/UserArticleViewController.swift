@@ -20,6 +20,7 @@ class UserArticleViewController: MainViewController {
         return tableView
     }()
     
+    private var articles = [Article]()
     private var scrollBeginingPoint: CGPoint!
     
     override func viewDidLoad() {
@@ -47,7 +48,8 @@ class UserArticleViewController: MainViewController {
                 let decoder = JSONDecoder()
                 print(response)
                 let result = try! decoder.decode(Array<Article>.self, from: data)
-                print(result)
+                self.articles = result
+                self.tableView.reloadData()
             case .failure(let error):
                 print(error)
             }
@@ -67,27 +69,27 @@ class UserArticleViewController: MainViewController {
 
 extension UserArticleViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return articles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell") as! ArticleTableViewCell
-        cell.setUp()
+        cell.dataSet(article: articles[indexPath.row])
         return cell
     }
 }
 
 extension UserArticleViewController: UIScrollViewDelegate {
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let currentPoint = scrollView.contentOffset
-//        if scrollBeginingPoint.y < currentPoint.y {
-//            print("下へスクロール")
-//            scrollBeginingPoint = scrollView.contentOffset
-//        } else {
-//            print("上へスクロール")
-//            scrollBeginingPoint = scrollView.contentOffset
-//        }
-//    }
+    //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    //        let currentPoint = scrollView.contentOffset
+    //        if scrollBeginingPoint.y < currentPoint.y {
+    //            print("下へスクロール")
+    //            scrollBeginingPoint = scrollView.contentOffset
+    //        } else {
+    //            print("上へスクロール")
+    //            scrollBeginingPoint = scrollView.contentOffset
+    //        }
+    //    }
 }
 
 extension UserArticleViewController: UITableViewDelegate {

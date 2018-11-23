@@ -27,6 +27,9 @@ public struct Article: Codable {
     /// 投稿のタイトル
     public let title: String
     
+    /// いいねの数
+    public let likesCount: Int
+    
     /// 投稿のURL
     public let URL: Foundation.URL
     
@@ -42,6 +45,7 @@ extension Article {
         case body         = "body"
         case createdAt    = "created_at"
         case title        = "title"
+        case likesCount   = "likes_count"
         case URL          = "url"
         case user         = "user"
     }
