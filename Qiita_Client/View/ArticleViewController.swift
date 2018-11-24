@@ -56,8 +56,8 @@ final class ArticleViewController: MainViewController {
         mdView.frame = view.bounds
         mdView.load(markdown: article.body)
         view.addSubview(mdView)
-        stockRequest()
-        likeRequest()
+        getStock()
+        getLike()
         setBtn()
     }
     
@@ -102,7 +102,7 @@ final class ArticleViewController: MainViewController {
 }
 
 extension ArticleViewController {
-    private func stockRequest() {
+    private func getStock() {
         let url = "https://qiita.com/api/v2/items/\(article.id)/stock"
         Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
             switch response.result {
@@ -119,7 +119,7 @@ extension ArticleViewController {
         }
     }
     
-    private func likeRequest() {
+    private func getLike() {
         let url = "https://qiita.com/api/v2/items/\(article.id)/like"
         Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
             switch response.result {
