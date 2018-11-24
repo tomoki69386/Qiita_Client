@@ -16,35 +16,14 @@ final class ArticleViewController: MainViewController {
     
     private let article: Article
     private let mdView = MarkdownView()
-    private var isLike: Bool = false {
-        didSet {
-            if isLike {
-                likeButton.setImage(UIImage(named: "like_true"), for: .normal)
-                likeButton.backgroundColor = AppColor.main
-            } else {
-                likeButton.setImage(UIImage(named: "like"), for: .normal)
-                likeButton.backgroundColor = AppColor.white
-                likeButton.layer.borderWidth = 2.0
-                likeButton.layer.borderColor = AppColor.main.cgColor
-            }
-        }
-    }
-    private var isStock: Bool = false {
-        didSet {
-            if isStock {
-                stockButton.setImage(UIImage(named: "like_true"), for: .normal)
-            }else {
-                stockButton.setImage(UIImage(named: "stock"), for: .normal)
-                stockButton.backgroundColor = AppColor.glay
-            }
-        }
-    }
+    
     private let likeButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = AppColor.white
         button.layer.borderWidth = 2.0
         button.layer.borderColor = AppColor.main.cgColor
         button.setImage(UIImage(named: "like"), for: .normal)
+        button.setImage(UIImage(named: "like_true"), for: .selected)
         button.clipsToBounds = true
         return button
     }()
@@ -52,6 +31,7 @@ final class ArticleViewController: MainViewController {
         let button = UIButton()
         button.backgroundColor = AppColor.glay
         button.setImage(UIImage(named: "stock"), for: .normal)
+        button.setImage(UIImage(named: "like_true"), for: .selected)
         button.clipsToBounds = true
         return button
     }()
@@ -97,11 +77,16 @@ final class ArticleViewController: MainViewController {
     
     private func btnEvent() {
         likeButton.rx.tap.subscribe(onNext: { _ in
-            self.isLike = !self.isLike
+            self.likeButton.isSelected = !self.likeButton.isSelected
+            if self.likeButton.isSelected {
+                self.likeButton.backgroundColor = AppColor.main
+            } else {
+                self.likeButton.backgroundColor = AppColor.white
+            }
         }).disposed(by: self.disposeBag)
         
         stockButton.rx.tap.subscribe(onNext: { _ in
-            self.isStock = !self.isStock
+            self.stockButton.isSelected = !self.stockButton.isSelected
         }).disposed(by: self.disposeBag)
     }
     
