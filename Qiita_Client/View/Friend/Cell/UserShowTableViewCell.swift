@@ -68,12 +68,18 @@ class UserShowTableViewCell: UITableViewCell {
         self.addSubview(IDLabel)
     }
     
-    func setUp() {
-        selectButton.isSelected = false
-        let imageURL = URL(string: "https://qiita-image-store.s3.amazonaws.com/0/165815/profile-images/1518552294")
+    func setUp(user: User) {
+        let imageURL = URL(string: user.profileImageURL)
         userImageView.sd_setImage(with: imageURL)
-        nameLabel.text = "ともき"
-        IDLabel.text = "@" + "tomoki_sun"
+        nameLabel.text = user.name
+        IDLabel.text = "@" + user.id
+        
+        selectButton.isSelected = true
+        if self.selectButton.isSelected {
+            self.selectButton.backgroundColor = AppColor.main
+        } else {
+            self.selectButton.backgroundColor = AppColor.white
+        }
     }
     
     override func layoutSubviews() {

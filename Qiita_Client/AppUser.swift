@@ -111,6 +111,26 @@ extension AppUser {
         Defaults[.twitterScreenName] = user.twitterScreenName
         Defaults[.websiteURL] = user.websiteURL
     }
+    
+    static func logout() {
+        Defaults.remove(.accessToken)
+        
+        Defaults.remove(.id)
+        Defaults.remove(.followeesCount)
+        Defaults.remove(.followersCount)
+        Defaults.remove(.itemsCount)
+        Defaults.remove(.permanentID)
+        Defaults.remove(.profileImageURL)
+        Defaults.remove(.userDescription)
+        Defaults.remove(.facebookID)
+        Defaults.remove(.githubLoginName)
+        Defaults.remove(.linkedinID)
+        Defaults.remove(.location)
+        Defaults.remove(.name)
+        Defaults.remove(.organization)
+        Defaults.remove(.twitterScreenName)
+        Defaults.remove(.websiteURL)
+    }
 }
 
 private extension DefaultsKeys {

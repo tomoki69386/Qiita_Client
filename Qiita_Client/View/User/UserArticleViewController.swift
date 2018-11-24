@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 import XLPagerTabStrip
 
 class UserArticleViewController: MainViewController {
@@ -19,6 +20,7 @@ class UserArticleViewController: MainViewController {
         return tableView
     }()
     
+    private var articles = [Article]()
     private var scrollBeginingPoint: CGPoint!
     
     override func viewDidLoad() {
@@ -28,6 +30,29 @@ class UserArticleViewController: MainViewController {
         tableView.delegate = self
         self.view.addSubview(tableView)
         scrollBeginingPoint = tableView.contentOffset
+        request()
+    }
+    
+    private func request() {
+        let url = "https://qiita.com/api/v2/authenticated_user/items?page=1&per_page=20"
+        let headers = [
+            "Content-type": "application/json",
+            "ACCEPT": "application/json",
+            "Authorization": "Bearer \(AppUser.accessToken)"
+        ]
+        
+        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
+            guard let data = response.data else { return }
+            switch response.result {
+            case .success:
+                let decoder = JSONDecoder()
+                let result = try! decoder.decode(Array<Article>.self, from: data)
+                self.articles = result
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     private func scrollViewWillBeginDragging(scrollView: UIScrollView) {
@@ -43,31 +68,35 @@ class UserArticleViewController: MainViewController {
 
 extension UserArticleViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return articles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell") as! ArticleTableViewCell
-        cell.setUp()
+        cell.dataSet(article: articles[indexPath.row])
         return cell
     }
 }
 
 extension UserArticleViewController: UIScrollViewDelegate {
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let currentPoint = scrollView.contentOffset
-//        if scrollBeginingPoint.y < currentPoint.y {
-//            print("下へスクロール")
-//            scrollBeginingPoint = scrollView.contentOffset
-//        } else {
-//            print("上へスクロール")
-//            scrollBeginingPoint = scrollView.contentOffset
-//        }
-//    }
+    //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    //        let currentPoint = scrollView.contentOffset
+    //        if scrollBeginingPoint.y < currentPoint.y {
+    //            print("下へスクロール")
+    //            scrollBeginingPoint = scrollView.contentOffset
+    //        } else {
+    //            print("上へスクロール")
+    //            scrollBeginingPoint = scrollView.contentOffset
+    //        }
+    //    }
 }
 
 extension UserArticleViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let VC = ArticleViewController(article: articles[indexPath.row])
+        self.navigationController?.pushViewController(VC, animated: true)
+    }
 }
 
 extension UserArticleViewController: IndicatorInfoProvider {

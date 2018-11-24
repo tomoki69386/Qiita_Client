@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 import XLPagerTabStrip
 
 class FollowViewController: UIViewController {
     
     private let tableView = UITableView()
+    private var users = [User]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,17 +24,40 @@ class FollowViewController: UIViewController {
         self.view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
+        request()
+    }
+    
+    private func request() {
+        let url = "https://qiita.com/api/v2/users/\(AppUser.id)/followees"
+        let headers = [
+            "Content-type": "application/json",
+            "ACCEPT": "application/json",
+            "Authorization": "Bearer \(AppUser.accessToken)"
+        ]
+        
+        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
+            guard let data = response.data else { return }
+            switch response.result {
+            case .success:
+                let decoder = JSONDecoder()
+                let result = try! decoder.decode(Array<User>.self, from: data)
+                self.users = result
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
 
 extension FollowViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserShowCell", for: indexPath) as! UserShowTableViewCell
-        cell.setUp()
+        cell.setUp(user: users[indexPath.row])
         return cell
     }
 }

@@ -40,17 +40,6 @@ class HomeViewController: MainViewController {
     
     private func showRequest() {
         items.removeAll()
-        APIClient.fetchArticle { (articles) in
-            self.items = articles
-            DispatchQueue.main.sync {
-                self.tableView.reloadData()
-            }
-        }
-        APIManager.call(UserRequest.get, disposeBag, onSuccess: { item in
-            print(item)
-        }, onError: {_ in
-            
-        })
     }
 }
 

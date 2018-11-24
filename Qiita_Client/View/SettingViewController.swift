@@ -72,6 +72,21 @@ extension SettingViewController: UITableViewDataSource {
 extension SettingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        switch (indexPath.section, indexPath.row) {
+        case (0, 0):
+            print("ブックマーク")
+        case (0, 1):
+            print("ログアウト")
+        case (1, 0):
+            print("お問い合わせ")
+        case (2, 0):
+            print("利用規約")
+        case (2, 1):
+            print("プライバシーポリシー")
+        case (2, 2):
+            print("ライセンス")
+        default: break
+        }
         performSegue(withIdentifier: "toInfo", sender: nil)
     }
 }

@@ -67,7 +67,6 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
                 let decoder = JSONDecoder()
                 let result = try! decoder.decode(AccessToken.self, from: response.data!)
                 AppUser.saveAccessToken(token: result.token)
-                Auth.getUserProfile()
                 if AppUser.accessToken != "" {
                     self.performSegue(withIdentifier: "toTabBar",sender: nil)
                 }
