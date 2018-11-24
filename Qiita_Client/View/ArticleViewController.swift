@@ -137,4 +137,68 @@ extension ArticleViewController {
             }
         }
     }
+    
+    private func toStock() {
+        let url = "https://qiita.com/api/v2/items/\(article.id)/stock"
+        Alamofire.request(url, method: .put, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
+            switch response.result {
+            case .success:
+                guard let code = response.response?.statusCode else { return }
+                if code == 204 {
+                    self.stockButton.isSelected = true
+                } else {
+                    self.stockButton.isSelected = false
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    private func toLike() {
+        let url = "https://qiita.com/api/v2/items/\(article.id)/like"
+        Alamofire.request(url, method: .put, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
+            switch response.result {
+            case .success:
+                guard let code = response.response?.statusCode else { return }
+                if code == 204 {
+                    self.likeButton.isSelected = true
+                    self.likeButton.backgroundColor = AppColor.main
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    private func deleteStock() {
+        let url = "https://qiita.com/api/v2/items/\(article.id)/stock"
+        Alamofire.request(url, method: .delete, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
+            switch response.result {
+            case .success:
+                guard let code = response.response?.statusCode else { return }
+                if code == 204 {
+                    self.stockButton.isSelected = false
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    private func deletelike() {
+        let url = "https://qiita.com/api/v2/items/\(article.id)/stock"
+        Alamofire.request(url, method: .delete, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
+            switch response.result {
+            case .success:
+                guard let code = response.response?.statusCode else { return }
+                if code == 204 {
+                    self.likeButton.isSelected = false
+                    self.likeButton.backgroundColor = AppColor.white
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
