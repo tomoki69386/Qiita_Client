@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Alamofire
 import MarkdownView
 import AMScrollingNavbar
 
@@ -49,14 +50,63 @@ final class ArticleViewController: MainViewController {
         mdView.frame = view.bounds
         mdView.load(markdown: article.body)
         view.addSubview(mdView)
+        stockRequest()
+        likeRequest()
         setBtn()
-        btnEvent()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let navigationController = navigationController as? ScrollingNavigationController {
             navigationController.followScrollView(mdView, delay: 50.0)
+        }
+    }
+    
+    private func stockRequest() {
+        let url = "https://qiita.com/api/v2/items/\(article.id)/stock"
+        let headers = [
+            "Content-type": "application/json",
+            "ACCEPT": "application/json",
+            "Authorization": "Bearer \(AppUser.accessToken)"
+        ]
+        
+        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
+            switch response.result {
+            case .success:
+                guard let code = response.response?.statusCode else { return }
+                if code == 204 {
+                    self.stockButton.isSelected = true
+                } else {
+                    self.stockButton.isSelected = false
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    private func likeRequest() {
+        let url = "https://qiita.com/api/v2/items/\(article.id)/like"
+        let headers = [
+            "Content-type": "application/json",
+            "ACCEPT": "application/json",
+            "Authorization": "Bearer \(AppUser.accessToken)"
+        ]
+        
+        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
+            switch response.result {
+            case .success:
+                guard let code = response.response?.statusCode else { return }
+                if code == 204 {
+                    self.likeButton.isSelected = true
+                    self.likeButton.backgroundColor = AppColor.main
+                } else {
+                    self.likeButton.isSelected = false
+                    self.likeButton.backgroundColor = AppColor.white
+                }
+            case .failure(let error):
+                print(error)
+            }
         }
     }
     
@@ -73,9 +123,7 @@ final class ArticleViewController: MainViewController {
             self.stockButton.frame.origin.y -= (self.tabBarController?.tabBar.frame.height)! + 75
             self.likeButton.frame.origin.y -= (self.tabBarController?.tabBar.frame.height)! + 150
         })
-    }
-    
-    private func btnEvent() {
+        
         likeButton.rx.tap.subscribe(onNext: { _ in
             self.likeButton.isSelected = !self.likeButton.isSelected
             if self.likeButton.isSelected {
