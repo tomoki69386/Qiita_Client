@@ -18,6 +18,12 @@ final class ArticleViewController: MainViewController {
     private let article: Article
     private let mdView = MarkdownView()
     
+    private let headers = [
+        "Content-type": "application/json",
+        "ACCEPT": "application/json",
+        "Authorization": "Bearer \(AppUser.accessToken)"
+    ]
+    
     private let likeButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = AppColor.white
@@ -62,54 +68,6 @@ final class ArticleViewController: MainViewController {
         }
     }
     
-    private func stockRequest() {
-        let url = "https://qiita.com/api/v2/items/\(article.id)/stock"
-        let headers = [
-            "Content-type": "application/json",
-            "ACCEPT": "application/json",
-            "Authorization": "Bearer \(AppUser.accessToken)"
-        ]
-        
-        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
-            switch response.result {
-            case .success:
-                guard let code = response.response?.statusCode else { return }
-                if code == 204 {
-                    self.stockButton.isSelected = true
-                } else {
-                    self.stockButton.isSelected = false
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    private func likeRequest() {
-        let url = "https://qiita.com/api/v2/items/\(article.id)/like"
-        let headers = [
-            "Content-type": "application/json",
-            "ACCEPT": "application/json",
-            "Authorization": "Bearer \(AppUser.accessToken)"
-        ]
-        
-        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
-            switch response.result {
-            case .success:
-                guard let code = response.response?.statusCode else { return }
-                if code == 204 {
-                    self.likeButton.isSelected = true
-                    self.likeButton.backgroundColor = AppColor.main
-                } else {
-                    self.likeButton.isSelected = false
-                    self.likeButton.backgroundColor = AppColor.white
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
     private func setBtn() {
         likeButton.frame = CGRect(x: view.frame.width - 75, y: UIScreen.main.bounds.height, width: 60, height: 60)
         likeButton.layer.cornerRadius = likeButton.frame.width / 2
@@ -140,5 +98,43 @@ final class ArticleViewController: MainViewController {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension ArticleViewController {
+    private func stockRequest() {
+        let url = "https://qiita.com/api/v2/items/\(article.id)/stock"
+        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
+            switch response.result {
+            case .success:
+                guard let code = response.response?.statusCode else { return }
+                if code == 204 {
+                    self.stockButton.isSelected = true
+                } else {
+                    self.stockButton.isSelected = false
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    private func likeRequest() {
+        let url = "https://qiita.com/api/v2/items/\(article.id)/like"
+        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
+            switch response.result {
+            case .success:
+                guard let code = response.response?.statusCode else { return }
+                if code == 204 {
+                    self.likeButton.isSelected = true
+                    self.likeButton.backgroundColor = AppColor.main
+                } else {
+                    self.likeButton.isSelected = false
+                    self.likeButton.backgroundColor = AppColor.white
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
