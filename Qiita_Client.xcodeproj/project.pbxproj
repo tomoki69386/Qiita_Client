@@ -11,6 +11,7 @@
 		B71555C421975550004A1399 /* UserArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555C321975550004A1399 /* UserArticleViewController.swift */; };
 		B715F7DD21958E2600BE0218 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B715F7DC21958E2600BE0218 /* ArticleTableViewCell.swift */; };
 		B715F7DF2195915300BE0218 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B715F7DE2195915300BE0218 /* User.swift */; };
+		B732C0F221A94A8D00C91FCC /* TwitterAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732C0F121A94A8D00C91FCC /* TwitterAlert.framework */; };
 		B74A384E218D1EA60066EA24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A384D218D1EA60066EA24 /* AppDelegate.swift */; };
 		B74A3853218D1EA60066EA24 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74A3851218D1EA60066EA24 /* Home.storyboard */; };
 		B74A3855218D1EA70066EA24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B74A3854218D1EA70066EA24 /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		B71555C321975550004A1399 /* UserArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserArticleViewController.swift; sourceTree = "<group>"; };
 		B715F7DC21958E2600BE0218 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		B715F7DE2195915300BE0218 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B732C0F121A94A8D00C91FCC /* TwitterAlert.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterAlert.framework; path = Carthage/Build/iOS/TwitterAlert.framework; sourceTree = "<group>"; };
 		B74A384A218D1EA60066EA24 /* Qiita_Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qiita_Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74A384D218D1EA60066EA24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B74A3852218D1EA60066EA24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B732C0F221A94A8D00C91FCC /* TwitterAlert.framework in Frameworks */,
 				B76EBD0D21A6143100AD0FFB /* Device.framework in Frameworks */,
 				B76EBCFB21A5FDA800AD0FFB /* SwiftyUserDefaults.framework in Frameworks */,
 				B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */,
@@ -280,6 +283,7 @@
 		B74A385F218D242F0066EA24 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B732C0F121A94A8D00C91FCC /* TwitterAlert.framework */,
 				B76EBD0C21A6143100AD0FFB /* Device.framework */,
 				B76EBCFA21A5FDA800AD0FFB /* SwiftyUserDefaults.framework */,
 				B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */,
@@ -676,6 +680,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/XLPagerTabStrip.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyUserDefaults.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Device.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TwitterAlert.framework",
 			);
 			outputFileListPaths = (
 			);

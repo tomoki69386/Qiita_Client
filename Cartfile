@@ -8,3 +8,4 @@ github "keitaoouchi/MarkdownView"
 github "xmartlabs/XLPagerTabStrip" ~> 8.1
 github "radex/SwiftyUserDefaults" "4.0.0-alpha.1"
 github "Ekhoo/Device" ~> 3.1.2
+github "tomoki69386/TwitterAlert"
