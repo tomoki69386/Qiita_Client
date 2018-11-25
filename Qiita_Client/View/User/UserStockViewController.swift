@@ -32,7 +32,7 @@ class UserStockViewController: MainViewController {
     }
     
     private func request() {
-        let url = "https://qiita.com/api/v2/users/\(AppUser.id)/stocks"
+        let url = "https://qiita.com/api/v2/users/\(AppUser.id)/stocks?page=1&per_page=20"
         let headers = [
             "Content-type": "application/json",
             "ACCEPT": "application/json",
