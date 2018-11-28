@@ -64,16 +64,7 @@ class ArticleTableViewCell: UITableViewCell {
         self.addSubview(createdLabel)
     }
     
-    func setUp() {
-        let imageURL = URL(string: "https://qiita-image-store.s3.amazonaws.com/0/165815/profile-images/1518552294")
-        userImageView.sd_setImage(with: imageURL)
-        titleLabel.text = "NavigationBarを隠すAMScrollViewについて"
-        likeCountLabel.text = "13"
-        tagLabel.text = "Tag: Swift Markdown MarkdownView"
-        createdLabel.text = "2018年11月20日に投稿"
-    }
-    
-    func dataSet(article: Article) {
+    func setUp(article: Article) {
         let imageURL = URL(string: article.user.profileImageURL)
         userImageView.sd_setImage(with: imageURL)
         titleLabel.text = article.title

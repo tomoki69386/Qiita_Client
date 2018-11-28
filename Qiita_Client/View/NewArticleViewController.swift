@@ -1,8 +1,8 @@
 //
-//  UserStockViewController.swift
+//  NewArticleViewController.swift
 //  Qiita_Client
 //
-//  Created by 築山朋紀 on 2018/11/22.
+//  Created by 築山朋紀 on 2018/11/29.
 //  Copyright © 2018 tomoki. All rights reserved.
 //
 
@@ -10,29 +10,35 @@ import UIKit
 import Alamofire
 import XLPagerTabStrip
 
-class UserStockViewController: MainViewController {
-    
-    private var articles = [Article]()
+class NewArticleViewController: UIViewController {
     
     private let tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "ArticleCell")
-        tableView.tableFooterView = UIView()
-        tableView.rowHeight = 90
-        return tableView
+        let table = UITableView()
+        table.tableFooterView = UIView()
+        table.register(ArticleTableViewCell.self, forCellReuseIdentifier: "ArticleCell")
+        table.rowHeight = 90
+        return table
     }()
     
+    private var articles = [Article]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.dataSource = self
         tableView.delegate = self
-        self.view.addSubview(tableView)
+        tableView.dataSource = self
         request()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        tableView.frame = view.bounds
+        self.view.addSubview(tableView)
+    }
+    
     private func request() {
-        let url = "https://qiita.com/api/v2/users/\(AppUser.id)/stocks?page=1&per_page=20"
+        let url = "https://qiita.com/api/v2/items?page=1&per_page=20"
         let headers = [
             "Content-type": "application/json",
             "ACCEPT": "application/json",
@@ -52,33 +58,21 @@ class UserStockViewController: MainViewController {
             }
         }
     }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        tableView.frame = self.view.bounds
-    }
 }
 
-extension UserStockViewController: UITableViewDataSource {
+extension NewArticleViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell") as! ArticleTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleTableViewCell
         cell.setUp(article: articles[indexPath.row])
         return cell
     }
 }
 
-extension UserStockViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-    }
-}
-
-extension UserStockViewController: UITableViewDelegate {
+extension NewArticleViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let VC = ArticleViewController(article: articles[indexPath.row])
@@ -86,8 +80,8 @@ extension UserStockViewController: UITableViewDelegate {
     }
 }
 
-extension UserStockViewController: IndicatorInfoProvider {
+extension NewArticleViewController: IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return "ストック"
+        return "新着記事"
     }
 }

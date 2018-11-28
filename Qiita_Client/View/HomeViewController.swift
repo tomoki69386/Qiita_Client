@@ -7,59 +7,35 @@
 //
 
 import UIKit
-import AMScrollingNavbar
+import XLPagerTabStrip
 
-class HomeViewController: MainViewController {
-    
-    private var items = [Article]()
-    private let tableView = UITableView()
+class HomeViewController: ButtonBarPagerTabStripViewController {
     
     override func viewDidLoad() {
+        setBarLayout()
         super.viewDidLoad()
         
-        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "Home")
-        tableView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-        view.addSubview(tableView)
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-        navigationItem.title = "記事一覧"
-        let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        navigationItem.backBarButtonItem = backButtonItem
-        
-//        showRequest()
-        tabBarController?.selectedIndex = 1
+        navigationItem.title = "ホーム"
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if let navigationController = navigationController as? ScrollingNavigationController {
-            navigationController.followScrollView(tableView, delay: 50.0)
+    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+        return [
+            Storyboard.newArticle.instantiateViewController()
+        ]
+    }
+    
+    private func setBarLayout() {
+        settings.style.buttonBarBackgroundColor = AppColor.white
+        settings.style.buttonBarItemBackgroundColor = AppColor.white
+        settings.style.buttonBarItemTitleColor = AppColor.main
+        settings.style.selectedBarBackgroundColor = AppColor.main
+        settings.style.selectedBarHeight = 2.5
+        changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) in
+            guard changeCurrentIndex else { return }
+            oldCell?.label.textColor = AppColor.glay
+            oldCell?.label.font = .systemFont(ofSize: CGFloat(15))
+            newCell?.label.textColor = AppColor.main
+            newCell?.label.font = .boldSystemFont(ofSize: 15)
         }
-    }
-    
-    private func showRequest() {
-        items.removeAll()
-    }
-}
-
-extension HomeViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Home", for: indexPath) as! HomeTableViewCell
-        cell.setup(item: items[indexPath.row])
-        return cell
-    }
-}
-
-extension HomeViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let VC = ArticleViewController(article: items[indexPath.row])
-        self.navigationController?.pushViewController(VC, animated: true)
     }
 }

@@ -73,7 +73,7 @@ extension UserArticleViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell") as! ArticleTableViewCell
-        cell.dataSet(article: articles[indexPath.row])
+        cell.setUp(article: articles[indexPath.row])
         return cell
     }
 }

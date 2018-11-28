@@ -14,6 +14,7 @@ class Storyboards {
     static let tabBar = Storyboard<UITabBarController>(name: "TabBarController")
     
     static let homeNav = Storyboard<UINavigationController>(name: "Home")
+    static let newArticle = Storyboard<UIViewController>(name: "NewArticle")
     
     static let userNav = Storyboard<UINavigationController>(name: "User")
     static let userArticle = Storyboard<UserArticleViewController>(name: "UserArticle")
