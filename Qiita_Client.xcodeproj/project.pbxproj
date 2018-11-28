@@ -13,7 +13,6 @@
 		B715F7DF2195915300BE0218 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B715F7DE2195915300BE0218 /* User.swift */; };
 		B732C0F221A94A8D00C91FCC /* TwitterAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732C0F121A94A8D00C91FCC /* TwitterAlert.framework */; };
 		B74A384E218D1EA60066EA24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A384D218D1EA60066EA24 /* AppDelegate.swift */; };
-		B74A3853218D1EA60066EA24 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74A3851218D1EA60066EA24 /* Home.storyboard */; };
 		B74A3855218D1EA70066EA24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B74A3854218D1EA70066EA24 /* Assets.xcassets */; };
 		B74A3858218D1EA70066EA24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74A3856218D1EA70066EA24 /* LaunchScreen.storyboard */; };
 		B74A3865218D24300066EA24 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74A3860218D24300066EA24 /* RxCocoa.framework */; };
@@ -21,7 +20,6 @@
 		B74A3867218D24300066EA24 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74A3862218D24300066EA24 /* RxSwift.framework */; };
 		B74A3868218D24300066EA24 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74A3863218D24300066EA24 /* SDWebImage.framework */; };
 		B74A3869218D24300066EA24 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74A3864218D24300066EA24 /* SnapKit.framework */; };
-		B74A3874218DE7B60066EA24 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A3873218DE7B60066EA24 /* HomeViewController.swift */; };
 		B74A3876218DEE590066EA24 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A3875218DEE590066EA24 /* Article.swift */; };
 		B74A3878218EAB940066EA24 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A3877218EAB940066EA24 /* ArticleViewController.swift */; };
 		B74A387B218EC72A0066EA24 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A387A218EC72A0066EA24 /* UIColor+hex.swift */; };
@@ -73,7 +71,6 @@
 		B732C0F121A94A8D00C91FCC /* TwitterAlert.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterAlert.framework; path = Carthage/Build/iOS/TwitterAlert.framework; sourceTree = "<group>"; };
 		B74A384A218D1EA60066EA24 /* Qiita_Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qiita_Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74A384D218D1EA60066EA24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B74A3852218D1EA60066EA24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		B74A3854218D1EA70066EA24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B74A3857218D1EA70066EA24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B74A3859218D1EA70066EA24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,7 +79,6 @@
 		B74A3862218D24300066EA24 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		B74A3863218D24300066EA24 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		B74A3864218D24300066EA24 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
-		B74A3873218DE7B60066EA24 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B74A3875218DEE590066EA24 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		B74A3877218EAB940066EA24 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		B74A387A218EC72A0066EA24 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
@@ -338,7 +334,6 @@
 		B74A3871218DE78D0066EA24 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B74A3851218D1EA60066EA24 /* Home.storyboard */,
 				B7A922D021AF1DB000D94AE7 /* NewArticle.storyboard */,
 			);
 			name = Home;
@@ -347,7 +342,6 @@
 		B74A3872218DE7A40066EA24 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B74A3873218DE7B60066EA24 /* HomeViewController.swift */,
 				B7A922CE21AF1D8600D94AE7 /* NewArticleViewController.swift */,
 				B74A3877218EAB940066EA24 /* ArticleViewController.swift */,
 			);
@@ -637,7 +631,6 @@
 				B76EBD3421A6D5FB00AD0FFB /* Auth.storyboard in Resources */,
 				B76EBD1321A6320400AD0FFB /* Friend.storyboard in Resources */,
 				B7EFC00321A0B899001A4BD4 /* UserArticle.storyboard in Resources */,
-				B74A3853218D1EA60066EA24 /* Home.storyboard in Resources */,
 				B76EBD3821A6EA8C00AD0FFB /* .env in Resources */,
 				B76EBD0B21A611D800AD0FFB /* Info.storyboard in Resources */,
 				B76EBD3A21A6EA9E00AD0FFB /* .env.sample in Resources */,
@@ -709,7 +702,6 @@
 				B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */,
 				B76EBD0321A6014700AD0FFB /* SettingViewController.swift in Sources */,
 				B71555C421975550004A1399 /* UserArticleViewController.swift in Sources */,
-				B74A3874218DE7B60066EA24 /* HomeViewController.swift in Sources */,
 				B76EBD0F21A627A100AD0FFB /* FriendView.swift in Sources */,
 				B76EBD0921A611CD00AD0FFB /* InfoViewController.swift in Sources */,
 				B786C3DD21A7ECD00026BA1E /* AccessToken.swift in Sources */,
@@ -719,14 +711,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B74A3851218D1EA60066EA24 /* Home.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B74A3852218D1EA60066EA24 /* Base */,
-			);
-			name = Home.storyboard;
-			sourceTree = "<group>";
-		};
 		B74A3856218D1EA70066EA24 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

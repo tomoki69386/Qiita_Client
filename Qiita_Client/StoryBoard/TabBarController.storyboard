@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--NewArticle-->
         <scene sceneID="n5A-Ap-HOB">
             <objects>
-                <viewControllerPlaceholder storyboardName="Home" id="O8c-yk-eAt" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="NewArticle" id="O8c-yk-eAt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="u86-7w-j3e"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aU8-op-v2k" userLabel="First Responder" sceneMemberID="firstResponder"/>

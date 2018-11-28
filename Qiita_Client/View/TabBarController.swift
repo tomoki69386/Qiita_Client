@@ -30,7 +30,7 @@ extension TabBarController {
             let tabBarItem: UITabBarItem
             switch self {
             case .home:
-                nav = Storyboard.homeNav.instantiateViewController()
+                nav = Storyboard.newArticle.instantiateViewController()
                 tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Home"), selectedImage: UIImage(named: "Home"))
             case .user:
                 nav = Storyboard.userNav.instantiateViewController()

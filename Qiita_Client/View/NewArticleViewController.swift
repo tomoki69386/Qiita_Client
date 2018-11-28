@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-import XLPagerTabStrip
 
 class NewArticleViewController: UIViewController {
     
@@ -27,6 +26,7 @@ class NewArticleViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        navigationItem.title = "新着記事"
         request()
     }
     
@@ -77,11 +77,5 @@ extension NewArticleViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let VC = ArticleViewController(article: articles[indexPath.row])
         self.navigationController?.pushViewController(VC, animated: true)
-    }
-}
-
-extension NewArticleViewController: IndicatorInfoProvider {
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return "新着記事"
     }
 }
