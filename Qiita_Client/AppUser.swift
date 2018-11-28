@@ -11,74 +11,92 @@ import SwiftyUserDefaults
 struct AppUser {
     private init() {}
     
+    /// ログイン中のユーザーのアクセストークン
     static var accessToken: String {
         return Defaults[.accessToken]
     }
     
+    /// APIKey
     static var clientID: String {
         return Defaults[.clientID]
     }
     
+    /// APISecret
     static var clientSecret: String {
         return Defaults[.clientSecret]
     }
     
+    /// ユーザーID
     static var id: String {
         return Defaults[.id]
     }
     
+    /// フォローしているユーザーの数
     static var followeesCount: Int {
         return Defaults[.followeesCount]
     }
     
+    /// 自分のことをフォローしてるユーザーの数
     static var followersCount: Int {
         return Defaults[.followersCount]
     }
     
+    /// このユーザーが公開している投稿の数
     static var itemsCount: Int {
         return Defaults[.itemsCount]
     }
     
+    /// ユーザー毎に割り当てられる整数のID
     static var permanentID: Int {
         return Defaults[.permanentID]
     }
     
+    /// プロフィール画像
     static var profileImageURL: String {
         return Defaults[.profileImageURL]
     }
     
+    /// 自己紹介文
     static var userDescription: String? {
         return Defaults[.userDescription]
     }
     
+    /// FacebookID
     static var facebookID: String? {
         return Defaults[.facebookID]
     }
     
+    /// GitHubID
     static var githubLoginName: String? {
         return Defaults[.githubLoginName]
     }
     
+    /// LinkedInID
     static var linkedinID: String? {
         return Defaults[.linkedinID]
     }
     
+    /// 居住地
     static var location: String? {
         return Defaults[.location]
     }
     
+    /// 名前
     static var name: String? {
         return Defaults[.name]
     }
     
+    /// 所属組織
     static var organization: String? {
         return Defaults[.organization]
     }
     
+    /// TwitterID
     static var twitterScreenName: String? {
         return Defaults[.twitterScreenName]
     }
     
+    /// WebサイトのURL
     static var websiteURL: String? {
         return Defaults[.websiteURL]
     }

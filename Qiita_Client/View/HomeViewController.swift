@@ -16,6 +16,7 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
         super.viewDidLoad()
         
         navigationItem.title = "ホーム"
+        print(AppUser.id)
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
