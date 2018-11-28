@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import XLPagerTabStrip
 
-class FollowViewController: UIViewController {
+class FollowViewController: MainViewController {
     
     private let tableView = UITableView()
     private var users = [User]()
@@ -20,11 +20,15 @@ class FollowViewController: UIViewController {
 
         tableView.register(UserShowTableViewCell.self, forCellReuseIdentifier: "UserShowCell")
         tableView.rowHeight = 70
-        tableView.frame = view.bounds
         self.view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
         request()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        tableView.frame = view.bounds
     }
     
     private func request() {

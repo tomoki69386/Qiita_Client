@@ -32,7 +32,7 @@ class UserStockViewController: MainViewController {
     }
     
     private func request() {
-        let url = "https://qiita.com/api/v2/users/\(AppUser.id)/stocks"
+        let url = "https://qiita.com/api/v2/users/\(AppUser.id)/stocks?page=1&per_page=20"
         let headers = [
             "Content-type": "application/json",
             "ACCEPT": "application/json",
@@ -67,7 +67,7 @@ extension UserStockViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell") as! ArticleTableViewCell
-        cell.dataSet(article: articles[indexPath.row])
+        cell.setUp(article: articles[indexPath.row])
         return cell
     }
 }
