@@ -1,0 +1,16 @@
+PODS:
+  - LicensePlist (1.9.1)
+
+DEPENDENCIES:
+  - LicensePlist
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - LicensePlist
+
+SPEC CHECKSUMS:
+  LicensePlist: c39d3fd5cd100f52e97463d44426f2608a42f782
+
+PODFILE CHECKSUM: fb961309b7e7401446b5976edf27c14147963bcc
+
+COCOAPODS: 1.5.3
