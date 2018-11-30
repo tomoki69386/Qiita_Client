@@ -52,8 +52,8 @@
 		B76EBD3121A6D5E400AD0FFB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD3021A6D5E400AD0FFB /* FirstViewController.swift */; };
 		B76EBD3421A6D5FB00AD0FFB /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD3321A6D5FB00AD0FFB /* Auth.storyboard */; };
 		B76EBD3621A6D61200AD0FFB /* First.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD3521A6D61200AD0FFB /* First.storyboard */; };
-		B76EBD3821A6EA8C00AD0FFB /* .env in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD3721A6EA8B00AD0FFB /* .env */; };
 		B76EBD3A21A6EA9E00AD0FFB /* .env.sample in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD3921A6EA9E00AD0FFB /* .env.sample */; };
+		B77BAABB21B1671700816E5A /* .env in Resources */ = {isa = PBXBuildFile; fileRef = B77BAABA21B1671700816E5A /* .env */; };
 		B786C3DD21A7ECD00026BA1E /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B786C3DC21A7ECD00026BA1E /* AccessToken.swift */; };
 		B786C3E021A7F00F0026BA1E /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B786C3DF21A7F00F0026BA1E /* Auth.swift */; };
 		B7A922CF21AF1D8600D94AE7 /* NewArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A922CE21AF1D8600D94AE7 /* NewArticleViewController.swift */; };
@@ -185,8 +185,8 @@
 		B76EBD3021A6D5E400AD0FFB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		B76EBD3321A6D5FB00AD0FFB /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		B76EBD3521A6D61200AD0FFB /* First.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = First.storyboard; sourceTree = "<group>"; };
-		B76EBD3721A6EA8B00AD0FFB /* .env */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 		B76EBD3921A6EA9E00AD0FFB /* .env.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .env.sample; sourceTree = "<group>"; };
+		B77BAABA21B1671700816E5A /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 		B786C3DC21A7ECD00026BA1E /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		B786C3DF21A7F00F0026BA1E /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		B7A922CE21AF1D8600D94AE7 /* NewArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewArticleViewController.swift; sourceTree = "<group>"; };
@@ -280,7 +280,7 @@
 				B74A3856218D1EA70066EA24 /* LaunchScreen.storyboard */,
 				B74A3859218D1EA70066EA24 /* Info.plist */,
 				B7A922E321B0C91D00D94AE7 /* Settings.bundle */,
-				B76EBD3721A6EA8B00AD0FFB /* .env */,
+				B77BAABA21B1671700816E5A /* .env */,
 				B76EBD3921A6EA9E00AD0FFB /* .env.sample */,
 			);
 			path = Qiita_Client;
@@ -645,6 +645,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B77BAABB21B1671700816E5A /* .env in Resources */,
 				B7A922E421B0C91D00D94AE7 /* Settings.bundle in Resources */,
 				B74A3858218D1EA70066EA24 /* LaunchScreen.storyboard in Resources */,
 				B76EBD1721A6322700AD0FFB /* Follower.storyboard in Resources */,
@@ -656,7 +657,6 @@
 				B76EBD3421A6D5FB00AD0FFB /* Auth.storyboard in Resources */,
 				B76EBD1321A6320400AD0FFB /* Friend.storyboard in Resources */,
 				B7EFC00321A0B899001A4BD4 /* UserArticle.storyboard in Resources */,
-				B76EBD3821A6EA8C00AD0FFB /* .env in Resources */,
 				B76EBD0B21A611D800AD0FFB /* Info.storyboard in Resources */,
 				B76EBD3A21A6EA9E00AD0FFB /* .env.sample in Resources */,
 				B76EBD0021A600A700AD0FFB /* Setting.storyboard in Resources */,
