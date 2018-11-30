@@ -35,13 +35,8 @@ class UserArticleViewController: MainViewController {
     
     private func request() {
         let url = "https://qiita.com/api/v2/authenticated_user/items?page=1&per_page=20"
-        let headers = [
-            "Content-type": "application/json",
-            "ACCEPT": "application/json",
-            "Authorization": "Bearer \(AppUser.accessToken)"
-        ]
         
-        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
+        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
             guard let data = response.data else { return }
             switch response.result {
             case .success:

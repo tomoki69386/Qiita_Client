@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+struct APIClient {
+    
+    static let authHeaders: [String: String] = [
+        "Content-type": "application/json",
+        "ACCEPT": "application/json"
+    ]
+
+    static let headers: [String: String] = [
+        "Content-type": "application/json",
+        "ACCEPT": "application/json",
+        "Authorization": "Bearer \(AppUser.accessToken)"
+    ]
+}

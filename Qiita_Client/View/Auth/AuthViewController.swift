@@ -48,12 +48,6 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
         let url = "https://qiita.com/api/v2/access_tokens"
         guard let code = code else { return }
         
-        // 受信可能なレスポンスデータのメディアタイプを指定
-        let headers = [
-            "Content-type": "application/json",
-            "ACCEPT": "application/json"
-        ]
-        
         // 認証に必要な値を設定
         let parameters: Parameters = [
             "client_id": AppUser.clientID,
@@ -61,7 +55,7 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
             "code": code
         ]
         
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: APIClient.authHeaders).responseJSON{ response in
             switch response.result {
             case .success:
                 let decoder = JSONDecoder()

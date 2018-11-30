@@ -18,12 +18,6 @@ final class ArticleViewController: MainViewController {
     private let article: Article
     private let mdView = MarkdownView()
     
-    private let headers = [
-        "Content-type": "application/json",
-        "ACCEPT": "application/json",
-        "Authorization": "Bearer \(AppUser.accessToken)"
-    ]
-    
     private let likeButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = AppColor.white
@@ -104,7 +98,7 @@ final class ArticleViewController: MainViewController {
 extension ArticleViewController {
     private func getStock() {
         let url = "https://qiita.com/api/v2/items/\(article.id)/stock"
-        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
+        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
             switch response.result {
             case .success:
                 guard let code = response.response?.statusCode else { return }
@@ -121,7 +115,7 @@ extension ArticleViewController {
     
     private func getLike() {
         let url = "https://qiita.com/api/v2/items/\(article.id)/like"
-        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
+        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
             switch response.result {
             case .success:
                 guard let code = response.response?.statusCode else { return }
@@ -140,7 +134,7 @@ extension ArticleViewController {
     
     private func toStock() {
         let url = "https://qiita.com/api/v2/items/\(article.id)/stock"
-        Alamofire.request(url, method: .put, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
+        Alamofire.request(url, method: .put, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
             switch response.result {
             case .success:
                 guard let code = response.response?.statusCode else { return }
@@ -157,7 +151,7 @@ extension ArticleViewController {
     
     private func toLike() {
         let url = "https://qiita.com/api/v2/items/\(article.id)/like"
-        Alamofire.request(url, method: .put, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
+        Alamofire.request(url, method: .put, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
             switch response.result {
             case .success:
                 guard let code = response.response?.statusCode else { return }
@@ -173,7 +167,7 @@ extension ArticleViewController {
     
     private func deleteStock() {
         let url = "https://qiita.com/api/v2/items/\(article.id)/stock"
-        Alamofire.request(url, method: .delete, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
+        Alamofire.request(url, method: .delete, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
             switch response.result {
             case .success:
                 guard let code = response.response?.statusCode else { return }
@@ -188,7 +182,7 @@ extension ArticleViewController {
     
     private func deletelike() {
         let url = "https://qiita.com/api/v2/items/\(article.id)/stock"
-        Alamofire.request(url, method: .delete, encoding: JSONEncoding.default, headers: headers).responseJSON{ response in
+        Alamofire.request(url, method: .delete, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
             switch response.result {
             case .success:
                 guard let code = response.response?.statusCode else { return }
