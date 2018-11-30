@@ -10,4 +10,5 @@ $ git clone https://github.com/tomoki69386/Qiita_Client.git
 
 ```bash
 $ carthage bootstrap --platform iOS
+$ pod install
 ```
