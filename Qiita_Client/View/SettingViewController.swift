@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingViewController: UIViewController {
+class SettingViewController: MainViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     
@@ -19,6 +19,8 @@ class SettingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setSwipeBack()
         
         tableView.delegate = self
         tableView.dataSource = self
