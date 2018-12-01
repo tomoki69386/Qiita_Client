@@ -9,6 +9,6 @@
 import UIKit
 import RxSwift
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, SwipeBackable {
     let disposeBag = DisposeBag()
 }

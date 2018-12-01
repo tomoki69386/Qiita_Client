@@ -45,6 +45,7 @@ final class ArticleViewController: MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setSwipeBack()
         navigationItem.title = article.title
         
         mdView.frame = view.bounds

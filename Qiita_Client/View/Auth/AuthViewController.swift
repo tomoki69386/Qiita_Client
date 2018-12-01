@@ -10,13 +10,15 @@ import UIKit
 import WebKit
 import Alamofire
 
-class AuthViewController: UIViewController, WKNavigationDelegate {
+class AuthViewController: MainViewController, WKNavigationDelegate {
     
     private var webView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setSwipeBack()
+
         let url = URL(string: "https://qiita.com/api/v2/oauth/authorize?client_id=\(AppUser.clientID)&scope=read_qiita+write_qiita")
         let urlRequest = URLRequest(url: url!)
         self.webView.load(urlRequest)

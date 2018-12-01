@@ -52,8 +52,9 @@
 		B76EBD3121A6D5E400AD0FFB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD3021A6D5E400AD0FFB /* FirstViewController.swift */; };
 		B76EBD3421A6D5FB00AD0FFB /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD3321A6D5FB00AD0FFB /* Auth.storyboard */; };
 		B76EBD3621A6D61200AD0FFB /* First.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD3521A6D61200AD0FFB /* First.storyboard */; };
-		B76EBD3821A6EA8C00AD0FFB /* .env in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD3721A6EA8B00AD0FFB /* .env */; };
 		B76EBD3A21A6EA9E00AD0FFB /* .env.sample in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD3921A6EA9E00AD0FFB /* .env.sample */; };
+		B77BAABB21B1671700816E5A /* .env in Resources */ = {isa = PBXBuildFile; fileRef = B77BAABA21B1671700816E5A /* .env */; };
+		B77BAADD21B2CC1B00816E5A /* SwipeBackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BAADC21B2CC1B00816E5A /* SwipeBackable.swift */; };
 		B786C3DD21A7ECD00026BA1E /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B786C3DC21A7ECD00026BA1E /* AccessToken.swift */; };
 		B786C3E021A7F00F0026BA1E /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B786C3DF21A7F00F0026BA1E /* Auth.swift */; };
 		B7A922CF21AF1D8600D94AE7 /* NewArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A922CE21AF1D8600D94AE7 /* NewArticleViewController.swift */; };
@@ -185,8 +186,9 @@
 		B76EBD3021A6D5E400AD0FFB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		B76EBD3321A6D5FB00AD0FFB /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		B76EBD3521A6D61200AD0FFB /* First.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = First.storyboard; sourceTree = "<group>"; };
-		B76EBD3721A6EA8B00AD0FFB /* .env */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 		B76EBD3921A6EA9E00AD0FFB /* .env.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .env.sample; sourceTree = "<group>"; };
+		B77BAABA21B1671700816E5A /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
+		B77BAADC21B2CC1B00816E5A /* SwipeBackable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeBackable.swift; sourceTree = "<group>"; };
 		B786C3DC21A7ECD00026BA1E /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		B786C3DF21A7F00F0026BA1E /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		B7A922CE21AF1D8600D94AE7 /* NewArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewArticleViewController.swift; sourceTree = "<group>"; };
@@ -280,7 +282,7 @@
 				B74A3856218D1EA70066EA24 /* LaunchScreen.storyboard */,
 				B74A3859218D1EA70066EA24 /* Info.plist */,
 				B7A922E321B0C91D00D94AE7 /* Settings.bundle */,
-				B76EBD3721A6EA8B00AD0FFB /* .env */,
+				B77BAABA21B1671700816E5A /* .env */,
 				B76EBD3921A6EA9E00AD0FFB /* .env.sample */,
 			);
 			path = Qiita_Client;
@@ -375,6 +377,7 @@
 			children = (
 				B74A387A218EC72A0066EA24 /* UIColor+hex.swift */,
 				B71555C1219750D0004A1399 /* MainViewController.swift */,
+				B77BAADC21B2CC1B00816E5A /* SwipeBackable.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B77BAABB21B1671700816E5A /* .env in Resources */,
 				B7A922E421B0C91D00D94AE7 /* Settings.bundle in Resources */,
 				B74A3858218D1EA70066EA24 /* LaunchScreen.storyboard in Resources */,
 				B76EBD1721A6322700AD0FFB /* Follower.storyboard in Resources */,
@@ -656,7 +660,6 @@
 				B76EBD3421A6D5FB00AD0FFB /* Auth.storyboard in Resources */,
 				B76EBD1321A6320400AD0FFB /* Friend.storyboard in Resources */,
 				B7EFC00321A0B899001A4BD4 /* UserArticle.storyboard in Resources */,
-				B76EBD3821A6EA8C00AD0FFB /* .env in Resources */,
 				B76EBD0B21A611D800AD0FFB /* Info.storyboard in Resources */,
 				B76EBD3A21A6EA9E00AD0FFB /* .env.sample in Resources */,
 				B76EBD0021A600A700AD0FFB /* Setting.storyboard in Resources */,
@@ -758,6 +761,7 @@
 				B76EBD2F21A6D5C300AD0FFB /* AuthViewController.swift in Sources */,
 				B76EBD0521A60A4800AD0FFB /* UserStockViewController.swift in Sources */,
 				B76EBCFD21A5FDF600AD0FFB /* AppUser.swift in Sources */,
+				B77BAADD21B2CC1B00816E5A /* SwipeBackable.swift in Sources */,
 				B7A922CF21AF1D8600D94AE7 /* NewArticleViewController.swift in Sources */,
 				B76EBD1921A6323D00AD0FFB /* FriendViewController.swift in Sources */,
 				B74A387D218EC9310066EA24 /* AppColor.swift in Sources */,
