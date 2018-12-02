@@ -8,33 +8,33 @@
 
 import Foundation
 
-public struct Article: Codable {
+struct Article: Codable {
     
-    public struct Tag: Codable {
+    struct Tag: Codable {
         let name: String
         let versions: [String]
     }
     
     /// タグを特定するための一意な名前
-    public let id: String
+    let id: String
     
     /// Markdown形式の本文
-    public let body: String
+    let body: String
     
     /// データが作成された日時
-    public let createdAt: String
+    let createdAt: String
     
     /// 投稿のタイトル
-    public let title: String
+    let title: String
     
     /// いいねの数
-    public let likesCount: Int
+    let likesCount: Int
     
     /// 投稿のURL
-    public let URL: Foundation.URL
+    let URL: Foundation.URL
     
     /// 投稿者
-    public let user: User
+    let user: User
     
 }
 
