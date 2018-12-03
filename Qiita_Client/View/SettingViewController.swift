@@ -90,12 +90,14 @@ extension SettingViewController: UITableViewDelegate {
             print("お問い合わせ")
         case (2, 0):
             print("利用規約")
+            performSegue(withIdentifier: "toInfo", sender: nil)
         case (2, 1):
             print("プライバシーポリシー")
         case (2, 2):
             print("ライセンス")
+            guard let url = "app-settings:root=General&path=com.gekkado.lunascope".url else { return }
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         default: break
         }
-        performSegue(withIdentifier: "toInfo", sender: nil)
     }
 }

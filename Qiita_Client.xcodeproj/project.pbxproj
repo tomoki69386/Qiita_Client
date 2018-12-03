@@ -61,6 +61,7 @@
 		B7A922D121AF1DB000D94AE7 /* NewArticle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7A922D021AF1DB000D94AE7 /* NewArticle.storyboard */; };
 		B7A922DF21B0C39500D94AE7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A922DE21B0C39500D94AE7 /* APIClient.swift */; };
 		B7A922E421B0C91D00D94AE7 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B7A922E321B0C91D00D94AE7 /* Settings.bundle */; };
+		B7BC96CE21B50B0600022175 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC96CD21B50B0600022175 /* String.swift */; };
 		B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */; };
 		B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */; };
 		B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFC00021A0B850001A4BD4 /* Storyboard.swift */; };
@@ -195,6 +196,7 @@
 		B7A922D021AF1DB000D94AE7 /* NewArticle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewArticle.storyboard; sourceTree = "<group>"; };
 		B7A922DE21B0C39500D94AE7 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		B7A922E321B0C91D00D94AE7 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		B7BC96CD21B50B0600022175 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		B7EFC00021A0B850001A4BD4 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 				B74A387A218EC72A0066EA24 /* UIColor+hex.swift */,
 				B71555C1219750D0004A1399 /* MainViewController.swift */,
 				B77BAADC21B2CC1B00816E5A /* SwipeBackable.swift */,
+				B7BC96CD21B50B0600022175 /* String.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -747,6 +750,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7BC96CE21B50B0600022175 /* String.swift in Sources */,
 				B74A3876218DEE590066EA24 /* Article.swift in Sources */,
 				B74A388A218EF06B0066EA24 /* UserViewController.swift in Sources */,
 				B786C3E021A7F00F0026BA1E /* Auth.swift in Sources */,
