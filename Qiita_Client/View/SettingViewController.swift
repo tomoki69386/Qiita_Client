@@ -63,8 +63,10 @@ extension SettingViewController: UITableViewDataSource {
             cell.textLabel?.text = accounts[indexPath.row]
         case 1:
             cell.textLabel?.text = supports[indexPath.row]
+            cell.accessoryType = .disclosureIndicator
         case 2:
             cell.textLabel?.text = apps[indexPath.row]
+            cell.accessoryType = .disclosureIndicator
         default: break
         }
         return cell
@@ -94,7 +96,6 @@ extension SettingViewController: UITableViewDelegate {
         case (2, 1):
             print("プライバシーポリシー")
         case (2, 2):
-            print("ライセンス")
             guard let url = "app-settings:root=General&path=com.gekkado.lunascope".url else { return }
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         default: break
