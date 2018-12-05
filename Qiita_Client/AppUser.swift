@@ -130,6 +130,7 @@ extension AppUser {
         Defaults[.websiteURL] = user.websiteURL
     }
     
+    /// ログアウトするときにデータをすべて削除します。
     static func logout() {
         Defaults.remove(.accessToken)
         

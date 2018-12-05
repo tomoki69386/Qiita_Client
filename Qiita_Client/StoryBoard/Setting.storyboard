@@ -43,11 +43,20 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="3Jh-m3-3qF" id="eCu-VJ-2UU"/>
+                        <segue destination="KG3-1p-Pwy" kind="modal" identifier="LogOut" id="IiY-pb-1sz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6EK-kA-Wm7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-46" y="-323"/>
+        </scene>
+        <!--First-->
+        <scene sceneID="9xB-N1-mBp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="First" id="KG3-1p-Pwy" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7aF-kx-bws" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="553" y="-391"/>
         </scene>
     </scenes>
 </document>

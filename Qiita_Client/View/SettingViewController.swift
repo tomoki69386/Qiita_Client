@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import TwitterAlert
 
 class SettingViewController: MainViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     
     private let sections = ["アカウント", "サポート", "アプリについて"]
-    private let accounts = ["ブックマーク", "ログアウト"]
+    private let accounts = ["ログアウト"]
     private let supports = ["お問い合わせ"]
     private let apps = ["利用規約", "プライバシーポリシー", "ライセンス"]
 
@@ -38,6 +39,18 @@ class SettingViewController: MainViewController {
         if let indexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPath, animated: true)
         }
+    }
+    
+    private func alertView() {
+        let alert: UIAlertController = UIAlertController(title: "ログアウトしますか？", message: "また利用する場合\n再度ログインする必要があります", preferredStyle: .alert)
+        let defaultAction: UIAlertAction = UIAlertAction(title: "ログアウト", style: .destructive, handler:{ (action: UIAlertAction!) -> Void in
+            AppUser.logout()
+            self.performSegue(withIdentifier: "LogOut", sender: nil)
+        })
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .cancel, handler:{ (action: UIAlertAction!) -> Void in })
+        alert.addAction(defaultAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -85,10 +98,8 @@ extension SettingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch (indexPath.section, indexPath.row) {
         case (0, 0):
-            print("ブックマーク")
-            
-        case (0, 1):
-            print("ログアウト")
+            tableView.deselectRow(at: indexPath, animated: true)
+            self.alertView()
             
         case (1, 0):
             print("お問い合わせ")
