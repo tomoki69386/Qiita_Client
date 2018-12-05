@@ -51,9 +51,9 @@ final class ArticleViewController: MainViewController {
         mdView.frame = view.bounds
         mdView.load(markdown: article.body)
         view.addSubview(mdView)
-        getStock()
-        getLike()
-        setBtn()
+//        getStock()
+//        getLike()
+//        setBtn()
     }
     
     override func viewWillAppear(_ animated: Bool) {
