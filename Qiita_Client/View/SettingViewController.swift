@@ -86,16 +86,23 @@ extension SettingViewController: UITableViewDelegate {
         switch (indexPath.section, indexPath.row) {
         case (0, 0):
             print("ブックマーク")
+            
         case (0, 1):
             print("ログアウト")
+            
         case (1, 0):
             print("お問い合わせ")
+            
         case (2, 0):
-            print("利用規約")
-            performSegue(withIdentifier: "toInfo", sender: nil)
+            let VC = InfoViewController(infoURL: .service)
+            self.navigationController?.pushViewController(VC, animated: true)
+            
         case (2, 1):
-            print("プライバシーポリシー")
+            let VC = InfoViewController(infoURL: .privacy)
+            self.navigationController?.pushViewController(VC, animated: true)
+            
         case (2, 2):
+            tableView.deselectRow(at: indexPath, animated: true)
             guard let url = "app-settings:root=General&path=com.gekkado.lunascope".url else { return }
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         default: break
