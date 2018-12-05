@@ -1,4 +1,4 @@
-# Qiita_Client
+# QiitaView
 
 ## クローン
 
