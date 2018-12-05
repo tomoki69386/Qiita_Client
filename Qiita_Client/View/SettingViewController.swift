@@ -42,15 +42,27 @@ class SettingViewController: MainViewController {
     }
     
     private func alertView() {
-        let alert: UIAlertController = UIAlertController(title: "ログアウトしますか？", message: "また利用する場合\n再度ログインする必要があります", preferredStyle: .alert)
-        let defaultAction: UIAlertAction = UIAlertAction(title: "ログアウト", style: .destructive, handler:{ (action: UIAlertAction!) -> Void in
+        let alert = UIAlertController(title: "ログアウトしますか？", message: "また利用する場合\n再度ログインする必要があります", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "ログアウト", style: .destructive, handler:{ (action: UIAlertAction!) -> Void in
             AppUser.logout()
             self.performSegue(withIdentifier: "LogOut", sender: nil)
         })
-        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .cancel, handler:{ (action: UIAlertAction!) -> Void in })
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
         alert.addAction(defaultAction)
         alert.addAction(cancelAction)
-        present(alert, animated: true, completion: nil)
+        present(alert, animated: true)
+    }
+    
+    private func lineAt() {
+        let alert = UIAlertController(title: "お問い合わせ", message: "LINEに移動します", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "LINEへ", style: .default, handler: { (action: UIAlertAction) -> Void in
+            guard let url = "https://line.me/R/ti/p/%40dtn0766u".url else { return }
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        })
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
+        alert.addAction(defaultAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
     }
 }
 
@@ -102,7 +114,8 @@ extension SettingViewController: UITableViewDelegate {
             self.alertView()
             
         case (1, 0):
-            print("お問い合わせ")
+            tableView.deselectRow(at: indexPath, animated: true)
+            self.lineAt()
             
         case (2, 0):
             let VC = InfoViewController(infoURL: .service)
