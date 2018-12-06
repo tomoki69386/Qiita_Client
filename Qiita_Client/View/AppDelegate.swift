@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Flurry_iOS_SDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -48,7 +49,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let clientSecret = ProcessInfo.processInfo.environment["Client_Secret"] else {
             fatalError("Client_Secretが.envファイルに記載されていません。")
         }
+        guard let FlurryAPIKey = ProcessInfo.processInfo.environment["Flurry_API_Key"] else {
+            fatalError("Flurry_API_Keyが.envファイルに記載されていません。")
+        }
+        
         AppUser.setUp(id: clientID, secret: clientSecret)
+        
+        Flurry.startSession(FlurryAPIKey, with: FlurrySessionBuilder
+            .init()
+            .withCrashReporting(true)
+            .withLogLevel(FlurryLogLevelAll))
         
         if AppUser.accessToken != "" {
             self.window?.rootViewController = Storyboard.tabBar.instantiateViewController()

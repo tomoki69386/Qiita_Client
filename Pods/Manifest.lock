@@ -1,16 +1,23 @@
 PODS:
+  - Flurry-iOS-SDK/FlurryAds (9.2.3):
+    - Flurry-iOS-SDK/FlurrySDK
+  - Flurry-iOS-SDK/FlurrySDK (9.2.3)
   - LicensePlist (1.9.1)
 
 DEPENDENCIES:
+  - Flurry-iOS-SDK/FlurryAds
+  - Flurry-iOS-SDK/FlurrySDK
   - LicensePlist
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Flurry-iOS-SDK
     - LicensePlist
 
 SPEC CHECKSUMS:
+  Flurry-iOS-SDK: 2ea1973a6c9c6b3675765d73ea290b281f8cb084
   LicensePlist: c39d3fd5cd100f52e97463d44426f2608a42f782
 
-PODFILE CHECKSUM: fb961309b7e7401446b5976edf27c14147963bcc
+PODFILE CHECKSUM: b7263a8b74bc033850e5e51d2af48e6f16d60ac1
 
 COCOAPODS: 1.5.3

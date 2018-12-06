@@ -603,6 +603,7 @@
 				B74A3848218D1EA60066EA24 /* Resources */,
 				B74A386A218D24400066EA24 /* ShellScript */,
 				B7A922E021B0C7F700D94AE7 /* LicensePlist */,
+				D735033D09CAFD5EAAEC3861 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -742,6 +743,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\n${PODS_ROOT}/LicensePlist/license-plist --output-path $PRODUCT_NAME/Settings.bundle\nfi\n";
+		};
+		D735033D09CAFD5EAAEC3861 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Qiita_Client/Pods-Qiita_Client-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Flurry-iOS-SDK/Flurry_iOS_SDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Flurry_iOS_SDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Qiita_Client/Pods-Qiita_Client-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -1,3 +1,7 @@
+name: Flurry-iOS-SDK, nameSpecified: 
+body: Developer's use of t…
+version: 9.2.3
+
 name: LicensePlist, nameSpecified: 
 body: MIT License
 
