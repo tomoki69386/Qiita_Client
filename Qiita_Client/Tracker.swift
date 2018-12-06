@@ -23,8 +23,6 @@ enum Log {
     case articleList
     case setting
     case myPage
-    case myArticle
-    case myStock
     case logout
     case info
     case service
@@ -41,10 +39,6 @@ enum Log {
             return "設定画面"
         case .myPage:
             return "Myページ"
-        case .myArticle:
-            return "投稿一覧画面"
-        case .myStock:
-            return "ストック一覧画面"
         case .logout:
             return "ログアウト"
         case .info:
