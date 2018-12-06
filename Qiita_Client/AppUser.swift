@@ -26,6 +26,11 @@ struct AppUser {
         return Defaults[.clientSecret]
     }
     
+    /// デバイスUUID
+    static var deviceID: String {
+        return Defaults[.deviceID]
+    }
+    
     /// ユーザーID
     static var id: String {
         return Defaults[.id]
@@ -112,6 +117,10 @@ extension AppUser {
         Defaults[.accessToken] = token
     }
     
+    static func  saveDeviceUUID(_ id: String) {
+        Defaults[.deviceID] = id
+    }
+    
     static func saveUser(user: User) {
         Defaults[.id] = user.id
         Defaults[.followeesCount] = user.followeesCount
@@ -156,6 +165,7 @@ private extension DefaultsKeys {
     static let accessToken = DefaultsKey<String>("access_token", defaultValue: "")
     static let clientID = DefaultsKey<String>("client_id", defaultValue: "")
     static let clientSecret = DefaultsKey<String>("client_secret", defaultValue: "")
+    static let deviceID = DefaultsKey<String>("Device_UUID")
 
     static let id = DefaultsKey<String>("id")
     static let followeesCount = DefaultsKey<Int>("followees_count")

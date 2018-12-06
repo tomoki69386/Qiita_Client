@@ -10,10 +10,19 @@ import Device
 import Flurry_iOS_SDK
 
 struct Tracker {
+    
     static func event(_ log: Log) {
-        /// シミュレーターじゃないときにevent送信
         if !Device.isSimulator() {
             Flurry.logEvent(log.eventName)
+        }
+    }
+    
+    static func setUserID() {
+        if !Device.isSimulator() {
+            if AppUser.deviceID == "" {
+                AppUser.saveDeviceUUID((UIDevice.current.identifierForVendor?.uuidString)!)
+            }
+            Flurry.setUserID(AppUser.deviceID)
         }
     }
 }
