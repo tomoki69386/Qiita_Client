@@ -9,6 +9,7 @@
 import UIKit
 import StoreKit
 import Alamofire
+import AMScrollingNavbar
 
 class NewArticleViewController: UIViewController {
     
@@ -45,9 +46,13 @@ class NewArticleViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         
         Tracker.event(.articleList)
+        
+        if let navigationController = navigationController as? ScrollingNavigationController {
+            navigationController.followScrollView(tableView, delay: 50.0)
+        }
     }
     
     private func request() {
@@ -85,6 +90,9 @@ extension NewArticleViewController: UITableViewDataSource {
 extension NewArticleViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if let navigationController = navigationController as? ScrollingNavigationController {
+            navigationController.showNavbar()
+        }
         let VC = ArticleViewController(article: articles[indexPath.row])
         self.navigationController?.pushViewController(VC, animated: true)
     }

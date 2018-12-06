@@ -49,7 +49,7 @@ class UserViewController: ButtonBarPagerTabStripViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         
         Tracker.event(.myPage)
     }

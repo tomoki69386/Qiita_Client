@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import TwitterAlert
+import AMScrollingNavbar
 
 class SettingViewController: MainViewController {
     
@@ -34,12 +34,16 @@ class SettingViewController: MainViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         
         Tracker.event(.setting)
         
         if let indexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPath, animated: true)
+        }
+        
+        if let navigationController = navigationController as? ScrollingNavigationController {
+            navigationController.followScrollView(tableView, delay: 50.0)
         }
     }
     
@@ -112,6 +116,9 @@ extension SettingViewController: UITableViewDataSource {
 
 extension SettingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let navigationController = navigationController as? ScrollingNavigationController {
+            navigationController.showNavbar()
+        }
         switch (indexPath.section, indexPath.row) {
         case (0, 0):
             tableView.deselectRow(at: indexPath, animated: true)
