@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 import Alamofire
 
 class NewArticleViewController: UIViewController {
@@ -30,6 +31,10 @@ class NewArticleViewController: UIViewController {
         tableView.dataSource = self
         navigationItem.title = "新着記事"
         request()
+        
+        if AppUser.countUp() {
+            SKStoreReviewController.requestReview()
+        }
     }
     
     override func viewWillLayoutSubviews() {

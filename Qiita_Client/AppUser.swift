@@ -31,6 +31,10 @@ struct AppUser {
         return Defaults[.deviceID]
     }
     
+    static var startCount: Int {
+        return Defaults[.startCount]
+    }
+    
     /// ユーザーID
     static var id: String {
         return Defaults[.id]
@@ -121,6 +125,17 @@ extension AppUser {
         Defaults[.deviceID] = id
     }
     
+    /// 起動回数を+1, 10回目ならtrueを返す
+    static func countUp() -> Bool {
+        Defaults[.startCount] += 1
+        print("起動回数...\(startCount)")
+        if startCount >= 5 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     static func saveUser(user: User) {
         Defaults[.id] = user.id
         Defaults[.followeesCount] = user.followeesCount
@@ -166,6 +181,7 @@ private extension DefaultsKeys {
     static let clientID = DefaultsKey<String>("client_id", defaultValue: "")
     static let clientSecret = DefaultsKey<String>("client_secret", defaultValue: "")
     static let deviceID = DefaultsKey<String>("Device_UUID")
+    static let startCount = DefaultsKey<Int>("start_up_count", defaultValue: 0)
 
     static let id = DefaultsKey<String>("id")
     static let followeesCount = DefaultsKey<Int>("followees_count")
