@@ -66,6 +66,7 @@
 		B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */; };
 		B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFC00021A0B850001A4BD4 /* Storyboard.swift */; };
 		B7EFC00321A0B899001A4BD4 /* UserArticle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7EFC00221A0B899001A4BD4 /* UserArticle.storyboard */; };
+		B7FBAB2821B8C38D004673DA /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FBAB2721B8C38D004673DA /* Tracker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -201,6 +202,7 @@
 		B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		B7EFC00021A0B850001A4BD4 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		B7EFC00221A0B899001A4BD4 /* UserArticle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserArticle.storyboard; sourceTree = "<group>"; };
+		B7FBAB2721B8C38D004673DA /* Tracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,6 +341,7 @@
 			children = (
 				B74A387C218EC9310066EA24 /* AppColor.swift */,
 				B76EBCFC21A5FDF600AD0FFB /* AppUser.swift */,
+				B7FBAB2721B8C38D004673DA /* Tracker.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -785,6 +788,7 @@
 				B71555C2219750D0004A1399 /* MainViewController.swift in Sources */,
 				B74A384E218D1EA60066EA24 /* AppDelegate.swift in Sources */,
 				B74A3878218EAB940066EA24 /* ArticleViewController.swift in Sources */,
+				B7FBAB2821B8C38D004673DA /* Tracker.swift in Sources */,
 				B76EBD2F21A6D5C300AD0FFB /* AuthViewController.swift in Sources */,
 				B76EBD0521A60A4800AD0FFB /* UserStockViewController.swift in Sources */,
 				B76EBCFD21A5FDF600AD0FFB /* AppUser.swift in Sources */,

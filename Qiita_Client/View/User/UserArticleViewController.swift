@@ -35,6 +35,12 @@ class UserArticleViewController: MainViewController {
         request()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        Tracker.event(.myArticle)
+    }
+    
     private func request() {
         currentIndex += 1
         let url = "https://qiita.com/api/v2/authenticated_user/items?page=\(currentIndex)&per_page=20"

@@ -58,6 +58,9 @@ final class ArticleViewController: MainViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        Tracker.event(.readArticle)
+
         if let navigationController = navigationController as? ScrollingNavigationController {
             navigationController.followScrollView(mdView, delay: 50.0)
         }

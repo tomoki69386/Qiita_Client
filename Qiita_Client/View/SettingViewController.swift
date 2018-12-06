@@ -36,6 +36,8 @@ class SettingViewController: MainViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
+        Tracker.event(.setting)
+        
         if let indexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPath, animated: true)
         }
@@ -44,6 +46,7 @@ class SettingViewController: MainViewController {
     private func alertView() {
         let alert = UIAlertController(title: "ログアウトしますか？", message: "また利用する場合\n再度ログインする必要があります", preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "ログアウト", style: .destructive, handler:{ (action: UIAlertAction!) -> Void in
+            Tracker.event(.logout)
             AppUser.logout()
             self.performSegue(withIdentifier: "LogOut", sender: nil)
         })
@@ -56,6 +59,7 @@ class SettingViewController: MainViewController {
     private func lineAt() {
         let alert = UIAlertController(title: "お問い合わせ", message: "LINEに移動します", preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "LINEへ", style: .default, handler: { (action: UIAlertAction) -> Void in
+            Tracker.event(.info)
             guard let url = "https://line.me/R/ti/p/%40dtn0766u".url else { return }
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         })
@@ -118,14 +122,17 @@ extension SettingViewController: UITableViewDelegate {
             self.lineAt()
             
         case (2, 0):
+            Tracker.event(.service)
             let VC = InfoViewController(infoURL: .service)
             self.navigationController?.pushViewController(VC, animated: true)
             
         case (2, 1):
+            Tracker.event(.privacy)
             let VC = InfoViewController(infoURL: .privacy)
             self.navigationController?.pushViewController(VC, animated: true)
             
         case (2, 2):
+            Tracker.event(.license)
             tableView.deselectRow(at: indexPath, animated: true)
             guard let url = "app-settings:root=General&path=com.gekkado.lunascope".url else { return }
             UIApplication.shared.open(url, options: [:], completionHandler: nil)

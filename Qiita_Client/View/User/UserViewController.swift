@@ -48,6 +48,12 @@ class UserViewController: ButtonBarPagerTabStripViewController {
         friendView.friendDelegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        Tracker.event(.myPage)
+    }
+    
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         return [
             Storyboard.userArticle.instantiateViewController(),

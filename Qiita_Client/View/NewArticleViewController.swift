@@ -39,6 +39,12 @@ class NewArticleViewController: UIViewController {
         self.view.addSubview(tableView)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        Tracker.event(.articleList)
+    }
+    
     private func request() {
         currentIndex += 1
         let url = "https://qiita.com/api/v2/items?page=\(currentIndex)&per_page=20"
