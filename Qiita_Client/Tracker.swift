@@ -6,12 +6,15 @@
 //  Copyright © 2018 tomoki. All rights reserved.
 //
 
-import Foundation
+import Device
 import Flurry_iOS_SDK
 
 struct Tracker {
     static func event(_ log: Log) {
-        Flurry.logEvent(log.eventName)
+        /// シミュレーターじゃないときにevent送信
+        if !Device.isSimulator() {
+            Flurry.logEvent(log.eventName)
+        }
     }
 }
 
