@@ -8,7 +8,6 @@
 
 import UIKit
 import WebKit
-import Alamofire
 
 class AuthViewController: MainViewController, WKNavigationDelegate {
     
@@ -34,7 +33,9 @@ class AuthViewController: MainViewController, WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if navigationAction.request.url?.scheme == "tomoki-qiita-client" {
             if navigationAction.request.url?.host == "oauth" && navigationAction.request.url?.lastPathComponent == "qiita" {
-                let code = getQueryStringParameter(url: (navigationAction.request.url?.absoluteString)!, param: "code")
+                guard let code = getQueryStringParameter(url: (navigationAction.request.url?.absoluteString)!, param: "code") else {
+                    return
+                }
                 getAccessToken(code: code)
             }
         }
@@ -47,29 +48,13 @@ class AuthViewController: MainViewController, WKNavigationDelegate {
     }
     
     private func getAccessToken(code: String!) {
-        let url = "https://qiita.com/api/v2/access_tokens"
-        guard let code = code else { return }
-        
-        // 認証に必要な値を設定
-        let parameters: Parameters = [
-            "client_id": AppUser.clientID,
-            "client_secret": AppUser.clientSecret,
-            "code": code
-        ]
-        
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: APIClient.authHeaders).responseJSON{ response in
-            switch response.result {
+        Auth.getAccessToken(code: code) { (result) in
+            switch result {
             case .success:
-                let decoder = JSONDecoder()
-                let result = try! decoder.decode(AccessToken.self, from: response.data!)
-                AppUser.saveAccessToken(token: result.token)
-                if AppUser.accessToken != "" {
-                    self.performSegue(withIdentifier: "toTabBar",sender: nil)
-                }
-            case .failure(let error):
-                print(error)
+                self.performSegue(withIdentifier: "toTabBar",sender: nil)
+            case .failure(_, let statusCode):
+                print(statusCode)
             }
         }
     }
-    
 }
