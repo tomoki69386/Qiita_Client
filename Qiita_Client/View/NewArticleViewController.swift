@@ -9,6 +9,7 @@
 import UIKit
 import StoreKit
 import Alamofire
+import DZNEmptyDataSet
 import AMScrollingNavbar
 
 class NewArticleViewController: UIViewController {
@@ -28,8 +29,8 @@ class NewArticleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
         tableView.dataSource = self
+        tableView.delegate = self
         navigationItem.title = "新着記事"
         request()
         
