@@ -34,7 +34,16 @@ class UserStockViewController: MainViewController {
     }
     
     private func request() {
-        
+        UserAPI.fetchUserStockArticle { (result) in
+            switch result {
+            case .success(let decode):
+                self.articles += decode
+                self.tableView.reloadData()
+                
+            case .failure(_, let statusCode):
+                print(statusCode ?? "")
+            }
+        }
     }
     
     override func viewWillLayoutSubviews() {

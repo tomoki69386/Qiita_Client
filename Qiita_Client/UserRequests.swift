@@ -26,3 +26,12 @@ struct UserArticleRequest: GETRequest, DecodingRequest {
     var endpoint: Endpoint { return .getUserArticle }
     
 }
+
+/// UserがStockした記事を取得
+struct UserStockArticleRequest: GETRequest, DecodingRequest {
+    
+    typealias Decoded = ArticleModel
+    
+    var requiresToken: Bool { return true}
+    var endpoint: Endpoint { return .getUserStock}
+}
