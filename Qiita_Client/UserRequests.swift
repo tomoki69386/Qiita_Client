@@ -13,6 +13,6 @@ struct UserProfileRequest: GETRequest, DecodingRequest {
     typealias Decoded = ProfileModel
     
     var requiresToken: Bool { return true }
-    var endpoint: Endpoint { return .user }
+    var endpoint: Endpoint { return .getUserProfile }
     
 }

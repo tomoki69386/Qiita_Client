@@ -15,10 +15,8 @@ extension Endpoint {
         return Endpoint(urlString: hostName)
     }()
     
-    static let appVersion = Endpoint.apiHost + "/api/versions/"
-    
-    /// AccessTokenのUserを取得
-    static let user = Endpoint.apiHost + "api/v2/authenticated_user"
+    /// UserProfileを取得
+    static let getUserProfile = Endpoint.apiHost + "api/v2/authenticated_user"
     
     /// 新着記事取得
     static let newArticle = Endpoint.apiHost + "/api/v2/items?page=1&per_page=20"

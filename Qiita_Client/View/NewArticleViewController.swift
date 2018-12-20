@@ -61,6 +61,7 @@ class NewArticleViewController: UIViewController {
             switch resule {
             case .success(let decoded):
                 self.articles += decoded
+                self.tableView.reloadData()
                 
             case .failure(_, let statusCode):
                 print(statusCode ?? "")
