@@ -44,3 +44,11 @@ struct UserFollowRequest: GETRequest, DecodingRequest {
     var requiresToken: Bool { return true }
     var endpoint: Endpoint { return .getUserFollow}
 }
+
+struct UserFollowerRequest: GETRequest, DecodingRequest {
+    
+    typealias Decoded = ProfileModel
+    
+    var requiresToken: Bool { return true }
+    var endpoint: Endpoint { return .getUserFollower}
+}

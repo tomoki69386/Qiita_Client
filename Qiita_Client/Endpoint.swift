@@ -27,6 +27,9 @@ extension Endpoint {
     /// UserのFollowを取得
     static let getUserFollow = Endpoint.apiHost + "/users/\(AppUser.id)/followees"
     
+    /// UserのFollowerを取得
+    static let getUserFollower = Endpoint.apiHost + "/users/\(AppUser.id)/followers"
+    
     /// 新着記事取得
     static let newArticle = Endpoint.apiHost + "/items?page=1&per_page=20"
 }

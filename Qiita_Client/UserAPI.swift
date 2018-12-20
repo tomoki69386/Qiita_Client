@@ -35,4 +35,10 @@ struct UserAPI {
         let request = UserFollowRequest()
         APIClient.send(request, decodingCompletion: completion)
     }
+    
+    /// Userのフォロワーを取得
+    static func fetchUserFollower(completion: @escaping (APIDecodingResult<[ProfileModel]>) -> Void) {
+        let request = UserFollowerRequest()
+        APIClient.send(request, decodingCompletion: completion)
+    }
 }

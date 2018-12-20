@@ -32,7 +32,16 @@ class FollowerViewController: MainViewController {
     }
     
     private func request() {
-        
+        UserAPI.fetchUserFollower { (result) in
+            switch result {
+            case .success(let decoded):
+                self.users = decoded
+                self.tableView.reloadData()
+                
+            case .failure(_, let statusCode):
+                print(statusCode ?? "")
+            }
+        }
     }
 }
 
