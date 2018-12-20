@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Device
 import StoreKit
 import Alamofire
 import DZNEmptyDataSet
@@ -25,7 +26,7 @@ class NewArticleViewController: UIViewController {
     private var articles = [ArticleModel]()
     private var isaddload: Bool = true
     private var currentIndex = 0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,7 +35,7 @@ class NewArticleViewController: UIViewController {
         navigationItem.title = "新着記事"
         request()
         
-        if AppUser.countUp() {
+        if AppUser.countUp() && !Device.isSimulator() {
             SKStoreReviewController.requestReview()
         }
     }
@@ -64,7 +65,7 @@ class NewArticleViewController: UIViewController {
                 self.articles += decoded
                 self.tableView.reloadData()
                 self.isaddload = true
-
+                
             case .failure(_, let statusCode):
                 print(statusCode ?? "")
             }
