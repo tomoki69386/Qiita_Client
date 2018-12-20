@@ -32,9 +32,16 @@ class FollowViewController: MainViewController {
     }
     
     private func request() {
-        let url = "https://qiita.com/api/v2/users/\(AppUser.id)/followees"
-        
-        
+        UserAPI.fetchUserFollow { (result) in
+            switch result {
+            case .success(let decoded):
+                self.users = decoded
+                self.tableView.reloadData()
+                
+            case .failure(_, let statusCode):
+                print(statusCode ?? "")
+            }
+        }
     }
 }
 

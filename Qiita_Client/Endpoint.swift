@@ -24,6 +24,9 @@ extension Endpoint {
     /// UserがStockした記事を取得
     static let getUserStock = Endpoint.apiHost + "/users/\(AppUser.id)/stocks?page=1&per_page=20"
     
+    /// UserのFollowを取得
+    static let getUserFollow = Endpoint.apiHost + "/users/\(AppUser.id)/followees"
+    
     /// 新着記事取得
     static let newArticle = Endpoint.apiHost + "/items?page=1&per_page=20"
 }

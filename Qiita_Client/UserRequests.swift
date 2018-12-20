@@ -35,3 +35,12 @@ struct UserStockArticleRequest: GETRequest, DecodingRequest {
     var requiresToken: Bool { return true}
     var endpoint: Endpoint { return .getUserStock}
 }
+
+/// Userのフォローを取得
+struct UserFollowRequest: GETRequest, DecodingRequest {
+    
+    typealias Decoded = ProfileModel
+    
+    var requiresToken: Bool { return true }
+    var endpoint: Endpoint { return .getUserFollow}
+}
