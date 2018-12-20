@@ -15,7 +15,7 @@ import AMScrollingNavbar
 
 final class ArticleViewController: MainViewController {
     
-    private let article: Article
+    private let article: ArticleModel
     private let mdView = MarkdownView()
     
     private let likeButton: UIButton = {
@@ -37,7 +37,7 @@ final class ArticleViewController: MainViewController {
         return button
     }()
     
-    init(article: Article) {
+    init(article: ArticleModel) {
         self.article = article
         super.init(nibName: nil, bundle: nil)
     }
@@ -96,107 +96,5 @@ final class ArticleViewController: MainViewController {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-}
-
-extension ArticleViewController {
-    private func getStock() {
-        let url = "https://qiita.com/api/v2/items/\(article.id)/stock"
-        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
-            switch response.result {
-            case .success:
-                guard let code = response.response?.statusCode else { return }
-                if code == 204 {
-                    self.stockButton.isSelected = true
-                } else {
-                    self.stockButton.isSelected = false
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    private func getLike() {
-        let url = "https://qiita.com/api/v2/items/\(article.id)/like"
-        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
-            switch response.result {
-            case .success:
-                guard let code = response.response?.statusCode else { return }
-                if code == 204 {
-                    self.likeButton.isSelected = true
-                    self.likeButton.backgroundColor = AppColor.main
-                } else {
-                    self.likeButton.isSelected = false
-                    self.likeButton.backgroundColor = AppColor.white
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    private func toStock() {
-        let url = "https://qiita.com/api/v2/items/\(article.id)/stock"
-        Alamofire.request(url, method: .put, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
-            switch response.result {
-            case .success:
-                guard let code = response.response?.statusCode else { return }
-                if code == 204 {
-                    self.stockButton.isSelected = true
-                } else {
-                    self.stockButton.isSelected = false
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    private func toLike() {
-        let url = "https://qiita.com/api/v2/items/\(article.id)/like"
-        Alamofire.request(url, method: .put, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
-            switch response.result {
-            case .success:
-                guard let code = response.response?.statusCode else { return }
-                if code == 204 {
-                    self.likeButton.isSelected = true
-                    self.likeButton.backgroundColor = AppColor.main
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    private func deleteStock() {
-        let url = "https://qiita.com/api/v2/items/\(article.id)/stock"
-        Alamofire.request(url, method: .delete, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
-            switch response.result {
-            case .success:
-                guard let code = response.response?.statusCode else { return }
-                if code == 204 {
-                    self.stockButton.isSelected = false
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    private func deletelike() {
-        let url = "https://qiita.com/api/v2/items/\(article.id)/stock"
-        Alamofire.request(url, method: .delete, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
-            switch response.result {
-            case .success:
-                guard let code = response.response?.statusCode else { return }
-                if code == 204 {
-                    self.likeButton.isSelected = false
-                    self.likeButton.backgroundColor = AppColor.white
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
     }
 }

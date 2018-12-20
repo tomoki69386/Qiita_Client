@@ -9,11 +9,6 @@
 import Foundation
 import Alamofire
 
-enum APIResult {
-    case success
-    case failure(Error, statusCode: Int?)
-}
-
 struct Auth {
     static func getUserProfile() {
         let url = "https://qiita.com/api/v2/authenticated_user"

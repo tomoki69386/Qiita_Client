@@ -48,13 +48,6 @@ class AuthViewController: MainViewController, WKNavigationDelegate {
     }
     
     private func getAccessToken(code: String!) {
-        Auth.getAccessToken(code: code) { (result) in
-            switch result {
-            case .success:
-                self.performSegue(withIdentifier: "toTabBar",sender: nil)
-            case .failure(_, let statusCode):
-                print(statusCode)
-            }
-        }
+        
     }
 }

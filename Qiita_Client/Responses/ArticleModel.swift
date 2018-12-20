@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Article: Codable {
+struct ArticleModel: Codable {
     
     struct Tag: Codable {
         let name: String
@@ -34,11 +34,11 @@ struct Article: Codable {
     let URL: Foundation.URL
     
     /// 投稿者
-    let user: User
+    let user: ProfileModel
     
 }
 
-extension Article {
+extension ArticleModel {
     
     enum CodingKeys: String, CodingKey {
         case id           = "id"

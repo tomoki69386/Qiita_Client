@@ -12,7 +12,7 @@ import XLPagerTabStrip
 
 class UserStockViewController: MainViewController {
     
-    private var articles = [Article]()
+    private var articles = [ArticleModel]()
     private var isaddload: Bool = true
     private var currentIndex = 0
     
@@ -34,22 +34,7 @@ class UserStockViewController: MainViewController {
     }
     
     private func request() {
-        currentIndex += 1
-        let url = "https://qiita.com/api/v2/users/\(AppUser.id)/stocks?page=\(currentIndex)&per_page=20"
         
-        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
-            guard let data = response.data else { return }
-            switch response.result {
-            case .success:
-                let decoder = JSONDecoder()
-                let result = try! decoder.decode(Array<Article>.self, from: data)
-                self.articles += result
-                self.tableView.reloadData()
-                self.isaddload = true
-            case .failure(let error):
-                print(error)
-            }
-        }
     }
     
     override func viewWillLayoutSubviews() {

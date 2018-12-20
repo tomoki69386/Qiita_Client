@@ -13,7 +13,7 @@ import XLPagerTabStrip
 class FollowerViewController: MainViewController {
     
     private let tableView = UITableView()
-    private var users = [User]()
+    private var users = [ProfileModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,20 +32,7 @@ class FollowerViewController: MainViewController {
     }
     
     private func request() {
-        let url = "https://qiita.com/api/v2/users/\(AppUser.id)/followers"
         
-        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
-            guard let data = response.data else { return }
-            switch response.result {
-            case .success:
-                let decoder = JSONDecoder()
-                let result = try! decoder.decode(Array<User>.self, from: data)
-                self.users = result
-                self.tableView.reloadData()
-            case .failure(let error):
-                print(error)
-            }
-        }
     }
 }
 

@@ -68,7 +68,7 @@ class UserShowTableViewCell: UITableViewCell {
         self.addSubview(IDLabel)
     }
     
-    func setUp(user: User) {
+    func setUp(user: ProfileModel) {
         let imageURL = URL(string: user.profileImageURL)
         userImageView.sd_setImage(with: imageURL)
         nameLabel.text = user.name

@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  ProfileModel.swift
 //  Qiita_Client
 //
 //  Created by 築山朋紀 on 2018/11/09.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct User: Codable {
+public struct ProfileModel: Codable {
     
     /// 自己紹介文
     public let userDescription: String?
@@ -56,7 +56,7 @@ public struct User: Codable {
     public let websiteURL: String?
 }
 
-extension User {
+extension ProfileModel {
     
     enum CodingKeys: String, CodingKey {
         case id                = "id"

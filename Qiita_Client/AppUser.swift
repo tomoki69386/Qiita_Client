@@ -136,7 +136,7 @@ extension AppUser {
         }
     }
     
-    static func saveUser(user: User) {
+    static func saveUser(user: ProfileModel) {
         Defaults[.id] = user.id
         Defaults[.followeesCount] = user.followeesCount
         Defaults[.followersCount] = user.followersCount

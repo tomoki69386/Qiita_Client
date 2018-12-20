@@ -64,7 +64,7 @@ class ArticleTableViewCell: UITableViewCell {
         self.addSubview(createdLabel)
     }
     
-    func setUp(article: Article) {
+    func setUp(article: ArticleModel) {
         let imageURL = URL(string: article.user.profileImageURL)
         userImageView.sd_setImage(with: imageURL)
         titleLabel.text = article.title
