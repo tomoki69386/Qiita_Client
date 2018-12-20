@@ -36,7 +36,16 @@ class UserArticleViewController: MainViewController {
     }
     
     private func request() {
-        
+        UserAPI.fetchUserArticle { (result) in
+            switch result {
+            case .success(let decode):
+                self.articles += decode
+                self.tableView.reloadData()
+                
+            case .failure(_, let statusCode):
+                print(statusCode ?? "")
+            }
+        }
     }
     
     private func scrollViewWillBeginDragging(scrollView: UIScrollView) {

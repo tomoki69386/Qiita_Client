@@ -11,14 +11,17 @@ import Foundation
 extension Endpoint {
     
     static let apiHost: Endpoint = {
-        let hostName = "https://qiita.com"
+        let hostName = "https://qiita.com/api/v2"
         return Endpoint(urlString: hostName)
     }()
     
     /// UserProfileを取得
-    static let getUserProfile = Endpoint.apiHost + "api/v2/authenticated_user"
+    static let getUserProfile = Endpoint.apiHost + "/authenticated_user"
     
     /// 新着記事取得
-    static let newArticle = Endpoint.apiHost + "/api/v2/items?page=1&per_page=20"
+    static let newArticle = Endpoint.apiHost + "/items?page=1&per_page=20"
+    
+    /// Userの投稿した記事を取得
+    static let getUserArticle = Endpoint.apiHost + "/authenticated_user/items?page=1&per_page=20"
 }
 
