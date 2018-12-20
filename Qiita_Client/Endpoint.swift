@@ -19,7 +19,7 @@ extension Endpoint {
     static let getUserProfile = Endpoint.apiHost + "/authenticated_user"
     
     /// Userの投稿した記事を取得
-    static let getUserArticle = Endpoint.apiHost + "/authenticated_user/items?page=1&per_page=20"
+    static let getUserArticle = Endpoint.apiHost + "/authenticated_user/items"
     
     /// UserがStockした記事を取得
     static let getUserStock = Endpoint.apiHost + "/users/\(AppUser.id)/stocks?page=1&per_page=20"

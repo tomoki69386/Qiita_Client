@@ -36,12 +36,13 @@ class UserArticleViewController: MainViewController {
     }
     
     private func request() {
-        UserAPI.fetchUserArticle { (result) in
+        currentIndex += 1
+        UserAPI.fetchUserArticle(in: currentIndex) { (result) in
             switch result {
             case .success(let decode):
                 self.articles += decode
                 self.tableView.reloadData()
-                
+                self.isaddload = true
             case .failure(_, let statusCode):
                 print(statusCode ?? "")
             }

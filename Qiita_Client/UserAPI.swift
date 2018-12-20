@@ -19,8 +19,8 @@ struct UserAPI {
     }
     
     /// Userの投稿した記事を取得
-    static func fetchUserArticle(completion: @escaping (APIDecodingResult<[ArticleModel]>) -> Void) {
-        let request = UserArticleRequest()
+    static func fetchUserArticle(in index: Int, completion: @escaping (APIDecodingResult<[ArticleModel]>) -> Void) {
+        let request = UserArticleRequest(currentIndex: index)
         APIClient.send(request, decodingCompletion: completion)
     }
     

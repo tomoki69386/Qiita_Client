@@ -63,7 +63,7 @@ protocol ParametersProvider {
 
 // MARK: - GETRequest
 
-protocol GETRequest: APIRequest {}
+protocol GETRequest: APIRequest, ParametersProvider {}
 
 extension GETRequest {
     static var httpMethod: HTTPMethod { return .get }

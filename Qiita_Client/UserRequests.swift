@@ -15,6 +15,8 @@ struct UserProfileRequest: GETRequest, DecodingRequest {
     
     var requiresToken: Bool { return true }
     var endpoint: Endpoint { return .getUserProfile }
+    
+    var parameters: [String : Any] { return [:]}
 }
 
 /// Userの投稿した記事を取得
@@ -25,6 +27,14 @@ struct UserArticleRequest: GETRequest, DecodingRequest {
     var requiresToken: Bool { return true }
     var endpoint: Endpoint { return .getUserArticle }
     
+    let currentIndex: Int
+    
+    var parameters: [String: Any] {
+        return [
+            "page": "\(self.currentIndex)",
+            "per_page": "20"
+        ]
+    }
 }
 
 /// UserがStockした記事を取得
@@ -34,6 +44,8 @@ struct UserStockArticleRequest: GETRequest, DecodingRequest {
     
     var requiresToken: Bool { return true}
     var endpoint: Endpoint { return .getUserStock}
+    
+    var parameters: [String : Any] { return [:]}
 }
 
 /// Userのフォローを取得
@@ -43,6 +55,8 @@ struct UserFollowRequest: GETRequest, DecodingRequest {
     
     var requiresToken: Bool { return true }
     var endpoint: Endpoint { return .getUserFollow}
+    
+    var parameters: [String : Any] { return [:]}
 }
 
 struct UserFollowerRequest: GETRequest, DecodingRequest {
@@ -51,4 +65,6 @@ struct UserFollowerRequest: GETRequest, DecodingRequest {
     
     var requiresToken: Bool { return true }
     var endpoint: Endpoint { return .getUserFollower}
+    
+    var parameters: [String : Any] { return [:]}
 }

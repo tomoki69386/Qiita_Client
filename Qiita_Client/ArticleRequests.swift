@@ -14,4 +14,6 @@ struct NewArticleRequest: GETRequest, DecodingRequest {
     
     var requiresToken: Bool { return true }
     var endpoint: Endpoint { return .newArticle }
+    
+    var parameters: [String : Any] { return [:]}
 }
