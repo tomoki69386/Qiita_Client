@@ -12,6 +12,7 @@ struct UserAPI {
     
     private init() {}
     
+    /// Userのプロフィール取得
     static func fetchProfile(completion: @escaping (APIDecodingResult<ProfileModel>) -> Void) {
         let request = UserProfileRequest()
         APIClient.send(request, decodingCompletion: completion)
