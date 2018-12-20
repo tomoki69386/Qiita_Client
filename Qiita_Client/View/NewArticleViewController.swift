@@ -57,12 +57,14 @@ class NewArticleViewController: UIViewController {
     }
     
     private func request() {
-        ArticleAPI.fetchNewArticle { (resule) in
+        currentIndex += 1
+        ArticleAPI.fetchNewArticle(in: currentIndex) { (resule) in
             switch resule {
             case .success(let decoded):
                 self.articles += decoded
                 self.tableView.reloadData()
-                
+                self.isaddload = true
+
             case .failure(_, let statusCode):
                 print(statusCode ?? "")
             }

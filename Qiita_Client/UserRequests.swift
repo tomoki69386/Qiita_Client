@@ -45,7 +45,14 @@ struct UserStockArticleRequest: GETRequest, DecodingRequest {
     var requiresToken: Bool { return true}
     var endpoint: Endpoint { return .getUserStock}
     
-    var parameters: [String : Any] { return [:]}
+    let currentIndex: Int
+
+    var parameters: [String : Any] {
+        return [
+            "page": "\(self.currentIndex)",
+            "per_page": "20"
+        ]
+    }
 }
 
 /// Userのフォローを取得

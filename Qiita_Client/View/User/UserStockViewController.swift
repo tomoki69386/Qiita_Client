@@ -34,12 +34,14 @@ class UserStockViewController: MainViewController {
     }
     
     private func request() {
-        UserAPI.fetchUserStockArticle { (result) in
+        currentIndex += 1
+        UserAPI.fetchUserStockArticle(in: currentIndex) { (result) in
             switch result {
             case .success(let decode):
                 self.articles += decode
                 self.tableView.reloadData()
-                
+                self.isaddload = true
+
             case .failure(_, let statusCode):
                 print(statusCode ?? "")
             }

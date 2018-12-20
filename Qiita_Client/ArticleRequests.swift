@@ -15,5 +15,12 @@ struct NewArticleRequest: GETRequest, DecodingRequest {
     var requiresToken: Bool { return true }
     var endpoint: Endpoint { return .newArticle }
     
-    var parameters: [String : Any] { return [:]}
+    let currentIndex: Int
+    
+    var parameters: [String : Any] {
+        return [
+            "page": "\(self.currentIndex)",
+            "per_page": "20"
+        ]
+    }
 }

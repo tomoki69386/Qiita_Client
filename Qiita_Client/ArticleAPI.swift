@@ -13,8 +13,8 @@ struct ArticleAPI {
     private init() {}
 
     /// 新着記事の取得
-    static func fetchNewArticle(completion: @escaping (APIDecodingResult<[ArticleModel]>) -> Void) {
-        let request = NewArticleRequest()
+    static func fetchNewArticle(in index: Int, completion: @escaping (APIDecodingResult<[ArticleModel]>) -> Void) {
+        let request = NewArticleRequest(currentIndex: index)
         APIClient.send(request, decodingCompletion: completion)
     }
 }

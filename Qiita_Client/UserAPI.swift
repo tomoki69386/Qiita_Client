@@ -25,8 +25,8 @@ struct UserAPI {
     }
     
     /// UserがStockした記事を取得
-    static func fetchUserStockArticle(completion: @escaping (APIDecodingResult<[ArticleModel]>) -> Void) {
-        let request = UserStockArticleRequest()
+    static func fetchUserStockArticle(in index: Int, completion: @escaping (APIDecodingResult<[ArticleModel]>) -> Void) {
+        let request = UserStockArticleRequest(currentIndex: index)
         APIClient.send(request, decodingCompletion: completion)
     }
     
