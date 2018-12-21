@@ -68,6 +68,7 @@
 		B7A922E421B0C91D00D94AE7 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B7A922E321B0C91D00D94AE7 /* Settings.bundle */; };
 		B7BC96CE21B50B0600022175 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC96CD21B50B0600022175 /* String.swift */; };
 		B7E67F3F21CD0BDB00527DC5 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E67F3E21CD0BDB00527DC5 /* LikeButton.swift */; };
+		B7E67F4121CD154400527DC5 /* MessagePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E67F4021CD154400527DC5 /* MessagePopupView.swift */; };
 		B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */; };
 		B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */; };
 		B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFC00021A0B850001A4BD4 /* Storyboard.swift */; };
@@ -210,6 +211,7 @@
 		B7A922E321B0C91D00D94AE7 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		B7BC96CD21B50B0600022175 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		B7E67F3E21CD0BDB00527DC5 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
+		B7E67F4021CD154400527DC5 /* MessagePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePopupView.swift; sourceTree = "<group>"; };
 		B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		B7EFC00021A0B850001A4BD4 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				B74A384D218D1EA60066EA24 /* AppDelegate.swift */,
 				B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */,
 				B7E67F3E21CD0BDB00527DC5 /* LikeButton.swift */,
+				B7E67F4021CD154400527DC5 /* MessagePopupView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -815,6 +818,7 @@
 				B76EBD0521A60A4800AD0FFB /* UserStockViewController.swift in Sources */,
 				B76EBCFD21A5FDF600AD0FFB /* AppUser.swift in Sources */,
 				B77BAADD21B2CC1B00816E5A /* SwipeBackable.swift in Sources */,
+				B7E67F4121CD154400527DC5 /* MessagePopupView.swift in Sources */,
 				B7A922CF21AF1D8600D94AE7 /* NewArticleViewController.swift in Sources */,
 				B76EBD1921A6323D00AD0FFB /* FriendViewController.swift in Sources */,
 				B74A387D218EC9310066EA24 /* AppColor.swift in Sources */,

@@ -72,6 +72,9 @@ final class ArticleViewController: MainViewController {
         })
         
         likeButton.rx.tap.subscribe(onNext: { _ in
+            if AppUser.id == self.article.user.id {
+                return self.messagePopup(message: "自分の投稿にいいねは出来ません")
+            }
             if self.likeButton.isSelected {
                 self.deleteLike()
             } else {
@@ -80,6 +83,9 @@ final class ArticleViewController: MainViewController {
         }).disposed(by: self.disposeBag)
         
         stockButton.rx.tap.subscribe(onNext: { _ in
+            if AppUser.id == self.article.user.id {
+                return self.messagePopup(message: "自分の投稿をストックは出来ません")
+            }
             if self.stockButton.isSelected {
                 self.deleteStock()
             } else {
@@ -150,6 +156,19 @@ final class ArticleViewController: MainViewController {
                 self.stockButton.isSelected = true
             }
         }
+    }
+    
+    private func messagePopup(message: String) {
+        let messageView = MessagePopupView(frame: self.view.bounds, message: message)
+        let bgView = UIButton(frame: self.view.bounds)
+        bgView.backgroundColor = AppColor.black
+        bgView.alpha = 0.5
+        self.tabBarController?.view.addSubview(bgView)
+        self.tabBarController?.view.addSubview(messageView)
+        bgView.rx.tap.subscribe(onNext: { _ in
+            messageView.removeFromSuperview()
+            bgView.removeFromSuperview()
+        }).disposed(by: disposeBag)
     }
     
     required init?(coder aDecoder: NSCoder) {
