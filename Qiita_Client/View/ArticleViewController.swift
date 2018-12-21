@@ -81,7 +81,7 @@ final class ArticleViewController: MainViewController {
         })
         
         likeButton.rx.tap.subscribe(onNext: { _ in
-            self.likeButton.isSelected = !self.likeButton.isSelected
+            self.likeButton.isSelected.toggle()
             if self.likeButton.isSelected {
                 self.likeButton.backgroundColor = AppColor.main
             } else {
@@ -90,7 +90,7 @@ final class ArticleViewController: MainViewController {
         }).disposed(by: self.disposeBag)
         
         stockButton.rx.tap.subscribe(onNext: { _ in
-            self.stockButton.isSelected = !self.stockButton.isSelected
+            self.stockButton.isSelected.toggle()
         }).disposed(by: self.disposeBag)
     }
     

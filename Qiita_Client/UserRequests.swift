@@ -66,6 +66,7 @@ struct UserFollowRequest: GETRequest, DecodingRequest {
     var parameters: [String : Any] { return [:]}
 }
 
+/// Userのフォロワーを取得
 struct UserFollowerRequest: GETRequest, DecodingRequest {
     
     typealias Decoded = ProfileModel
