@@ -21,12 +21,18 @@ protocol APIRequest {
 extension APIRequest {
     
     var defaultHeaders: [String: String] {
-        guard self.requiresToken else { return [:] }
-        return [
-            "Content-type": "application/json",
-            "ACCEPT": "application/json",
-            "Authorization": "Bearer \(AppUser.accessToken)"
-        ]
+        if self.requiresToken {
+            return [
+                "Content-type": "application/json",
+                "ACCEPT": "application/json",
+                "Authorization": "Bearer \(AppUser.accessToken)"
+            ]
+        } else {
+            return [
+                "Content-type": "application/json",
+                "ACCEPT": "application/json"
+            ]
+        }
     }
     
     var headers: [String: String] { return self.defaultHeaders }

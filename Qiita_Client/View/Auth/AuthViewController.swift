@@ -18,8 +18,8 @@ class AuthViewController: MainViewController, WKNavigationDelegate {
         
         setSwipeBack()
 
-        let url = URL(string: "https://qiita.com/api/v2/oauth/authorize?client_id=\(AppUser.clientID)&scope=read_qiita+write_qiita")
-        let urlRequest = URLRequest(url: url!)
+        guard let url = URL(string: "https://qiita.com/api/v2/oauth/authorize?client_id=\(AppUser.clientID)&scope=read_qiita+write_qiita") else { return }
+        let urlRequest = URLRequest(url: url)
         self.webView.load(urlRequest)
     }
     
@@ -48,6 +48,13 @@ class AuthViewController: MainViewController, WKNavigationDelegate {
     }
     
     private func getAccessToken(code: String!) {
-        
+        AppAPI.fetchAccessToken(code: code) { (result) in
+            switch result {
+            case .success(let decoded):
+                print(decoded)
+            case .failure(let error, _):
+                print(error)
+            }
+        }
     }
 }
