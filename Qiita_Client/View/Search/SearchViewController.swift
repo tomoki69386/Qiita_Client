@@ -64,8 +64,6 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
-        
         ArticleAPI.fetchSearchArticle(text: searchText) { (result) in
             switch result {
             case .success(let decoded):
