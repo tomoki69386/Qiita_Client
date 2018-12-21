@@ -9,22 +9,78 @@
 import UIKit
 
 class SearchViewController: UIViewController {
+    
+    private var searchBar: UISearchBar!
+    private let tableView: UITableView = {
+        let table = UITableView()
+        table.tableFooterView = UIView()
+        table.register(ArticleTableViewCell.self, forCellReuseIdentifier: "ArticleCell")
+        table.rowHeight = 90
+        return table
+    }()
+    
+    private var articles = [ArticleModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "検索"
+        setupSearchBar()
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        tableView.frame = view.bounds
+        self.view.addSubview(tableView)
     }
-    */
+    
+    func setupSearchBar() {
+        if let navigationBarFrame = navigationController?.navigationBar.bounds {
+            let searchBar: UISearchBar = UISearchBar(frame: navigationBarFrame)
+            searchBar.delegate = self
+            searchBar.placeholder = "キーワード検索"
+            searchBar.setValue("キャンセル", forKey: "_cancelButtonText")
+            searchBar.keyboardType = .default
+            navigationItem.titleView = searchBar
+            navigationItem.titleView?.frame = searchBar.frame
+            self.searchBar = searchBar
+        }
+    }
+}
 
+extension SearchViewController: UISearchBarDelegate {
+    // 編集が開始されたら、キャンセルボタンを有効にする
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBar.showsCancelButton = true
+        return true
+    }
+    
+    // キャンセルボタンが押されたらキャンセルボタンを無効にしてフォーカスを外す
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.resignFirstResponder()
+    }
+}
+
+extension SearchViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return articles.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleTableViewCell
+        cell.setUp(article: articles[indexPath.row])
+        return cell
+    }
+}
+
+extension SearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let VC = ArticleViewController(article: articles[indexPath.row])
+        self.navigationController?.pushViewController(VC, animated: true)
+    }
 }
