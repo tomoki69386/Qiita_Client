@@ -20,8 +20,8 @@ class FollowerViewController: MainViewController {
 
         tableView.register(UserShowTableViewCell.self, forCellReuseIdentifier: "UserShowCell")
         tableView.rowHeight = 70
+        tableView.allowsSelection = false
         self.view.addSubview(tableView)
-        tableView.delegate = self
         tableView.dataSource = self
         request()
     }
@@ -54,12 +54,6 @@ extension FollowerViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserShowCell", for: indexPath) as! UserShowTableViewCell
         cell.setUp(user: users[indexPath.row])
         return cell
-    }
-}
-
-extension FollowerViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

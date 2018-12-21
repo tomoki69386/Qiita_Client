@@ -42,18 +42,18 @@ class UserShowTableViewCell: UITableViewCell {
     private let IDLabel: UILabel = {
         let label = UILabel()
         label.textColor = AppColor.glay
-        label.font = .systemFont(ofSize: 15)
+        label.font = .systemFont(ofSize: 12)
         return label
     }()
     
     private func selectButtonPush() {
         selectButton.rx.tap.subscribe( onNext: { _ in
-            self.selectButton.isSelected = !self.selectButton.isSelected
-            if self.selectButton.isSelected {
-                self.selectButton.backgroundColor = AppColor.main
-            } else {
-                self.selectButton.backgroundColor = AppColor.white
-            }
+//            self.selectButton.isSelected = !self.selectButton.isSelected
+//            if self.selectButton.isSelected {
+//                self.selectButton.backgroundColor = AppColor.main
+//            } else {
+//                self.selectButton.backgroundColor = AppColor.white
+//            }
         }).disposed(by: disposeBag)
     }
     
