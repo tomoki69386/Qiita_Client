@@ -13,7 +13,7 @@ struct NewArticleRequest: GETRequest, DecodingRequest {
     typealias Decoded = ArticleModel
     
     var requiresToken: Bool { return true }
-    var endpoint: Endpoint { return .newArticle }
+    var path: String { return "/items" }
     
     let currentIndex: Int
     
@@ -23,4 +23,29 @@ struct NewArticleRequest: GETRequest, DecodingRequest {
             "per_page": "20"
         ]
     }
+}
+
+/// いいねしてるか取得
+struct GetLikeRequest: GETRequest {
+    
+    typealias Decoded = APIResult
+    
+    let id: String
+    
+    var requiresToken: Bool { return true }
+    var path: String { return "/items/\(id)/like" }
+    
+    var parameters: [String : Any] { return [:] }
+}
+
+/// Stockしてるか取得
+struct GetStockRequest: GETRequest {
+    
+    typealias Decoded = APIResult
+    let id: String
+    
+    var requiresToken: Bool { return true }
+    var path: String { return "/items\(id)/Stock" }
+    
+    var parameters: [String : Any] { return [:] }
 }

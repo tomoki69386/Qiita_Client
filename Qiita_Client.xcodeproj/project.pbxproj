@@ -56,7 +56,6 @@
 		B77BAABB21B1671700816E5A /* .env in Resources */ = {isa = PBXBuildFile; fileRef = B77BAABA21B1671700816E5A /* .env */; };
 		B77BAADD21B2CC1B00816E5A /* SwipeBackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BAADC21B2CC1B00816E5A /* SwipeBackable.swift */; };
 		B780947621CA19A3007B063F /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B780947521CA19A3007B063F /* APIRequest.swift */; };
-		B780947821CA19C5007B063F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B780947721CA19C5007B063F /* Endpoint.swift */; };
 		B780947A21CA1A29007B063F /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B780947921CA1A29007B063F /* APIResult.swift */; };
 		B780947C21CA1A3D007B063F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B780947B21CA1A3D007B063F /* APIClient.swift */; };
 		B780948021CA2872007B063F /* UserRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B780947F21CA2872007B063F /* UserRequests.swift */; };
@@ -198,7 +197,6 @@
 		B77BAABA21B1671700816E5A /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 		B77BAADC21B2CC1B00816E5A /* SwipeBackable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeBackable.swift; sourceTree = "<group>"; };
 		B780947521CA19A3007B063F /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
-		B780947721CA19C5007B063F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		B780947921CA1A29007B063F /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
 		B780947B21CA1A3D007B063F /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		B780947F21CA2872007B063F /* UserRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequests.swift; sourceTree = "<group>"; };
@@ -329,7 +327,6 @@
 			children = (
 				B780947421CA1997007B063F /* Requests */,
 				B715F7E02196738100BE0218 /* Responses */,
-				B780947721CA19C5007B063F /* Endpoint.swift */,
 				B780947921CA1A29007B063F /* APIResult.swift */,
 				B780947B21CA1A3D007B063F /* APIClient.swift */,
 				B780948121CA293E007B063F /* UserAPI.swift */,
@@ -805,7 +802,6 @@
 				B76EBD1B21A6324300AD0FFB /* FollowViewController.swift in Sources */,
 				B76EBD1F21A6441300AD0FFB /* UserShowTableViewCell.swift in Sources */,
 				B76EBD1D21A6324C00AD0FFB /* FollowerViewController.swift in Sources */,
-				B780947821CA19C5007B063F /* Endpoint.swift in Sources */,
 				B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */,
 				B71555C2219750D0004A1399 /* MainViewController.swift in Sources */,
 				B74A384E218D1EA60066EA24 /* AppDelegate.swift in Sources */,

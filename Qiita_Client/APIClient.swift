@@ -27,7 +27,6 @@ struct APIClient {
                     preprocessOnSuccess()
                     result = .success
                 case .failure(let error):
-                    printFailedResponse(response, or: error)
                     result = .failure(error, statusCode: response.response?.statusCode)
                 }
         }
@@ -61,7 +60,6 @@ struct APIClient {
                     }
                 case .failure(let error):
                     print("ERROR:", "\(type(of: Request.Decoded.self))型へ変換するJSONが取得できませんでした")
-                    printFailedResponse(response, or: error)
                     result = .failure(error, statusCode: statusCode)
                 }
         }
@@ -95,18 +93,8 @@ struct APIClient {
                     }
                 case .failure(let error):
                     print("ERROR:", "\(type(of: Request.Decoded.self))型へ変換するJSONが取得できませんでした")
-                    printFailedResponse(response, or: error)
                     result = .failure(error, statusCode: statusCode)
                 }
-        }
-    }
-    
-    /// 失敗時のレスポンス内容があれば出力し、なければエラーを出力する
-    private static func printFailedResponse<T>(_ response: DataResponse<T>, or error: Error) {
-        if let data = response.data, let responseString = String(data: data, encoding: .utf8), !responseString.isEmpty {
-            print("エラー内容:", responseString)
-        } else {
-            debugPrint(error)
         }
     }
     

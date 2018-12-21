@@ -52,7 +52,7 @@ final class ArticleViewController: MainViewController {
         mdView.load(markdown: article.body)
         view.addSubview(mdView)
 //        getStock()
-//        getLike()
+        getLike()
 //        setBtn()
     }
     
@@ -92,6 +92,28 @@ final class ArticleViewController: MainViewController {
         stockButton.rx.tap.subscribe(onNext: { _ in
             self.stockButton.isSelected.toggle()
         }).disposed(by: self.disposeBag)
+    }
+    
+    private func getLike() {
+        ArticleAPI.fetchArticleLike(id: article.id) { (result) in
+            switch result {
+            case .success:
+                self.likeButton.isSelected = true
+                self.likeButton.backgroundColor = AppColor.main
+            case .failure(_, _):
+                self.likeButton.isSelected = false
+                self.likeButton.backgroundColor = AppColor.white
+            }
+        }
+        
+        ArticleAPI.fetchArticleStock(id: article.id) { (result) in
+            switch result {
+            case .success:
+                self.stockButton.isSelected = true
+            case .failure(_, _):
+                self.stockButton.isSelected = false
+            }
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

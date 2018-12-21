@@ -8,18 +8,6 @@
 
 import Alamofire
 
-// MARK: - Endpoint -
-
-struct Endpoint {
-    
-    let urlString: String
-    
-    static func +(lhs: Endpoint, path: String) -> Endpoint {
-        return Endpoint(urlString: lhs.urlString + path)
-    }
-    
-}
-
 // MARK: - APIRequest -
 
 protocol APIRequest {
@@ -27,7 +15,7 @@ protocol APIRequest {
     var requiresToken: Bool { get }
     var headers: [String: String] { get }
     var queryItems: [URLQueryItem]? { get }
-    var endpoint: Endpoint { get }
+    var path: String { get }
 }
 
 extension APIRequest {
@@ -44,11 +32,21 @@ extension APIRequest {
     var headers: [String: String] { return self.defaultHeaders }
     var queryItems: [URLQueryItem]? { return nil }
     
+    /// APIバージョン
+    var version: String {
+        return "v2"
+    }
+    
+    /// APIホスト
+    var baseURL: URL {
+        return URL(string: "https://qiita.com/api/\(version)")!
+    }
+    
     /// Alamofireに渡すURLコンポーネント
     var urlComponents: URLComponents {
-        guard var urlComponents = URLComponents(string: self.endpoint.urlString) else {
-            print("Invalid Endpoint:", self.endpoint.urlString)
-            assertionFailure("\(self.endpoint.urlString) は無効なURLです。\(Self.self)のエンドポイントを修正してください。")
+        guard var urlComponents = URLComponents(string: "\(self.baseURL)\(self.path)") else {
+            print("Invalid Endpoint:", self.path)
+            assertionFailure("\(self.path) は無効なURLです。\(Self.self)のエンドポイントを修正してください。")
             return URLComponents()
         }
         urlComponents.queryItems = self.queryItems

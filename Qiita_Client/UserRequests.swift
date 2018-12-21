@@ -14,7 +14,7 @@ struct UserProfileRequest: GETRequest, DecodingRequest {
     typealias Decoded = ProfileModel
     
     var requiresToken: Bool { return true }
-    var endpoint: Endpoint { return .getUserProfile }
+    var path: String { return "/authenticated_user" }
     
     var parameters: [String : Any] { return [:]}
 }
@@ -25,7 +25,7 @@ struct UserArticleRequest: GETRequest, DecodingRequest {
     typealias Decoded = ArticleModel
     
     var requiresToken: Bool { return true }
-    var endpoint: Endpoint { return .getUserArticle }
+    var path: String { return "/authenticated_user/items" }
     
     let currentIndex: Int
     
@@ -43,7 +43,7 @@ struct UserStockArticleRequest: GETRequest, DecodingRequest {
     typealias Decoded = ArticleModel
     
     var requiresToken: Bool { return true}
-    var endpoint: Endpoint { return .getUserStock}
+    var path: String { return "/users/\(AppUser.id)/stocks" }
     
     let currentIndex: Int
 
@@ -61,7 +61,7 @@ struct UserFollowRequest: GETRequest, DecodingRequest {
     typealias Decoded = ProfileModel
     
     var requiresToken: Bool { return true }
-    var endpoint: Endpoint { return .getUserFollow}
+    var path: String { return "/users/\(AppUser.id)/followees" }
     
     var parameters: [String : Any] { return [:]}
 }
@@ -72,7 +72,7 @@ struct UserFollowerRequest: GETRequest, DecodingRequest {
     typealias Decoded = ProfileModel
     
     var requiresToken: Bool { return true }
-    var endpoint: Endpoint { return .getUserFollower}
+    var path: String { return "/users/\(AppUser.id)/followers" }
     
     var parameters: [String : Any] { return [:]}
 }

@@ -17,4 +17,15 @@ struct ArticleAPI {
         let request = NewArticleRequest(currentIndex: index)
         APIClient.send(request, decodingCompletion: completion)
     }
+    
+    /// Likeしてるか取得
+    static func fetchArticleLike(id: String, completion: @escaping (APIResult) -> Void) {
+        let request = GetLikeRequest(id: id)
+        APIClient.send(request, completion: completion)
+    }
+    
+    static func fetchArticleStock(id: String, completion: @escaping (APIResult) -> Void) {
+        let request = GetStockRequest(id: id)
+        APIClient.send(request, completion: completion)
+    }
 }
