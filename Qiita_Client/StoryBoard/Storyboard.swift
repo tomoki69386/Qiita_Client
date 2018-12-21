@@ -15,6 +15,8 @@ class Storyboards {
     
     static let newArticle = Storyboard<UINavigationController>(name: "NewArticle")
     
+    static let searchNav = Storyboard<UINavigationController>(name: "Search")
+    
     static let userNav = Storyboard<UINavigationController>(name: "User")
     static let userArticle = Storyboard<UserArticleViewController>(name: "UserArticle")
     static let userStock = Storyboard<UserStockViewController>(name: "UserStock")

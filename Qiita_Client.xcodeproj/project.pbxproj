@@ -69,6 +69,8 @@
 		B7BC96CE21B50B0600022175 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC96CD21B50B0600022175 /* String.swift */; };
 		B7E67F3F21CD0BDB00527DC5 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E67F3E21CD0BDB00527DC5 /* LikeButton.swift */; };
 		B7E67F4121CD154400527DC5 /* MessagePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E67F4021CD154400527DC5 /* MessagePopupView.swift */; };
+		B7E67F4421CD29F000527DC5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E67F4321CD29F000527DC5 /* SearchViewController.swift */; };
+		B7E67F4721CD2A1200527DC5 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E67F4621CD2A1200527DC5 /* Search.storyboard */; };
 		B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */; };
 		B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */; };
 		B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFC00021A0B850001A4BD4 /* Storyboard.swift */; };
@@ -212,6 +214,8 @@
 		B7BC96CD21B50B0600022175 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		B7E67F3E21CD0BDB00527DC5 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		B7E67F4021CD154400527DC5 /* MessagePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePopupView.swift; sourceTree = "<group>"; };
+		B7E67F4321CD29F000527DC5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		B7E67F4621CD2A1200527DC5 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		B7EFC00021A0B850001A4BD4 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -345,6 +349,7 @@
 				B76EBD0121A6013400AD0FFB /* Setting */,
 				B76EBD1021A631E300AD0FFB /* Friend */,
 				B74A3887218EF0430066EA24 /* User */,
+				B7E67F4521CD29FB00527DC5 /* Search */,
 				B74A3872218DE7A40066EA24 /* Home */,
 				B76EBD2D21A6D5B300AD0FFB /* Auth */,
 				B74A384D218D1EA60066EA24 /* AppDelegate.swift */,
@@ -372,6 +377,7 @@
 				B76EBCFE21A6009B00AD0FFB /* Setting */,
 				B76EBD1121A631F100AD0FFB /* Friend */,
 				B74A3888218EF04D0066EA24 /* User */,
+				B7E67F4221CD29D000527DC5 /* Search */,
 				B74A3871218DE78D0066EA24 /* Home */,
 				B76EBD3221A6D5EB00AD0FFB /* Auth */,
 				B74A387E218ECAD10066EA24 /* TabBarController.storyboard */,
@@ -614,6 +620,22 @@
 			name = Requests;
 			sourceTree = "<group>";
 		};
+		B7E67F4221CD29D000527DC5 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B7E67F4621CD2A1200527DC5 /* Search.storyboard */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		B7E67F4521CD29FB00527DC5 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B7E67F4321CD29F000527DC5 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -680,6 +702,7 @@
 				B7A922E421B0C91D00D94AE7 /* Settings.bundle in Resources */,
 				B74A3858218D1EA70066EA24 /* LaunchScreen.storyboard in Resources */,
 				B76EBD1721A6322700AD0FFB /* Follower.storyboard in Resources */,
+				B7E67F4721CD2A1200527DC5 /* Search.storyboard in Resources */,
 				B74A388C218EF0730066EA24 /* User.storyboard in Resources */,
 				B74A3855218D1EA70066EA24 /* Assets.xcassets in Resources */,
 				B76EBD0721A60A9B00AD0FFB /* UserStock.storyboard in Resources */,
@@ -803,6 +826,7 @@
 				B74A3876218DEE590066EA24 /* ArticleModel.swift in Sources */,
 				B74A388A218EF06B0066EA24 /* UserViewController.swift in Sources */,
 				B780947C21CA1A3D007B063F /* APIClient.swift in Sources */,
+				B7E67F4421CD29F000527DC5 /* SearchViewController.swift in Sources */,
 				B715F7DD21958E2600BE0218 /* ArticleTableViewCell.swift in Sources */,
 				B780948621CA2B85007B063F /* ArticleAPI.swift in Sources */,
 				B76EBD1B21A6324300AD0FFB /* FollowViewController.swift in Sources */,
