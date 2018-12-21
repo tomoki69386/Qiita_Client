@@ -64,12 +64,15 @@ class ArticleTableViewCell: UITableViewCell {
         self.addSubview(createdLabel)
     }
     
-    func setUp(article: Article) {
+    func setUp(article: ArticleModel) {
         let imageURL = URL(string: article.user.profileImageURL)
         userImageView.sd_setImage(with: imageURL)
         titleLabel.text = article.title
         likeCountLabel.text = String(article.likesCount)
         createdLabel.text = article.createdAt
+        for i in article.tags {
+            tagLabel.text = "#\(i.name)"
+        }
     }
     
     override func layoutSubviews() {

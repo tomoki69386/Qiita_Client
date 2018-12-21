@@ -13,15 +13,15 @@ import XLPagerTabStrip
 class FollowerViewController: MainViewController {
     
     private let tableView = UITableView()
-    private var users = [User]()
+    private var users = [ProfileModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.register(UserShowTableViewCell.self, forCellReuseIdentifier: "UserShowCell")
         tableView.rowHeight = 70
+        tableView.allowsSelection = false
         self.view.addSubview(tableView)
-        tableView.delegate = self
         tableView.dataSource = self
         request()
     }
@@ -32,18 +32,14 @@ class FollowerViewController: MainViewController {
     }
     
     private func request() {
-        let url = "https://qiita.com/api/v2/users/\(AppUser.id)/followers"
-        
-        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
-            guard let data = response.data else { return }
-            switch response.result {
-            case .success:
-                let decoder = JSONDecoder()
-                let result = try! decoder.decode(Array<User>.self, from: data)
-                self.users = result
+        UserAPI.fetchUserFollower { (result) in
+            switch result {
+            case .success(let decoded):
+                self.users = decoded
                 self.tableView.reloadData()
-            case .failure(let error):
-                print(error)
+                
+            case .failure(_, let statusCode):
+                print(statusCode ?? "")
             }
         }
     }
@@ -58,12 +54,6 @@ extension FollowerViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserShowCell", for: indexPath) as! UserShowTableViewCell
         cell.setUp(user: users[indexPath.row])
         return cell
-    }
-}
-
-extension FollowerViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

@@ -20,7 +20,7 @@ class UserArticleViewController: MainViewController {
         return tableView
     }()
     
-    private var articles = [Article]()
+    private var articles = [ArticleModel]()
     private var scrollBeginingPoint: CGPoint!
     private var isaddload: Bool = true
     private var currentIndex = 0
@@ -37,19 +37,14 @@ class UserArticleViewController: MainViewController {
     
     private func request() {
         currentIndex += 1
-        let url = "https://qiita.com/api/v2/authenticated_user/items?page=\(currentIndex)&per_page=20"
-        
-        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
-            guard let data = response.data else { return }
-            switch response.result {
-            case .success:
-                let decoder = JSONDecoder()
-                let result = try! decoder.decode(Array<Article>.self, from: data)
-                self.articles += result
+        UserAPI.fetchUserArticle(in: currentIndex) { (result) in
+            switch result {
+            case .success(let decode):
+                self.articles += decode
                 self.tableView.reloadData()
                 self.isaddload = true
-            case .failure(let error):
-                print(error)
+            case .failure(_, let statusCode):
+                print(statusCode ?? "")
             }
         }
     }

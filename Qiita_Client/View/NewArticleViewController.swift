@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Device
 import StoreKit
 import Alamofire
+import DZNEmptyDataSet
 import AMScrollingNavbar
 
 class NewArticleViewController: UIViewController {
@@ -21,19 +23,19 @@ class NewArticleViewController: UIViewController {
         return table
     }()
     
-    private var articles = [Article]()
+    private var articles = [ArticleModel]()
     private var isaddload: Bool = true
     private var currentIndex = 0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
         tableView.dataSource = self
+        tableView.delegate = self
         navigationItem.title = "新着記事"
         request()
         
-        if AppUser.countUp() {
+        if AppUser.countUp() && !Device.isSimulator() {
             SKStoreReviewController.requestReview()
         }
     }
@@ -57,19 +59,15 @@ class NewArticleViewController: UIViewController {
     
     private func request() {
         currentIndex += 1
-        let url = "https://qiita.com/api/v2/items?page=\(currentIndex)&per_page=20"
-        
-        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
-            guard let data = response.data else { return }
-            switch response.result {
-            case .success:
-                let decoder = JSONDecoder()
-                let result = try! decoder.decode(Array<Article>.self, from: data)
-                self.articles += result
+        ArticleAPI.fetchNewArticle(in: currentIndex) { (resule) in
+            switch resule {
+            case .success(let decoded):
+                self.articles += decoded
                 self.tableView.reloadData()
                 self.isaddload = true
-            case .failure(let error):
-                print(error)
+                
+            case .failure(_, let statusCode):
+                print(statusCode ?? "")
             }
         }
     }

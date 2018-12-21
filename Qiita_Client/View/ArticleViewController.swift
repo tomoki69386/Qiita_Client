@@ -15,19 +15,10 @@ import AMScrollingNavbar
 
 final class ArticleViewController: MainViewController {
     
-    private let article: Article
+    private let article: ArticleModel
     private let mdView = MarkdownView()
     
-    private let likeButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = AppColor.white
-        button.layer.borderWidth = 2.0
-        button.layer.borderColor = AppColor.main.cgColor
-        button.setImage(UIImage(named: "like"), for: .normal)
-        button.setImage(UIImage(named: "like_true"), for: .selected)
-        button.clipsToBounds = true
-        return button
-    }()
+    private let likeButton = LikeButton()
     private let stockButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = AppColor.glay
@@ -37,7 +28,7 @@ final class ArticleViewController: MainViewController {
         return button
     }()
     
-    init(article: Article) {
+    init(article: ArticleModel) {
         self.article = article
         super.init(nibName: nil, bundle: nil)
     }
@@ -51,9 +42,9 @@ final class ArticleViewController: MainViewController {
         mdView.frame = view.bounds
         mdView.load(markdown: article.body)
         view.addSubview(mdView)
-//        getStock()
-//        getLike()
-//        setBtn()
+        
+        getStatus()
+        setBtn()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,122 +72,106 @@ final class ArticleViewController: MainViewController {
         })
         
         likeButton.rx.tap.subscribe(onNext: { _ in
-            self.likeButton.isSelected = !self.likeButton.isSelected
+            if AppUser.id == self.article.user.id {
+                return self.messagePopup(message: "自分の投稿にいいねは出来ません")
+            }
             if self.likeButton.isSelected {
-                self.likeButton.backgroundColor = AppColor.main
+                self.deleteLike()
             } else {
-                self.likeButton.backgroundColor = AppColor.white
+                self.putLike()
             }
         }).disposed(by: self.disposeBag)
         
         stockButton.rx.tap.subscribe(onNext: { _ in
-            self.stockButton.isSelected = !self.stockButton.isSelected
+            if AppUser.id == self.article.user.id {
+                return self.messagePopup(message: "自分の投稿をストックは出来ません")
+            }
+            if self.stockButton.isSelected {
+                self.deleteStock()
+            } else {
+                self.putStock()
+            }
         }).disposed(by: self.disposeBag)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-extension ArticleViewController {
-    private func getStock() {
-        let url = "https://qiita.com/api/v2/items/\(article.id)/stock"
-        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
-            switch response.result {
+    private func getStatus() {
+        ArticleAPI.getLike(id: article.id) { (result) in
+            switch result {
             case .success:
-                guard let code = response.response?.statusCode else { return }
-                if code == 204 {
-                    self.stockButton.isSelected = true
-                } else {
-                    self.stockButton.isSelected = false
-                }
-            case .failure(let error):
-                print(error)
+                self.likeButton.isSelected = true
+            case .failure(_, _):
+                self.likeButton.isSelected = false
+            }
+        }
+        
+        ArticleAPI.getStock(id: article.id) { (result) in
+            switch result {
+            case .success:
+                self.stockButton.isSelected = true
+            case .failure(_, _):
+                self.stockButton.isSelected = false
             }
         }
     }
     
-    private func getLike() {
-        let url = "https://qiita.com/api/v2/items/\(article.id)/like"
-        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
-            switch response.result {
+    private func putLike() {
+        ArticleAPI.putLike(id: article.id) { (result) in
+            switch result {
             case .success:
-                guard let code = response.response?.statusCode else { return }
-                if code == 204 {
-                    self.likeButton.isSelected = true
-                    self.likeButton.backgroundColor = AppColor.main
-                } else {
-                    self.likeButton.isSelected = false
-                    self.likeButton.backgroundColor = AppColor.white
-                }
-            case .failure(let error):
-                print(error)
+                self.likeButton.isSelected = true
+            case .failure(_, _):
+                self.likeButton.isSelected = false
             }
         }
     }
     
-    private func toStock() {
-        let url = "https://qiita.com/api/v2/items/\(article.id)/stock"
-        Alamofire.request(url, method: .put, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
-            switch response.result {
+    private func deleteLike() {
+        ArticleAPI.deleteLike(id: article.id, completion: { (result) in
+            switch result {
             case .success:
-                guard let code = response.response?.statusCode else { return }
-                if code == 204 {
-                    self.stockButton.isSelected = true
-                } else {
-                    self.stockButton.isSelected = false
-                }
-            case .failure(let error):
-                print(error)
+                self.likeButton.isSelected = false
+            case .failure(_, _):
+                self.likeButton.isSelected = true
             }
-        }
+        })
     }
     
-    private func toLike() {
-        let url = "https://qiita.com/api/v2/items/\(article.id)/like"
-        Alamofire.request(url, method: .put, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
-            switch response.result {
+    private func putStock() {
+        ArticleAPI.putStock(id: article.id) { (result) in
+            switch result {
             case .success:
-                guard let code = response.response?.statusCode else { return }
-                if code == 204 {
-                    self.likeButton.isSelected = true
-                    self.likeButton.backgroundColor = AppColor.main
-                }
-            case .failure(let error):
-                print(error)
+                self.stockButton.isSelected = true
+            case .failure(_, _):
+                self.stockButton.isSelected = false
             }
         }
     }
     
     private func deleteStock() {
-        let url = "https://qiita.com/api/v2/items/\(article.id)/stock"
-        Alamofire.request(url, method: .delete, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
-            switch response.result {
+        ArticleAPI.deleteStock(id: article.id) { (result) in
+            switch result {
             case .success:
-                guard let code = response.response?.statusCode else { return }
-                if code == 204 {
-                    self.stockButton.isSelected = false
-                }
-            case .failure(let error):
-                print(error)
+                self.stockButton.isSelected = false
+            case .failure(_, _):
+                self.stockButton.isSelected = true
             }
         }
     }
     
-    private func deletelike() {
-        let url = "https://qiita.com/api/v2/items/\(article.id)/stock"
-        Alamofire.request(url, method: .delete, encoding: JSONEncoding.default, headers: APIClient.headers).responseJSON{ response in
-            switch response.result {
-            case .success:
-                guard let code = response.response?.statusCode else { return }
-                if code == 204 {
-                    self.likeButton.isSelected = false
-                    self.likeButton.backgroundColor = AppColor.white
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
+    private func messagePopup(message: String) {
+        let messageView = MessagePopupView(frame: self.view.bounds, message: message)
+        let bgView = UIButton(frame: self.view.bounds)
+        bgView.backgroundColor = AppColor.black
+        bgView.alpha = 0.5
+        self.tabBarController?.view.addSubview(bgView)
+        self.tabBarController?.view.addSubview(messageView)
+        bgView.rx.tap.subscribe(onNext: { _ in
+            messageView.removeFromSuperview()
+            bgView.removeFromSuperview()
+        }).disposed(by: disposeBag)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

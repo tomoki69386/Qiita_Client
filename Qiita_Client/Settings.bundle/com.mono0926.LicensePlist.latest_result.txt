@@ -8,17 +8,19 @@ body: MIT License
 Copyrig…
 version: 1.9.1
 
-name: Alamofire, nameSpecified: , owner: Alamofire, version: 4.7.3
+name: Alamofire, nameSpecified: , owner: Alamofire, version: 4.8.0
 
 name: AMScrollingNavbar, nameSpecified: , owner: andreamazz, version: 5.2.0
 
 name: Device, nameSpecified: , owner: Ekhoo, version: 3.1.2
 
+name: DZNEmptyDataSet, nameSpecified: , owner: dzenbot, version: v1.8.1
+
 name: MarkdownView, nameSpecified: , owner: keitaoouchi, version: 1.5.0
 
 name: RxSwift, nameSpecified: , owner: ReactiveX, version: 4.4.0
 
-name: SDWebImage, nameSpecified: , owner: SDWebImage, version: 4.4.2
+name: SDWebImage, nameSpecified: , owner: SDWebImage, version: 4.4.3
 
 name: SkeletonView, nameSpecified: , owner: Juanpe, version: 1.4.1
 
