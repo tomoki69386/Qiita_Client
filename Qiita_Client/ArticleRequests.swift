@@ -25,6 +25,24 @@ struct NewArticleRequest: GETRequest, DecodingRequest {
     }
 }
 
+struct SearchArticleRequest: GETRequest, DecodingRequest {
+    
+    typealias Decoded = ArticleModel
+    
+    var requiresToken: Bool { return true }
+    var path: String { return "/items" }
+    
+    let text: String
+    
+    var parameters: [String : Any] {
+        return [
+            "page": "1",
+            "per_page": "20",
+            "query": "\(text)"
+        ]
+    }
+}
+
 /// いいねしてるか取得
 struct GetLikeRequest: GETRequest {
     

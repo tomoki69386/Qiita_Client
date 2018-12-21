@@ -71,6 +71,7 @@
 		B7E67F4121CD154400527DC5 /* MessagePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E67F4021CD154400527DC5 /* MessagePopupView.swift */; };
 		B7E67F4421CD29F000527DC5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E67F4321CD29F000527DC5 /* SearchViewController.swift */; };
 		B7E67F4721CD2A1200527DC5 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E67F4621CD2A1200527DC5 /* Search.storyboard */; };
+		B7E67F4921CD319900527DC5 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E67F4821CD319900527DC5 /* UISearchBar.swift */; };
 		B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */; };
 		B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */; };
 		B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFC00021A0B850001A4BD4 /* Storyboard.swift */; };
@@ -216,6 +217,7 @@
 		B7E67F4021CD154400527DC5 /* MessagePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePopupView.swift; sourceTree = "<group>"; };
 		B7E67F4321CD29F000527DC5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B7E67F4621CD2A1200527DC5 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		B7E67F4821CD319900527DC5 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		B7EFC00021A0B850001A4BD4 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 				B71555C1219750D0004A1399 /* MainViewController.swift */,
 				B77BAADC21B2CC1B00816E5A /* SwipeBackable.swift */,
 				B7BC96CD21B50B0600022175 /* String.swift */,
+				B7E67F4821CD319900527DC5 /* UISearchBar.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -851,6 +854,7 @@
 				B76EBD3121A6D5E400AD0FFB /* FirstViewController.swift in Sources */,
 				B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */,
 				B76EBD0321A6014700AD0FFB /* SettingViewController.swift in Sources */,
+				B7E67F4921CD319900527DC5 /* UISearchBar.swift in Sources */,
 				B71555C421975550004A1399 /* UserArticleViewController.swift in Sources */,
 				B7E67F3F21CD0BDB00527DC5 /* LikeButton.swift in Sources */,
 				B76EBD0F21A627A100AD0FFB /* FriendView.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: MainViewController {
     
     private var searchBar: UISearchBar!
     private let tableView: UITableView = {
@@ -61,6 +61,20 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = false
         searchBar.resignFirstResponder()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+        
+        ArticleAPI.fetchSearchArticle(text: searchText) { (result) in
+            switch result {
+            case .success(let decoded):
+                self.articles = decoded
+                self.tableView.reloadData()
+            case .failure(let error, _):
+                print(error)
+            }
+        }
     }
 }
 
