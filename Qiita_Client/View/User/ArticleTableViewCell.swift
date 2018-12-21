@@ -70,6 +70,9 @@ class ArticleTableViewCell: UITableViewCell {
         titleLabel.text = article.title
         likeCountLabel.text = String(article.likesCount)
         createdLabel.text = article.createdAt
+        for i in article.tags {
+            tagLabel.text = "#\(i.name)"
+        }
     }
     
     override func layoutSubviews() {

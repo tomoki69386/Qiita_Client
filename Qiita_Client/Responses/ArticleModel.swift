@@ -15,6 +15,9 @@ struct ArticleModel: Codable {
         let versions: [String]
     }
     
+    /// このタグが付けられた投稿の数
+    let tags: [ArticleModel.Tag]
+    
     /// タグを特定するための一意な名前
     let id: String
     
@@ -41,6 +44,7 @@ struct ArticleModel: Codable {
 extension ArticleModel {
     
     enum CodingKeys: String, CodingKey {
+        case tags         = "tags"
         case id           = "id"
         case body         = "body"
         case createdAt    = "created_at"
