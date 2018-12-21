@@ -41,4 +41,15 @@ struct ArticleAPI {
         let request = GetStockRequest(id: id)
         APIClient.send(request, completion: completion)
     }
+    
+    /// Stockする
+    static func putStock(id: String, completion: @escaping (APIResult) -> Void) {
+        let request = PutStockRequest(id: id)
+        APIClient.send(request, completion: completion)
+    }
+    /// Stockを取り消す
+    static func deleteStock(id: String, completion: @escaping (APIResult) -> Void) {
+        let request = DeleteStockRequest(id: id)
+        APIClient.send(request, completion: completion)
+    }
 }

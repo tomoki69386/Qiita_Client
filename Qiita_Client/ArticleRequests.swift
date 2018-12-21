@@ -68,7 +68,31 @@ struct GetStockRequest: GETRequest {
     let id: String
     
     var requiresToken: Bool { return true }
-    var path: String { return "/items\(id)/Stock" }
+    var path: String { return "/items/\(id)/stock" }
+    
+    var parameters: [String : Any] { return [:] }
+}
+
+/// Stockする
+struct PutStockRequest: PUTRequest {
+    
+    typealias Decoded = APIResult
+    let id: String
+    
+    var requiresToken: Bool { return true }
+    var path: String { return "/items/\(id)/stock" }
+    
+    var parameters: [String : Any] { return [:] }
+}
+
+/// Stockを取り消す
+struct DeleteStockRequest: DELETERequest {
+    
+    typealias Decoded = APIResult
+    let id: String
+    
+    var requiresToken: Bool { return true }
+    var path: String { return "/items/\(id)/stock" }
     
     var parameters: [String : Any] { return [:] }
 }

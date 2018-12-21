@@ -80,7 +80,11 @@ final class ArticleViewController: MainViewController {
         }).disposed(by: self.disposeBag)
         
         stockButton.rx.tap.subscribe(onNext: { _ in
-            self.stockButton.isSelected.toggle()
+            if self.stockButton.isSelected {
+                self.deleteStock()
+            } else {
+                self.putStock()
+            }
         }).disposed(by: self.disposeBag)
     }
     
@@ -127,11 +131,25 @@ final class ArticleViewController: MainViewController {
     }
     
     private func putStock() {
-        
+        ArticleAPI.putStock(id: article.id) { (result) in
+            switch result {
+            case .success:
+                self.stockButton.isSelected = true
+            case .failure(_, _):
+                self.stockButton.isSelected = false
+            }
+        }
     }
     
     private func deleteStock() {
-        
+        ArticleAPI.deleteStock(id: article.id) { (result) in
+            switch result {
+            case .success:
+                self.stockButton.isSelected = false
+            case .failure(_, _):
+                self.stockButton.isSelected = true
+            }
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
