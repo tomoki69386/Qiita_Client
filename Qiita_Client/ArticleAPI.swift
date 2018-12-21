@@ -19,12 +19,25 @@ struct ArticleAPI {
     }
     
     /// Likeしてるか取得
-    static func fetchArticleLike(id: String, completion: @escaping (APIResult) -> Void) {
+    static func getLike(id: String, completion: @escaping (APIResult) -> Void) {
         let request = GetLikeRequest(id: id)
         APIClient.send(request, completion: completion)
     }
     
-    static func fetchArticleStock(id: String, completion: @escaping (APIResult) -> Void) {
+    /// Likeする
+    static func putLike(id: String, completion: @escaping (APIResult) -> Void) {
+        let request = PutLikeRequest(id: id)
+        APIClient.send(request, completion: completion)
+    }
+    
+    /// Likeを取り消す
+    static func deleteLike(id: String, completion: @escaping (APIResult) -> Void) {
+        let request = DelegateLikeRequest(id: id)
+        APIClient.send(request, completion: completion)
+    }
+
+    /// Stockしてるか取得
+    static func getStock(id: String, completion: @escaping (APIResult) -> Void) {
         let request = GetStockRequest(id: id)
         APIClient.send(request, completion: completion)
     }

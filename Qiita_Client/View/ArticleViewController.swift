@@ -18,16 +18,7 @@ final class ArticleViewController: MainViewController {
     private let article: ArticleModel
     private let mdView = MarkdownView()
     
-    private let likeButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = AppColor.white
-        button.layer.borderWidth = 2.0
-        button.layer.borderColor = AppColor.main.cgColor
-        button.setImage(UIImage(named: "like"), for: .normal)
-        button.setImage(UIImage(named: "like_true"), for: .selected)
-        button.clipsToBounds = true
-        return button
-    }()
+    private let likeButton = LikeButton()
     private let stockButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = AppColor.glay
@@ -51,9 +42,9 @@ final class ArticleViewController: MainViewController {
         mdView.frame = view.bounds
         mdView.load(markdown: article.body)
         view.addSubview(mdView)
-//        getStock()
-        getLike()
-//        setBtn()
+        
+        getStatus()
+        setBtn()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,11 +72,10 @@ final class ArticleViewController: MainViewController {
         })
         
         likeButton.rx.tap.subscribe(onNext: { _ in
-            self.likeButton.isSelected.toggle()
             if self.likeButton.isSelected {
-                self.likeButton.backgroundColor = AppColor.main
+                self.deleteLike()
             } else {
-                self.likeButton.backgroundColor = AppColor.white
+                self.putLike()
             }
         }).disposed(by: self.disposeBag)
         
@@ -94,19 +84,17 @@ final class ArticleViewController: MainViewController {
         }).disposed(by: self.disposeBag)
     }
     
-    private func getLike() {
-        ArticleAPI.fetchArticleLike(id: article.id) { (result) in
+    private func getStatus() {
+        ArticleAPI.getLike(id: article.id) { (result) in
             switch result {
             case .success:
                 self.likeButton.isSelected = true
-                self.likeButton.backgroundColor = AppColor.main
             case .failure(_, _):
                 self.likeButton.isSelected = false
-                self.likeButton.backgroundColor = AppColor.white
             }
         }
         
-        ArticleAPI.fetchArticleStock(id: article.id) { (result) in
+        ArticleAPI.getStock(id: article.id) { (result) in
             switch result {
             case .success:
                 self.stockButton.isSelected = true
@@ -114,6 +102,36 @@ final class ArticleViewController: MainViewController {
                 self.stockButton.isSelected = false
             }
         }
+    }
+    
+    private func putLike() {
+        ArticleAPI.putLike(id: article.id) { (result) in
+            switch result {
+            case .success:
+                self.likeButton.isSelected = true
+            case .failure(_, _):
+                self.likeButton.isSelected = false
+            }
+        }
+    }
+    
+    private func deleteLike() {
+        ArticleAPI.deleteLike(id: article.id, completion: { (result) in
+            switch result {
+            case .success:
+                self.likeButton.isSelected = false
+            case .failure(_, _):
+                self.likeButton.isSelected = true
+            }
+        })
+    }
+    
+    private func putStock() {
+        
+    }
+    
+    private func deleteStock() {
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

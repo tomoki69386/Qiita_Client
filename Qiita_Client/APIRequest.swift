@@ -83,6 +83,14 @@ extension PUTRequest {
     static var httpMethod: HTTPMethod { return .put }
 }
 
+// MARK: - DELETERequest
+
+protocol DELETERequest: APIRequest, ParametersProvider {}
+
+extension DELETERequest {
+    static var httpMethod: HTTPMethod { return .delete }
+}
+
 // MARK: - DecodingRequest
 
 protocol DecodingRequest: APIRequest {

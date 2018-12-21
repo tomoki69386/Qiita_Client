@@ -29,7 +29,30 @@ struct NewArticleRequest: GETRequest, DecodingRequest {
 struct GetLikeRequest: GETRequest {
     
     typealias Decoded = APIResult
+    let id: String
     
+    var requiresToken: Bool { return true }
+    var path: String { return "/items/\(id)/like" }
+    
+    var parameters: [String : Any] { return [:] }
+}
+
+/// いいねする
+struct PutLikeRequest: PUTRequest {
+    
+    typealias Decoded = APIResult
+    let id: String
+    
+    var requiresToken: Bool { return true }
+    var path: String { return "/items/\(id)/like" }
+    
+    var parameters: [String : Any] { return [:] }
+}
+
+/// いいねを取り消す
+struct DelegateLikeRequest: DELETERequest {
+    
+    typealias Decoded = APIResult
     let id: String
     
     var requiresToken: Bool { return true }

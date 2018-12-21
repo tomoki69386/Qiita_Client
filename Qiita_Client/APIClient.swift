@@ -22,8 +22,7 @@ struct APIClient {
                 defer { completion(result) }
                 
                 switch response.result {
-                case .success(let string):
-                    debugPrint(string)
+                case .success(_):
                     preprocessOnSuccess()
                     result = .success
                 case .failure(let error):
