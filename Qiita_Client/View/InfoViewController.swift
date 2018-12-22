@@ -20,6 +20,8 @@ class InfoViewController: MainViewController {
     
         setSwipeBack()
         navigationItem.title = "お問い合わせ"
+        nameInputField.delegate = self
+        nameInputField.becomeFirstResponder()
         let barButton = UIBarButtonItem(title: "送信", style: .done, target: self, action: #selector(InfoViewController.send))
         barButton.tintColor = AppColor.white
         barButton.isEnabled = false
@@ -61,5 +63,16 @@ class InfoViewController: MainViewController {
                 print(error)
             }
         }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+}
+
+extension InfoViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textView.becomeFirstResponder()
+        return true
     }
 }
