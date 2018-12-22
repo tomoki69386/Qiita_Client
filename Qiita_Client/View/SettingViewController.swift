@@ -46,8 +46,6 @@ class SettingViewController: MainViewController {
         if let navigationController = navigationController as? ScrollingNavigationController {
             navigationController.followScrollView(tableView, delay: 50.0)
         }
-        
-        performSegue(withIdentifier: "toInfo", sender: nil)
     }
     
     private func alertView() {
@@ -56,19 +54,6 @@ class SettingViewController: MainViewController {
             Tracker.screenName(.logout)
             AppUser.logout()
             self.performSegue(withIdentifier: "LogOut", sender: nil)
-        })
-        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
-        alert.addAction(defaultAction)
-        alert.addAction(cancelAction)
-        present(alert, animated: true)
-    }
-    
-    private func lineAt() {
-        let alert = UIAlertController(title: "お問い合わせ", message: "LINEに移動します", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "LINEへ", style: .default, handler: { (action: UIAlertAction) -> Void in
-            Tracker.screenName(.info)
-            guard let url = "https://line.me/R/ti/p/%40dtn0766u".url else { return }
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         })
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
         alert.addAction(defaultAction)
@@ -128,8 +113,7 @@ extension SettingViewController: UITableViewDelegate {
             self.alertView()
             
         case (1, 0):
-            tableView.deselectRow(at: indexPath, animated: true)
-            self.lineAt()
+            performSegue(withIdentifier: "toInfo", sender: nil)
             
         case (2, 0):
             Tracker.screenName(.service)
