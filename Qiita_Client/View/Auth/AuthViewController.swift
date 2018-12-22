@@ -51,9 +51,24 @@ class AuthViewController: MainViewController, WKNavigationDelegate {
         AppAPI.fetchAccessToken(code: code) { (result) in
             switch result {
             case .success(let decoded):
-                print(decoded)
+                AppUser.saveAccessToken(token: decoded.token)
+                self.getUser()
             case .failure(let error, _):
                 print(error)
+                /// Token取得に失敗しました。
+            }
+        }
+    }
+    
+    private func getUser() {
+        UserAPI.fetchProfile { (result) in
+            switch result {
+            case .success(let decoded):
+                AppUser.saveUser(user: decoded)
+                self.performSegue(withIdentifier: "toTabBar", sender: nil)
+            case .failure(_, let statusCode):
+                print(statusCode)
+                /// User情報の取得に失敗しました。
             }
         }
     }
