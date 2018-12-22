@@ -13,7 +13,7 @@ struct AccessTokenRequest: POSTRequest, DecodingRequest {
     typealias Decoded = AccessTokenModel
     
     var requiresToken: Bool { return false }
-    var path: String { return "/access_token" }
+    var path: String { return "/access_tokens" }
     
     let code: String
     
