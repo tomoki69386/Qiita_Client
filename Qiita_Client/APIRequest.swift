@@ -126,27 +126,5 @@ protocol DecodingRequest: APIRequest {
     associatedtype Decoded: Decodable
 }
 
-protocol PageableRequestType: APIRequest {
-    
-    /// ページ番号 (1から100まで)
-    var page: Int { get set }
-    
-    /// 1ページあたりに含まれる要素数 (1から100まで)
-    var perPage: Int { get set }
-    
-}
-
-extension PageableRequestType {
-    
-    /// ページング用パラメータ
-    var pageParamaters: [String: String] {
-        return [
-            "page"     : "\(page)",
-            "per_page" : "\(perPage)"
-        ]
-    }
-    
-}
-
 
 
