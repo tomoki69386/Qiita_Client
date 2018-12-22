@@ -21,4 +21,10 @@ class FirstViewController: UIViewController {
         registrationButton.backgroundColor = AppColor.main
         registrationButton.layer.cornerRadius = registrationButton.frame.height / 2
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        Tracker.event(.lp)
+    }
 }

@@ -28,15 +28,41 @@ struct Tracker {
 }
 
 enum Log {
+    /// 記事詳細画面
     case readArticle
+    
+    /// 記事一覧画面
     case articleList
+    
+    ///検索画面
+    case search
+    
+    ///設定画面
     case setting
+    
+    ///Myページ
     case myPage
+    
+    ///ログアウト
     case logout
+    
+    ///お問い合わせ
     case info
+    
+    ///利用規約
     case service
+    
+    ///プライバシーポリシー
     case privacy
+    
+    ///ライセンス
     case license
+    
+    /// LP画面
+    case lp
+    
+    /// 認証画面
+    case auth
     
     var eventName: String {
         switch self {
@@ -44,6 +70,8 @@ enum Log {
             return "記事詳細画面"
         case .articleList:
             return "記事一覧画面"
+        case .search:
+            return "検索画面"
         case .setting:
             return "設定画面"
         case .myPage:
@@ -58,6 +86,10 @@ enum Log {
             return "プライバシーポリシー"
         case .license:
             return "ライセンス"
+        case .lp:
+            return "LP画面"
+        case .auth:
+            return "認証画面"
         }
     }
 }

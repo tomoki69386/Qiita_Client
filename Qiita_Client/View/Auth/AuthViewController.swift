@@ -23,6 +23,12 @@ class AuthViewController: MainViewController, WKNavigationDelegate {
         self.webView.load(urlRequest)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        Tracker.event(.auth)
+    }
+    
     override func loadView() {
         let webConfiguration = WKWebViewConfiguration()
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
