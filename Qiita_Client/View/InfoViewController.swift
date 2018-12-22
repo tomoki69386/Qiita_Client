@@ -38,6 +38,8 @@ class InfoViewController: MainViewController {
     }
     
     @objc func send() {
+        nameInputField.resignFirstResponder()
+        textView.resignFirstResponder()
         guard let name = nameInputField.text else { return }
         guard let message = textView.text else { return }
         let version: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
