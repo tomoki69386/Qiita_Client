@@ -13,7 +13,7 @@ struct AccessTokenRequest: POSTRequest, DecodingRequest {
     typealias Decoded = AccessTokenModel
     
     var isAPIHost: BaseURL { return .qiita }
-    var requiresToken: Bool { return false }
+    var isHeaders: Headers { return .uncertified }
     var path: String { return "/access_tokens" }
     
     let code: String

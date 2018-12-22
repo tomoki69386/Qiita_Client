@@ -14,7 +14,7 @@ struct UserProfileRequest: GETRequest, DecodingRequest {
     typealias Decoded = ProfileModel
     
     var isAPIHost: BaseURL { return .qiita }
-    var requiresToken: Bool { return true }
+    var isHeaders: Headers { return .defaults }
     var path: String { return "/authenticated_user" }
     
     var parameters: [String : Any] { return [:]}
@@ -26,7 +26,7 @@ struct UserArticleRequest: GETRequest, DecodingRequest {
     typealias Decoded = ArticleModel
     
     var isAPIHost: BaseURL { return .qiita }
-    var requiresToken: Bool { return true }
+    var isHeaders: Headers { return .defaults }
     var path: String { return "/authenticated_user/items" }
     
     let currentIndex: Int
@@ -45,7 +45,7 @@ struct UserStockArticleRequest: GETRequest, DecodingRequest {
     typealias Decoded = ArticleModel
     
     var isAPIHost: BaseURL { return .qiita }
-    var requiresToken: Bool { return true}
+    var isHeaders: Headers { return .defaults }
     var path: String { return "/users/\(AppUser.id)/stocks" }
     
     let currentIndex: Int
@@ -64,7 +64,7 @@ struct UserFollowRequest: GETRequest, DecodingRequest {
     typealias Decoded = ProfileModel
     
     var isAPIHost: BaseURL { return .qiita }
-    var requiresToken: Bool { return true }
+    var isHeaders: Headers { return .defaults }
     var path: String { return "/users/\(AppUser.id)/followees" }
     
     var parameters: [String : Any] { return [:]}
@@ -76,7 +76,7 @@ struct UserFollowerRequest: GETRequest, DecodingRequest {
     typealias Decoded = ProfileModel
     
     var isAPIHost: BaseURL { return .qiita }
-    var requiresToken: Bool { return true }
+    var isHeaders: Headers { return .defaults }
     var path: String { return "/users/\(AppUser.id)/followers" }
     
     var parameters: [String : Any] { return [:]}

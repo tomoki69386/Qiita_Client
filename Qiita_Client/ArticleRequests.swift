@@ -13,7 +13,7 @@ struct NewArticleRequest: GETRequest, DecodingRequest {
     typealias Decoded = ArticleModel
     
     var isAPIHost: BaseURL { return .qiita }
-    var requiresToken: Bool { return true }
+    var isHeaders: Headers { return .defaults }
     var path: String { return "/items" }
     
     let currentIndex: Int
@@ -31,7 +31,7 @@ struct SearchArticleRequest: GETRequest, DecodingRequest {
     typealias Decoded = ArticleModel
     
     var isAPIHost: BaseURL { return .qiita }
-    var requiresToken: Bool { return true }
+    var isHeaders: Headers { return .defaults }
     var path: String { return "/items" }
     
     let text: String
@@ -52,7 +52,7 @@ struct GetLikeRequest: GETRequest {
     let id: String
     
     var isAPIHost: BaseURL { return .qiita }
-    var requiresToken: Bool { return true }
+    var isHeaders: Headers { return .defaults }
     var path: String { return "/items/\(id)/like" }
     
     var parameters: [String : Any] { return [:] }
@@ -65,7 +65,7 @@ struct PutLikeRequest: PUTRequest {
     let id: String
     
     var isAPIHost: BaseURL { return .qiita }
-    var requiresToken: Bool { return true }
+    var isHeaders: Headers { return .defaults }
     var path: String { return "/items/\(id)/like" }
     
     var parameters: [String : Any] { return [:] }
@@ -78,7 +78,7 @@ struct DelegateLikeRequest: DELETERequest {
     let id: String
     
     var isAPIHost: BaseURL { return .qiita }
-    var requiresToken: Bool { return true }
+    var isHeaders: Headers { return .defaults }
     var path: String { return "/items/\(id)/like" }
     
     var parameters: [String : Any] { return [:] }
@@ -91,7 +91,7 @@ struct GetStockRequest: GETRequest {
     let id: String
     
     var isAPIHost: BaseURL { return .qiita }
-    var requiresToken: Bool { return true }
+    var isHeaders: Headers { return .defaults }
     var path: String { return "/items/\(id)/stock" }
     
     var parameters: [String : Any] { return [:] }
@@ -104,7 +104,7 @@ struct PutStockRequest: PUTRequest {
     let id: String
     
     var isAPIHost: BaseURL { return .qiita }
-    var requiresToken: Bool { return true }
+    var isHeaders: Headers { return .defaults }
     var path: String { return "/items/\(id)/stock" }
     
     var parameters: [String : Any] { return [:] }
@@ -117,7 +117,7 @@ struct DeleteStockRequest: DELETERequest {
     let id: String
     
     var isAPIHost: BaseURL { return .qiita }
-    var requiresToken: Bool { return true }
+    var isHeaders: Headers { return .defaults }
     var path: String { return "/items/\(id)/stock" }
     
     var parameters: [String : Any] { return [:] }

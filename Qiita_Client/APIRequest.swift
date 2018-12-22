@@ -23,35 +23,44 @@ enum BaseURL {
 }
 
 enum Headers {
+    /// デフォルト
+    case defaults
     
+    /// 未認証時
+    case uncertified
+    
+    var item: [String: String] {
+        switch self {
+        case .defaults:
+            return [
+                "Content-type": "application/json",
+                "ACCEPT": "application/json",
+                "Authorization": "Bearer \(AppUser.accessToken)"
+            ]
+        case .uncertified:
+            return [
+                "Content-type": "application/json",
+                "ACCEPT": "application/json"
+            ]
+        }
+    }
 }
 
 // MARK: - APIRequest -
 
 protocol APIRequest {
     static var httpMethod: HTTPMethod { get }
-    var requiresToken: Bool { get }
     var headers: [String: String] { get }
     var queryItems: [URLQueryItem]? { get }
     var path: String { get }
     var isAPIHost: BaseURL { get }
+    var isHeaders: Headers { get }
 }
 
 extension APIRequest {
     
     var defaultHeaders: [String: String] {
-        if self.requiresToken {
-            return [
-                "Content-type": "application/json",
-                "ACCEPT": "application/json",
-                "Authorization": "Bearer \(AppUser.accessToken)"
-            ]
-        } else {
-            return [
-                "Content-type": "application/json",
-                "ACCEPT": "application/json"
-            ]
-        }
+        return isHeaders.item
     }
     
     var headers: [String: String] { return self.defaultHeaders }
