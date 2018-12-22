@@ -17,7 +17,7 @@ enum BaseURL {
         case .qiita:
             return "https://qiita.com/api/v2"
         case .slack:
-            return ""
+            return "https://hooks.slack.com"
         }
     }
 }
@@ -28,6 +28,9 @@ enum Headers {
     
     /// 未認証時
     case uncertified
+    
+    /// headerなし
+    case none
     
     var item: [String: String] {
         switch self {
@@ -42,6 +45,8 @@ enum Headers {
                 "Content-type": "application/json",
                 "ACCEPT": "application/json"
             ]
+        case .none:
+            return [:]
         }
     }
 }
@@ -73,6 +78,7 @@ extension APIRequest {
     
     /// Alamofireに渡すURLコンポーネント
     var urlComponents: URLComponents {
+        print(self.baseURL);print(self.path)
         guard var urlComponents = URLComponents(string: "\(self.baseURL)\(self.path)") else {
             print("Invalid Endpoint:", self.path)
             assertionFailure("\(self.path) は無効なURLです。\(Self.self)のエンドポイントを修正してください。")

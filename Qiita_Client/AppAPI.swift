@@ -17,4 +17,10 @@ struct AppAPI {
         let request = AccessTokenRequest(code: code)
         APIClient.send(request, decodingCompletion: completion)
     }
+    
+    /// SlackにMessageを送信
+    static func fetchSlackMessage(parameter: [String: Any], completion: @escaping (APIResult) -> Void) {
+        let request = StackMessageRequest(parameter: parameter)
+        APIClient.send(request, completion: completion)
+    }
 }

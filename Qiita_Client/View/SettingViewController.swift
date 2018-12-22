@@ -46,6 +46,8 @@ class SettingViewController: MainViewController {
         if let navigationController = navigationController as? ScrollingNavigationController {
             navigationController.followScrollView(tableView, delay: 50.0)
         }
+        
+        performSegue(withIdentifier: "toInfo", sender: nil)
     }
     
     private func alertView() {

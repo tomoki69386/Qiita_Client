@@ -26,6 +26,11 @@ struct AppUser {
         return Defaults[.clientSecret]
     }
     
+    /// SlackURL
+    static var SlackURL: String {
+        return Defaults[.slackURL]
+    }
+    
     /// デバイスUUID
     static var deviceID: String {
         return Defaults[.deviceID]
@@ -112,16 +117,17 @@ struct AppUser {
 }
 
 extension AppUser {
-    static func setUp(id: String, secret: String) {
+    static func setUp(id: String, secret: String, url: String) {
         Defaults[.clientID] = id
         Defaults[.clientSecret] = secret
+        Defaults[.slackURL] = url
     }
     
     static func saveAccessToken(token: String) {
         Defaults[.accessToken] = token
     }
     
-    static func  saveDeviceUUID(_ id: String) {
+    static func saveDeviceUUID(_ id: String) {
         Defaults[.deviceID] = id
     }
     
@@ -180,6 +186,7 @@ private extension DefaultsKeys {
     static let accessToken = DefaultsKey<String>("access_token", defaultValue: "")
     static let clientID = DefaultsKey<String>("client_id", defaultValue: "")
     static let clientSecret = DefaultsKey<String>("client_secret", defaultValue: "")
+    static let slackURL = DefaultsKey<String>("Slack_URL", defaultValue: "")
     static let deviceID = DefaultsKey<String>("Device_UUID")
     static let startCount = DefaultsKey<Int>("start_up_count", defaultValue: 0)
 

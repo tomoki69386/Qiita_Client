@@ -26,3 +26,16 @@ struct AccessTokenRequest: POSTRequest, DecodingRequest {
         ]
     }
 }
+
+struct StackMessageRequest: POSTRequest {
+    
+    var isAPIHost: BaseURL { return .slack }
+    var isHeaders: Headers { return .none }
+    var path: String { return AppUser.SlackURL }
+    
+    var parameter: [String: Any]
+    
+    var parameters: [String : Any] {
+        return parameter
+    }
+}

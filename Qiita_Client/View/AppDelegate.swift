@@ -54,15 +54,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             fatalError("Flurry_API_Keyが.envファイルに記載されていません。")
         }
         
-        AppUser.setUp(id: clientID, secret: clientSecret)
+        guard let slackURL = ProcessInfo.processInfo.environment["Slack_URL"] else {
+            fatalError("Slack_URLが.envファイルに記載されていません。")
+        }
+        AppUser.setUp(id: clientID, secret: clientSecret, url: slackURL)
         
         // Flurryの初期設定
         Flurry.startSession(FlurryAPIKey, with: FlurrySessionBuilder
             .init()
             .withCrashReporting(true)
             .withLogLevel(FlurryLogLevelAll))
-        
-        print(AppUser.deviceID)
         Tracker.setUserID()
         
         // ログイン判定
