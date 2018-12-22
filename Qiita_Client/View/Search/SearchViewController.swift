@@ -57,6 +57,10 @@ extension SearchViewController: UISearchBarDelegate {
         return true
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.textField?.resignFirstResponder()
+    }
+    
     // キャンセルボタンが押されたらキャンセルボタンを無効にしてフォーカスを外す
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = false
@@ -64,6 +68,7 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.count < 2 { return }
         ArticleAPI.fetchSearchArticle(text: searchText) { (result) in
             switch result {
             case .success(let decoded):
