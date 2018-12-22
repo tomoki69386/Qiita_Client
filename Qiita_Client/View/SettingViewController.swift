@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 import AMScrollingNavbar
 
 class SettingViewController: MainViewController {
@@ -130,13 +131,15 @@ extension SettingViewController: UITableViewDelegate {
             
         case (2, 0):
             Tracker.screenName(.service)
-            let VC = InfoViewController(infoURL: .service)
-            self.navigationController?.pushViewController(VC, animated: true)
+            guard let url = URL(string: "https://tomoki69386.github.io/Qiita_Client/Service/Service") else { return }
+            let SFVC = SFSafariViewController(url: url)
+            present(SFVC, animated: true, completion: nil)
             
         case (2, 1):
             Tracker.screenName(.privacy)
-            let VC = InfoViewController(infoURL: .privacy)
-            self.navigationController?.pushViewController(VC, animated: true)
+            guard let url = URL(string: "https://tomoki69386.github.io/Qiita_Client/Privacy/Privacy") else { return }
+            let SFVC = SFSafariViewController(url: url)
+            present(SFVC, animated: true, completion: nil)
             
         case (2, 2):
             Tracker.screenName(.license)
