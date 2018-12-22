@@ -11,9 +11,15 @@ import Flurry_iOS_SDK
 
 struct Tracker {
     
-    static func event(_ log: Log) {
+    static func screenName(_ log: Log) {
         if !Device.isSimulator() {
-            Flurry.logEvent(log.eventName)
+            Flurry.logEvent(log.screenName)
+        }
+    }
+    
+    static func event(_ log: Event) {
+        if !Device.isSimulator() {
+            Flurry.logEvent(log.log)
         }
     }
     
@@ -23,6 +29,28 @@ struct Tracker {
                 AppUser.saveDeviceUUID((UIDevice.current.identifierForVendor?.uuidString)!)
             }
             Flurry.setUserID(AppUser.deviceID)
+        }
+    }
+}
+
+enum Event {
+    /// いいね
+    case like
+    
+    /// ストック
+    case stock
+    
+    /// ログイン
+    case login
+    
+    var log: String {
+        switch self {
+        case .like:
+            return "いいね"
+        case .stock:
+            return "ストック"
+        case .login:
+            return "ログイン"
         }
     }
 }
@@ -64,7 +92,7 @@ enum Log {
     /// 認証画面
     case auth
     
-    var eventName: String {
+    var screenName: String {
         switch self {
         case .readArticle:
             return "記事詳細画面"

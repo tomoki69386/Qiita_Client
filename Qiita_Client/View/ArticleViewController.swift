@@ -50,7 +50,7 @@ final class ArticleViewController: MainViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        Tracker.event(.readArticle)
+        Tracker.screenName(.readArticle)
 
         if let navigationController = navigationController as? ScrollingNavigationController {
             navigationController.followScrollView(mdView, delay: 50.0)
@@ -75,6 +75,7 @@ final class ArticleViewController: MainViewController {
             if AppUser.id == self.article.user.id {
                 return self.messagePopup(message: "自分の投稿にいいねは出来ません")
             }
+            Tracker.event(.like)
             if self.likeButton.isSelected {
                 self.deleteLike()
             } else {
@@ -86,6 +87,7 @@ final class ArticleViewController: MainViewController {
             if AppUser.id == self.article.user.id {
                 return self.messagePopup(message: "自分の投稿をストックは出来ません")
             }
+            Tracker.event(.stock)
             if self.stockButton.isSelected {
                 self.deleteStock()
             } else {

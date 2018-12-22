@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class FirstViewController: UIViewController {
+class FirstViewController: MainViewController {
 
     @IBOutlet private weak var registrationButton: UIButton!
     
@@ -20,11 +20,15 @@ class FirstViewController: UIViewController {
         registrationButton.setTitleColor(AppColor.white, for: .normal)
         registrationButton.backgroundColor = AppColor.main
         registrationButton.layer.cornerRadius = registrationButton.frame.height / 2
+        
+        registrationButton.rx.tap.subscribe(onNext: { _ in
+            Tracker.event(.login)
+        }).disposed(by: self.disposeBag)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        Tracker.event(.lp)
+        Tracker.screenName(.lp)
     }
 }

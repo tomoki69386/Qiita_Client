@@ -50,7 +50,7 @@ class NewArticleViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        Tracker.event(.articleList)
+        Tracker.screenName(.articleList)
         
         if let navigationController = navigationController as? ScrollingNavigationController {
             navigationController.followScrollView(tableView, delay: 50.0)

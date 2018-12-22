@@ -26,7 +26,7 @@ class AuthViewController: MainViewController, WKNavigationDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        Tracker.event(.auth)
+        Tracker.screenName(.auth)
     }
     
     override func loadView() {

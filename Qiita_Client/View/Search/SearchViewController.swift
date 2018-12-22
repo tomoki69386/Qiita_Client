@@ -32,7 +32,7 @@ class SearchViewController: MainViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        Tracker.event(.search)
+        Tracker.screenName(.search)
     }
     
     override func viewWillLayoutSubviews() {
