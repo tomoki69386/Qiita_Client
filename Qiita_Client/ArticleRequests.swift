@@ -12,6 +12,7 @@ struct NewArticleRequest: GETRequest, DecodingRequest {
     
     typealias Decoded = ArticleModel
     
+    var isAPIHost: BaseURL { return .qiita }
     var requiresToken: Bool { return true }
     var path: String { return "/items" }
     
@@ -29,6 +30,7 @@ struct SearchArticleRequest: GETRequest, DecodingRequest {
     
     typealias Decoded = ArticleModel
     
+    var isAPIHost: BaseURL { return .qiita }
     var requiresToken: Bool { return true }
     var path: String { return "/items" }
     
@@ -49,6 +51,7 @@ struct GetLikeRequest: GETRequest {
     typealias Decoded = APIResult
     let id: String
     
+    var isAPIHost: BaseURL { return .qiita }
     var requiresToken: Bool { return true }
     var path: String { return "/items/\(id)/like" }
     
@@ -61,6 +64,7 @@ struct PutLikeRequest: PUTRequest {
     typealias Decoded = APIResult
     let id: String
     
+    var isAPIHost: BaseURL { return .qiita }
     var requiresToken: Bool { return true }
     var path: String { return "/items/\(id)/like" }
     
@@ -73,6 +77,7 @@ struct DelegateLikeRequest: DELETERequest {
     typealias Decoded = APIResult
     let id: String
     
+    var isAPIHost: BaseURL { return .qiita }
     var requiresToken: Bool { return true }
     var path: String { return "/items/\(id)/like" }
     
@@ -85,6 +90,7 @@ struct GetStockRequest: GETRequest {
     typealias Decoded = APIResult
     let id: String
     
+    var isAPIHost: BaseURL { return .qiita }
     var requiresToken: Bool { return true }
     var path: String { return "/items/\(id)/stock" }
     
@@ -97,6 +103,7 @@ struct PutStockRequest: PUTRequest {
     typealias Decoded = APIResult
     let id: String
     
+    var isAPIHost: BaseURL { return .qiita }
     var requiresToken: Bool { return true }
     var path: String { return "/items/\(id)/stock" }
     
@@ -109,6 +116,7 @@ struct DeleteStockRequest: DELETERequest {
     typealias Decoded = APIResult
     let id: String
     
+    var isAPIHost: BaseURL { return .qiita }
     var requiresToken: Bool { return true }
     var path: String { return "/items/\(id)/stock" }
     

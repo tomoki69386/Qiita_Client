@@ -13,6 +13,7 @@ struct UserProfileRequest: GETRequest, DecodingRequest {
     
     typealias Decoded = ProfileModel
     
+    var isAPIHost: BaseURL { return .qiita }
     var requiresToken: Bool { return true }
     var path: String { return "/authenticated_user" }
     
@@ -24,6 +25,7 @@ struct UserArticleRequest: GETRequest, DecodingRequest {
     
     typealias Decoded = ArticleModel
     
+    var isAPIHost: BaseURL { return .qiita }
     var requiresToken: Bool { return true }
     var path: String { return "/authenticated_user/items" }
     
@@ -42,6 +44,7 @@ struct UserStockArticleRequest: GETRequest, DecodingRequest {
     
     typealias Decoded = ArticleModel
     
+    var isAPIHost: BaseURL { return .qiita }
     var requiresToken: Bool { return true}
     var path: String { return "/users/\(AppUser.id)/stocks" }
     
@@ -60,6 +63,7 @@ struct UserFollowRequest: GETRequest, DecodingRequest {
     
     typealias Decoded = ProfileModel
     
+    var isAPIHost: BaseURL { return .qiita }
     var requiresToken: Bool { return true }
     var path: String { return "/users/\(AppUser.id)/followees" }
     
@@ -71,6 +75,7 @@ struct UserFollowerRequest: GETRequest, DecodingRequest {
     
     typealias Decoded = ProfileModel
     
+    var isAPIHost: BaseURL { return .qiita }
     var requiresToken: Bool { return true }
     var path: String { return "/users/\(AppUser.id)/followers" }
     

@@ -8,6 +8,24 @@
 
 import Alamofire
 
+enum BaseURL {
+    case qiita
+    case slack
+    
+    var url: String {
+        switch self {
+        case .qiita:
+            return "https://qiita.com/api/v2"
+        case .slack:
+            return ""
+        }
+    }
+}
+
+enum Headers {
+    
+}
+
 // MARK: - APIRequest -
 
 protocol APIRequest {
@@ -16,6 +34,7 @@ protocol APIRequest {
     var headers: [String: String] { get }
     var queryItems: [URLQueryItem]? { get }
     var path: String { get }
+    var isAPIHost: BaseURL { get }
 }
 
 extension APIRequest {
@@ -38,14 +57,9 @@ extension APIRequest {
     var headers: [String: String] { return self.defaultHeaders }
     var queryItems: [URLQueryItem]? { return nil }
     
-    /// APIバージョン
-    var version: String {
-        return "v2"
-    }
-    
     /// APIホスト
     var baseURL: URL {
-        return URL(string: "https://qiita.com/api/\(version)")!
+        return URL(string: isAPIHost.url)!
     }
     
     /// Alamofireに渡すURLコンポーネント
