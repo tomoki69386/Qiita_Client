@@ -66,8 +66,8 @@ class AuthViewController: MainViewController, WKNavigationDelegate {
             case .success(let decoded):
                 AppUser.saveUser(user: decoded)
                 self.performSegue(withIdentifier: "toTabBar", sender: nil)
-            case .failure(_, let statusCode):
-                print(statusCode)
+            case .failure(let error, _):
+                print(error)
                 /// User情報の取得に失敗しました。
             }
         }
