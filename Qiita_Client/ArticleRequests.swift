@@ -8,9 +8,10 @@
 
 import Foundation
 
+/// 最新記事一覧取得
 struct NewArticleRequest: GETRequest, DecodingRequest {
     
-    typealias Decoded = ArticleModel
+    typealias Decoded = [ArticleModel]
     
     var isAPIHost: BaseURL { return .qiita }
     var isHeaders: Headers { return .defaults }
@@ -26,9 +27,10 @@ struct NewArticleRequest: GETRequest, DecodingRequest {
     }
 }
 
+/// 検索
 struct SearchArticleRequest: GETRequest, DecodingRequest {
     
-    typealias Decoded = ArticleModel
+    typealias Decoded = [ArticleModel]
     
     var isAPIHost: BaseURL { return .qiita }
     var isHeaders: Headers { return .defaults }

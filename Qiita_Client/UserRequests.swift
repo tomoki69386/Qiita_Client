@@ -23,7 +23,7 @@ struct UserProfileRequest: GETRequest, DecodingRequest {
 /// Userの投稿した記事を取得
 struct UserArticleRequest: GETRequest, DecodingRequest {
     
-    typealias Decoded = ArticleModel
+    typealias Decoded = [ArticleModel]
     
     var isAPIHost: BaseURL { return .qiita }
     var isHeaders: Headers { return .defaults }
@@ -42,7 +42,7 @@ struct UserArticleRequest: GETRequest, DecodingRequest {
 /// UserがStockした記事を取得
 struct UserStockArticleRequest: GETRequest, DecodingRequest {
     
-    typealias Decoded = ArticleModel
+    typealias Decoded = [ArticleModel]
     
     var isAPIHost: BaseURL { return .qiita }
     var isHeaders: Headers { return .defaults }
@@ -61,7 +61,7 @@ struct UserStockArticleRequest: GETRequest, DecodingRequest {
 /// Userのフォローを取得
 struct UserFollowRequest: GETRequest, DecodingRequest {
     
-    typealias Decoded = ProfileModel
+    typealias Decoded = [ProfileModel]
     
     var isAPIHost: BaseURL { return .qiita }
     var isHeaders: Headers { return .defaults }
@@ -73,7 +73,7 @@ struct UserFollowRequest: GETRequest, DecodingRequest {
 /// Userのフォロワーを取得
 struct UserFollowerRequest: GETRequest, DecodingRequest {
     
-    typealias Decoded = ProfileModel
+    typealias Decoded = [ProfileModel]
     
     var isAPIHost: BaseURL { return .qiita }
     var isHeaders: Headers { return .defaults }

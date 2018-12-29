@@ -31,40 +31,7 @@ struct APIClient {
         }
     }
     
-    /// responseが配列の時
-    static func send<Request: DecodingRequest>(_ request: Request,
-                                               decodingCompletion: @escaping (APIDecodingResult<[Request.Decoded]>) -> Void) {
-        request.alamofireRequest
-            .responseJSON { response in
-                let result: APIDecodingResult<[Request.Decoded]>
-                defer { decodingCompletion(result) }
-                
-                let statusCode = response.response?.statusCode
-                switch response.result {
-                case .success:
-                    guard let data = response.data else {
-                        assertionFailure("response.resultがsuccessならresponse.dataはnilでないはず")
-                        result = .failure(NSError(), statusCode: statusCode)
-                        return
-                    }
-                    
-                    do {
-                        let decoder = JSONDecoder()
-                        let decoded = try decoder.decode([Request.Decoded].self, from: data)
-                        result = .success(decoded)
-                    } catch {
-                        print("ERROR:", "\(type(of: Request.Decoded.self))型へのデコードに失敗しました")
-                        debugPrint(error)
-                        result = .failure(error, statusCode: statusCode)
-                    }
-                case .failure(let error):
-                    print("ERROR:", "\(type(of: Request.Decoded.self))型へ変換するJSONが取得できませんでした")
-                    result = .failure(error, statusCode: statusCode)
-                }
-        }
-    }
-    
-    /// responseが一つの時
+    /// responseがあるとき
     static func send<Request: DecodingRequest>(_ request: Request,
                                                decodingCompletion: @escaping (APIDecodingResult<Request.Decoded>) -> Void) {
         request.alamofireRequest
