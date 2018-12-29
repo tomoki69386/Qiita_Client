@@ -78,7 +78,6 @@ extension APIRequest {
     
     /// Alamofireに渡すURLコンポーネント
     var urlComponents: URLComponents {
-        print(self.baseURL);print(self.path)
         guard var urlComponents = URLComponents(string: "\(self.baseURL)\(self.path)") else {
             print("Invalid Endpoint:", self.path)
             assertionFailure("\(self.path) は無効なURLです。\(Self.self)のエンドポイントを修正してください。")
