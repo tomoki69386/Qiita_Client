@@ -46,8 +46,7 @@ class InfoViewController: MainViewController {
         
         let text = """
         時間: \(Date())
-        端末名: \(Device.type())
-        ソフトウェアバージョン: \(Device.version())
+        端末名: \(Device.version())
         アプリバージョン: \(version)
         名前: \(name)
         お問い合わせ内容:
