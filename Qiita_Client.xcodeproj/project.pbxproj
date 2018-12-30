@@ -75,6 +75,7 @@
 		B7EC2BDA21D91DF5007625B3 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = B7EC2BD821D91DF5007625B3 /* .env */; };
 		B7EC2BDB21D91DF5007625B3 /* .env.sample in Resources */ = {isa = PBXBuildFile; fileRef = B7EC2BD921D91DF5007625B3 /* .env.sample */; };
 		B7EC2BDF21D92FD0007625B3 /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EC2BDE21D92FCF007625B3 /* PopUp.swift */; };
+		B7EC2BE121D93DF5007625B3 /* SFSafariViewController+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EC2BE021D93DF5007625B3 /* SFSafariViewController+UIColor.swift */; };
 		B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */; };
 		B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */; };
 		B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFC00021A0B850001A4BD4 /* Storyboard.swift */; };
@@ -224,6 +225,7 @@
 		B7EC2BD821D91DF5007625B3 /* .env */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .env; sourceTree = SOURCE_ROOT; };
 		B7EC2BD921D91DF5007625B3 /* .env.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .env.sample; sourceTree = SOURCE_ROOT; };
 		B7EC2BDE21D92FCF007625B3 /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
+		B7EC2BE021D93DF5007625B3 /* SFSafariViewController+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SFSafariViewController+UIColor.swift"; path = "View/SFSafariViewController+UIColor.swift"; sourceTree = "<group>"; };
 		B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		B7EFC00021A0B850001A4BD4 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 		B74A3879218EC70A0066EA24 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				B7EC2BE021D93DF5007625B3 /* SFSafariViewController+UIColor.swift */,
 				B74A387A218EC72A0066EA24 /* UIColor+hex.swift */,
 				B71555C1219750D0004A1399 /* MainViewController.swift */,
 				B77BAADC21B2CC1B00816E5A /* SwipeBackable.swift */,
@@ -849,6 +852,7 @@
 				B7E67F5321CD3DAE00527DC5 /* AppAPI.swift in Sources */,
 				B71555C2219750D0004A1399 /* MainViewController.swift in Sources */,
 				B74A384E218D1EA60066EA24 /* AppDelegate.swift in Sources */,
+				B7EC2BE121D93DF5007625B3 /* SFSafariViewController+UIColor.swift in Sources */,
 				B74A3878218EAB940066EA24 /* ArticleViewController.swift in Sources */,
 				B780948221CA293E007B063F /* UserAPI.swift in Sources */,
 				B7FBAB2821B8C38D004673DA /* Tracker.swift in Sources */,
