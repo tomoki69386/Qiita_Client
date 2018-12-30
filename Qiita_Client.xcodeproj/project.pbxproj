@@ -52,7 +52,6 @@
 		B76EBD3121A6D5E400AD0FFB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EBD3021A6D5E400AD0FFB /* FirstViewController.swift */; };
 		B76EBD3421A6D5FB00AD0FFB /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD3321A6D5FB00AD0FFB /* Auth.storyboard */; };
 		B76EBD3621A6D61200AD0FFB /* First.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD3521A6D61200AD0FFB /* First.storyboard */; };
-		B76EBD3A21A6EA9E00AD0FFB /* .env.sample in Resources */ = {isa = PBXBuildFile; fileRef = B76EBD3921A6EA9E00AD0FFB /* .env.sample */; };
 		B77BAADD21B2CC1B00816E5A /* SwipeBackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BAADC21B2CC1B00816E5A /* SwipeBackable.swift */; };
 		B780947621CA19A3007B063F /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B780947521CA19A3007B063F /* APIRequest.swift */; };
 		B780947A21CA1A29007B063F /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B780947921CA1A29007B063F /* APIResult.swift */; };
@@ -73,6 +72,8 @@
 		B7E67F4921CD319900527DC5 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E67F4821CD319900527DC5 /* UISearchBar.swift */; };
 		B7E67F5121CD3C0F00527DC5 /* AppRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E67F5021CD3C0F00527DC5 /* AppRequest.swift */; };
 		B7E67F5321CD3DAE00527DC5 /* AppAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E67F5221CD3DAE00527DC5 /* AppAPI.swift */; };
+		B7EC2BDA21D91DF5007625B3 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = B7EC2BD821D91DF5007625B3 /* .env */; };
+		B7EC2BDB21D91DF5007625B3 /* .env.sample in Resources */ = {isa = PBXBuildFile; fileRef = B7EC2BD921D91DF5007625B3 /* .env.sample */; };
 		B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */; };
 		B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */; };
 		B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFC00021A0B850001A4BD4 /* Storyboard.swift */; };
@@ -199,7 +200,6 @@
 		B76EBD3021A6D5E400AD0FFB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		B76EBD3321A6D5FB00AD0FFB /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		B76EBD3521A6D61200AD0FFB /* First.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = First.storyboard; sourceTree = "<group>"; };
-		B76EBD3921A6EA9E00AD0FFB /* .env.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .env.sample; sourceTree = "<group>"; };
 		B77BAADC21B2CC1B00816E5A /* SwipeBackable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeBackable.swift; sourceTree = "<group>"; };
 		B780947521CA19A3007B063F /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		B780947921CA1A29007B063F /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
@@ -220,7 +220,8 @@
 		B7E67F4821CD319900527DC5 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		B7E67F5021CD3C0F00527DC5 /* AppRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequest.swift; sourceTree = "<group>"; };
 		B7E67F5221CD3DAE00527DC5 /* AppAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAPI.swift; sourceTree = "<group>"; };
-		B7EC2BD721D919DB007625B3 /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
+		B7EC2BD821D91DF5007625B3 /* .env */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .env; sourceTree = SOURCE_ROOT; };
+		B7EC2BD921D91DF5007625B3 /* .env.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .env.sample; sourceTree = SOURCE_ROOT; };
 		B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		B7EFC00021A0B850001A4BD4 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -308,9 +309,9 @@
 				B74A3854218D1EA70066EA24 /* Assets.xcassets */,
 				B74A3856218D1EA70066EA24 /* LaunchScreen.storyboard */,
 				B74A3859218D1EA70066EA24 /* Info.plist */,
+				B7EC2BD821D91DF5007625B3 /* .env */,
+				B7EC2BD921D91DF5007625B3 /* .env.sample */,
 				B7A922E321B0C91D00D94AE7 /* Settings.bundle */,
-				B7EC2BD721D919DB007625B3 /* .env */,
-				B76EBD3921A6EA9E00AD0FFB /* .env.sample */,
 			);
 			path = Qiita_Client;
 			sourceTree = "<group>";
@@ -706,9 +707,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7EC2BDA21D91DF5007625B3 /* .env in Resources */,
 				B7A922E421B0C91D00D94AE7 /* Settings.bundle in Resources */,
 				B74A3858218D1EA70066EA24 /* LaunchScreen.storyboard in Resources */,
 				B76EBD1721A6322700AD0FFB /* Follower.storyboard in Resources */,
+				B7EC2BDB21D91DF5007625B3 /* .env.sample in Resources */,
 				B7E67F4721CD2A1200527DC5 /* Search.storyboard in Resources */,
 				B74A388C218EF0730066EA24 /* User.storyboard in Resources */,
 				B74A3855218D1EA70066EA24 /* Assets.xcassets in Resources */,
@@ -719,7 +722,6 @@
 				B76EBD1321A6320400AD0FFB /* Friend.storyboard in Resources */,
 				B7EFC00321A0B899001A4BD4 /* UserArticle.storyboard in Resources */,
 				B76EBD0B21A611D800AD0FFB /* Info.storyboard in Resources */,
-				B76EBD3A21A6EA9E00AD0FFB /* .env.sample in Resources */,
 				B76EBD0021A600A700AD0FFB /* Setting.storyboard in Resources */,
 				B76EBD1521A6321900AD0FFB /* Follow.storyboard in Resources */,
 				B76EBD3621A6D61200AD0FFB /* First.storyboard in Resources */,
