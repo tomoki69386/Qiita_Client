@@ -74,6 +74,7 @@
 		B7E67F5321CD3DAE00527DC5 /* AppAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E67F5221CD3DAE00527DC5 /* AppAPI.swift */; };
 		B7EC2BDA21D91DF5007625B3 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = B7EC2BD821D91DF5007625B3 /* .env */; };
 		B7EC2BDB21D91DF5007625B3 /* .env.sample in Resources */ = {isa = PBXBuildFile; fileRef = B7EC2BD921D91DF5007625B3 /* .env.sample */; };
+		B7EC2BDF21D92FD0007625B3 /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EC2BDE21D92FCF007625B3 /* PopUp.swift */; };
 		B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */; };
 		B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */; };
 		B7EFC00121A0B850001A4BD4 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFC00021A0B850001A4BD4 /* Storyboard.swift */; };
@@ -222,6 +223,7 @@
 		B7E67F5221CD3DAE00527DC5 /* AppAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAPI.swift; sourceTree = "<group>"; };
 		B7EC2BD821D91DF5007625B3 /* .env */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .env; sourceTree = SOURCE_ROOT; };
 		B7EC2BD921D91DF5007625B3 /* .env.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .env.sample; sourceTree = SOURCE_ROOT; };
+		B7EC2BDE21D92FCF007625B3 /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
 		B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		B7EFC00021A0B850001A4BD4 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */,
 				B7E67F3E21CD0BDB00527DC5 /* LikeButton.swift */,
 				B7E67F4021CD154400527DC5 /* MessagePopupView.swift */,
+				B7EC2BDE21D92FCF007625B3 /* PopUp.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -841,6 +844,7 @@
 				B76EBD1B21A6324300AD0FFB /* FollowViewController.swift in Sources */,
 				B76EBD1F21A6441300AD0FFB /* UserShowTableViewCell.swift in Sources */,
 				B76EBD1D21A6324C00AD0FFB /* FollowerViewController.swift in Sources */,
+				B7EC2BDF21D92FD0007625B3 /* PopUp.swift in Sources */,
 				B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */,
 				B7E67F5321CD3DAE00527DC5 /* AppAPI.swift in Sources */,
 				B71555C2219750D0004A1399 /* MainViewController.swift in Sources */,

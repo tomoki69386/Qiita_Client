@@ -59,6 +59,8 @@ class InfoViewController: MainViewController {
             switch result {
             case .success:
                 print("succcess")
+                PopUp().topMessage(text: "送信完了")
+                self.navigationController?.popViewController(animated: true)
             case .failure(let error, _):
                 print(error)
             }
