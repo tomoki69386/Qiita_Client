@@ -45,12 +45,11 @@ class InfoViewController: MainViewController {
         let version: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
         
         let text = """
-        時間: \(Date())
+        時間: \(now())
         端末名: \(Device.version())
         アプリバージョン: \(version)
         名前: \(name)
-        お問い合わせ内容:
-        \(message)
+        お問い合わせ内容: \(message)
         """
         let parameters: [String: Any] = [
             "text": text
@@ -64,6 +63,15 @@ class InfoViewController: MainViewController {
                 print(error)
             }
         }
+    }
+    
+    private func now() -> String {
+        let f = DateFormatter()
+        f.timeStyle = .full
+        f.dateStyle = .long
+        f.locale = Locale(identifier: "ja_JP")
+        let time = f.string(from: Date())
+        return time
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
