@@ -71,7 +71,6 @@
 		B7E67F4421CD29F000527DC5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E67F4321CD29F000527DC5 /* SearchViewController.swift */; };
 		B7E67F4721CD2A1200527DC5 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E67F4621CD2A1200527DC5 /* Search.storyboard */; };
 		B7E67F4921CD319900527DC5 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E67F4821CD319900527DC5 /* UISearchBar.swift */; };
-		B7E67F4F21CD3B8100527DC5 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = B7E67F4E21CD3B8100527DC5 /* .env */; };
 		B7E67F5121CD3C0F00527DC5 /* AppRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E67F5021CD3C0F00527DC5 /* AppRequest.swift */; };
 		B7E67F5321CD3DAE00527DC5 /* AppAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E67F5221CD3DAE00527DC5 /* AppAPI.swift */; };
 		B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */; };
@@ -219,9 +218,9 @@
 		B7E67F4321CD29F000527DC5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B7E67F4621CD2A1200527DC5 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		B7E67F4821CD319900527DC5 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
-		B7E67F4E21CD3B8100527DC5 /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 		B7E67F5021CD3C0F00527DC5 /* AppRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRequest.swift; sourceTree = "<group>"; };
 		B7E67F5221CD3DAE00527DC5 /* AppAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAPI.swift; sourceTree = "<group>"; };
+		B7EC2BD721D919DB007625B3 /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 		B7EFBFF821A0A68A001A4BD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B7EFBFFE21A0B584001A4BD4 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		B7EFC00021A0B850001A4BD4 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -310,7 +309,7 @@
 				B74A3856218D1EA70066EA24 /* LaunchScreen.storyboard */,
 				B74A3859218D1EA70066EA24 /* Info.plist */,
 				B7A922E321B0C91D00D94AE7 /* Settings.bundle */,
-				B7E67F4E21CD3B8100527DC5 /* .env */,
+				B7EC2BD721D919DB007625B3 /* .env */,
 				B76EBD3921A6EA9E00AD0FFB /* .env.sample */,
 			);
 			path = Qiita_Client;
@@ -710,7 +709,6 @@
 				B7A922E421B0C91D00D94AE7 /* Settings.bundle in Resources */,
 				B74A3858218D1EA70066EA24 /* LaunchScreen.storyboard in Resources */,
 				B76EBD1721A6322700AD0FFB /* Follower.storyboard in Resources */,
-				B7E67F4F21CD3B8100527DC5 /* .env in Resources */,
 				B7E67F4721CD2A1200527DC5 /* Search.storyboard in Resources */,
 				B74A388C218EF0730066EA24 /* User.storyboard in Resources */,
 				B74A3855218D1EA70066EA24 /* Assets.xcassets in Resources */,
