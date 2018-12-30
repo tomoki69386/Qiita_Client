@@ -18,6 +18,21 @@ struct PopUp {
         return topViewController
     }
     
+    /// 画面全体のタイプ
+    func alert(message: String) {
+        guard  let vc = topViewController else { return }
+        
+        let messageView = MessagePopupView(frame: vc.view.bounds, message: message)
+        messageView.backgroundColor = AppColor.alphaBlack
+        vc.view.addSubview(messageView)
+        messageView.isUserInteractionEnabled = true
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            messageView.removeFromSuperview()
+        }
+    }
+    
+    /// 上から出るタイプ
     func topMessage(text: String) {
         guard  let vc = topViewController else { return }
         

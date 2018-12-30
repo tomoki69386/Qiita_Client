@@ -24,4 +24,7 @@ struct AppColor {
     
     /// #000000
     static var black: UIColor { return #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) }
+    
+    /// #000000
+    static var alphaBlack: UIColor { return UIColor(hex: "000000", alpha: 0.5)}
 }

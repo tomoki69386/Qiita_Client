@@ -73,7 +73,7 @@ final class ArticleViewController: MainViewController {
         
         likeButton.rx.tap.subscribe(onNext: { _ in
             if AppUser.id == self.article.user.id {
-                return self.messagePopup(message: "自分の投稿にいいねは出来ません")
+                return PopUp().alert(message: "自分の投稿にいいね出来ません")
             }
             Tracker.event(.like)
             if self.likeButton.isSelected {
@@ -85,7 +85,7 @@ final class ArticleViewController: MainViewController {
         
         stockButton.rx.tap.subscribe(onNext: { _ in
             if AppUser.id == self.article.user.id {
-                return self.messagePopup(message: "自分の投稿をストックは出来ません")
+                return PopUp().alert(message: "自分の投稿をストック出来ません")
             }
             Tracker.event(.stock)
             if self.stockButton.isSelected {
