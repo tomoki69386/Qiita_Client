@@ -39,12 +39,9 @@ final class ArticleViewController: MainViewController {
         setSwipeBack()
         navigationItem.title = article.title
         
-        mdView.frame = view.bounds
-        mdView.load(markdown: article.body)
-        view.addSubview(mdView)
-        
         getStatus()
-        setBtn()
+        setLayout()
+        setButtonHidden(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,19 +54,17 @@ final class ArticleViewController: MainViewController {
         }
     }
     
-    private func setBtn() {
+    private func setLayout() {
+        mdView.frame = view.bounds
+        mdView.load(markdown: article.body)
+        view.addSubview(mdView)
+        
+        likeButton.layer.cornerRadius = 30
+        stockButton.layer.cornerRadius = 30
         likeButton.frame = CGRect(x: view.frame.width - 75, y: UIScreen.main.bounds.height, width: 60, height: 60)
-        likeButton.layer.cornerRadius = likeButton.frame.width / 2
-        view.addSubview(likeButton)
-        
         stockButton.frame = CGRect(x: view.frame.width - 75, y: UIScreen.main.bounds.height, width: 60, height: 60)
-        stockButton.layer.cornerRadius = stockButton.frame.width / 2
+        view.addSubview(likeButton)
         view.addSubview(stockButton)
-        
-        UIView.animate(withDuration: 0.5, animations: {
-            self.stockButton.frame.origin.y -= (self.tabBarController?.tabBar.frame.height)! + 75
-            self.likeButton.frame.origin.y -= (self.tabBarController?.tabBar.frame.height)! + 150
-        })
         
         likeButton.rx.tap.subscribe(onNext: { _ in
             if AppUser.id == self.article.user.id {
@@ -160,19 +155,22 @@ final class ArticleViewController: MainViewController {
         }
     }
     
-    private func messagePopup(message: String) {
-        let messageView = MessagePopupView(frame: self.view.bounds, message: message)
-        let bgView = UIButton(frame: self.view.bounds)
-        bgView.backgroundColor = AppColor.black
-        bgView.alpha = 0.5
-        self.tabBarController?.view.addSubview(bgView)
-        self.tabBarController?.view.addSubview(messageView)
-        bgView.rx.tap.subscribe(onNext: { _ in
-            messageView.removeFromSuperview()
-            bgView.removeFromSuperview()
-        }).disposed(by: disposeBag)
+    private func setButtonHidden(_ hidden: Bool, completion: @escaping (Bool) -> Void = { _ in}) {
+        guard let tabBarHeight = self.tabBarController?.tabBar.frame.height else { return }
+        let screenHeight = UIScreen.main.bounds.height
+        if hidden {
+            UIView.animate(withDuration: 0.5) {
+                self.stockButton.frame.origin = CGPoint(x: self.view.frame.width - 75, y: screenHeight - (tabBarHeight + 75))
+                self.likeButton.frame.origin = CGPoint(x: self.view.frame.width - 75, y: screenHeight - (tabBarHeight + 150))
+            }
+        } else {
+            UIView.animate(withDuration: 0.5) {
+                self.stockButton.frame.origin.y = screenHeight
+                self.likeButton.frame.origin.y = screenHeight
+            }
+        }
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

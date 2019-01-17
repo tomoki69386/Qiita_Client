@@ -29,6 +29,10 @@ class LikeButton: UIButton {
         self.layer.borderWidth = 2.0
         self.layer.borderColor = AppColor.main.cgColor
         self.clipsToBounds = true
+        self.layer.shadowColor = AppColor.bgGlay.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 3)
+        self.layer.shadowRadius = 5
+        self.layer.shadowOpacity = 0.5
     }
     
     required init?(coder aDecoder: NSCoder) {
