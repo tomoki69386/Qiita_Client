@@ -1,18 +1,18 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
-      "filename" : "nav設定@1.png",
+      "idiom" : "iphone",
+      "filename" : "無料の設定歯車アイコン@1.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
-      "filename" : "nav設定@2.png",
+      "idiom" : "iphone",
+      "filename" : "無料の設定歯車アイコン@2.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "universal",
-      "filename" : "nav設定@3.png",
+      "idiom" : "iphone",
+      "filename" : "無料の設定歯車アイコン@3.png",
       "scale" : "3x"
     }
   ],

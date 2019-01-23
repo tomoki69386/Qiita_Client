@@ -60,11 +60,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppUser.setUp(id: clientID, secret: clientSecret, url: slackURL)
         
         // Flurryの初期設定
-        Flurry.startSession(FlurryAPIKey, with: FlurrySessionBuilder
-            .init()
-            .withCrashReporting(true)
-            .withLogLevel(FlurryLogLevelAll))
-        Tracker.setUserID()
+        if !Device.isSimulator() {
+            Flurry.startSession(FlurryAPIKey, with: FlurrySessionBuilder
+                .init()
+                .withCrashReporting(true)
+                .withLogLevel(FlurryLogLevelAll))
+            Tracker.setUserID()
+        }
         
         // ログイン判定
         if AppUser.accessToken != "" {

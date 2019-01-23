@@ -1,44 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UbL-Ms-o88">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First View Controller-->
+        <!--QView-->
         <scene sceneID="TIJ-qS-ekn">
             <objects>
                 <viewController id="BUQ-YM-FZ2" customClass="FirstViewController" customModule="Qiita_Client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aAK-GX-fgu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izp-XH-eO8">
-                                <rect key="frame" x="50" y="355" width="275" height="50"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="aOp-Kr-Ffi">
+                                <rect key="frame" x="0.0" y="88" width="375" height="375"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="13n-jU-Ebj"/>
+                                    <constraint firstAttribute="width" secondItem="aOp-Kr-Ffi" secondAttribute="height" multiplier="1:1" id="A5Q-qF-XqK"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nk-Qn-ONc">
+                                <rect key="frame" x="37.666666666666657" y="487" width="300" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="oyp-kW-SlG"/>
+                                    <constraint firstAttribute="height" constant="50" id="rVQ-rg-M0V"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="wAr-BQ-3qf" kind="show" id="DcN-Tm-gkO"/>
+                                    <segue destination="wAr-BQ-3qf" kind="push" id="3Fc-eg-5ge"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="izp-XH-eO8" firstAttribute="leading" secondItem="SQ0-Iw-vsZ" secondAttribute="leading" constant="50" id="sHX-Lt-AH2"/>
-                            <constraint firstItem="SQ0-Iw-vsZ" firstAttribute="trailing" secondItem="izp-XH-eO8" secondAttribute="trailing" constant="50" id="z1w-c1-9hf"/>
-                            <constraint firstItem="SQ0-Iw-vsZ" firstAttribute="bottom" secondItem="izp-XH-eO8" secondAttribute="bottom" constant="262" id="z5b-Eb-iX0"/>
+                            <constraint firstItem="SQ0-Iw-vsZ" firstAttribute="trailing" secondItem="aOp-Kr-Ffi" secondAttribute="trailing" id="G2U-Ql-tg3"/>
+                            <constraint firstItem="aOp-Kr-Ffi" firstAttribute="leading" secondItem="SQ0-Iw-vsZ" secondAttribute="leading" id="abL-fn-yAq"/>
+                            <constraint firstItem="1nk-Qn-ONc" firstAttribute="centerX" secondItem="aAK-GX-fgu" secondAttribute="centerX" id="jga-MU-Kps"/>
+                            <constraint firstItem="1nk-Qn-ONc" firstAttribute="top" secondItem="aOp-Kr-Ffi" secondAttribute="bottom" constant="24" id="qs3-Yl-AqO"/>
+                            <constraint firstItem="aOp-Kr-Ffi" firstAttribute="top" secondItem="SQ0-Iw-vsZ" secondAttribute="top" id="wSO-jS-ilb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SQ0-Iw-vsZ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="cxG-bW-NdL"/>
+                    <navigationItem key="navigationItem" title="QView" id="cxG-bW-NdL"/>
                     <connections>
-                        <outlet property="registrationButton" destination="izp-XH-eO8" id="5PR-nD-EIs"/>
+                        <outlet property="registrationButton" destination="1nk-Qn-ONc" id="xiG-5f-efC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ey-Jh-0Nr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -48,7 +58,9 @@
         <!--Auth-->
         <scene sceneID="Uj5-Dg-Lac">
             <objects>
-                <viewControllerPlaceholder storyboardName="Auth" id="wAr-BQ-3qf" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Auth" id="wAr-BQ-3qf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="e4X-Tk-7IA"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sfq-r5-ZB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2008.8" y="-309.44527736131937"/>
@@ -59,7 +71,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UbL-Ms-o88" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ffl-y5-b32">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -72,4 +84,7 @@
             <point key="canvasLocation" x="408.80000000000001" y="-304.4977511244378"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AppIcon" width="16" height="16"/>
+    </resources>
 </document>
