@@ -64,6 +64,17 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.textField?.text else { return }
+        if text.count < 2 { return }
+        ArticleAPI.fetchSearchArticle(text: text) { result in
+            switch result {
+            case .success(let decoded):
+                self.articles = decoded
+                self.tableView.reloadData()
+            case .failure(_, let statusCode):
+                print(statusCode ?? "")
+            }
+        }
         searchBar.textField?.resignFirstResponder()
     }
     
@@ -71,19 +82,6 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = false
         searchBar.resignFirstResponder()
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.count < 2 { return }
-        ArticleAPI.fetchSearchArticle(text: searchText) { (result) in
-            switch result {
-            case .success(let decoded):
-                self.articles = decoded
-                self.tableView.reloadData()
-            case .failure(let error, _):
-                print(error)
-            }
-        }
     }
 }
 
