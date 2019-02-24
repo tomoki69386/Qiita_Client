@@ -33,6 +33,11 @@ class NewArticleViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         navigationItem.title = "新着記事"
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshControlAction), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+        
         request()
         
         if AppUser.countUp() && !Device.isSimulator() {
@@ -57,7 +62,13 @@ class NewArticleViewController: UIViewController {
         }
     }
     
-    private func request() {
+    @objc private func refreshControlAction(refreshControl: UIRefreshControl) {
+        currentIndex = 0
+        request {
+            refreshControl.endRefreshing()
+        }
+    }
+    private func request(completion: @escaping () -> Void = { }) {
         currentIndex += 1
         ArticleAPI.fetchNewArticle(in: currentIndex) { (resule) in
             switch resule {
@@ -65,7 +76,7 @@ class NewArticleViewController: UIViewController {
                 self.articles += decoded
                 self.tableView.reloadData()
                 self.isaddload = true
-                
+                completion()
             case .failure(_, let statusCode):
                 print(statusCode ?? "")
             }
