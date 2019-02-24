@@ -1,0 +1,8 @@
+app_identifier("com.tomoki.Qiita-Client") # The bundle identifier of your app
+apple_id("tomoki_Developer@yahoo.co.jp") # Your Apple email address
+
+itc_team_id("118726078") # App Store Connect Team ID
+team_id("FJMPLD4D4X") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
