@@ -8,6 +8,7 @@ target 'Qiita_Client' do
   # Pods for Qiita_Client
 
   pod 'LicensePlist'
+  pod 'SwiftLint'
   pod 'Flurry-iOS-SDK/FlurrySDK'
   pod 'Flurry-iOS-SDK/FlurryAds'
 

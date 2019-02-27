@@ -12,6 +12,7 @@
 		B71555C421975550004A1399 /* UserArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555C321975550004A1399 /* UserArticleViewController.swift */; };
 		B715F7DD21958E2600BE0218 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B715F7DC21958E2600BE0218 /* ArticleTableViewCell.swift */; };
 		B715F7DF2195915300BE0218 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B715F7DE2195915300BE0218 /* ProfileModel.swift */; };
+		B71C69182226271C00EF63A6 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B71C69172226271C00EF63A6 /* PKHUD.framework */; };
 		B732C0F221A94A8D00C91FCC /* TwitterAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732C0F121A94A8D00C91FCC /* TwitterAlert.framework */; };
 		B74A384E218D1EA60066EA24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A384D218D1EA60066EA24 /* AppDelegate.swift */; };
 		B74A3855218D1EA70066EA24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B74A3854218D1EA70066EA24 /* Assets.xcassets */; };
@@ -91,6 +92,7 @@
 		B71555C321975550004A1399 /* UserArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserArticleViewController.swift; sourceTree = "<group>"; };
 		B715F7DC21958E2600BE0218 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		B715F7DE2195915300BE0218 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		B71C69172226271C00EF63A6 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
 		B732C0F121A94A8D00C91FCC /* TwitterAlert.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterAlert.framework; path = Carthage/Build/iOS/TwitterAlert.framework; sourceTree = "<group>"; };
 		B74A384A218D1EA60066EA24 /* Qiita_Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qiita_Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74A384D218D1EA60066EA24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B71C69182226271C00EF63A6 /* PKHUD.framework in Frameworks */,
 				B732C0F221A94A8D00C91FCC /* TwitterAlert.framework in Frameworks */,
 				B76EBD0D21A6143100AD0FFB /* Device.framework in Frameworks */,
 				B76EBCFB21A5FDA800AD0FFB /* SwiftyUserDefaults.framework in Frameworks */,
@@ -323,6 +326,7 @@
 		B74A385F218D242F0066EA24 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B71C69172226271C00EF63A6 /* PKHUD.framework */,
 				B732C0F121A94A8D00C91FCC /* TwitterAlert.framework */,
 				B76EBD0C21A6143100AD0FFB /* Device.framework */,
 				B76EBCFA21A5FDA800AD0FFB /* SwiftyUserDefaults.framework */,
@@ -665,6 +669,7 @@
 				B74A386A218D24400066EA24 /* Carthage */,
 				B7A922E021B0C7F700D94AE7 /* LicensePlist */,
 				D735033D09CAFD5EAAEC3861 /* [CP] Embed Pods Frameworks */,
+				B71C69162226259B00EF63A6 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -759,6 +764,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B71C69162226259B00EF63A6 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\n${PODS_ROOT}/LicensePlist/license-plist --output-path $PRODUCT_NAME/Settings.bundle\nfi\n";
+		};
 		B74A386A218D24400066EA24 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -780,6 +803,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Device.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TwitterAlert.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/DZNEmptyDataSet.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PKHUD.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
@@ -816,7 +840,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Qiita_Client/Pods-Qiita_Client-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Qiita_Client/Pods-Qiita_Client-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Flurry-iOS-SDK/Flurry_iOS_SDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -827,7 +851,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Qiita_Client/Pods-Qiita_Client-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Qiita_Client/Pods-Qiita_Client-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
