@@ -10,7 +10,6 @@ import UIKit
 import Device
 import StoreKit
 import Alamofire
-import DZNEmptyDataSet
 import AMScrollingNavbar
 
 class NewArticleViewController: UIViewController {
@@ -26,7 +25,8 @@ class NewArticleViewController: UIViewController {
     private var articles = [ArticleModel]()
     private var isaddload: Bool = true
     private var currentIndex = 0
-    
+    private let activityIndicator = UIActivityIndicatorView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,11 +34,18 @@ class NewArticleViewController: UIViewController {
         tableView.delegate = self
         navigationItem.title = "新着記事"
         
+        activityIndicator.center = view.center
+        activityIndicator.color = .white
+        tableView.addSubview(activityIndicator)
+        
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshControlAction), for: .valueChanged)
         tableView.addSubview(refreshControl)
         
-        request()
+        activityIndicator.startAnimating()
+//        request {
+//            self.activityIndicator.stopAnimating()
+//        }
         
         if AppUser.countUp() && !Device.isSimulator() {
             SKStoreReviewController.requestReview()
