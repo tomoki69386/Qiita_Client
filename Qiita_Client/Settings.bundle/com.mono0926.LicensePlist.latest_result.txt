@@ -8,29 +8,23 @@ body: MIT License
 Copyrig…
 version: 1.9.1
 
-name: Alamofire, nameSpecified: , owner: Alamofire, version: 4.8.0
+name: Alamofire, nameSpecified: , owner: Alamofire, version: 4.8.2
 
 name: AMScrollingNavbar, nameSpecified: , owner: andreamazz, version: 5.2.0
 
 name: Device, nameSpecified: , owner: Ekhoo, version: 3.1.2
 
-name: DZNEmptyDataSet, nameSpecified: , owner: dzenbot, version: v1.8.1
-
 name: MarkdownView, nameSpecified: , owner: keitaoouchi, version: 1.5.0
 
-name: RxSwift, nameSpecified: , owner: ReactiveX, version: 4.4.0
+name: RxSwift, nameSpecified: , owner: ReactiveX, version: 5.0.1
 
-name: SDWebImage, nameSpecified: , owner: SDWebImage, version: 4.4.3
+name: SDWebImage, nameSpecified: , owner: SDWebImage, version: 5.0.2
 
-name: SkeletonView, nameSpecified: , owner: Juanpe, version: 1.4.1
-
-name: SnapKit, nameSpecified: , owner: SnapKit, version: 4.2.0
+name: SnapKit, nameSpecified: , owner: SnapKit, version: 5.0.0
 
 name: SwiftyUserDefaults, nameSpecified: , owner: radex, version: 4.0.0-alpha.1
 
-name: TwitterAlert, nameSpecified: , owner: tomoki69386, version: 1.1
-
-name: XLPagerTabStrip, nameSpecified: , owner: xmartlabs, version: 8.1.0
+name: XLPagerTabStrip, nameSpecified: , owner: xmartlabs, version: 8.1.1
 
 add-version-numbers: false
 
