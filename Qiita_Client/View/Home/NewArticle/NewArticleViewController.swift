@@ -15,9 +15,11 @@ import Alamofire
 
 class NewArticleViewController: UIViewController {
 
+    private let refreshControl = UIRefreshControl()
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
             tableView.tableFooterView = UIView()
+            tableView.refreshControl = refreshControl
             tableView.rowHeight = 90
             tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "ArticleCell")
         }
