@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uFU-Kd-WMr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uFU-Kd-WMr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,22 +17,40 @@
                     <view key="view" contentMode="scaleToFill" id="5AY-cX-BjM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="um0-Um-vZw">
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Goh-lk-M8w" id="9pk-cy-kwy"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="um0-Um-vZw" firstAttribute="leading" secondItem="pEK-mo-trp" secondAttribute="leading" id="BUl-N1-Q1J"/>
+                            <constraint firstItem="pEK-mo-trp" firstAttribute="bottom" secondItem="um0-Um-vZw" secondAttribute="bottom" id="DdQ-7g-ley"/>
+                            <constraint firstItem="um0-Um-vZw" firstAttribute="top" secondItem="pEK-mo-trp" secondAttribute="top" id="LWl-64-d97"/>
+                            <constraint firstItem="pEK-mo-trp" firstAttribute="trailing" secondItem="um0-Um-vZw" secondAttribute="trailing" id="fVj-Fb-U77"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pEK-mo-trp"/>
                     </view>
                     <navigationItem key="navigationItem" id="OEd-EI-y1a"/>
+                    <connections>
+                        <outlet property="tableView" destination="um0-Um-vZw" id="ZVV-vf-dgh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xw6-v5-6D2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1239.2" y="-153.37331334332833"/>
         </scene>
-        <!--Scrolling Navigation Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="CKM-sy-glA">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uFU-Kd-WMr" customClass="ScrollingNavigationController" customModule="AMScrollingNavbar" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uFU-Kd-WMr" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eXg-2a-hOO">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="eXg-2a-hOO">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -12,6 +12,9 @@
 		B71555C421975550004A1399 /* UserArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71555C321975550004A1399 /* UserArticleViewController.swift */; };
 		B715F7DD21958E2600BE0218 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B715F7DC21958E2600BE0218 /* ArticleTableViewCell.swift */; };
 		B715F7DF2195915300BE0218 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B715F7DE2195915300BE0218 /* ProfileModel.swift */; };
+		B7222F45227B4AE800C0D66A /* NewArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7222F44227B4AE800C0D66A /* NewArticleModel.swift */; };
+		B7222F47227B4AED00C0D66A /* NewArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7222F46227B4AED00C0D66A /* NewArticleViewModel.swift */; };
+		B7222F49227B5AE600C0D66A /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7222F48227B5AE600C0D66A /* RxRelay.framework */; };
 		B74A384E218D1EA60066EA24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A384D218D1EA60066EA24 /* AppDelegate.swift */; };
 		B74A3855218D1EA70066EA24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B74A3854218D1EA70066EA24 /* Assets.xcassets */; };
 		B74A3858218D1EA70066EA24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74A3856218D1EA70066EA24 /* LaunchScreen.storyboard */; };
@@ -89,6 +92,9 @@
 		B71555C321975550004A1399 /* UserArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserArticleViewController.swift; sourceTree = "<group>"; };
 		B715F7DC21958E2600BE0218 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		B715F7DE2195915300BE0218 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		B7222F44227B4AE800C0D66A /* NewArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewArticleModel.swift; sourceTree = "<group>"; };
+		B7222F46227B4AED00C0D66A /* NewArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewArticleViewModel.swift; sourceTree = "<group>"; };
+		B7222F48227B5AE600C0D66A /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		B732C0F121A94A8D00C91FCC /* TwitterAlert.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterAlert.framework; path = Carthage/Build/iOS/TwitterAlert.framework; sourceTree = "<group>"; };
 		B74A384A218D1EA60066EA24 /* Qiita_Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qiita_Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74A384D218D1EA60066EA24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -236,6 +242,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7222F49227B5AE600C0D66A /* RxRelay.framework in Frameworks */,
 				B76EBD0D21A6143100AD0FFB /* Device.framework in Frameworks */,
 				B76EBCFB21A5FDA800AD0FFB /* SwiftyUserDefaults.framework in Frameworks */,
 				B7EFBFFF21A0B584001A4BD4 /* XLPagerTabStrip.framework in Frameworks */,
@@ -280,6 +287,16 @@
 			path = Responses;
 			sourceTree = "<group>";
 		};
+		B7222F43227B4AD200C0D66A /* NewArticle */ = {
+			isa = PBXGroup;
+			children = (
+				B7A922CE21AF1D8600D94AE7 /* NewArticleViewController.swift */,
+				B7222F44227B4AE800C0D66A /* NewArticleModel.swift */,
+				B7222F46227B4AED00C0D66A /* NewArticleViewModel.swift */,
+			);
+			path = NewArticle;
+			sourceTree = "<group>";
+		};
 		B74A3841218D1EA50066EA24 = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +336,7 @@
 		B74A385F218D242F0066EA24 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B7222F48227B5AE600C0D66A /* RxRelay.framework */,
 				B732C0F121A94A8D00C91FCC /* TwitterAlert.framework */,
 				B76EBD0C21A6143100AD0FFB /* Device.framework */,
 				B76EBCFA21A5FDA800AD0FFB /* SwiftyUserDefaults.framework */,
@@ -405,7 +423,7 @@
 			isa = PBXGroup;
 			children = (
 				B74A3877218EAB940066EA24 /* ArticleViewController.swift */,
-				B7A922CE21AF1D8600D94AE7 /* NewArticleViewController.swift */,
+				B7222F43227B4AD200C0D66A /* NewArticle */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -773,6 +791,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/XLPagerTabStrip.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyUserDefaults.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Device.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
@@ -841,6 +860,7 @@
 				B76EBD1F21A6441300AD0FFB /* UserShowTableViewCell.swift in Sources */,
 				B76EBD1D21A6324C00AD0FFB /* FollowerViewController.swift in Sources */,
 				B7EC2BDF21D92FD0007625B3 /* PopUp.swift in Sources */,
+				B7222F45227B4AE800C0D66A /* NewArticleModel.swift in Sources */,
 				B7EFBFF921A0A68A001A4BD4 /* TabBarController.swift in Sources */,
 				B7E67F5321CD3DAE00527DC5 /* AppAPI.swift in Sources */,
 				B71555C2219750D0004A1399 /* MainViewController.swift in Sources */,
@@ -854,6 +874,7 @@
 				B76EBCFD21A5FDF600AD0FFB /* AppUser.swift in Sources */,
 				B77BAADD21B2CC1B00816E5A /* SwipeBackable.swift in Sources */,
 				B7E67F4121CD154400527DC5 /* MessagePopupView.swift in Sources */,
+				B7222F47227B4AED00C0D66A /* NewArticleViewModel.swift in Sources */,
 				B7A922CF21AF1D8600D94AE7 /* NewArticleViewController.swift in Sources */,
 				B76EBD1921A6323D00AD0FFB /* FriendViewController.swift in Sources */,
 				B74A387D218EC9310066EA24 /* AppColor.swift in Sources */,
