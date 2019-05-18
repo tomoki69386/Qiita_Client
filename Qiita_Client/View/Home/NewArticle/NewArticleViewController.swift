@@ -11,10 +11,9 @@ import Device
 import RxSwift
 import RxCocoa
 import StoreKit
-import Alamofire
 
 class NewArticleViewController: UIViewController {
-
+    
     private let refreshControl = UIRefreshControl()
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
@@ -28,22 +27,40 @@ class NewArticleViewController: UIViewController {
     private lazy var viewModel = NewArticleViewModel(
         itemSelected: tableView.rx.itemSelected.asObservable())
     private let disposeBag = DisposeBag()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        refreshControl.rx.controlEvent(.valueChanged)
+            .map { _ in }
+            .bind(to: viewModel.refreshTriggerSubject)
+            .disposed(by: disposeBag)
+        
+        viewModel.loadedFirstData.map { _ in false }
+            .drive(refreshControl.rx.isRefreshing)
+            .disposed(by: disposeBag)
+        
         viewModel.deselectRow
-        .bind(to: deselectRow)
-        .disposed(by: disposeBag)
+            .bind(to: deselectRow)
+            .disposed(by: disposeBag)
         
         viewModel.reloadData
-        .bind(to: reloadData)
-        .disposed(by: disposeBag)
+            .bind(to: reloadData)
+            .disposed(by: disposeBag)
         
         viewModel.transitionToArticleDetail
-        .bind(to: transitionToArticleDetail)
-        .disposed(by: disposeBag)
-
+            .bind(to: transitionToArticleDetail)
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .items
+            .asObservable()
+            .bind(to: tableView.rx.items(cellIdentifier: "ArticleCell",
+                                         cellType: ArticleTableViewCell.self)) { row, element, cell in
+                                            cell.setUp(article: element)
+            }
+            .disposed(by: disposeBag)
+        
         navigationItem.title = "新着記事"
         
         if AppUser.countUp() && !Device.isSimulator() {
@@ -72,17 +89,5 @@ class NewArticleViewController: UIViewController {
             let target = ArticleViewController(article: article)
             me.navigationController?.pushViewController(target, animated: true)
         }
-    }
-}
-
-extension NewArticleViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.articles.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleTableViewCell
-        cell.setUp(article: viewModel.articles[indexPath.row])
-        return cell
     }
 }
